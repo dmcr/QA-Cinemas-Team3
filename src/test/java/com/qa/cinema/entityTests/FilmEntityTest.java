@@ -2,6 +2,8 @@ package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,8 +16,9 @@ public class FilmEntityTest {
 		
 		@Test
 		public void testGetFilmId() {
+			film.setFilmId(2);
 			int id = film.getFilmId();
-			assertEquals(1, holdID);
+			assertEquals(2, id);
 		}
 		
 		@Test
@@ -26,58 +29,63 @@ public class FilmEntityTest {
 		
 		@Test
 		public void testGetFilmTitle() {
-			int title = film.getFilmTitle();
+			film.setFilmTitle("Test");
+			String title = film.getFilmTitle();
 			assertEquals("", title);
 		}
 		
 		@Test
 		public void testSetFilmTitle() {
-			film.setFilmId(2);
+			film.setFilmTitle("Test");
 			assertEquals("", film.getFilmTitle);
 		}
 		
 		@Test
 		public void testGetFilmSummary() {
-			int summary = film.getFilmSummary();
-			assertEquals("", summary);
+			film.setFilmSummary("Test");
+			String summary = film.getFilmSummary();
+			assertEquals("Test", summary);
 		}
 		
 		@Test
 		public void testSetFilmSummary() {
-			film.setFilmId(2);
-			assertEquals("", film.getFilmSummary);
+			film.setFilmSummary("Test");
+			assertEquals("Test", film.getFilmSummary());
 		}
 		
 		@Test
 		public void testGetFilmDuration() {
+			film.setFilmDuration(100);
 			int duration = film.getFilmDuration();
-			assertEquals(1, duration);
+			assertEquals(100, duration);
 		}
 		
 		@Test
 		public void testSetFilmDuration() {
-			film.setFilmDuration(2);
-			assertEquals(2, film.getFilmDuration());
+			film.setFilmDuration(100);
+			assertEquals(100, film.getFilmDuration());
 		}
 		
 		@Test
 		public void testGetFilmGenre() {
-			int genre = film.getFilmGenre();
-			assertEquals("", genre);
+			film.setFilmGenre("Test");
+			String genre = film.getFilmGenre();
+			assertEquals("Test", genre);
 		}
 		
 		@Test
 		public void testSetFilmGenre() {
-			film.setFilmGenre(2);
-			assertEquals("", film.getFilmGenre);
+			film.setFilmGenre("Test");
+			assertEquals("Test", film.getFilmGenre());
 		}
 		
 		//Certrating enum test
 		
 		@Test
 		public void testGetFilm3D() {
-			int film3D = film.getFilm3D();
-			assertFalse(film.getFilm3D());
+			film.setFilm3D(true);
+			Boolean film3D = film.getFilm3D();
+			assertFalse(film3D);
 		}
 		
 		@Test
@@ -88,38 +96,40 @@ public class FilmEntityTest {
 		
 		@Test
 		public void testGetFilmReleaseDate() {
-			int releaseDate = film.getFilmReleaseDate();
-			assertEquals( , film.getFilm3D());
+			film.setFilmReleaseDate("01/11/11");
+			Date releaseDate = film.getFilmReleaseDate();
+			assertEquals("01/11/11", releaseDate);
 		}
 		
 		@Test
 		public void testSetFilmReleaseDate() {
-			film.setFilmReleaseDate(true);
-			assertEquals( , film.getFilmReleaseDate);
+			film.setFilmReleaseDate("01/11/11");
+			assertEquals( "01/11/11", film.getFilmReleaseDate);
 		}
 		@Test
-		public void testGetFilmTitle() {
-			int director = film.getFilmDirector();
-			assertEquals("", director);
+		public void testGetFilmDirector() {
+			film.setFilmDirector("Test");
+			String director = film.getFilmDirector();
+			assertEquals("Test", director);
 		}
 		
 		@Test
 		public void testSetFilmDirector() {
-			film.setFilmDirector(2);
-			assertEquals("", film.getFilmDirector);
+			film.setFilmDirector("Test");
+			assertEquals("Test", film.getFilmDirector());
 		}
 		
 		@Test
-		public void testGetFilmDirector() {
+		public void testGetFilmActor() {
 			film.setFilmActor("Test");
 			int actor = film.getFilmActor();
-			assertEquals("Test", title);
+			assertEquals("Test", actor);
 		}
 		
 		@Test
 		public void testSetFilmActor() {
 			film.setFilmActor("Test");
-			assertEquals("Test", film.getFilmActor);
+			assertEquals("Test", film.getFilmActor());
 		}
 		
 }
