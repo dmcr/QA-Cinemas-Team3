@@ -18,40 +18,40 @@ public class Film implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="film_id", unique=true, nullable=false)
+	@Column(name="film_id")
 	private Long filmId;
 
-	@Column(name="film_3D", nullable=false)
+	@Column(name="film_3D")
 	private boolean is3D;
 
-	@Column(name="film_cast", nullable=false, length=240)
+	@Column(name="film_cast")
 	private String cast;
 
-	@Column(name="film_certification", nullable=false, length=1)
+	@Column(name="film_certification")
 	private String certification;
 
-	@Column(name="film_director", nullable=false, length=45)
+	@Column(name="film_director")
 	private String director;
 
-	@Column(name="film_duration", nullable=false)
+	@Column(name="film_duration")
 	private int duration;
 
-	@Column(name="film_genre", nullable=false, length=45)
+	@Column(name="film_genre")
 	private String genre;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="film_release_date", nullable=false)
+	@Column(name="film_release_date")
 	private Date releaseDate;
 
-	@Column(name="film_summary", nullable=false, length=250)
+	@Column(name="film_summary")
 	private String summary;
 
-	@Column(name="film_title", nullable=false, length=45)
+	@Column(name="film_title")
 	private String title;
 
 	//bi-directional many-to-one association to Showing
-	@OneToMany(mappedBy="cinFilm", cascade={CascadeType.ALL})
-	private List<Showing> cinShowings;
+	@OneToMany(mappedBy="film")
+	private List<Showing> showings;
 
 	public Film() {
 	}
@@ -136,26 +136,26 @@ public class Film implements Serializable {
 		this.title = title;
 	}
 
-	public List<Showing> getCinShowings() {
-		return this.cinShowings;
+	public List<Showing> getShowings() {
+		return this.showings;
 	}
 
-	public void setCinShowings(List<Showing> cinShowings) {
-		this.cinShowings = cinShowings;
+	public void setShowings(List<Showing> showings) {
+		this.showings = showings;
 	}
 
-	public Showing addCinShowing(Showing cinShowing) {
-		getCinShowings().add(cinShowing);
-		cinShowing.setCinFilm(this);
+	public Showing addShowing(Showing showing) {
+		getShowings().add(showing);
+		showing.setFilm(this);
 
-		return cinShowing;
+		return showing;
 	}
 
-	public Showing removeCinShowing(Showing cinShowing) {
-		getCinShowings().remove(cinShowing);
-		cinShowing.setCinFilm(null);
+	public Showing removeShowing(Showing showing) {
+		getShowings().remove(showing);
+		showing.setFilm(null);
 
-		return cinShowing;
+		return showing;
 	}
 
 }

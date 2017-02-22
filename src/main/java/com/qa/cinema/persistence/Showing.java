@@ -18,26 +18,26 @@ public class Showing implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="showing_id", unique=true, nullable=false)
+	@Column(name="showing_id")
 	private Long showingId;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="showing_start_time", nullable=false)
+	@Column(name="showing_start_time")
 	private Date startTime;
 
 	//bi-directional many-to-one association to Screen
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="showing_screen_id", nullable=false)
-	private Screen cinScreen;
+	@JoinColumn(name="showing_screen_id")
+	private Screen screen;
 
 	//bi-directional many-to-one association to Film
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="showing_film_id", nullable=false)
-	private Film cinFilm;
+	@JoinColumn(name="showing_film_id")
+	private Film film;
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="cinShowing")
-	private List<Ticket> cinTickets;
+	@OneToMany(mappedBy="showing")
+	private List<Ticket> tickets;
 
 	public Showing() {
 	}
@@ -58,42 +58,42 @@ public class Showing implements Serializable {
 		this.startTime = startTime;
 	}
 
-	public Screen getCinScreen() {
-		return this.cinScreen;
+	public Screen getScreen() {
+		return this.screen;
 	}
 
-	public void setCinScreen(Screen cinScreen) {
-		this.cinScreen = cinScreen;
+	public void setScreen(Screen screen) {
+		this.screen = screen;
 	}
 
-	public Film getCinFilm() {
-		return this.cinFilm;
+	public Film getFilm() {
+		return this.film;
 	}
 
-	public void setCinFilm(Film cinFilm) {
-		this.cinFilm = cinFilm;
+	public void setFilm(Film film) {
+		this.film = film;
 	}
 
-	public List<Ticket> getCinTickets() {
-		return this.cinTickets;
+	public List<Ticket> getTickets() {
+		return this.tickets;
 	}
 
-	public void setCinTickets(List<Ticket> cinTickets) {
-		this.cinTickets = cinTickets;
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
-	public Ticket addCinTicket(Ticket cinTicket) {
-		getCinTickets().add(cinTicket);
-		cinTicket.setCinShowing(this);
+	public Ticket addTicket(Ticket ticket) {
+		getTickets().add(ticket);
+		ticket.setShowing(this);
 
-		return cinTicket;
+		return ticket;
 	}
 
-	public Ticket removeCinTicket(Ticket cinTicket) {
-		getCinTickets().remove(cinTicket);
-		cinTicket.setCinShowing(null);
+	public Ticket removeTicket(Ticket ticket) {
+		getTickets().remove(ticket);
+		ticket.setShowing(null);
 
-		return cinTicket;
+		return ticket;
 	}
 
 }

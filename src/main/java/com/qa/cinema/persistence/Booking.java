@@ -2,6 +2,8 @@ package com.qa.cinema.persistence;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import java.util.List;
 
 
@@ -12,28 +14,30 @@ import java.util.List;
 @Entity
 @Table(name="cin_booking")
 @NamedQuery(name="Booking.findAll", query="SELECT b FROM Booking b")
-public class Booking implements Serializable {
+public class Booking implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
-	private BookingPK id;
+	@Id
+	@NotNull
+	@Column(name = "booking_id")
+	private Long bookingId;
 
-	@Column(name="booking_complete", nullable=false)
+	@Column(name="booking_complete")
 	private boolean complete;
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="cinBooking")
-	private List<Ticket> cinTickets;
+	@OneToMany(mappedBy="booking")
+	private List<Ticket> tickets;
 
 	public Booking() {
 	}
 
-	public BookingPK getId() {
-		return this.id;
+	public Long getId() {
+		return this.bookingId;
 	}
 
-	public void setId(BookingPK id) {
-		this.id = id;
+	public void setId(Long id) {
+		this.bookingId = id;
 	}
 
 	public boolean getComplete() {
@@ -44,26 +48,26 @@ public class Booking implements Serializable {
 		this.complete = complete;
 	}
 
-	public List<Ticket> getCinTickets() {
-		return this.cinTickets;
+	public List<Ticket> getTickets() {
+		return this.tickets;
 	}
 
-	public void setCinTickets(List<Ticket> cinTickets) {
-		this.cinTickets = cinTickets;
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
-	public Ticket addCinTicket(Ticket cinTicket) {
-		getCinTickets().add(cinTicket);
-		cinTicket.setCinBooking(this);
+	public Ticket addTicket(Ticket ticket) {
+		getTickets().add(ticket);
+		ticket.setBooking(this);
 
-		return cinTicket;
+		return ticket;
 	}
 
-	public Ticket removeCinTicket(Ticket cinTicket) {
-		getCinTickets().remove(cinTicket);
-		cinTicket.setCinBooking(null);
+	public Ticket removeTicket(Ticket ticket) {
+		getTickets().remove(ticket);
+		ticket.setBooking(null);
 
-		return cinTicket;
+		return ticket;
 	}
 
 }

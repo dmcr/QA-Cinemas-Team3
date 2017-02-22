@@ -17,28 +17,28 @@ public class Seat implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="seat_id", unique=true, nullable=false)
+	@Column(name="seat_id")
 	private Long seatId;
 
-	@Column(name="seat_number", nullable=false)
+	@Column(name="seat_number")
 	private int number;
 
-	@Column(name="seat_row", nullable=false, length=2)
+	@Column(name="seat_row")
 	private String row;
 
 	//bi-directional many-to-one association to SeatType
 	@ManyToOne(cascade={CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="seat_type_id", nullable=false)
-	private SeatType cinSeatType;
+	@JoinColumn(name="seat_type_id")
+	private SeatType seatType;
 
 	//bi-directional many-to-one association to Screen
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="seat_screen_id", nullable=false)
-	private Screen cinScreen;
+	@JoinColumn(name="seat_screen_id")
+	private Screen screen;
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="cinSeat")
-	private List<Ticket> cinTickets;
+	@OneToMany(mappedBy="seat")
+	private List<Ticket> tickets;
 
 	public Seat() {
 	}
@@ -67,42 +67,42 @@ public class Seat implements Serializable {
 		this.row = row;
 	}
 
-	public SeatType getCinSeatType() {
-		return this.cinSeatType;
+	public SeatType getSeatType() {
+		return this.seatType;
 	}
 
-	public void setCinSeatType(SeatType cinSeatType) {
-		this.cinSeatType = cinSeatType;
+	public void setSeatType(SeatType seatType) {
+		this.seatType = seatType;
 	}
 
-	public Screen getCinScreen() {
-		return this.cinScreen;
+	public Screen getScreen() {
+		return this.screen;
 	}
 
-	public void setCinScreen(Screen cinScreen) {
-		this.cinScreen = cinScreen;
+	public void setScreen(Screen screen) {
+		this.screen = screen;
 	}
 
-	public List<Ticket> getCinTickets() {
-		return this.cinTickets;
+	public List<Ticket> getTickets() {
+		return this.tickets;
 	}
 
-	public void setCinTickets(List<Ticket> cinTickets) {
-		this.cinTickets = cinTickets;
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
-	public Ticket addCinTicket(Ticket cinTicket) {
-		getCinTickets().add(cinTicket);
-		cinTicket.setCinSeat(this);
+	public Ticket addTicket(Ticket ticket) {
+		getTickets().add(ticket);
+		ticket.setSeat(this);
 
-		return cinTicket;
+		return ticket;
 	}
 
-	public Ticket removeCinTicket(Ticket cinTicket) {
-		getCinTickets().remove(cinTicket);
-		cinTicket.setCinSeat(null);
+	public Ticket removeTicket(Ticket ticket) {
+		getTickets().remove(ticket);
+		ticket.setSeat(null);
 
-		return cinTicket;
+		return ticket;
 	}
 
 }

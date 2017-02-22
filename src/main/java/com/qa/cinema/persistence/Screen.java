@@ -17,22 +17,22 @@ public class Screen implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="screen_id", unique=true, nullable=false)
+	@Column(name="screen_id")
 	private Long screenId;
 
-	@Column(name="cin_screen_capacity", nullable=false)
-	private int screenCapacity;
+	@Column(name="cin_screen_capacity")
+	private int cinScreenCapacity;
 
-	@Column(name="screen_type_id", nullable=false)
-	private Long typeId;
+	@Column(name="screen_type_id")
+	private Long screenTypeId;
 
 	//bi-directional many-to-one association to Seat
-	@OneToMany(mappedBy="cinScreen")
-	private List<Seat> cinSeats;
+	@OneToMany(mappedBy="screen")
+	private List<Seat> seats;
 
 	//bi-directional many-to-one association to Showing
-	@OneToMany(mappedBy="cinScreen")
-	private List<Showing> cinShowings;
+	@OneToMany(mappedBy="screen")
+	private List<Showing> showings;
 
 	public Screen() {
 	}
@@ -45,64 +45,64 @@ public class Screen implements Serializable {
 		this.screenId = screenId;
 	}
 
-	public int getScreenCapacity() {
-		return this.screenCapacity;
+	public int getCinScreenCapacity() {
+		return this.cinScreenCapacity;
 	}
 
-	public void setScreenCapacity(int screenCapacity) {
-		this.screenCapacity = screenCapacity;
+	public void setCinScreenCapacity(int cinScreenCapacity) {
+		this.cinScreenCapacity = cinScreenCapacity;
 	}
 
-	public Long getTypeId() {
-		return this.typeId;
+	public Long getScreenTypeId() {
+		return this.screenTypeId;
 	}
 
-	public void setTypeId(Long typeId) {
-		this.typeId = typeId;
+	public void setScreenTypeId(Long screenTypeId) {
+		this.screenTypeId = screenTypeId;
 	}
 
-	public List<Seat> getCinSeats() {
-		return this.cinSeats;
+	public List<Seat> getSeats() {
+		return this.seats;
 	}
 
-	public void setCinSeats(List<Seat> cinSeats) {
-		this.cinSeats = cinSeats;
+	public void setSeats(List<Seat> seats) {
+		this.seats = seats;
 	}
 
-	public Seat addCinSeat(Seat cinSeat) {
-		getCinSeats().add(cinSeat);
-		cinSeat.setCinScreen(this);
+	public Seat addSeat(Seat seat) {
+		getSeats().add(seat);
+		seat.setScreen(this);
 
-		return cinSeat;
+		return seat;
 	}
 
-	public Seat removeCinSeat(Seat cinSeat) {
-		getCinSeats().remove(cinSeat);
-		cinSeat.setCinScreen(null);
+	public Seat removeSeat(Seat seat) {
+		getSeats().remove(seat);
+		seat.setScreen(null);
 
-		return cinSeat;
+		return seat;
 	}
 
-	public List<Showing> getCinShowings() {
-		return this.cinShowings;
+	public List<Showing> getShowings() {
+		return this.showings;
 	}
 
-	public void setCinShowings(List<Showing> cinShowings) {
-		this.cinShowings = cinShowings;
+	public void setShowings(List<Showing> showings) {
+		this.showings = showings;
 	}
 
-	public Showing addCinShowing(Showing cinShowing) {
-		getCinShowings().add(cinShowing);
-		cinShowing.setCinScreen(this);
+	public Showing addShowing(Showing showing) {
+		getShowings().add(showing);
+		showing.setScreen(this);
 
-		return cinShowing;
+		return showing;
 	}
 
-	public Showing removeCinShowing(Showing cinShowing) {
-		getCinShowings().remove(cinShowing);
-		cinShowing.setCinScreen(null);
+	public Showing removeShowing(Showing showing) {
+		getShowings().remove(showing);
+		showing.setScreen(null);
 
-		return cinShowing;
+		return showing;
 	}
 
 }

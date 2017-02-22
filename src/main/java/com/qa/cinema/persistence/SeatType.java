@@ -18,18 +18,18 @@ public class SeatType implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="type_id", unique=true, nullable=false)
+	@Column(name="type_id")
 	private Long typeId;
 
-	@Column(name="type_name", nullable=false, length=1)
+	@Column(name="type_name")
 	private String name;
 
-	@Column(name="type_price", nullable=false, precision=10)
+	@Column(name="type_price")
 	private BigDecimal price;
 
 	//bi-directional many-to-one association to Seat
-	@OneToMany(mappedBy="cinSeatType")
-	private List<Seat> cinSeats;
+	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
+	private List<Seat> seats;
 
 	public SeatType() {
 	}
@@ -58,26 +58,26 @@ public class SeatType implements Serializable {
 		this.price = price;
 	}
 
-	public List<Seat> getCinSeats() {
-		return this.cinSeats;
+	public List<Seat> getSeats() {
+		return this.seats;
 	}
 
-	public void setCinSeats(List<Seat> cinSeats) {
-		this.cinSeats = cinSeats;
+	public void setSeats(List<Seat> seats) {
+		this.seats = seats;
 	}
 
-	public Seat addCinSeat(Seat cinSeat) {
-		getCinSeats().add(cinSeat);
-		cinSeat.setCinSeatType(this);
+	public Seat addSeat(Seat seat) {
+		getSeats().add(seat);
+		seat.setSeatType(this);
 
-		return cinSeat;
+		return seat;
 	}
 
-	public Seat removeCinSeat(Seat cinSeat) {
-		getCinSeats().remove(cinSeat);
-		cinSeat.setCinSeatType(null);
+	public Seat removeSeat(Seat seat) {
+		getSeats().remove(seat);
+		seat.setSeatType(null);
 
-		return cinSeat;
+		return seat;
 	}
 
 }
