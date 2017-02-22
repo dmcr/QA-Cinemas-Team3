@@ -4,45 +4,43 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ScreenTest {
+import com.qa.cinema.persistence.Screen;
 
+public class ScreenTest {
+	
+	Screen screen = new Screen();
 	@Test
+	
 	public void getScreenIDtest() {
-		Screen screen = new Screen(12,34,100);
-		assertEquals(12,screen.getScreenId());
+		assertSame(12,screen.getScreenId());
 	}
 	
 	@Test
 	public void getScreentypeIDtest() {
-		Screen screen = new Screen(12,34,100);
-		assertEquals(34,screen.getScreenTypeId());
+		assertSame(34,screen.getScreenTypeId());
 	}
 	
 	@Test
 	public void getScreencapacitytest() {
-		Screen screen = new Screen(12,34,100);
-		assertEquals(100,screen.getScreencapacity());
+		assertEquals(100,screen.getCinScreenCapacity());
 	}
 
 	@Test
 	public void setscreenIDTest() {
-		Screen screen = new Screen(12,34,100);
-		screen.setScreenId(12345);
-		assertEquals(12345,screen.getScreenId());
+		screen.setScreenId(12345L);
+		assertSame(12345L,screen.getScreenId());
 	}
 	
 	@Test
 	public void setscreentypeIDTest() {
-		Screen screen = new Screen(12,34,100);
-		screen.setScreenTypeId(45);
-		assertEquals(45,screen.getScreenTypeId());
+		screen.setScreenTypeId(45L);
+		assertSame(45L, screen.getScreenTypeId());
 	}
 	
 	@Test
 	public void setscreencapacityTest() {
-		Screen screen = new Screen(12,34,100);
-		screen.setScreencapacity(200);
-		assertEquals(200,screen.getScreencapacity());
+		screen.setCinScreenCapacity(200);
+		assertEquals(200,screen.getCinScreenCapacity());
 	}
 	
 }
