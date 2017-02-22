@@ -31,13 +31,13 @@ public class FilmEntityTest {
 		public void testGetFilmTitle() {
 			film.setFilmTitle("Test");
 			String title = film.getFilmTitle();
-			assertEquals("", title);
+			assertEquals("Test", title);
 		}
 		
 		@Test
 		public void testSetFilmTitle() {
 			film.setFilmTitle("Test");
-			assertEquals("", film.getFilmTitle);
+			assertEquals("Test", film.getFilmTitle);
 		}
 		
 		@Test
