@@ -13,31 +13,38 @@ public class SeatEntityTest {
 	@Test
 	public void testSeatId() {
 		seat.setSeatId(1L);
-		assertEquals(seat.getSeatId());
+		assertSame(1L, seat.getSeatId());
 	}
 	
 	@Test
 	public void testSeatNumber() {
 		seat.setNumber(2);
-		assertEquals(seat.getNumber());
+		assertSame(2, seat.getNumber());
 	}
 	
 	@Test
 	public void testSeatRow() {
 		seat.setRow("A");
-		assertEquals(seat.getRow());
+		assertSame("A", seat.getRow());
 	}
 	
 	@Test
 	public void testSeatType() {
 		seat.setSeatType(null);
-		assertEquals(seat.getSeatType());
+		assertSame(null,  seat.getSeatType());
 	}
 	
 	@Test
-	public void testScreenId() {
-		seat.setScreenId(1);
-		assertEquals(seat.getScreenId(1));
+	public void testSeatScreen() {
+		seat.setScreen(null);
+		assertSame(null, seat.getScreen());
+		
+	}
+	
+	@Test
+	public void testSeatTicket() {
+		seat.setTickets(null);
+		assertSame(null, seat.getTickets());
 		
 	}
 

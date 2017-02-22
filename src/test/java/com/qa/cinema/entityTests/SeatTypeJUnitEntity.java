@@ -8,35 +8,35 @@ import com.qa.cinema.persistence.SeatType;
 
 public class SeatTypeJUnitEntity {
 
-	@Test
-	public void testGetSeatTypeId() {
- 
-		SeatType seatType = new SeatType();
-		seatType.setSeatTypeId(4);
-		assertEquals(4, seatType.getSeatTypeId());
+	SeatType seatType = new SeatType();
 	
+	@Test
+	public void testSeatTypeId() {
+		seatType.setTypeId(4L);
+		assertSame(4, seatType.getTypeId());
+
 	}
 	
 	@Test
-	public void testGetSeatTypePrice() {
+	public void testSeatName() {
+		seatType.setName("Test");
+		assertEquals(4, seatType.getName());
 
-		SeatType seatType = new SeatType();
-		seatType.setSeatTypePrice(10.00);
-		assertEquals(10.00, seatType.getSeatTypePrice());
-	
 	}
-	
+
 	@Test
-	public void testGetSeatTypeName() {
+	public void testSeatTypePrice() {
+		seatType.setPrice(10.00);
+		assertSame(10.00, seatType.getPrice());
 
-		SeatType seatType = new SeatType();
-		seatType.setSeatTypeName("child");
-		assertEquals("child", seatType.getSeatTypeName());
-	
 	}
-	
-	
-	
-	
 
+	@Test
+	public void testSeatType() {
+		seatType.setSeats(null);
+		assertEquals("child", seatType.getSeats());
+
+	}
+
+	
 }

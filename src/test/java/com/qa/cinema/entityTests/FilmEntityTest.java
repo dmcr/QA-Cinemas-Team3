@@ -6,10 +6,6 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 import com.qa.cinema.persistence.Film;
 
 public class FilmEntityTest {
@@ -20,13 +16,13 @@ public class FilmEntityTest {
 		public void testGetFilmId() {
 			film.setFilmId(2L);
 			Long id = film.getFilmId();
-			assertEquals(2L, id);
+			assertSame(2L, id);
 		}
 		
 		@Test
 		public void testSetFilmId() {
 			film.setFilmId(2L);
-			assertEquals(2L, film.getFilmId());
+			assertSame(2L, film.getFilmId());
 		}
 		
 		@Test
@@ -81,8 +77,19 @@ public class FilmEntityTest {
 			assertEquals("Test", film.getGenre());
 		}
 		
-		//Certrating enum test
+		@Test
+		public void testGetCertrating() {
+			film.setCertification("Test");
+			String cert = film.getCertification();
+			assertEquals("Test", cert);
+		}
 		
+		@Test
+		public void testSetCertification() {
+			film.setGenre("Test");
+			assertEquals("Test", film.getGenre());
+		}
+	
 		@Test
 		public void testGetFilm3D() {
 			film.setIs3D(true);
@@ -98,14 +105,14 @@ public class FilmEntityTest {
 		
 		@Test
 		public void testGetFilmReleaseDate() {
-			film.setReleaseDate("01/11/11");
+			film.setReleaseDate(null);
 			Date releaseDate = film.getReleaseDate();
 			assertEquals("01/11/11", releaseDate);
 		}
 		
 		@Test
 		public void testSetFilmReleaseDate() {
-			film.setReleaseDate("01/11/11");
+			film.setReleaseDate(null);
 			assertEquals( "01/11/11", film.getReleaseDate());
 		}
 		@Test
