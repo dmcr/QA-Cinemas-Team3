@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class BookingTest {
 
+	// Temporary Booking class
 	class Booking{
 		public int getBookingID() {
 			return BookingID;
