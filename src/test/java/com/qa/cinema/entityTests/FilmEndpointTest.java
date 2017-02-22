@@ -18,7 +18,7 @@ public class FilmEndpointTest {
 	@InjectMocks
 	private FilmEndpoint subject;
 	
-	private static final String MOCKFILM = "[{\"id\": 1,\" is3D\": \"true\", \"cast\": \"Tom Hardy\", \"certification\": \"15\", \"director\": \"James Cameron\", \"duration\": \"120 mins\", \"genre\": \"Horror\", \"releaseDate\": \"20-02-17\", \"summary\": \"One man fights to try his best to defeat the evil ghosts\", \"title\": \"Spooks\", \"showings: \"10:00 14:20 17:45 21:10\"}]";
+	private static final String MOCKFILM = "[{\"id\": 1,\" is3D\": \"true\", \"cast\": \"Tom Hardy\", \"certification\": \"15\", \"director\": \"James Cameron\", \"duration\": \"120 mins\", \"genre\": \"Horror\", \"releaseDate\": \"20-02-17\", \"summary\": \"One man fights to try his best to defeat the evil ghosts\", \"title\": \"Spooks\", \"showings\": []\"}]";
 	
 	
 	@Mock
