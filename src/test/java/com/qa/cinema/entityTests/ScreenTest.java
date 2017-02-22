@@ -1,4 +1,4 @@
-package com.qa.cinema.entityTest;
+package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
