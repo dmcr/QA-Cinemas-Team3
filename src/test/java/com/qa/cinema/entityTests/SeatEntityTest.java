@@ -1,8 +1,10 @@
-package com.qa.cinema.persistence;
+package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import com.qa.cinema.persistence.Seat;
 
 public class SeatEntityTest {
 
