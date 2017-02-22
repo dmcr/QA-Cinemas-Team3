@@ -4,58 +4,42 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.qa.cinema.persistence.Showing;
+
 
 public class ShowingEntityJunitTest {
 
+	Showing showing = new Showing();
+	
 	@Test
 	public void showingIDTest() {
-		Showing s1 = new Showing(1, 1, "", 1);
-		assertEquals(1, s1.getShowingID());
+		showing.setShowingId(1L);
+		assertSame(1L, showing.getShowingId());
 	}
 	
 	@Test
 	public void showingStartTimeTest() {
-		Showing s2 = new Showing(2, 2, "", 2);
-		assertEquals("16:00", s2.getShowingStartTime());
+		showing.setStartTime(null);
+		assertEquals("16:00", showing.getStartTime());
 	}
 	
 	@Test
-	public void showingFilmIDTest() {
-		Showing s3 = new Showing(3, 3,"", 3);
-		assertEquals(3, s3.getshowingFilmID());
+	public void showingScreen() {
+		showing.setScreen(null);
+		assertEquals(4, showing.getScreen());
 	}
 	
 	@Test
-	public void showingScreenID() {
-		Showing s4 = new Showing(4, 4, "", 4);
-		assertEquals(4, s4.getShowingScreenID());
+	public void showingFilmTest() {
+		showing.setFilm(null);
+		assertEquals(3, showing.getFilm());
 	}
 	
 	@Test
-	public void setShowingIDTest() {
-		Showing s5 = new Showing();
-		s5.setShowingID(5);
-		assertEquals(5, s5.setShowingID());
+	public void showingTicketTest() {
+		showing.setTickets(null);
+		assertEquals(3, showing.getTickets());
 	}
 	
-	@Test
-	public void setShowingStartTimeTest() {
-		Showing s6 = new Showing();
-		s6.setShowingStartTime("15:00");
-		assertEquals("15:00", s6.setShowingID());
-	}
 	
-	@Test
-	public void setShowingFilmIDTest() {
-		Showing s7 = new Showing();
-		s7.setShowingFilmID(7);
-		assertEquals(7, s7.setShowingFilmIDTest);
-	}
-
-	@Test
-	public void setShowingScreenIDTest() {
-		Showing s8 = new Showing();
-		s8.setShowingScreenID(8);
-		assertEquals(8, s8.setShowingScreenID());
-	}
 }

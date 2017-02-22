@@ -8,37 +8,35 @@ import com.qa.cinema.persistence.Ticket;
 
 public class TicketEntityTest {
 
+	Ticket ticket = new Ticket();
+	
 	@Test
 	public void testTicket() {
 		assertNotNull(new Ticket());
-		assertNotNull(new Ticket(0, 0, "adult", 0));
+		assertNotNull(new Ticket(0L, null, null, null));
 	}
 	
 	@Test
 	public void testGetTicketId() {
-		Ticket ticket = new Ticket();
-		ticket.setTicketId(5);
-		assertEquals(5, ticket.getTicketId());
+		ticket.setTicketId(5L);
+		assertSame(5L, ticket.getTicketId());
 	}
 	
 	@Test
-	public void testGetBookingId() {
-		Ticket ticket = new Ticket();
-		ticket.setBookingId(5);
-		assertEquals(5, ticket.getBookingId);
+	public void testGetBooking() {
+		ticket.setBooking(null);
+		assertEquals(5, ticket.getBooking());
 	}
 
 	@Test
-	public void testGetTicketType() {
-		Ticket ticket = new Ticket();
-		ticket.setType("child");
-		assertEquals("child", ticket.getType());
+	public void testGetTicketShowing() {
+		ticket.setShowing(null);
+		assertEquals("child", ticket.getShowing());
 	}
 	
 	@Test
-	public void ticketGetSeatId() {
-		Ticket ticket = new Ticket();
-		ticket.setSeatId(5);
-		assertEquals(5, ticket.getSeatId());
+	public void ticketGetSeat() {
+		ticket.setSeat(null);
+		assertEquals(5, ticket.getSeat());
 	}
 }
