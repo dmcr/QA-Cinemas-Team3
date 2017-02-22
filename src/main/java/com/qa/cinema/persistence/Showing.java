@@ -1,7 +1,9 @@
 package com.qa.cinema.persistence;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +42,15 @@ public class Showing implements Serializable {
 	private List<Ticket> tickets;
 
 	public Showing() {
+	}
+	
+	public Showing(Long showingId, Date startTime, Screen screen, Film film,
+			List<Ticket> tickets) {
+		this.showingId = showingId;
+		this.startTime = startTime;
+		this.screen = screen;
+		this.film = film;
+		this.tickets = tickets;
 	}
 
 	public Long getShowingId() {

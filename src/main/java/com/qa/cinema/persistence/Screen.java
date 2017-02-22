@@ -1,7 +1,9 @@
 package com.qa.cinema.persistence;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -35,6 +37,16 @@ public class Screen implements Serializable {
 	private List<Showing> showings;
 
 	public Screen() {
+	}
+
+	public Screen(Long screenId, int cinScreenCapacity, Long screenTypeId,
+			List<Seat> seats, List<Showing> showings) {
+		super();
+		this.screenId = screenId;
+		this.cinScreenCapacity = cinScreenCapacity;
+		this.screenTypeId = screenTypeId;
+		this.seats = seats;
+		this.showings = showings;
 	}
 
 	public Long getScreenId() {

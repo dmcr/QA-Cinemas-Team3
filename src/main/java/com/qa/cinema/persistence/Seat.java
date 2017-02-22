@@ -1,46 +1,57 @@
 package com.qa.cinema.persistence;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.util.List;
 
+import javax.persistence.*;
+
+import java.util.List;
 
 /**
  * The persistent class for the cin_seat database table.
  * 
  */
 @Entity
-@Table(name="cin_seat")
-@NamedQuery(name="Seat.findAll", query="SELECT s FROM Seat s")
+@Table(name = "cin_seat")
+@NamedQuery(name = "Seat.findAll", query = "SELECT s FROM Seat s")
 public class Seat implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="seat_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seat_id")
 	private Long seatId;
 
-	@Column(name="seat_number")
+	@Column(name = "seat_number")
 	private int number;
 
-	@Column(name="seat_row")
+	@Column(name = "seat_row")
 	private String row;
 
-	//bi-directional many-to-one association to SeatType
-	@ManyToOne(cascade={CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="seat_type_id")
+	// bi-directional many-to-one association to SeatType
+	@ManyToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "seat_type_id")
 	private SeatType seatType;
 
-	//bi-directional many-to-one association to Screen
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="seat_screen_id")
+	// bi-directional many-to-one association to Screen
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "seat_screen_id")
 	private Screen screen;
 
-	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="seat")
+	// bi-directional many-to-one association to Ticket
+	@OneToMany(mappedBy = "seat")
 	private List<Ticket> tickets;
 
 	public Seat() {
+	}
+
+	public Seat(Long seatId, int number, String row, SeatType seatType,
+			Screen screen, List<Ticket> tickets) {
+		this.seatId = seatId;
+		this.number = number;
+		this.row = row;
+		this.seatType = seatType;
+		this.screen = screen;
+		this.tickets = tickets;
 	}
 
 	public Long getSeatId() {

@@ -8,40 +8,34 @@ import com.qa.cinema.persistence.Seat;
 
 public class SeatEntityTest {
 
+	Seat seat = new Seat();
 	
 	@Test
 	public void testSeatId() {
-		Seat seat = new Seat();
-		seat.setSeatId(1);
-		assertEquals(seat.getSeatID(1));
-	}
-	
-	@Test
-	public void testSeatRow() {
-		Seat seat = new Seat();
-		seat.setSeatRow("A");
-		assertEquals(seat.getSeatRow("A"));
-		
+		seat.setSeatId(1L);
+		assertEquals(seat.getSeatId());
 	}
 	
 	@Test
 	public void testSeatNumber() {
-		Seat seat = new Seat();
-		seat.setSeatNumber(2);
-		assertEquals(seat.getSeatRow(2));
-		
+		seat.setNumber(2);
+		assertEquals(seat.getNumber());
 	}
+	
 	@Test
-	public void testSeatTypeId() {
-		Seat seat = new Seat();
-		seat.setSeatTypeId(1);
-		assertEquals(seat.getSeatRow(1));
-		
+	public void testSeatRow() {
+		seat.setRow("A");
+		assertEquals(seat.getRow());
+	}
+	
+	@Test
+	public void testSeatType() {
+		seat.setSeatType(null);
+		assertEquals(seat.getSeatType());
 	}
 	
 	@Test
 	public void testScreenId() {
-		Seat seat = new Seat();
 		seat.setScreenId(1);
 		assertEquals(seat.getScreenId(1));
 		

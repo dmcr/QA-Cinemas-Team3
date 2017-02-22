@@ -2,7 +2,9 @@ package com.qa.cinema.persistence;
 
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -33,6 +35,13 @@ public class SeatType implements Serializable {
 	private List<Seat> seats;
 
 	public SeatType() {
+	}
+	
+	public SeatType(Long typeId, String name, BigDecimal price, List<Seat> seats) {
+		this.typeId = typeId;
+		this.name = name;
+		this.price = price;
+		this.seats = seats;
 	}
 
 	public Long getTypeId() {

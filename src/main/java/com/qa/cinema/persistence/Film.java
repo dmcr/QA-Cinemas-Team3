@@ -1,7 +1,9 @@
 package com.qa.cinema.persistence;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
@@ -54,6 +56,22 @@ public class Film implements Serializable {
 	private List<Showing> showings;
 
 	public Film() {
+	}
+	
+	public Film(Long filmId, boolean is3d, String cast, String certification,
+			String director, int duration, String genre, Date releaseDate,
+			String summary, String title, List<Showing> showings) {
+		this.filmId = filmId;
+		this.is3D = is3d;
+		this.cast = cast;
+		this.certification = certification;
+		this.director = director;
+		this.duration = duration;
+		this.genre = genre;
+		this.releaseDate = releaseDate;
+		this.summary = summary;
+		this.title = title;
+		this.showings = showings;
 	}
 
 	public Long getFilmId() {

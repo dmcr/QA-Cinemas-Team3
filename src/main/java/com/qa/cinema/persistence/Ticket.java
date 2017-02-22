@@ -46,7 +46,6 @@ public class Ticket implements Serializable {
 	}
 	
 	public Ticket(Long ticketId, Booking booking, Showing showing, Seat seat) {
-		super();
 		this.ticketId = ticketId;
 		this.booking = booking;
 		this.showing = showing;
