@@ -20,6 +20,8 @@ public class TicketEndPointTest {
 	private TicketEndPoint ticketEndPoint;
 	
 	private static final String MOCKALLSTRING = "[{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}]";
+	private static final String MOCKTICKETSSTRING = "";
+	private static final String MOCKBOOKINGTICKETSSTRING = "";
 	
 	@Mock
 	private TicketService mockService;
@@ -30,5 +32,21 @@ public class TicketEndPointTest {
 		String ticketString = ticketEndPoint.getTicketsAsJson();
 		Mockito.verify(mockService).getAllTickets();
 		Assert.assertEquals(MOCKALLSTRING, ticketString);
+	}
+	
+	@Test
+	public void testGetTicketByIdReturned() {
+		Mockito.when(mockService.getTicketByTicketID(1L)).thenReturn(MOCKTICKETSSTRING);
+		String ticketString = ticketEndPoint.getTicketByTicketIDAsJson(1L);
+		Mockito.verify(mockService).getTicketByTicketID(1L);
+		Assert.assertEquals(MOCKTICKETSSTRING, ticketString);
+	}
+	
+	@Test
+	public void testGetTicketsByBookingIDReturned() {
+		Mockito.when(mockService.getTicketByTicketID(1L)).thenReturn(MOCKBOOKINGTICKETSSTRING);
+		String ticketString = ticketEndPoint.getTicketsByBookingTicketIDAsJson(1L);
+		Mockito.verify(mockService).getAllTicketsByBookingID(1L);
+		Assert.assertEquals(MOCKBOOKINGTICKETSSTRING, ticketString);
 	}
 }

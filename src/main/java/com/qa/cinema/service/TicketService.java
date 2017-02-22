@@ -4,7 +4,7 @@ public interface TicketService {
 	
 	String getAllTickets();
 	
-	String getTicketByTicketID();
+	String getTicketByTicketID(Long ticketId);
 	
-	String getAllTicketsByBookingID();
+	String getAllTicketsByBookingID(Long bookingId);
 }
