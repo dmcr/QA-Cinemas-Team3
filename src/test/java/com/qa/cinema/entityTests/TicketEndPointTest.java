@@ -1,5 +1,34 @@
 package com.qa.cinema.entityTests;
 
-public class TicketEndPointTest {
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
+import com.qa.cinema.rest.TicketEndPoint;
+import com.qa.cinema.service.TicketService;
+
+
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+
+@RunWith(MockitoJUnitRunner.class)
+public class TicketEndPointTest {
+	
+	@InjectMocks
+	private TicketEndPoint ticketEndPoint;
+	
+	private static final String MOCKALLSTRING = "[{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}]";
+	
+	@Mock
+	private TicketService mockService;
+	
+	@Test
+	public void testGetAllTicketsReturned() {
+		Mockito.when(mockService.getAllTickets()).thenReturn(MOCKALLSTRING);
+		String ticketString = ticketEndPoint.getTicketsAsJson();
+		Mockito.verify(mockService).getAllTickets();
+		Assert.assertEquals(MOCKALLSTRING, ticketString);
+	}
 }
