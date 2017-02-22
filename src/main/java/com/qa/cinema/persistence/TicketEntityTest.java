@@ -21,7 +21,7 @@ public class TicketEntityTest {
 	
 	@Test
 	public void testGetBookingId() {
-		Ticket ticket = new Ticker();
+		Ticket ticket = new Ticket();
 		ticket.setBookingId(5);
 		assertEquals(5, ticket.getBookingId);
 	}
