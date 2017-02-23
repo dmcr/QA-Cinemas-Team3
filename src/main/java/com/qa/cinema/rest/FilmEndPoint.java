@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 
 import com.qa.cinema.service.SeatTypeService;
 
-@Path("Films")
+@Path("/binema")
 public class FilmEndPoint {
 
 	@Inject
@@ -26,7 +26,7 @@ public class FilmEndPoint {
 	}
 
 	@GET
-	@Path("json")
+	@Path("json/{id}")
 	@Produces({ "application/json" })
 	public String getFilmAsJsonBasedOnId(@PathParam("id") Long filmId) {
 		return filmService.getFilmById(filmId);
