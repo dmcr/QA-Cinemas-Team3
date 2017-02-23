@@ -15,7 +15,6 @@ import com.qa.cinema.util.JSONUtil;
 
 @Stateless
 @Default
-
 public class DBSeatService implements seatService {
 	
 	@PersistenceContext(unitName = "primary")

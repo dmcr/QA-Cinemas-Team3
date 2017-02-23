@@ -12,7 +12,8 @@ import com.qa.cinema.persistence.*;
 @Stateless
 @Default
 public class BookingServiceDBImp implements BookingService {
-	@PersistenceContext(unitName = "bookingService")
+	
+	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
 	
 	@SuppressWarnings("unused")
