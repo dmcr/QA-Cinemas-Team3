@@ -2,8 +2,8 @@ package com.qa.cinema.service;
 
 public interface seatService {
 	
-	public void getAllSeats();
+	public String getAllSeats();
 	
-	public void getSeatById();
+	public String getSeatById(Long seatId);
 
 }
