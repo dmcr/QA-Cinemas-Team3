@@ -17,6 +17,11 @@ public class SeatEntityTest {
 	Seat seat = new Seat();
 	
 	@Test
+	public void testSeat() {
+		assertNotNull(seat);
+	}
+	
+	@Test
 	public void testSeatId() {
 		seat.setSeatId(1L);
 		assertSame(1L, seat.getSeatId());
