@@ -1,15 +1,25 @@
 package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.Date;
 
 import org.junit.Test;
 
+import com.qa.cinema.persistence.Film;
+import com.qa.cinema.persistence.Screen;
 import com.qa.cinema.persistence.Showing;
+import com.qa.cinema.persistence.Ticket;
 
 
 public class ShowingEntityJunitTest {
 
 	Showing showing = new Showing();
+	
+	@Test
+	public void showingTest() {
+		assertNotNull(showing);
+	}
 	
 	@Test
 	public void showingIDTest() {
@@ -19,26 +29,30 @@ public class ShowingEntityJunitTest {
 	
 	@Test
 	public void showingStartTimeTest() {
-		showing.setStartTime(null);
-		assertEquals("16:00", showing.getStartTime());
+		Date date = new Date(23/03/1993);
+		showing.setStartTime(date);
+		assertEquals(date, showing.getStartTime());
 	}
 	
 	@Test
-	public void showingScreen() {
-		showing.setScreen(null);
-		assertEquals(4, showing.getScreen());
+	public void showingScreenTest() {
+		Screen screen = new Screen();
+		showing.setScreen(screen);
+		assertEquals(screen, showing.getScreen());
 	}
 	
 	@Test
 	public void showingFilmTest() {
-		showing.setFilm(null);
-		assertEquals(3, showing.getFilm());
+		Film film = new Film();
+		showing.setFilm(film);
+		assertEquals(film, showing.getFilm());
 	}
 	
 	@Test
 	public void showingTicketTest() {
-		showing.setTickets(null);
-		assertEquals(3, showing.getTickets());
+		ArrayList<Ticket> tickets = new ArrayList<Ticket>();
+		showing.setTickets(tickets);
+		assertEquals(tickets, showing.getTickets());
 	}
 	
 	
