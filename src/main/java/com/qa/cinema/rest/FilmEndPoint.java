@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 
 import com.qa.cinema.service.FilmService;
 
-@Path("/binema")
+@Path("/films")
 public class FilmEndPoint {
 
 	@Inject
