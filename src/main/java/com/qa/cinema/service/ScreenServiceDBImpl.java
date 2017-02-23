@@ -14,7 +14,7 @@ import com.qa.cinema.util.JSONUtil;
 
 @Stateless
 @Default
-public class ScreenServiceBDBImpl implements ScreenService {
+public class ScreenServiceDBImpl implements ScreenService {
 
 	@PersistenceContext(unitName="primary")
 	private EntityManager em;
@@ -22,6 +22,7 @@ public class ScreenServiceBDBImpl implements ScreenService {
 	@Inject
 	private JSONUtil util;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllScreens() {
 		Query query = em.createQuery("SELECT s FROM Screen s");

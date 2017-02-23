@@ -11,7 +11,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.service.SeatTypeService;;
 @RunWith(MockitoJUnitRunner.class)
-public class ShowingEndPointTest {
+public class ShowingEndPointJunitTest {
 
 	@InjectMocks
 	private ShowingEndPoint subject;

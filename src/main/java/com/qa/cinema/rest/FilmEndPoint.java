@@ -10,7 +10,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.qa.cinema.service.FilmService;
-import com.qa.cinema.service.SeatTypeService;
 
 @Path("/binema")
 public class FilmEndPoint {
@@ -21,7 +20,7 @@ public class FilmEndPoint {
 	@GET
 	@Path("json")
 	@Produces({ "application/json" })
-	public String getFilmAsJson() {
+	public String getFilmsAsJson() {
 		return filmService.getAllFilms();
 
 	}
@@ -36,7 +35,7 @@ public class FilmEndPoint {
 	@POST
 	@Path("/json")
 	@Produces({ "application/json" })
-	public String addNewBookToMap(String filmJson) {
+	public String addNewFilm(String filmJson) {
 		return filmService.addNewFilm(filmJson);
 	}
 
