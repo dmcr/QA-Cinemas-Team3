@@ -1,4 +1,4 @@
-package com.qa.cinema.entityTests;
+package com.qa.cinema.EndPointTests;
 
 import org.junit.Assert;
 import org.junit.Test;
