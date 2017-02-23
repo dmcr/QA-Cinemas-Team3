@@ -15,33 +15,27 @@ public class SeatTypeJUnitEntity {
 	SeatType seatType = new SeatType();
 	
 	@Test
+	public void testSeatType() {
+		assertNotNull(seatType);
+	}
+	
+	@Test
 	public void testSeatTypeId() {
 		seatType.setTypeId(4L);
-		assertSame(4, seatType.getTypeId());
-
+		assertSame(4L, seatType.getTypeId());
 	}
 	
 	@Test
 	public void testSeatName() {
-		seatType.setName("Test");
-		assertEquals(4, seatType.getName());
-
+		seatType.setName("Child");
+		assertEquals("Child", seatType.getName());
 	}
 
 	@Test
 	public void testSeatTypePrice() {
-		seatType.setPrice(10.00);
-		assertSame(10.00, seatType.getPrice());
-
+		double dd = 100.00;
+		seatType.setPrice(dd);
+		boolean same = seatType.getPrice() == dd ? true : false;
+		assertTrue(same);
 	}
-
-	@Test
-	public void testSeatType() {
-		List<Seat> seats = new ArrayList<Seat>();
-		seatType.setSeats(seats);
-		assertEquals("child", seatType.getSeats());
-
-	}
-
-	
 }
