@@ -2,15 +2,23 @@ package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 
 import com.qa.cinema.persistence.Film;
+import com.qa.cinema.persistence.Showing;
 
 public class FilmEntityTest {
 
 	Film film = new Film();
+	
+		@Test
+		public void testFilm() {
+			assertNotNull(film);
+		}
 		
 		@Test
 		public void testGetFilmId() {
@@ -73,4 +81,10 @@ public class FilmEntityTest {
 			assertEquals("Test", film.getCast());
 		}
 		
+		@Test
+		public void testGetFilmShowings() {
+			List<Showing> showings = new ArrayList<Showing>();
+			film.setShowings(showings);
+			assertEquals(showings, film.getShowings());
+		}
 }
