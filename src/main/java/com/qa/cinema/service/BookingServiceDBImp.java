@@ -15,6 +15,7 @@ public class BookingServiceDBImp implements BookingService {
 	@PersistenceContext(unitName = "bookingService")
 	private EntityManager em;
 	
+	@SuppressWarnings("unused")
 	@Inject
 	private JSONUtil util;
 	
@@ -30,6 +31,7 @@ public class BookingServiceDBImp implements BookingService {
 		return null;
 	}
 	
+	@SuppressWarnings("unused")
 	private Booking findBooking(Long bookingID){
 		return em.find(Booking.class, bookingID);
 	}

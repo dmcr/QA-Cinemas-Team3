@@ -12,6 +12,7 @@ import com.qa.cinema.service.TicketService;
 @Path("/tickets")
 public class TicketEndPoint {
 
+	@SuppressWarnings("unused")
 	@Inject
 	private TicketService ticketService;
 	
