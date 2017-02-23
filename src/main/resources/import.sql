@@ -18,3 +18,4 @@ insert into cin_seat_type (type_name, type_price) values ('Premier', '15.00')
 
 INSERT INTO cin_ticket(ticket_showing_id, tocket_booking_id, ticket_type, ticket_seat_id) VALUES (1, 1, 'adult', 1);
 
+INSERT INTO cin_booking(booking_complete, booking_paypal) VALUES (true, "example2335");
