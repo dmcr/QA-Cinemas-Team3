@@ -11,7 +11,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.SeatEndPoint;
 import com.qa.cinema.service.DBSeatService;
-import com.qa.cinema.service.SeatTypeService;
 
 
 @RunWith(MockitoJUnitRunner.class)

@@ -25,6 +25,7 @@ public class DBSeatService implements seatService {
 	private JSONUtil util;
 	
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllSeats() {
 		Query query = em.createQuery("SELECT s FROM Seat s");

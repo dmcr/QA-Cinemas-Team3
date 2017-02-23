@@ -1,7 +1,5 @@
 package com.qa.cinema.EndPointTests;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +10,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.BookingEndPoint;
 import com.qa.cinema.service.BookingService;
-import com.qa.cinema.service.DBSeatService;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class BookingEndpointTest {

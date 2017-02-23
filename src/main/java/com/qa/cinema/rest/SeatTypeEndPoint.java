@@ -4,8 +4,6 @@ import javax.inject.Inject;
 import com.qa.cinema.service.SeatTypeService;
 import javax.ws.rs.*;
 
-import com.qa.cinema.service.SeatTypeService;
-
 @Path("seattype")
 public class SeatTypeEndPoint {
 
