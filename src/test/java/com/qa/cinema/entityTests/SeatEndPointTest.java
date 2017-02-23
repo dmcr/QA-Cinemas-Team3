@@ -1,7 +1,5 @@
 package com.qa.cinema.entityTests;
 
-
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.service.DBSeatService;
-
+import com.qa.cinema.service.SeatTypeService;
 
 
 @RunWith(MockitoJUnitRunner.class)
