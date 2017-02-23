@@ -10,7 +10,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.qa.cinema.rest.BookingEndpoint;
+import com.qa.cinema.rest.BookingEndPoint;
 import com.qa.cinema.service.BookingService;
 import com.qa.cinema.service.DBSeatService;
 
@@ -18,7 +18,7 @@ import com.qa.cinema.service.DBSeatService;
 public class BookingEndpointTest {
 
 	@InjectMocks
-	private BookingEndpoint booking;
+	private BookingEndPoint booking;
 	
 	private static final String MOCKSTRING = "[{\"booking_id\": 1,\"booking_complete\": \"true\",\"paypal_id\": \"10074405\"}]";
 	
@@ -28,6 +28,8 @@ public class BookingEndpointTest {
 
 	@Test
 	public void testGetAllSeats() {
+	
+		
 		Mockito.when(mockService.getAllBookings()).thenReturn(MOCKSTRING);
 		String bookingString = booking.getBookingAsJson();
 		Mockito.verify(mockService).getAllBookings();
@@ -36,9 +38,9 @@ public class BookingEndpointTest {
 
 	@Test
 	public void testGetSeatById() {
-		Mockito.when(mockService.getBookingByID(1)).thenReturn(MOCKSTRING);
-		String bookingString = booking.getBookingAsJson(1, MOCKSTRING);
-		Mockito.verify(mockService).getBookingById(1, MOCKSTRING);
+		Mockito.when(mockService.getBookingByID(1L)).thenReturn(MOCKSTRING);
+		String bookingString = booking.getBookingAsJsonFromID(1L);
+		Mockito.verify(mockService).getBookingByID(1L);
 		Assert.assertEquals(MOCKSTRING, bookingString);
 	}
 
