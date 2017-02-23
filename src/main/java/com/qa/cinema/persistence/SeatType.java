@@ -29,17 +29,16 @@ public class SeatType implements Serializable {
 	private double price;
 
 	//bi-directional many-to-one association to Seat
-	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
-	private List<Seat> seats;
+//	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
+//	private List<Seat> seats;
 
 	public SeatType() {
 	}
 	
-	public SeatType(Long typeId, String name, double price, List<Seat> seats) {
+	public SeatType(Long typeId, String name, double price) {
 		this.typeId = typeId;
 		this.name = name;
 		this.price = price;
-		this.seats = seats;
 	}
 
 	public Long getTypeId() {
@@ -66,26 +65,26 @@ public class SeatType implements Serializable {
 		this.price = price;
 	}
 
-	public List<Seat> getSeats() {
-		return this.seats;
-	}
+//	public List<Seat> getSeats() {
+//		return this.seats;
+//	}
+//
+//	public void setSeats(List<Seat> seats) {
+//		this.seats = seats;
+//	}
 
-	public void setSeats(List<Seat> seats) {
-		this.seats = seats;
-	}
-
-	public Seat addSeat(Seat seat) {
-		getSeats().add(seat);
-		seat.setSeatType(this);
-
-		return seat;
-	}
-
-	public Seat removeSeat(Seat seat) {
-		getSeats().remove(seat);
-		seat.setSeatType(null);
-
-		return seat;
-	}
+//	public Seat addSeat(Seat seat) {
+//		getSeats().add(seat);
+//		seat.setSeatType(this);
+//
+//		return seat;
+//	}
+//
+//	public Seat removeSeat(Seat seat) {
+//		getSeats().remove(seat);
+//		seat.setSeatType(null);
+//
+//		return seat;
+//	}
 
 }
