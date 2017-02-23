@@ -12,3 +12,6 @@ insert into cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) values
 (11, "A", 2, 1);
 
 INSERT INTO Screen (screen_type_id,cin_screen_capacity) VALUES ('2','100');
+
+insert into cin_seat_type (type_name, type_price) values ('Standard', '10.00')
+insert into cin_seat_type (type_name, type_price) values ('Premier', '15.00')
