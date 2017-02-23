@@ -36,4 +36,5 @@ public class SeatTypeJUnitEntity {
 		boolean same = seatType.getPrice() == dd ? true : false;
 		assertTrue(same);
 	}
+
 }

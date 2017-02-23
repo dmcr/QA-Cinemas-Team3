@@ -64,26 +64,4 @@ public class SeatType implements Serializable {
 		this.price = price;
 	}
 
-//	public List<Seat> getSeats() {
-//		return this.seats;
-//	}
-//
-//	public void setSeats(List<Seat> seats) {
-//		this.seats = seats;
-//	}
-
-//	public Seat addSeat(Seat seat) {
-//		getSeats().add(seat);
-//		seat.setSeatType(this);
-//
-//		return seat;
-//	}
-//
-//	public Seat removeSeat(Seat seat) {
-//		getSeats().remove(seat);
-//		seat.setSeatType(null);
-//
-//		return seat;
-//	}
-
 }
