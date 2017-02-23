@@ -64,14 +64,6 @@ public class Booking implements Serializable{
 	public void setComplete(boolean complete) {
 		this.complete = complete;
 	}
-	
-	public Long getPaypalBookingID(){
-		return this.paypalId;
-	}
-	
-	public void setPaypalBookingID(long paypalID){
-		this.paypalId = paypalID;
-	}
 
 	public List<Ticket> getTickets() {
 		return this.tickets;
