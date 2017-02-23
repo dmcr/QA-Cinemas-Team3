@@ -28,8 +28,8 @@ public class FilmEndPoint {
 	@GET
 	@Path("json")
 	@Produces({ "application/json" })
-	public String getFilmAsJsonBasedOnId(Long id) {
-		return null;
+	public String getFilmAsJsonBasedOnId(@PathParam("id") Long filmId) {
+		return filmService.getFilmById(filmId);
 	}
 	
 	@POST
@@ -42,15 +42,16 @@ public class FilmEndPoint {
 	@PUT
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String replaceBookFromBookStore(@PathParam("id") Integer id, String bookJson) {
-		return bookService.replaceBook(id, bookJson);
+	public String updateFilmInCinema(@PathParam("id") Long filmId, String filmUpdated) {
+		return filmService.updateFilm(filmId, filmUpdated);
 	}
 
 	@DELETE
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String deleteBookFromBookStore(@PathParam("id") Integer id) {
-		return bookService.deleteBook(id);
+	public String deleteFilmFromCinema(@PathParam("id") Long filmId) {
+		return filmService.removeFilm(filmId);
 	}
 
 }
+
