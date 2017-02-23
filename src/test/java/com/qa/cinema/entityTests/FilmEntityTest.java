@@ -94,7 +94,7 @@ public class FilmEntityTest {
 		public void testGetFilm3D() {
 			film.setIs3D(true);
 			Boolean film3D = film.getIs3D();
-			assertFalse(film3D);
+			assertTrue(film3D);
 		}
 		
 		@Test
