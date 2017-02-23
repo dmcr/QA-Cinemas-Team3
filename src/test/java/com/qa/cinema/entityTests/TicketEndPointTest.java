@@ -20,8 +20,8 @@ public class TicketEndPointTest {
 	private TicketEndPoint ticketEndPoint;
 	
 	private static final String MOCKALLSTRING = "[{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}]";
-	private static final String MOCKTICKETSSTRING = "";
-	private static final String MOCKBOOKINGTICKETSSTRING = "";
+	private static final String MOCKTICKETSSTRING = "{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}";
+	private static final String MOCKBOOKINGTICKETSSTRING = "[{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}]";
 	
 	@Mock
 	private TicketService mockService;
