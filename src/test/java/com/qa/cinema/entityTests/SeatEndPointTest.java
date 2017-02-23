@@ -1,3 +1,4 @@
+
 package com.qa.cinema.entityTests;
 
 import org.junit.Assert;
@@ -45,3 +46,4 @@ public class SeatEndPointTest {
 	}
 
 }
+

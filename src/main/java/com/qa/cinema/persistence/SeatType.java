@@ -4,7 +4,6 @@ package com.qa.cinema.persistence;
 import java.io.Serializable;
 
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -29,8 +28,8 @@ public class SeatType implements Serializable {
 	private double price;
 
 	//bi-directional many-to-one association to Seat
-	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
-	private List<Seat> seats;
+//	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
+//	private List<Seat> seats;
 
 	public SeatType() {
 	}
@@ -65,5 +64,4 @@ public class SeatType implements Serializable {
 		this.price = price;
 	}
 
-	
 }
