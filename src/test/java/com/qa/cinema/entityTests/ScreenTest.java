@@ -2,45 +2,54 @@ package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
 import com.qa.cinema.persistence.Screen;
+import com.qa.cinema.persistence.Seat;
+import com.qa.cinema.persistence.Showing;
 
 public class ScreenTest {
 	
 	Screen screen = new Screen();
-	@Test
 	
-	public void getScreenIDtest() {
-		assertSame(12,screen.getScreenId());
+	@Test
+	public void screenTest() {
+		assertNotNull(screen);
 	}
 	
 	@Test
-	public void getScreentypeIDtest() {
-		assertSame(34,screen.getScreenTypeId());
+	public void getScreenIDTest() {
+		screen.setScreenId(12L);
+		assertSame(12L, screen.getScreenId());
 	}
 	
 	@Test
-	public void getScreencapacitytest() {
+	public void getScreenTypeIDTest() {
+		screen.setScreenTypeId(34L);
+		assertSame(34L,screen.getScreenTypeId());
+	}
+	
+	@Test
+	public void getScreenCapacityTest() {
+		screen.setCinScreenCapacity(100);
 		assertEquals(100,screen.getCinScreenCapacity());
 	}
-
+	
 	@Test
-	public void setscreenIDTest() {
-		screen.setScreenId(12345L);
-		assertSame(12345L,screen.getScreenId());
+	public void getSeatsTest() {
+		List<Seat> seats = new ArrayList<Seat>();
+		screen.setSeats(seats);
+		assertEquals(seats, screen.getSeats());
 	}
 	
 	@Test
-	public void setscreentypeIDTest() {
-		screen.setScreenTypeId(45L);
-		assertSame(45L, screen.getScreenTypeId());
-	}
-	
-	@Test
-	public void setscreencapacityTest() {
-		screen.setCinScreenCapacity(200);
-		assertEquals(200,screen.getCinScreenCapacity());
+	public void getShowingsTest() {
+		List<Showing> showings = new ArrayList<Showing>();
+		screen.setShowings(showings);
+		assertEquals(showings, screen.getShowings());
 	}
 	
 }
