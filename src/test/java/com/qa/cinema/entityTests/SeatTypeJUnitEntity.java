@@ -2,8 +2,12 @@ package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import com.qa.cinema.persistence.Seat;
 import com.qa.cinema.persistence.SeatType;
 
 public class SeatTypeJUnitEntity {

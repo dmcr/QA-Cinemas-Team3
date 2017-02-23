@@ -105,15 +105,16 @@ public class FilmEntityTest {
 		
 		@Test
 		public void testGetFilmReleaseDate() {
-			film.setReleaseDate(null);
-			Date releaseDate = film.getReleaseDate();
-			assertEquals("01/11/11", releaseDate);
+			Date releaseDate = new Date(11/11/11);
+			film.setReleaseDate(releaseDate);
+			assertEquals(11/11/11, releaseDate);
 		}
 		
 		@Test
 		public void testSetFilmReleaseDate() {
-			film.setReleaseDate(null);
-			assertEquals( "01/11/11", film.getReleaseDate());
+			Date releaseDate = new Date(11/11/11);
+			film.setReleaseDate(releaseDate);
+			assertEquals( 01/11/11, releaseDate);
 		}
 		@Test
 		public void testGetFilmDirector() {
