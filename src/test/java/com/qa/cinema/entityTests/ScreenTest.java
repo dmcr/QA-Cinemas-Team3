@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.qa.cinema.persistence.Screen;
 import com.qa.cinema.persistence.Seat;
+import com.qa.cinema.persistence.Showing;
 
 public class ScreenTest {
 	
@@ -44,6 +45,11 @@ public class ScreenTest {
 		assertEquals(seats, screen.getSeats());
 	}
 	
-	
+	@Test
+	public void getShowingsTest() {
+		List<Showing> showings = new ArrayList<Showing>();
+		screen.setShowings(showings);
+		assertEquals(showings, screen.getShowings());
+	}
 	
 }
