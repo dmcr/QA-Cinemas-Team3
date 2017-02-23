@@ -8,20 +8,20 @@ import javax.ws.rs.Produces;
 
 import com.qa.cinema.service.BookingService;
 
-@Path("/cinema")
+@Path("/booking")
 public class BookingEndPoint {
 	@Inject
 	private BookingService bookingService;
 	
 	@GET
-	@Path("json")
+	@Path("/json")
 	@Produces({ "application/json" })
 	public String getBookingAsJson(){
 		return bookingService.getAllBookings();
 	}
 	
 	@GET
-	@Path("json/{id}")
+	@Path("/json/{id}")
 	@Produces({ "application/json" })
 	public String getBookingAsJsonFromID(@PathParam("id") Long bookingID){
 		return bookingService.getBookingByID(bookingID);

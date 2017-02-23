@@ -4,14 +4,14 @@ import javax.inject.Inject;
 import com.qa.cinema.service.SeatTypeService;
 import javax.ws.rs.*;
 
-@Path("seattype")
+@Path("/seattype")
 public class SeatTypeEndPoint {
 
 	@Inject
 	private SeatTypeService service;
 	
 	@GET
-	@Path("json")
+	@Path("/json")
 	@Produces({"application/json"})
 	public String getSeatTypeAsJson(){
 		return service.listAllSeatTypes();
@@ -19,7 +19,7 @@ public class SeatTypeEndPoint {
 	}
 	
 	@GET
-	@Path("json")
+	@Path("/json")
 	@Produces({"application/json"})
 	public String getSeatTypeAsJsonBasedOnId(Long id){
 		return service.listSeatTypeBasedOnId(id);

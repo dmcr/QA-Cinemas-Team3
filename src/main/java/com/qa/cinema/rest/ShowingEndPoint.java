@@ -10,7 +10,7 @@ import com.qa.cinema.service.ShowingService;
 
 
 
-	@Path("/bookstore")
+	@Path("/showing")
 	public class ShowingEndPoint {
 
 		@Inject

@@ -18,7 +18,7 @@ public class FilmEndPoint {
 	private FilmService filmService;
 
 	@GET
-	@Path("json")
+	@Path("/json")
 	@Produces({ "application/json" })
 	public String getFilmsAsJson() {
 		return filmService.getAllFilms();
@@ -26,7 +26,7 @@ public class FilmEndPoint {
 	}
 
 	@GET
-	@Path("json/{id}")
+	@Path("/json/{id}")
 	@Produces({ "application/json" })
 	public String getFilmAsJsonBasedOnId(@PathParam("id") Long filmId) {
 		return filmService.getFilmById(filmId);
