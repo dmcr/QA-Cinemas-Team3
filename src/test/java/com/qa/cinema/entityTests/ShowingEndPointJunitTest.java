@@ -37,4 +37,5 @@ public class ShowingEndPointTest {
 		Assert.assertEquals(MOCKSTRING, showingString);
 	}
 
+	
 }
