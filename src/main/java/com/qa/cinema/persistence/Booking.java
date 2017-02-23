@@ -18,12 +18,16 @@ public class Booking implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@NotNull
 	@Column(name = "booking_id")
 	private Long bookingId;
 
 	@Column(name="booking_complete")
 	private boolean complete;
+	
+	@Column(name = "booking_paypal")
+	private String paypal;
 
 	//bi-directional many-to-one association to Ticket
 	@OneToMany(mappedBy="booking")
@@ -31,17 +35,29 @@ public class Booking implements Serializable{
 
 	public Booking() {
 	}
-
-	public Long getId() {
-		return this.bookingId;
-	}
-
-	public void setId(Long id) {
-		this.bookingId = id;
+	
+	public Booking(Long bookingId, boolean complete, List<Ticket> tickets, String paypal) {
+		
 	}
 
 	public boolean getComplete() {
 		return this.complete;
+	}
+
+	public Long getBookingId() {
+		return bookingId;
+	}
+
+	public void setBookingId(Long bookingId) {
+		this.bookingId = bookingId;
+	}
+
+	public String getPaypal() {
+		return paypal;
+	}
+
+	public void setPaypal(String paypal) {
+		this.paypal = paypal;
 	}
 
 	public void setComplete(boolean complete) {
