@@ -34,14 +34,5 @@ public class SeatTypeJUnitEntity {
 		assertSame(10.00, seatType.getPrice());
 
 	}
-
-	@Test
-	public void testSeatType() {
-		List<Seat> seats = new ArrayList<Seat>();
-		seatType.setSeats(seats);
-		assertEquals("child", seatType.getSeats());
-
-	}
-
 	
 }
