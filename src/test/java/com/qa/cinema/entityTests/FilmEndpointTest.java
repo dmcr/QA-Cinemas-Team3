@@ -32,7 +32,14 @@ public class FilmEndpointTest {
 		assertEquals(MOCKFILM, filmString);
 	}
 	
-	
+	@Test
+	public void testGetFilmById() {
+		Mockito.when(filmServiceMock.getFilmById(1l)).thenReturn(MOCKFILM);
+		String filmString = subject.getFilmsAsJson();
+		Mockito.verify(filmServiceMock).getFilmById(1l);
+		assertEquals(MOCKFILM, filmString);
+	}
+		
 	@Test
 	public void testAddNewFilm() {
 		Mockito.when(filmServiceMock.addNewFilm(MOCKFILM)).thenReturn(MOCKFILM);

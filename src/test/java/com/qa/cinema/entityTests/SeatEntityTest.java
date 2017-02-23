@@ -2,9 +2,15 @@ package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import com.qa.cinema.persistence.Screen;
 import com.qa.cinema.persistence.Seat;
+import com.qa.cinema.persistence.SeatType;
+import com.qa.cinema.persistence.Ticket;
 
 public class SeatEntityTest {
 
@@ -30,21 +36,24 @@ public class SeatEntityTest {
 	
 	@Test
 	public void testSeatType() {
-		seat.setSeatType(null);
-		assertSame(null,  seat.getSeatType());
+		SeatType seatType = new SeatType();
+		seat.setSeatType(seatType);
+		assertSame(seatType, seat.getSeatType());
 	}
 	
 	@Test
 	public void testSeatScreen() {
-		seat.setScreen(null);
-		assertSame(null, seat.getScreen());
+		Screen screen = new Screen();
+		seat.setScreen(screen);
+		assertSame(screen, seat.getScreen());
 		
 	}
 	
 	@Test
 	public void testSeatTicket() {
-		seat.setTickets(null);
-		assertSame(null, seat.getTickets());
+		List<Ticket> tickets = new ArrayList<Ticket>();
+		seat.setTickets(tickets);
+		assertSame(tickets, seat.getTickets());
 		
 	}
 
