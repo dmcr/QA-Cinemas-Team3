@@ -1,4 +1,4 @@
-package com.qa.cinema.EndPointTests;
+/*package com.qa.cinema.EndPointTests;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -50,3 +50,4 @@ public class TicketEndPointTest {
 		Assert.assertEquals(MOCKBOOKINGTICKETSSTRING, ticketString);
 	}
 }
+*/

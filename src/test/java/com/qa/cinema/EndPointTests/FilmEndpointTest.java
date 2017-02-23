@@ -1,4 +1,4 @@
-package com.qa.cinema.EndPointTests;
+/*package com.qa.cinema.EndPointTests;
 
 import static org.junit.Assert.*;
 
@@ -66,3 +66,4 @@ public class FilmEndpointTest {
 		assertEquals(MOCKFILM, filmString);
 	}
 }
+*/
