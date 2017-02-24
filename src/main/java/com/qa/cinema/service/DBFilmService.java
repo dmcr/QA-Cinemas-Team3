@@ -26,7 +26,7 @@ public class DBFilmService implements FilmService{
 
 	@Override
 	public String getAllFilms() {
-		Query query = em.createQuery("SELECT m FROM SeatType m");
+		Query query = em.createQuery("SELECT m FROM Film m");
 		Collection<Film> films = (Collection<Film>) query.getResultList();
 		return util.getJSONForObject(films);
 	}

@@ -1,6 +1,7 @@
 package com.qa.cinema.persistence;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -87,4 +88,8 @@ public class Booking implements Serializable{
 		return ticket;
 	}
 
+	@Override
+	public String toString(){
+		return null;
+	}
 }

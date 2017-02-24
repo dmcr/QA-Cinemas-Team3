@@ -28,8 +28,8 @@ public class DBSeatService implements seatService {
 	@Override
 	public String getAllSeats() {
 		Query query = em.createQuery("SELECT s FROM Seat s");
-		Collection<Seat> seat = (Collection<Seat> )query.getResultList();
-		return util.getJSONForObject(seat);
+		Collection<Seat> seats = (Collection<Seat> )query.getResultList();
+		return util.getJSONForObject(seats);
 	}
 
 	@Override
