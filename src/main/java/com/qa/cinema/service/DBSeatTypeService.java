@@ -24,8 +24,9 @@ public class DBSeatTypeService implements SeatTypeService{
 
 	@Override
 	public String listAllSeatTypes() {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createQuery("SELECT m FROM SeatType m");
+		Collection<SeatType> SeatTypes = (Collection<SeatType>) query.getResultList();
+		return util.getJSONForObject(SeatTypes);
 	}
 
 	@Override
