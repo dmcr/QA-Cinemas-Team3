@@ -21,21 +21,17 @@ public class DBSeatTypeService implements SeatTypeService{
 	
 	@Inject
 	private JSONUtil util;
-	
-	@SuppressWarnings("unchecked")
-	public String listAllSeatTypes(){	
-		Query query = em.createQuery("SELECT m FROM SeatType m");
-		Collection<SeatType> SeatTypes = (Collection<SeatType>) query.getResultList();
-		return util.getJSONForObject(SeatTypes);
-	};
-	
-	
-	public String listSeatTypeBasedOnId(Long SeatId){
-		SeatType seattype = findSeatType(SeatId);
-		return util.getJSONForObject(seattype);
-	};
 
-	private SeatType findSeatType(Long seatId){
-		return em.find(SeatType.class, seatId);
+	@Override
+	public String listAllSeatTypes() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	@Override
+	public String listSeatTypeBasedOnId(Long SeatId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
