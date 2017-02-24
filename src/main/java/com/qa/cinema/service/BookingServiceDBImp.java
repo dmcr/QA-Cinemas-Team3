@@ -19,8 +19,8 @@ public class BookingServiceDBImp implements BookingService {
 	@SuppressWarnings("unused")
 	@Inject
 	private JSONUtil util;
-	
-		@Override
+
+	@Override
 	public String getAllBookings() {
 		// TODO Auto-generated method stub
 		return null;
@@ -32,9 +32,5 @@ public class BookingServiceDBImp implements BookingService {
 		return null;
 	}
 	
-	@SuppressWarnings("unused")
-	private Booking findBooking(Long bookingID){
-		return em.find(Booking.class, bookingID);
-	}
 
 }

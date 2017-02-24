@@ -22,9 +22,9 @@ public class ScreenEndPoint {
 	}
 	
 	@GET
-	@Path("/json/{screenId}")
+	@Path("/json/{id}")
 	@Produces({"application/json"})
-	public String getScreenbyIDAsJson(@PathParam("screenId") Long id) {
+	public String getScreenbyIDAsJson(@PathParam("id") Long id) {
 		return screenService.getScreentypebyId(id);
 	}
 }

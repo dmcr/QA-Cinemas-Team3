@@ -21,7 +21,7 @@ public class ScreenServiceDBImpl implements ScreenService {
 	
 	@Inject
 	private JSONUtil util;
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllScreens() {
@@ -36,5 +36,9 @@ public class ScreenServiceDBImpl implements ScreenService {
 		Screen screen = (Screen) query.getSingleResult();
 		return util.getJSONForObject(screen);
 	}
+
+	
+	
+	
 
 }
