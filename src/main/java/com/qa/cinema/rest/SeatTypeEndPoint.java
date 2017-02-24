@@ -1,7 +1,9 @@
 package com.qa.cinema.rest;
 
 import javax.inject.Inject;
+
 import com.qa.cinema.service.SeatTypeService;
+
 import javax.ws.rs.*;
 
 @Path("/seattype")
@@ -19,9 +21,9 @@ public class SeatTypeEndPoint {
 	}
 	
 	@GET
-	@Path("/json")
+	@Path("/json/{id}")
 	@Produces({"application/json"})
-	public String getSeatTypeAsJsonBasedOnId(Long id){
+	public String getSeatTypeAsJsonBasedOnId(@PathParam("id") Long id){
 		return service.listSeatTypeBasedOnId(id);
 	}
 	
