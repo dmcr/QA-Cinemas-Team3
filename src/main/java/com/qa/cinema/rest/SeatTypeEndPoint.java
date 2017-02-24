@@ -23,8 +23,8 @@ public class SeatTypeEndPoint {
 	@GET
 	@Path("/json/{id}")
 	@Produces({"application/json"})
-	public String getSeatTypeAsJsonBasedOnId(@PathParam("id") Long id){
-		return service.listSeatTypeBasedOnId(id);
+	public String getSeatTypeAsJsonBasedOnId(@PathParam("id") Long typeId){
+		return service.listSeatTypeBasedOnId(typeId);
 	}
 	
 }

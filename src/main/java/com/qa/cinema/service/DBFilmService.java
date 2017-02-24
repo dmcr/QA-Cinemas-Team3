@@ -1,11 +1,16 @@
 package com.qa.cinema.service;
 
+import java.util.Collection;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
+import com.qa.cinema.persistence.Film;
+import com.qa.cinema.persistence.SeatType;
 import com.qa.cinema.util.JSONUtil;
 
 
@@ -21,8 +26,9 @@ public class DBFilmService implements FilmService{
 
 	@Override
 	public String getAllFilms() {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createQuery("SELECT m FROM SeatType m");
+		Collection<Film> films = (Collection<Film>) query.getResultList();
+		return util.getJSONForObject(films);
 	}
 
 	@Override
