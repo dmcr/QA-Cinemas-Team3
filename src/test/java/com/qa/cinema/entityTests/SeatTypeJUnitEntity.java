@@ -2,7 +2,7 @@ package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 
-
+import java.math.BigDecimal;
 
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class SeatTypeJUnitEntity {
 
 	@Test
 	public void testSeatTypePrice() {
-		double dd = 100.00;
+		BigDecimal dd = new BigDecimal("100.00");
 		seatType.setPrice(dd);
 		boolean same = seatType.getPrice() == dd ? true : false;
 		assertTrue(same);
