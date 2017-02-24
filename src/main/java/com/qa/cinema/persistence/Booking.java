@@ -31,7 +31,7 @@ public class Booking implements Serializable{
 
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="booking")
+	@OneToMany
 	private List<Ticket> tickets;
 
 	public Booking() {
