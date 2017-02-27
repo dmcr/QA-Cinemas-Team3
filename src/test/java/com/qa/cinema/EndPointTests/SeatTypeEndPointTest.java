@@ -1,4 +1,4 @@
-/*
+
 package com.qa.cinema.EndPointTests;
 
 import org.junit.Assert;
@@ -39,5 +39,5 @@ public class SeatTypeEndPointTest {
 	}
 
 }
-*/
+
 
