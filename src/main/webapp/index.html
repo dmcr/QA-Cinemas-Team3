@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="movieApp">
+<html lang="en" ng-app="cinemaApp">
 <head>
     <meta charset="UTF-8">
-    <title>Movie application</title>
+    <title>QA Cinemas</title>
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
 </head>
 <body>
 <ul>
     <li ><a ui-sref="dashboard">Dashboard</a></li>
-    <li><a ui-sref="addmovie">Add movie</a></li>
-    <li><a ui-sref="getmovie">Get movies</a></li>
 </ul>
 
     <div ui-view></div>
@@ -29,12 +27,10 @@
 
     <!-- Services-->
     <script src="app/service/dal/dal.js"></script>
-    <script src="app/service/dal/movie.js"></script>
+    <script src="app/service/dal/films.js"></script>
 
     <!-- Features-->
     <!--<script src="app/feature/dashboard/dashboard-controller.js"></script>-->
-    <script src="app/feature/movie/add/add-movie-controller.js"></script>
-    <script src="app/feature/movie/get/get-movie-controller.js"></script>
 
 
 
