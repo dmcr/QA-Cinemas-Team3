@@ -54,6 +54,9 @@ public class Film implements Serializable {
 	//bi-directional many-to-one association to Showing
 	@OneToMany(mappedBy="film")
 	private List<Showing> showings;
+	
+	@Column(name="film_IMDBID")
+	private String IMDBID;
 
 	public Film() {
 	}
@@ -175,5 +178,14 @@ public class Film implements Serializable {
 
 		return showing;
 	}
+
+	public String getIMDBID() {
+		return IMDBID;
+	}
+
+	public void setIMDBID(String iMDBID) {
+		IMDBID = iMDBID;
+	}
+	
 
 }

@@ -92,6 +92,6 @@ public class FilmEntityTest {
 		@Test 
 		public void testGetIMDBID() {
 			film.setIMDBID("1");
-			assertEquals("1", "1");
+			assertEquals("1", film.getIMDBID());
 		}
 }
