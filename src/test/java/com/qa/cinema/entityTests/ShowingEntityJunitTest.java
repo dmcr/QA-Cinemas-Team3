@@ -1,4 +1,4 @@
-package com.qa.cinema.EndPointTests;
+package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
 import java.util.ArrayList;
