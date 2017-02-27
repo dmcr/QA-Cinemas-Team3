@@ -2,19 +2,16 @@
 
 (function () {
 
-    angular.module('movieApp').config(function ($stateProvider, $urlRouterProvider) {
+    angular.module('cinemaApp').config(function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/getmovie");
+        $urlRouterProvider.otherwise("/dashboard");
 
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard-partial.html"
-        }).state("addmovie", {
-            url: "/addmovie",
-            templateUrl: "app/feature/movie/add/add-movie-partial.html"
-        }).state("getmovie", {
-            url: "/getmovie",
-            templateUrl: "app/feature/movie/get/get-movie-partial.html"
+        }).state("whatson-upcoming", {
+            url: "/films",
+            templateUrl: "app/feature/films/films.html"
         })
     });
 }());

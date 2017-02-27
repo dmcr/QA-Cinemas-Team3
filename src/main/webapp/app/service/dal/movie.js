@@ -2,7 +2,7 @@
 
 (function () {
 
-    angular.module("movieApp").service("movieDal", ["dal", MovieDal]);
+    angular.module("cinemaApp").service("movieDal", ["dal", MovieDal]);
 
     function MovieDal (dal) {
 
