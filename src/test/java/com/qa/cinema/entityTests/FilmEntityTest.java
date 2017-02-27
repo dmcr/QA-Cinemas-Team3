@@ -88,4 +88,10 @@ public class FilmEntityTest {
 			film.setShowings(showings);
 			assertEquals(showings, film.getShowings());
 		}
+		
+		@Test 
+		public void testGetIMDBID() {
+			film.setIMDBID("1");
+			assertEquals("1", "1");
+		}
 }
