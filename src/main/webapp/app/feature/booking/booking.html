@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <title>Booking</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="form">
+        <form id="book_tickets">
+            <fieldset>
+                <legend>Booking Details</legend>
+
+                <p>
+                    <label for="movie_name">Movies</label>
+                    <select id="movie_name" name="movie_name" required autofocus>
+                        <option></option>
+                        <option value="Movie 1">La La Land</option>
+                        <option value="Movie 2">Logan</option>
+                        <option value="Movie 3">John Wick 2</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="type">Ticket type</label>
+                    <select id="type" required>
+                        <option></option>
+                        <option value="Standard">Standard</option>
+                        <option value="Student">Student</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="date">Date<br/></label>
+                    <input type="date" name="date" id="date" min="today" required />
+                </p>
+
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required />
+                </p>
+
+                <p>
+                    <label for="tickets_quantity">Number of Tickets</label>
+                    <input type="number" min="1" name="tickets_quantity" id="tickets_quantity" required />
+                </p>
+
+                <div id="submit_wrapper">
+                    <input type="submit" id="submit" value="Book Tickets" />
+                </div>
+<br>
+                <input type="image" id="paypal" src="paypal.png" alt="Submit" width="150" height="40">
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
