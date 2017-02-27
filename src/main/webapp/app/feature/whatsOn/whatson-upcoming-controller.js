@@ -1,3 +1,12 @@
-/**
- * Created by Administrator on 27/02/2017.
- */
+(function () {
+    var GetMoviesController = function (moviesDal) {
+        var vm = this;
+
+        function init() {
+
+        }
+        init();
+    };
+
+
+}());
