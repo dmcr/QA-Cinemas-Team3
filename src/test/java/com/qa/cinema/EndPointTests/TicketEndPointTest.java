@@ -44,7 +44,7 @@ public class TicketEndPointTest {
 	
 	@Test
 	public void testGetTicketsByBookingIDReturned() {
-		Mockito.when(mockService.getTicketByTicketID(1L)).thenReturn(MOCKBOOKINGTICKETSSTRING);
+		Mockito.when(mockService.getAllTicketsByBookingID(1L)).thenReturn(MOCKBOOKINGTICKETSSTRING);
 		String ticketString = ticketEndPoint.getTicketsByBookingTicketIDAsJson(1L);
 		Mockito.verify(mockService).getAllTicketsByBookingID(1L);
 		Assert.assertEquals(MOCKBOOKINGTICKETSSTRING, ticketString);

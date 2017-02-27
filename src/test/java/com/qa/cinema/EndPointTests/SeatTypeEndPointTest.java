@@ -32,7 +32,7 @@ public class SeatTypeEndPointTest {
 	
 	@Test
 	public void testSeatTypesIsReturnedCorrectlyBasedOnId() {
-		Mockito.when(mockService.listAllSeatTypes()).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.listSeatTypeBasedOnId(1L)).thenReturn(MOCKSTRING);
 		String seatTypeString = subject.getSeatTypeAsJsonBasedOnId(1L);
 		Mockito.verify(mockService).listSeatTypeBasedOnId(1L);
 		Assert.assertEquals(MOCKSTRING, seatTypeString);

@@ -61,7 +61,7 @@ public class FilmEndpointTest {
 	@Test
 	public void testUpdateFilm() {
 		Mockito.when(filmServiceMock.updateFilm(2l, MOCKFILM)).thenReturn(MOCKFILM);
-		String filmString = subject.deleteFilmFromCinema(2l);
+		String filmString = subject.updateFilmInCinema(2l, MOCKFILM);
 		Mockito.verify(filmServiceMock).updateFilm(2l, MOCKFILM);
 		assertEquals(MOCKFILM, filmString);
 	}

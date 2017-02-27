@@ -12,7 +12,6 @@ import com.qa.cinema.service.TicketService;
 @Path("/tickets")
 public class TicketEndPoint {
 
-	@SuppressWarnings("unused")
 	@Inject
 	private TicketService ticketService;
 	
@@ -20,20 +19,20 @@ public class TicketEndPoint {
 	@Path("/json")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getTicketsAsJson() {
-		return "";
+		return ticketService.getAllTickets();
 	}
 	
 	@GET
 	@Path("/json/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getTicketByTicketIDAsJson(@PathParam("id") Long id) {
-		return "";
+		return ticketService.getTicketByTicketID(id);
 	}
 	
 	@GET
 	@Path("/json/booking/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getTicketsByBookingTicketIDAsJson(@PathParam("id") Long id) {
-		return "";
+		return ticketService.getAllTicketsByBookingID(id);
 	}
 }
