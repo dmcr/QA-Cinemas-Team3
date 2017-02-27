@@ -1,11 +1,16 @@
 package com.qa.cinema.service;
 
+import java.util.Collection;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
+import com.qa.cinema.persistence.Film;
+import com.qa.cinema.persistence.Ticket;
 import com.qa.cinema.util.JSONUtil;
 
 @Stateless
@@ -20,20 +25,23 @@ public class TicketServiceDBImpl implements TicketService {
 	
 	@Override
 	public String getAllTickets() {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createQuery("SELECT t FROM Ticket t");
+		Collection<Ticket> tickets = (Collection<Ticket>) query.getResultList();
+		return util.getJSONForObject(tickets);
 	}
 
 	@Override
 	public String getTicketByTicketID(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createQuery("SELECT t FROM Ticket t WHERE t.ticketId = " + id);
+		Collection<Ticket> tickets = (Collection<Ticket>) query.getResultList();
+		return util.getJSONForObject(tickets);
 	}
 
 	@Override
 	public String getAllTicketsByBookingID(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createQuery("SELECT t FROM Ticket t WHERE t.booking.bookingId = " + id);
+		Collection<Ticket> tickets = (Collection<Ticket>) query.getResultList();
+		return util.getJSONForObject(tickets);
 	}
 
 }
