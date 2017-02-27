@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.qa.cinema.persistence.Seat;
 import com.qa.cinema.persistence.SeatType;
 import com.qa.cinema.util.JSONUtil;
 
@@ -30,9 +31,10 @@ public class DBSeatTypeService implements SeatTypeService{
 	}
 
 	@Override
-	public String listSeatTypeBasedOnId(Long SeatId) {
-		// TODO Auto-generated method stub
-		return null;
+	public String listSeatTypeBasedOnId(Long TypeId) {
+		Query query = em.createQuery("SELECT s FROM SeatType s WHERE typeId ="+TypeId);
+		SeatType seatType = (SeatType)query.getSingleResult();
+		return util.getJSONForObject(seatType);
 	}
 
 }
