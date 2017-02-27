@@ -9,9 +9,9 @@
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard-partial.html"
-        }).state("whatson-upcoming", {
+        }).state("films", {
             url: "/films",
-            templateUrl: "app/feature/films/films.html"
+            templateUrl: "app/feature/films/films-partial.html"
         })
     });
 }());
