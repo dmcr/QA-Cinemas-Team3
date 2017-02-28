@@ -31,7 +31,7 @@ public class SeatTypeJUnitEntity {
 
 	@Test
 	public void testSeatTypePrice() {
-		BigDecimal dd = new BigDecimal("100.00");
+		BigDecimal dd = new BigDecimal("10.00");
 		seatType.setPrice(dd);
 		boolean same = seatType.getPrice() == dd ? true : false;
 		assertTrue(same);

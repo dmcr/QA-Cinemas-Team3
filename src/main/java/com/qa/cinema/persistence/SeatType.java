@@ -30,8 +30,8 @@ public class SeatType implements Serializable {
 	private BigDecimal price;
 
 	//bi-directional many-to-one association to Seat
-	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
-	private List<Seat> seats;
+//	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
+//	private List<Seat> seats;
 
 	public SeatType() {
 	}
