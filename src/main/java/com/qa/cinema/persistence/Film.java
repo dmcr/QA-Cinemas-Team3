@@ -52,8 +52,10 @@ public class Film implements Serializable {
 	private String title;
 
 	//bi-directional many-to-one association to Showing
-	@OneToMany(cascade = { CascadeType.ALL })
-	@JoinColumn(name="showing_film_id")
+	//@OneToMany(mappedBy="film", cascade = { CascadeType.ALL })
+	//@JoinColumn(name="showing_id")
+	@JoinColumn(name="showing_id")
+	@OneToMany
 	private List<Showing> showings;
 	
 	@Column(name="film_IMDBID")
@@ -62,11 +64,12 @@ public class Film implements Serializable {
 	public Film() {
 	}
 	
-	public Film(Long filmId, boolean is3d, String cast, String certification,
-			String director, int duration, String genre, Date releaseDate,
-			String summary, String title, List<Showing> showings) {
+	
+	public Film(Long filmId, boolean is3D, String cast, String certification, String director, int duration,
+			String genre, Date releaseDate, String summary, String title, List<Showing> showings, String IMDBID) {
+		super();
 		this.filmId = filmId;
-		this.is3D = is3d;
+		this.is3D = is3D;
 		this.cast = cast;
 		this.certification = certification;
 		this.director = director;
@@ -76,7 +79,9 @@ public class Film implements Serializable {
 		this.summary = summary;
 		this.title = title;
 		this.showings = showings;
+		this.IMDBID = IMDBID;
 	}
+
 
 	public Long getFilmId() {
 		return this.filmId;
@@ -165,20 +170,7 @@ public class Film implements Serializable {
 	public void setShowings(List<Showing> showings) {
 		this.showings = showings;
 	}
-
-	public Showing addShowing(Showing showing) {
-		getShowings().add(showing);
-		showing.setFilm(this);
-
-		return showing;
-	}
-
-	public Showing removeShowing(Showing showing) {
-		getShowings().remove(showing);
-		showing.setFilm(null);
-
-		return showing;
-	}
+	
 
 	public String getIMDBID() {
 		return IMDBID;
@@ -187,6 +179,10 @@ public class Film implements Serializable {
 	public void setIMDBID(String iMDBID) {
 		IMDBID = iMDBID;
 	}
+
+	
+	
+	
 	
 
 }

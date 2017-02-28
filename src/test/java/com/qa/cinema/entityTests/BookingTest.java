@@ -40,11 +40,11 @@ public class BookingTest {
 		assertEquals("example1345", booking.getPaypal());
 	}
 	
-	@Test
-	public void testGetBookingTickets() {
-		List<Ticket> tickets = new ArrayList<Ticket>();
-		Booking booking = new Booking();
-		booking.setTickets(tickets);
-		assertEquals(tickets, booking.getTickets());
-	}
+//	@Test
+//	public void testGetBookingTickets() {
+//		List<Ticket> tickets = new ArrayList<Ticket>();
+//		Booking booking = new Booking();
+//		booking.setTickets(tickets);
+//		assertEquals(tickets, booking.getTickets());
+//	}
 }

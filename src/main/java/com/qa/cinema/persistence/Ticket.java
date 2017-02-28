@@ -27,31 +27,44 @@ public class Ticket implements Serializable {
 	@Column(name="ticket_id")
 	private Long ticketId;
 	
-	@NotNull
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ticket_booking_id", referencedColumnName = "booking_id")
-	private Booking booking;
+//	@NotNull
+//	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+//	@JoinColumn(name = "ticket_booking_id", referencedColumnName = "booking_id")
+//	private Booking booking;
+	@Column(name="ticket_booking_id")
+	private Long bookingId;
 
-	@NotNull
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ticket_showing_id", referencedColumnName = "showing_id")
+//	@NotNull
+//	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+//	@JoinColumn(name = "ticket_showing_id", referencedColumnName = "showing_id")
+//	private Showing showing;
+	@OneToOne
+	@JoinColumn(name="ticket_showing_id")
 	private Showing showing;
 	
-	@NotNull
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ticket_seat_id", referencedColumnName = "seat_id")
+//	@NotNull
+//	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+//	@JoinColumn(name = "ticket_seat_id", referencedColumnName = "seat_id")
+//	private Seat seat;
+	@OneToOne
+	@JoinColumn(name="ticket_seat_id")
 	private Seat seat;
 
 	public Ticket() {
 		
 	}
 	
-	public Ticket(Long ticketId, Booking booking, Showing showing, Seat seat) {
+	
+
+	public Ticket(Long ticketId, Long bookingId, Showing showing, Seat seat) {
+		super();
 		this.ticketId = ticketId;
-		this.booking = booking;
+		this.bookingId = bookingId;
 		this.showing = showing;
 		this.seat = seat;
 	}
+
+
 
 	public Long getTicketId() {
 		return ticketId;
@@ -61,13 +74,19 @@ public class Ticket implements Serializable {
 		this.ticketId = ticketId;
 	}
 
-	public Booking getBooking() {
-		return booking;
+	
+
+	public Long getBookingId() {
+		return bookingId;
 	}
 
-	public void setBooking(Booking booking) {
-		this.booking = booking;
+
+
+	public void setBookingId(Long bookingId) {
+		this.bookingId = bookingId;
 	}
+
+
 
 	public Showing getShowing() {
 		return showing;

@@ -32,7 +32,8 @@ public class Booking implements Serializable{
 
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="booking")
+	@JoinColumn(name="ticket_id")
+	@OneToMany
 	private List<Ticket> tickets;
 
 	public Booking() {
@@ -66,27 +67,27 @@ public class Booking implements Serializable{
 		this.complete = complete;
 	}
 
-	public List<Ticket> getTickets() {
-		return this.tickets;
-	}
+//	public List<Ticket> getTickets() {
+//		return this.tickets;
+//	}
+//
+//	public void setTickets(List<Ticket> tickets) {
+//		this.tickets = tickets;
+//	}
 
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
-	}
-
-	public Ticket addTicket(Ticket ticket) {
-		getTickets().add(ticket);
-		ticket.setBooking(this);
-
-		return ticket;
-	}
-
-	public Ticket removeTicket(Ticket ticket) {
-		getTickets().remove(ticket);
-		ticket.setBooking(null);
-
-		return ticket;
-	}
+//	public Ticket addTicket(Ticket ticket) {
+//		getTickets().add(ticket);
+//		ticket.setBooking(this);
+//
+//		return ticket;
+//	}
+//
+//	public Ticket removeTicket(Ticket ticket) {
+//		getTickets().remove(ticket);
+//		ticket.setBooking(null);
+//
+//		return ticket;
+//	}
 
 	@Override
 	public String toString(){

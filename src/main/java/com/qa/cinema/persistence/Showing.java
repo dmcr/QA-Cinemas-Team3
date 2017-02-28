@@ -27,31 +27,41 @@ public class Showing implements Serializable {
 	@Column(name="showing_start_time")
 	private Date startTime;
 
-	//bi-directional many-to-one association to Screen
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="showing_screen_id")
-	private Screen screen;
+//	//bi-directional many-to-one association to Screen
+//	@ManyToOne(cascade = { CascadeType.ALL },fetch=FetchType.LAZY)
+////	@JoinColumn(name="showing_screen_id")
+//	private Screen screen;
+	@Column(name="showing_screen_id")
+	private Long screenId;
 
-	//bi-directional many-to-one association to Film
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="showing_film_id")
-	private Film film;
+//	//bi-directional many-to-one association to Film
+//	@ManyToOne(cascade = { CascadeType.ALL }, fetch=FetchType.LAZY)
+//	//@JoinColumn(name="showing_film_id")
+//	//@Column(name="showing_film_id")
+////	@JoinColumn(name="film_id")
+//	private Film film;
+	@Column(name="showing_film_id")
+	private Long filmId;
 
 	//bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy="showing")
-	private List<Ticket> tickets;
+	//@OneToMany(mappedBy="showing")
+//	@OneToMany()
+//	private List<Ticket> tickets;
 
 	public Showing() {
 	}
 	
-	public Showing(Long showingId, Date startTime, Screen screen, Film film,
-			List<Ticket> tickets) {
+	
+
+	public Showing(Long showingId, Date startTime, Long screenId, Long filmId) {
+		super();
 		this.showingId = showingId;
 		this.startTime = startTime;
-		this.screen = screen;
-		this.film = film;
-		this.tickets = tickets;
+		this.screenId = screenId;
+		this.filmId = filmId;
 	}
+
+
 
 	public Long getShowingId() {
 		return this.showingId;
@@ -69,42 +79,74 @@ public class Showing implements Serializable {
 		this.startTime = startTime;
 	}
 
-	public Screen getScreen() {
-		return this.screen;
+
+
+	public Long getScreenId() {
+		return screenId;
 	}
 
-	public void setScreen(Screen screen) {
-		this.screen = screen;
+
+
+	public void setScreenId(Long screenId) {
+		this.screenId = screenId;
 	}
 
-	public Film getFilm() {
-		return this.film;
+
+
+	public Long getFilmId() {
+		return filmId;
 	}
 
-	public void setFilm(Film film) {
-		this.film = film;
+
+
+	public void setFilmId(Long filmId) {
+		this.filmId = filmId;
 	}
+	
+	
 
-	public List<Ticket> getTickets() {
-		return this.tickets;
-	}
+//	public Screen getScreen() {
+//		return this.screen;
+//	}
+//
+//	public void setScreen(Screen screen) {
+//		this.screen = screen;
+//	}
 
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
-	}
+//	public Film getFilm() {
+//		return this.film;
+//	}
+//
+//	public void setFilm(Film film) {
+//		this.film = film;
+//	}
+	
+	
+	
+	
 
-	public Ticket addTicket(Ticket ticket) {
-		getTickets().add(ticket);
-		ticket.setShowing(this);
+//	public List<Ticket> getTickets() {
+//		return this.tickets;
+//	}
+//
+//	public void setTickets(List<Ticket> tickets) {
+//		this.tickets = tickets;
+//	}
 
-		return ticket;
-	}
-
-	public Ticket removeTicket(Ticket ticket) {
-		getTickets().remove(ticket);
-		ticket.setShowing(null);
-
-		return ticket;
-	}
+//	public Ticket addTicket(Ticket ticket) {
+//		getTickets().add(ticket);
+//		ticket.setShowing(this);
+//
+//		return ticket;
+//	}
+//
+//	public Ticket removeTicket(Ticket ticket) {
+//		getTickets().remove(ticket);
+//		ticket.setShowing(null);
+//
+//		return ticket;
+//	}
+	
+	
 
 }

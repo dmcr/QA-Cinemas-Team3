@@ -35,21 +35,26 @@ public class Screen implements Serializable {
 	private List<Seat> seats;
 
 	//bi-directional many-to-one association to Showing
-//	@OneToMany()
-//	private List<Showing> showings;
+	@JoinColumn(name="showing_id")
+	@OneToMany
+	private List<Showing> showings;
+	
 
 	public Screen() {
 	}
 
-	public Screen(Long screenId, int cinScreenCapacity, Long screenTypeId,
-			List<Seat> seats, List<Showing> showings) {
+	
+
+	public Screen(Long screenId, int cinScreenCapacity, Long screenTypeId, List<Seat> seats, List<Showing> showings) {
 		super();
 		this.screenId = screenId;
 		this.cinScreenCapacity = cinScreenCapacity;
 		this.screenTypeId = screenTypeId;
 		this.seats = seats;
-		//this.showings = showings;
+		this.showings = showings;
 	}
+
+
 
 	public Long getScreenId() {
 		return this.screenId;
@@ -82,6 +87,8 @@ public class Screen implements Serializable {
 	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
 	}
+
+	
 
 //	public Seat addSeat(Seat seat) {
 //		getSeats().add(seat);
@@ -118,5 +125,7 @@ public class Screen implements Serializable {
 //
 //		return showing;
 //	}
+	
+	
 
 }

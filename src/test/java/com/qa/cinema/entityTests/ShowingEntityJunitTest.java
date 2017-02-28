@@ -34,26 +34,26 @@ public class ShowingEntityJunitTest {
 		assertEquals(date, showing.getStartTime());
 	}
 	
-	@Test
-	public void showingScreenTest() {
-		Screen screen = new Screen();
-		showing.setScreen(screen);
-		assertEquals(screen, showing.getScreen());
-	}
+//	@Test
+//	public void showingScreenTest() {
+//		Screen screen = new Screen();
+//		showing.setScreen(screen);
+//		assertEquals(screen, showing.getScreen());
+//	}
 	
-	@Test
-	public void showingFilmTest() {
-		Film film = new Film();
-		showing.setFilm(film);
-		assertEquals(film, showing.getFilm());
-	}
+//	@Test
+//	public void showingFilmTest() {
+//		Film film = new Film();
+//		showing.setFilm(film);
+//		assertEquals(film, showing.getFilm());
+//	}
 	
-	@Test
-	public void showingTicketTest() {
-		ArrayList<Ticket> tickets = new ArrayList<Ticket>();
-		showing.setTickets(tickets);
-		assertEquals(tickets, showing.getTickets());
-	}
+//	@Test
+//	public void showingTicketTest() {
+//		ArrayList<Ticket> tickets = new ArrayList<Ticket>();
+//		showing.setTickets(tickets);
+//		assertEquals(tickets, showing.getTickets());
+//	}
 	
 	
 } 
