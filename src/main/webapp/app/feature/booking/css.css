@@ -90,9 +90,3 @@ p, span, li{
 #submit:hover {
     background-color: #3e8e41;
 }
-
-#paypal:hover {
-    width: 155px;
-    height: 45px;
-    box-shadow: 8px 8px 5px #888888;
-}
