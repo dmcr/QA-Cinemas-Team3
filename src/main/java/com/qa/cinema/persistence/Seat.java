@@ -32,26 +32,29 @@ public class Seat implements Serializable {
 	@JoinColumn(name = "seat_type_id")
 	private SeatType seatType;
 
-	// bi-directional many-to-one association to Screen
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "seat_screen_id")
-	private Screen screen;
+//	// bi-directional many-to-one association to Screen
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "seat_screen_id")
+//	private Screen screen;
+	@Column(name = "seat_screen_id")
+	private Long screenId;
 
-	// bi-directional many-to-one association to Ticket
-	@OneToMany(mappedBy = "seat")
-	private List<Ticket> tickets;
+//	// bi-directional many-to-one association to Ticket
+//	@OneToMany(mappedBy = "seat")
+//	private List<Ticket> tickets;
 
 	public Seat() {
 	}
 
 	public Seat(Long seatId, int number, String row, SeatType seatType,
-			Screen screen, List<Ticket> tickets) {
+			Long screenId, List<Ticket> tickets) {
 		this.seatId = seatId;
 		this.number = number;
 		this.row = row;
 		this.seatType = seatType;
-		this.screen = screen;
-		this.tickets = tickets;
+		this.screenId = screenId;
+//		this.screen = screen;
+//		this.tickets = tickets;
 	}
 
 	public Long getSeatId() {
@@ -86,34 +89,44 @@ public class Seat implements Serializable {
 		this.seatType = seatType;
 	}
 
-	public Screen getScreen() {
-		return this.screen;
+	public Long getScreenId() {
+		return screenId;
 	}
 
-	public void setScreen(Screen screen) {
-		this.screen = screen;
+	public void setScreenId(Long screenId) {
+		this.screenId = screenId;
 	}
+	
+	
 
-	public List<Ticket> getTickets() {
-		return this.tickets;
-	}
+//	public Screen getScreen() {
+//		return this.screen;
+//	}
+//
+//	public void setScreen(Screen screen) {
+//		this.screen = screen;
+//	}
+//
+//	public List<Ticket> getTickets() {
+//		return this.tickets;
+//	}
+//
+//	public void setTickets(List<Ticket> tickets) {
+//		this.tickets = tickets;
+//	}
 
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
-	}
-
-	public Ticket addTicket(Ticket ticket) {
-		getTickets().add(ticket);
-		ticket.setSeat(this);
-
-		return ticket;
-	}
-
-	public Ticket removeTicket(Ticket ticket) {
-		getTickets().remove(ticket);
-		ticket.setSeat(null);
-
-		return ticket;
-	}
+//	public Ticket addTicket(Ticket ticket) {
+//		getTickets().add(ticket);
+//		ticket.setSeat(this);
+//
+//		return ticket;
+//	}
+//
+//	public Ticket removeTicket(Ticket ticket) {
+//		getTickets().remove(ticket);
+//		ticket.setSeat(null);
+//
+//		return ticket;
+//	}
 
 }

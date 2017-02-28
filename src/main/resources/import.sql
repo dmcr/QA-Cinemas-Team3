@@ -12,7 +12,10 @@ INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES
 INSERT INTO cin_booking(booking_complete, booking_paypal) VALUES (true, 'example2335');
 
 INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cast', 'PG', 'director', 120, 'genre', '18-06-17', 'summary', 'title');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cas2t', 'PG', 'direct2or', 120, 'genr2e', '18-07-17', 'summary', 'titasdle');
 
 INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) VALUES ('18-06-17 12:10:08', 1, 1);
+INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) VALUES ('18-06-17 16:10:08', 1, 1);
+INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) VALUES ('18-10-17 16:10:08', 1, 2);
 
 INSERT INTO cin_ticket(ticket_booking_id, ticket_showing_id, ticket_seat_id) VALUES (1, 1, 1);

@@ -29,12 +29,14 @@ public class Screen implements Serializable {
 	private Long screenTypeId;
 
 	//bi-directional many-to-one association to Seat
-	@OneToMany(mappedBy="screen")
+	//@OneToMany(mappedBy="screen")
+	@OneToMany()
+	@JoinColumn(name = "seat_id")
 	private List<Seat> seats;
 
 	//bi-directional many-to-one association to Showing
-	@OneToMany(mappedBy="screen")
-	private List<Showing> showings;
+//	@OneToMany()
+//	private List<Showing> showings;
 
 	public Screen() {
 	}
@@ -46,7 +48,7 @@ public class Screen implements Serializable {
 		this.cinScreenCapacity = cinScreenCapacity;
 		this.screenTypeId = screenTypeId;
 		this.seats = seats;
-		this.showings = showings;
+		//this.showings = showings;
 	}
 
 	public Long getScreenId() {
@@ -81,40 +83,40 @@ public class Screen implements Serializable {
 		this.seats = seats;
 	}
 
-	public Seat addSeat(Seat seat) {
-		getSeats().add(seat);
-		seat.setScreen(this);
+//	public Seat addSeat(Seat seat) {
+//		getSeats().add(seat);
+//		seat.setScreen(this);
+//
+//		return seat;
+//	}
+//
+//	public Seat removeSeat(Seat seat) {
+//		getSeats().remove(seat);
+//		seat.setScreen(null);
+//
+//		return seat;
+//	}
 
-		return seat;
-	}
+//	public List<Showing> getShowings() {
+//		return this.showings;
+//	}
+//
+//	public void setShowings(List<Showing> showings) {
+//		this.showings = showings;
+//	}
 
-	public Seat removeSeat(Seat seat) {
-		getSeats().remove(seat);
-		seat.setScreen(null);
-
-		return seat;
-	}
-
-	public List<Showing> getShowings() {
-		return this.showings;
-	}
-
-	public void setShowings(List<Showing> showings) {
-		this.showings = showings;
-	}
-
-	public Showing addShowing(Showing showing) {
-		getShowings().add(showing);
-		showing.setScreen(this);
-
-		return showing;
-	}
-
-	public Showing removeShowing(Showing showing) {
-		getShowings().remove(showing);
-		showing.setScreen(null);
-
-		return showing;
-	}
+//	public Showing addShowing(Showing showing) {
+//		getShowings().add(showing);
+//		showing.setScreen(this);
+//
+//		return showing;
+//	}
+//
+//	public Showing removeShowing(Showing showing) {
+//		getShowings().remove(showing);
+//		showing.setScreen(null);
+//
+//		return showing;
+//	}
 
 }

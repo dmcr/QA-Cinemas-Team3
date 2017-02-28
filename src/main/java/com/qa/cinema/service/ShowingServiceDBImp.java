@@ -27,7 +27,7 @@ public class ShowingServiceDBImp implements ShowingService{
 	
 	@Override
 	public String getAllShowings(){
-		Query query = em.createQuery("SELECT s FROM Showings s");
+		Query query = em.createQuery("SELECT s FROM Showing s");
 		Collection<Showing> showing = (Collection<Showing>) query.getResultList();
 		return util.getJSONForObject(showing);
 	}

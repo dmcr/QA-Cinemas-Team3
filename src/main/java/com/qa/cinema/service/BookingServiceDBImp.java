@@ -25,7 +25,7 @@ public class BookingServiceDBImp implements BookingService {
 
 	@Override
 	public String getAllBookings() {
-		Query query = em.createQuery("SELECT b FROM Bookings b");
+		Query query = em.createQuery("SELECT b FROM Booking b");
 		Collection<Booking> bookings = (Collection<Booking> )query.getResultList();
 		return util.getJSONForObject(bookings);
 	}
