@@ -52,10 +52,8 @@ public class Film implements Serializable {
 	private String title;
 
 	//bi-directional many-to-one association to Showing
-	//@OneToMany(mappedBy="film", cascade = { CascadeType.ALL })
-	//@JoinColumn(name="showing_id")
 	@JoinColumn(name="showing_id")
-	@OneToMany
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	private List<Showing> showings;
 	
 	@Column(name="film_IMDBID")
@@ -63,8 +61,7 @@ public class Film implements Serializable {
 
 	public Film() {
 	}
-	
-	
+
 	public Film(Long filmId, boolean is3D, String cast, String certification, String director, int duration,
 			String genre, Date releaseDate, String summary, String title, List<Showing> showings, String IMDBID) {
 		super();
@@ -82,25 +79,24 @@ public class Film implements Serializable {
 		this.IMDBID = IMDBID;
 	}
 
-
 	public Long getFilmId() {
-		return this.filmId;
+		return filmId;
 	}
 
 	public void setFilmId(Long filmId) {
 		this.filmId = filmId;
 	}
 
-	public boolean getIs3D() {
-		return this.is3D;
+	public boolean isIs3D() {
+		return is3D;
 	}
 
-	public void setIs3D(boolean is3D) {
-		this.is3D = is3D;
+	public void setIs3D(boolean is3d) {
+		is3D = is3d;
 	}
 
 	public String getCast() {
-		return this.cast;
+		return cast;
 	}
 
 	public void setCast(String cast) {
@@ -108,7 +104,7 @@ public class Film implements Serializable {
 	}
 
 	public String getCertification() {
-		return this.certification;
+		return certification;
 	}
 
 	public void setCertification(String certification) {
@@ -116,7 +112,7 @@ public class Film implements Serializable {
 	}
 
 	public String getDirector() {
-		return this.director;
+		return director;
 	}
 
 	public void setDirector(String director) {
@@ -124,7 +120,7 @@ public class Film implements Serializable {
 	}
 
 	public int getDuration() {
-		return this.duration;
+		return duration;
 	}
 
 	public void setDuration(int duration) {
@@ -132,7 +128,7 @@ public class Film implements Serializable {
 	}
 
 	public String getGenre() {
-		return this.genre;
+		return genre;
 	}
 
 	public void setGenre(String genre) {
@@ -140,7 +136,7 @@ public class Film implements Serializable {
 	}
 
 	public Date getReleaseDate() {
-		return this.releaseDate;
+		return releaseDate;
 	}
 
 	public void setReleaseDate(Date releaseDate) {
@@ -148,7 +144,7 @@ public class Film implements Serializable {
 	}
 
 	public String getSummary() {
-		return this.summary;
+		return summary;
 	}
 
 	public void setSummary(String summary) {
@@ -156,7 +152,7 @@ public class Film implements Serializable {
 	}
 
 	public String getTitle() {
-		return this.title;
+		return title;
 	}
 
 	public void setTitle(String title) {
@@ -164,13 +160,12 @@ public class Film implements Serializable {
 	}
 
 	public List<Showing> getShowings() {
-		return this.showings;
+		return showings;
 	}
 
 	public void setShowings(List<Showing> showings) {
 		this.showings = showings;
 	}
-	
 
 	public String getIMDBID() {
 		return IMDBID;
@@ -179,10 +174,5 @@ public class Film implements Serializable {
 	public void setIMDBID(String iMDBID) {
 		IMDBID = iMDBID;
 	}
-
-	
-	
-	
-	
 
 }

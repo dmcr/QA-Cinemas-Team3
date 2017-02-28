@@ -32,8 +32,8 @@ public class Booking implements Serializable{
 
 
 	//bi-directional many-to-one association to Ticket
-	@JoinColumn(name="ticket_id")
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name="ticket_id")
 	private List<Ticket> tickets;
 
 	public Booking() {
