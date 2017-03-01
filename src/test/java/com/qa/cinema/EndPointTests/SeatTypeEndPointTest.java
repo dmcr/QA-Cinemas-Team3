@@ -17,17 +17,18 @@ public class SeatTypeEndPointTest {
 	@InjectMocks
 	private SeatTypeEndPoint subject;
 
-	private static final String MOCKSTRING = "[{\"id\": 1,\"price\": \"10.00\",\"name\": \"child\"}]";
+	private static final String MOCKSTRINGALL = "[{\"typeId\": 1,\"name\": \"STANDARD\",\"price\": 10}]";
+	private static final String MOCKSTRING = "{\"typeId\": 1,\"name\": \"STANDARD\",\"price\": 10}";
 
 	@Mock
 	private SeatTypeService mockService;
 
 	@Test
 	public void testAllSeatTypesAreReturnedCorrectly() {
-		Mockito.when(mockService.listAllSeatTypes()).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.listAllSeatTypes()).thenReturn(MOCKSTRINGALL);
 		String seatTypeString = subject.getSeatTypeAsJson();
 		Mockito.verify(mockService).listAllSeatTypes();
-		Assert.assertEquals(MOCKSTRING, seatTypeString);
+		Assert.assertEquals(MOCKSTRINGALL, seatTypeString);
 	}
 	
 	@Test
