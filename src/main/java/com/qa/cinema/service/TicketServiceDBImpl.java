@@ -8,8 +8,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import com.qa.cinema.persistence.Film;
 import com.qa.cinema.persistence.Ticket;
 import com.qa.cinema.util.JSONUtil;
 
