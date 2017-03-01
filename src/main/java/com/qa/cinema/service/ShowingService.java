@@ -2,9 +2,9 @@ package com.qa.cinema.service;
 
 public interface ShowingService {
 
-	String getAllShowings();
+	String getShowings();
 
-	String getShowingBasedOnId(Long id);
+	String getShowingById(Long id);
 	
 	
 }

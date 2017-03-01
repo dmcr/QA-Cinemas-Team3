@@ -20,14 +20,14 @@ import com.qa.cinema.service.ShowingService;
 		@Path("/json")
 		@Produces({ "application/json" })
 		public String getShowingsAsJson() {
-			return ShowingService.getAllShowings();
+			return ShowingService.getShowings();
 		}
 		
 		@GET
 		@Path("/json/{id}")
 		@Produces({ "application/json" })
-			public String getShowingBasedOnIDAsJson(@PathParam("screenId") Long id) {
-				return ShowingService.getShowingBasedOnId(id);
+			public String getShowingBasedOnIDAsJson(@PathParam("id") Long id) {
+				return ShowingService.getShowingById(id);
 			}
 
 

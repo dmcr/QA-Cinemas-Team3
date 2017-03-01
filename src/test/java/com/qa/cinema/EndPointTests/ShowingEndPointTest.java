@@ -25,17 +25,17 @@ public class ShowingEndPointTest {
 
 	@Test
 	public void testAllShowingsAreReturnedCorrectly() {
-		Mockito.when(mockService.getAllShowings()).thenReturn(MOCKSTRINGALL);
+		Mockito.when(mockService.getShowings()).thenReturn(MOCKSTRINGALL);
 		String showingString = subject.getShowingsAsJson();
-		Mockito.verify(mockService).getAllShowings();
+		Mockito.verify(mockService).getShowings();
 		Assert.assertEquals(MOCKSTRINGALL, showingString);
 	}
 	
 	@Test
 	public void testShowingsIsReturnedCorrectlyBasedOnId() {
-		Mockito.when(mockService.getShowingBasedOnId(1L)).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.getShowingById(1L)).thenReturn(MOCKSTRING);
 		String showingString = subject.getShowingBasedOnIDAsJson(1L);
-		Mockito.verify(mockService).getShowingBasedOnId(1L);
+		Mockito.verify(mockService).getShowingById(1L);
 		Assert.assertEquals(MOCKSTRING, showingString);
 	}
 

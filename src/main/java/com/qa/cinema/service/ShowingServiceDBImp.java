@@ -26,14 +26,14 @@ public class ShowingServiceDBImp implements ShowingService{
 	private JSONUtil util;
 	
 	@Override
-	public String getAllShowings(){
+	public String getShowings(){
 		Query query = em.createQuery("SELECT s FROM Showing s");
 		Collection<Showing> showing = (Collection<Showing>) query.getResultList();
 		return util.getJSONForObject(showing);
 	}
 
 	@Override
-	public String getShowingBasedOnId(Long showingId) {
+	public String getShowingById(Long showingId) {
 		Query query = em.createQuery("SELECT s FROM Showing s WHERE showingId ="+showingId);
 		Showing showing = (Showing)query.getSingleResult();
 		return util.getJSONForObject(showing);
