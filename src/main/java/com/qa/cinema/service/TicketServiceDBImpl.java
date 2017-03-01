@@ -33,8 +33,8 @@ public class TicketServiceDBImpl implements TicketService {
 	@Override
 	public String getTicketByTicketID(Long id) {
 		Query query = em.createQuery("SELECT t FROM Ticket t WHERE t.ticketId = " + id);
-		Collection<Ticket> tickets = (Collection<Ticket>) query.getResultList();
-		return util.getJSONForObject(tickets);
+		Ticket ticket = (Ticket) query.getSingleResult();
+		return util.getJSONForObject(ticket);
 	}
 
 }

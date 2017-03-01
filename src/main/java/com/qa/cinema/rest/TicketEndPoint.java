@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.qa.cinema.service.TicketService;
 
-@Path("/tickets")
+@Path("/ticket")
 public class TicketEndPoint {
 
 	@Inject
