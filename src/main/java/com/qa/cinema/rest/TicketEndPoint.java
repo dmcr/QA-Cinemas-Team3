@@ -29,10 +29,4 @@ public class TicketEndPoint {
 		return ticketService.getTicketByTicketID(id);
 	}
 	
-	@GET
-	@Path("/json/booking/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String getTicketsByBookingTicketIDAsJson(@PathParam("id") Long id) {
-		return ticketService.getAllTicketsByBookingID(id);
-	}
 }

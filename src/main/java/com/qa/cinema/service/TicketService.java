@@ -6,5 +6,4 @@ public interface TicketService {
 	
 	String getTicketByTicketID(Long ticketId);
 	
-	String getAllTicketsByBookingID(Long bookingId);
 }

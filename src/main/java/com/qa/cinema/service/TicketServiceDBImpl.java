@@ -37,11 +37,4 @@ public class TicketServiceDBImpl implements TicketService {
 		return util.getJSONForObject(tickets);
 	}
 
-	@Override
-	public String getAllTicketsByBookingID(Long id) {
-		Query query = em.createQuery("SELECT t FROM Ticket t WHERE t.booking.bookingId = " + id);
-		Collection<Ticket> tickets = (Collection<Ticket>) query.getResultList();
-		return util.getJSONForObject(tickets);
-	}
-
 }
