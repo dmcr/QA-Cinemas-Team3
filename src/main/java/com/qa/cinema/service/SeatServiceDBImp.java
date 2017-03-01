@@ -23,21 +23,18 @@ public class SeatServiceDBImp implements SeatService {
 	@Inject
 	private JSONUtil util;
 	
-
-	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllSeats() {
 		Query query = em.createQuery("SELECT s FROM Seat s");
-		Collection<Seat> seats = (Collection<Seat> )query.getResultList();
+		Collection<Seat> seats = (Collection<Seat>)query.getResultList();
 		return util.getJSONForObject(seats);
 	}
 
 	@Override
 	public String getSeatById(Long seatId) {
-		Query query = em.createQuery("SELECT s FROM Seat s WHERE seat_id ="+seatId);
+		Query query = em.createQuery("SELECT s FROM Seat s WHERE seatId =" + seatId);
 		Seat seat = (Seat)query.getSingleResult();
 		return util.getJSONForObject(seat);
-	
 	}
 	
 
