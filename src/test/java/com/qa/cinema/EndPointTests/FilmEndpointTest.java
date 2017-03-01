@@ -18,7 +18,16 @@ public class FilmEndpointTest {
 	@InjectMocks
 	private FilmEndPoint subject;
 	
-	private static final String MOCKFILM = "[{\"id\": 1,\" is3D\": \"true\", \"cast\": \"Tom Hardy\", \"certification\": \"15\", \"director\": \"James Cameron\", \"duration\": \"120 mins\", \"genre\": \"Horror\", \"releaseDate\": \"20-02-17\", \"summary\": \"One man fights to try his best to defeat the evil ghosts\", \"title\": \"Spooks\", \"showings\": []\"}]";
+	private static final String MOCKFILMALL = "[{\"filmId\": 1,\" is3D\": \"false\", \"cast\": \"Tom Hardy\", \"certification\":"
+			+ " \"PG\", \"director\": \"James Cameron\", \"duration\": \"120\", \"genre\": \"Horror\", \"releaseDate\": "
+			+ "\"Jun 17, 0018\", \"summary\": \"One man fights to try his best to defeat the evil ghosts\", \"title\": "
+			+ "\"Spooks\", \"showings\": [{\"showingId\": 1, \"startTime\": \"Jun 17, 0018 12:10:08 PM\", \"screenId\": "
+			+ "1, \"filmId\": 1}]\"}]";
+	private static final String MOCKFILM = "{\"filmId\": 1,\" is3D\": \"false\", \"cast\": \"Tom Hardy\", \"certification\":"
+			+ " \"PG\", \"director\": \"James Cameron\", \"duration\": \"120\", \"genre\": \"Horror\", \"releaseDate\": "
+			+ "\"Jun 17, 0018\", \"summary\": \"One man fights to try his best to defeat the evil ghosts\", \"title\": "
+			+ "\"Spooks\", \"showings\": [{\"showingId\": 1, \"startTime\": \"Jun 17, 0018 12:10:08 PM\", \"screenId\": "
+			+ "1, \"filmId\": 1}]\"}";
 	
 	
 	@Mock
@@ -26,10 +35,10 @@ public class FilmEndpointTest {
 	
 	@Test
 	public void testGetAllFilms() {
-		Mockito.when(filmServiceMock.getAllFilms()).thenReturn(MOCKFILM);
+		Mockito.when(filmServiceMock.getAllFilms()).thenReturn(MOCKFILMALL);
 		String filmString = subject.getFilmsAsJson();
 		Mockito.verify(filmServiceMock).getAllFilms();
-		assertEquals(MOCKFILM, filmString);
+		assertEquals(MOCKFILMALL, filmString);
 	}
 	
 	@Test
