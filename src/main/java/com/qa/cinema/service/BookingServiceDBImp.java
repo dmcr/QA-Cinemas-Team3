@@ -19,7 +19,6 @@ public class BookingServiceDBImp implements BookingService {
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
 	
-	@SuppressWarnings("unused")
 	@Inject
 	private JSONUtil util;
 
