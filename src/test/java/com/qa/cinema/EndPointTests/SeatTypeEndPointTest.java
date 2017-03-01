@@ -25,17 +25,17 @@ public class SeatTypeEndPointTest {
 
 	@Test
 	public void testAllSeatTypesAreReturnedCorrectly() {
-		Mockito.when(mockService.listAllSeatTypes()).thenReturn(MOCKSTRINGALL);
+		Mockito.when(mockService.getSeatTypes()).thenReturn(MOCKSTRINGALL);
 		String seatTypeString = subject.getSeatTypeAsJson();
-		Mockito.verify(mockService).listAllSeatTypes();
+		Mockito.verify(mockService).getSeatTypes();
 		Assert.assertEquals(MOCKSTRINGALL, seatTypeString);
 	}
 	
 	@Test
 	public void testSeatTypesIsReturnedCorrectlyBasedOnId() {
-		Mockito.when(mockService.listSeatTypeBasedOnId(1L)).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.getSeatTypeById(1L)).thenReturn(MOCKSTRING);
 		String seatTypeString = subject.getSeatTypeAsJsonBasedOnId(1L);
-		Mockito.verify(mockService).listSeatTypeBasedOnId(1L);
+		Mockito.verify(mockService).getSeatTypeById(1L);
 		Assert.assertEquals(MOCKSTRING, seatTypeString);
 	}
 

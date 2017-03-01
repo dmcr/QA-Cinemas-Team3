@@ -24,14 +24,14 @@ public class SeatTypeServiceDBImp implements SeatTypeService{
 	private JSONUtil util;
 
 	@Override
-	public String listAllSeatTypes() {
+	public String getSeatTypes() {
 		Query query = em.createQuery("SELECT m FROM SeatType m");
 		Collection<SeatType> SeatTypes = (Collection<SeatType>) query.getResultList();
 		return util.getJSONForObject(SeatTypes);
 	}
 
 	@Override
-	public String listSeatTypeBasedOnId(Long TypeId) {
+	public String getSeatTypeById(Long TypeId) {
 		Query query = em.createQuery("SELECT s FROM SeatType s WHERE typeId ="+TypeId);
 		SeatType seatType = (SeatType)query.getSingleResult();
 		return util.getJSONForObject(seatType);
