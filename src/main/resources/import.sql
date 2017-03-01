@@ -1,7 +1,7 @@
 
 
 
-INSERT INTO cin_screen (cin_screen_capacity, screen_type_id) VALUES (500, 1);
+INSERT INTO cin_screen (cin_screen_capacity) VALUES (500);
 
 INSERT INTO cin_seat_type (type_name, type_price) VALUES ('Standard', '10.00');
 

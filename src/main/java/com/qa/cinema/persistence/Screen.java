@@ -25,9 +25,6 @@ public class Screen implements Serializable {
 	@Column(name="cin_screen_capacity")
 	private int cinScreenCapacity;
 
-	@Column(name="screen_type_id")
-	private Long screenTypeId;
-
 	@JoinColumn(name = "seat_id")
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	private List<Seat> seats;
@@ -41,11 +38,10 @@ public class Screen implements Serializable {
 	}
 
 
-	public Screen(Long screenId, int cinScreenCapacity, Long screenTypeId, List<Seat> seats, List<Showing> showings) {
+	public Screen(Long screenId, int cinScreenCapacity, List<Seat> seats, List<Showing> showings) {
 		super();
 		this.screenId = screenId;
 		this.cinScreenCapacity = cinScreenCapacity;
-		this.screenTypeId = screenTypeId;
 		this.seats = seats;
 		this.showings = showings;
 	}
@@ -71,16 +67,6 @@ public class Screen implements Serializable {
 	}
 
 
-	public Long getScreenTypeId() {
-		return screenTypeId;
-	}
-
-
-	public void setScreenTypeId(Long screenTypeId) {
-		this.screenTypeId = screenTypeId;
-	}
-
-
 	public List<Seat> getSeats() {
 		return seats;
 	}
@@ -99,5 +85,6 @@ public class Screen implements Serializable {
 	public void setShowings(List<Showing> showings) {
 		this.showings = showings;
 	}
+	
 
 }
