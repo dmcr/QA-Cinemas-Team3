@@ -37,9 +37,9 @@ public class ScreenEndPointTest {
 	
 	@Test
 	public void testGetScreentypebyIdreturnedCorrectly() {
-		Mockito.when(mockService.getScreentypebyId(1l)).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.getScreenById(1l)).thenReturn(MOCKSTRING);
 		String screenString = subject.getScreenbyIDAsJson(1l);
-		Mockito.verify(mockService).getScreentypebyId(1l);
+		Mockito.verify(mockService).getScreenById(1l);
 		Assert.assertEquals(MOCKSTRING, screenString);
 	}
 

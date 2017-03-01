@@ -31,8 +31,8 @@ public class ScreenServiceDBImpl implements ScreenService {
 	}
 
 	@Override
-	public String getScreentypebyId(Long id) {
-		Query query = em.createQuery("SELECT s FROM Screen s where s=" + id);
+	public String getScreenById(Long id) {
+		Query query = em.createQuery("SELECT s FROM Screen s WHERE screenId =" + id);
 		Screen screen = (Screen) query.getSingleResult();
 		return util.getJSONForObject(screen);
 	}

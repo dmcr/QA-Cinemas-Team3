@@ -4,6 +4,6 @@ public interface ScreenService {
 	
 	String getAllScreens();
 	
-	String getScreentypebyId(Long id);
+	String getScreenById(Long id);
 
 }

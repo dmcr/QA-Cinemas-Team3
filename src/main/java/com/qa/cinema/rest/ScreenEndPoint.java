@@ -25,6 +25,6 @@ public class ScreenEndPoint {
 	@Path("/json/{id}")
 	@Produces({"application/json"})
 	public String getScreenbyIDAsJson(@PathParam("id") Long id) {
-		return screenService.getScreentypebyId(id);
+		return screenService.getScreenById(id);
 	}
 }
