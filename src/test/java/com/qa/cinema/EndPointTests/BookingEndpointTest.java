@@ -18,7 +18,8 @@ public class BookingEndpointTest {
 	@InjectMocks
 	private BookingEndPoint booking;
 	
-	private static final String MOCKSTRING = "[{\"booking_id\": 1,\"booking_complete\": \"true\",\"paypal_id\": \"10074405\"}]";
+	private static final String MOCKSTRINGALL = "[{\"bookingId\": 1,\"complete\": \"true\",\"paypal\": \"10074405\"}]";
+	private static final String MOCKSTRING = "{\"bookingId\": 1,\"complete\": \"true\",\"paypal\": \"10074405\"}";
 	
 	@Mock
 	private BookingService mockService;
@@ -26,12 +27,10 @@ public class BookingEndpointTest {
 
 	@Test
 	public void testGetAllSeats() {
-	
-		
-		Mockito.when(mockService.getAllBookings()).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.getAllBookings()).thenReturn(MOCKSTRINGALL);
 		String bookingString = booking.getBookingAsJson();
 		Mockito.verify(mockService).getAllBookings();
-		Assert.assertEquals(MOCKSTRING, bookingString);
+		Assert.assertEquals(MOCKSTRINGALL, bookingString);
 	}
 
 	@Test
