@@ -18,4 +18,4 @@ INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) 
 INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) VALUES ('18-06-17 16:10:08', 1, 1);
 
 
-INSERT INTO cin_ticket(ticket_booking_id, ticket_showing_id, ticket_seat_id) VALUES (1, 1, 1);
+INSERT INTO cin_ticket(ticket_booking_id, ticket_showing_id, ticket_seat_id, ticket_type) VALUES (1, 1, 1, 'ADULT');

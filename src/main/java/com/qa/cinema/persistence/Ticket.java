@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,16 +37,22 @@ public class Ticket implements Serializable {
 	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_seat_id")
 	private Seat seat;
+	
+	@Column(name="ticket_type")
+	@Enumerated(EnumType.STRING)
+	private TicketType ticketType;
 
 	public Ticket() {
+		
 	}
-
-	public Ticket(Long ticketId, Long bookingId, Showing showing, Seat seat) {
+	
+	public Ticket(Long ticketId, Long bookingId, Showing showing, Seat seat, TicketType ticketType) {
 		super();
 		this.ticketId = ticketId;
 		this.bookingId = bookingId;
 		this.showing = showing;
 		this.seat = seat;
+		this.ticketType = ticketType;
 	}
 
 	public Long getTicketId() {
@@ -77,6 +85,14 @@ public class Ticket implements Serializable {
 
 	public void setSeat(Seat seat) {
 		this.seat = seat;
+	}
+
+	public TicketType getTicketType() {
+		return ticketType;
+	}
+
+	public void setTicketType(TicketType ticketType) {
+		this.ticketType = ticketType;
 	}
 	
 }
