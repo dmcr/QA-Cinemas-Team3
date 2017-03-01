@@ -1,10 +1,7 @@
 package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-import com.qa.cinema.persistence.Booking;
 import com.qa.cinema.persistence.Seat;
 import com.qa.cinema.persistence.Showing;
 import com.qa.cinema.persistence.Ticket;

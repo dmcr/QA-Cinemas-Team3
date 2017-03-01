@@ -3,7 +3,6 @@ package com.qa.cinema.persistence;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -29,21 +28,18 @@ public class SeatType implements Serializable {
 	@Column(name="type_price")
 	private BigDecimal price;
 
-	//bi-directional many-to-one association to Seat
-//	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
-//	private List<Seat> seats;
-
 	public SeatType() {
 	}
-	
+
 	public SeatType(Long typeId, String name, BigDecimal price) {
+		super();
 		this.typeId = typeId;
 		this.name = name;
 		this.price = price;
 	}
 
 	public Long getTypeId() {
-		return this.typeId;
+		return typeId;
 	}
 
 	public void setTypeId(Long typeId) {
@@ -51,7 +47,7 @@ public class SeatType implements Serializable {
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -59,11 +55,10 @@ public class SeatType implements Serializable {
 	}
 
 	public BigDecimal getPrice() {
-		return this.price;
+		return price;
 	}
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-
 }

@@ -30,8 +30,6 @@ public class Booking implements Serializable{
 	@Column(name = "booking_paypal")
 	private String paypal;
 
-
-	//bi-directional many-to-one association to Ticket
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_id")
 	private List<Ticket> tickets;

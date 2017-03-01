@@ -10,11 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="cin_ticket")
@@ -27,34 +25,19 @@ public class Ticket implements Serializable {
 	@Column(name="ticket_id")
 	private Long ticketId;
 	
-//	@NotNull
-//	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-//	@JoinColumn(name = "ticket_booking_id", referencedColumnName = "booking_id")
-//	private Booking booking;
 	@Column(name="ticket_booking_id")
 	private Long bookingId;
 
-//	@NotNull
-//	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-//	@JoinColumn(name = "ticket_showing_id", referencedColumnName = "showing_id")
-//	private Showing showing;
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_showing_id")
 	private Showing showing;
 	
-//	@NotNull
-//	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-//	@JoinColumn(name = "ticket_seat_id", referencedColumnName = "seat_id")
-//	private Seat seat;
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_seat_id")
 	private Seat seat;
 
 	public Ticket() {
-		
 	}
-	
-	
 
 	public Ticket(Long ticketId, Long bookingId, Showing showing, Seat seat) {
 		super();
@@ -64,8 +47,6 @@ public class Ticket implements Serializable {
 		this.seat = seat;
 	}
 
-
-
 	public Long getTicketId() {
 		return ticketId;
 	}
@@ -74,19 +55,13 @@ public class Ticket implements Serializable {
 		this.ticketId = ticketId;
 	}
 
-	
-
 	public Long getBookingId() {
 		return bookingId;
 	}
 
-
-
 	public void setBookingId(Long bookingId) {
 		this.bookingId = bookingId;
 	}
-
-
 
 	public Showing getShowing() {
 		return showing;
