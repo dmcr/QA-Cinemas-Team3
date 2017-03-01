@@ -19,34 +19,32 @@ public class TicketEndPointTest {
 	@InjectMocks
 	private TicketEndPoint ticketEndPoint;
 	
-	private static final String MOCKALLSTRING = "[{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}]";
-	private static final String MOCKTICKETSSTRING = "{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}";
-	private static final String MOCKBOOKINGTICKETSSTRING = "[{\"tickedId\": 1,\"booking\": {},\"showing\": {},\"seat\": {}}]";
+	private static final String MOCKSTRINGALL = "[{\"tickedId\": 1,\"bookingId\": 1,\"showing\": {"
+			+ "\"showingId\": 1, \"startTime\": \"Jun 17, 0018 12:10:08 PM\", \"screenId\": 1, \"filmId\": 1},\"seat\": {"
+			+ "\"seatId\": 1, \"number\": 1, \"row\": \"A\", \"seatType\": { \"typeId\": 1, \"name\": \"STANDARD\", \"price\": 10}, \"screenId\": 1},"
+			+ "\"ticketType\": \"ADULT\"}]";
+	private static final String MOCKSTRING = "{\"tickedId\": 1,\"bookingId\": 1,\"showing\": {"
+			+ "\"showingId\": 1, \"startTime\": \"Jun 17, 0018 12:10:08 PM\", \"screenId\": 1, \"filmId\": 1},\"seat\": {"
+			+ "\"seatId\": 1, \"number\": 1, \"row\": \"A\", \"seatType\": { \"typeId\": 1, \"name\": \"STANDARD\", \"price\": 10}, \"screenId\": 1},"
+			+ "\"ticketType\": \"ADULT\"}";
 	
 	@Mock
 	private TicketService mockService;
 	
 	@Test
 	public void testGetAllTicketsReturned() {
-		Mockito.when(mockService.getAllTickets()).thenReturn(MOCKALLSTRING);
+		Mockito.when(mockService.getAllTickets()).thenReturn(MOCKSTRINGALL);
 		String ticketString = ticketEndPoint.getTicketsAsJson();
 		Mockito.verify(mockService).getAllTickets();
-		Assert.assertEquals(MOCKALLSTRING, ticketString);
+		Assert.assertEquals(MOCKSTRINGALL, ticketString);
 	}
 	
 	@Test
 	public void testGetTicketByIdReturned() {
-		Mockito.when(mockService.getTicketByTicketID(1L)).thenReturn(MOCKTICKETSSTRING);
+		Mockito.when(mockService.getTicketByTicketID(1L)).thenReturn(MOCKSTRING);
 		String ticketString = ticketEndPoint.getTicketByTicketIDAsJson(1L);
 		Mockito.verify(mockService).getTicketByTicketID(1L);
-		Assert.assertEquals(MOCKTICKETSSTRING, ticketString);
+		Assert.assertEquals(MOCKSTRING, ticketString);
 	}
 	
-	@Test
-	public void testGetTicketsByBookingIDReturned() {
-		Mockito.when(mockService.getAllTicketsByBookingID(1L)).thenReturn(MOCKBOOKINGTICKETSSTRING);
-		String ticketString = ticketEndPoint.getTicketsByBookingTicketIDAsJson(1L);
-		Mockito.verify(mockService).getAllTicketsByBookingID(1L);
-		Assert.assertEquals(MOCKBOOKINGTICKETSSTRING, ticketString);
-	}
 }
