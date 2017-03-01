@@ -13,7 +13,7 @@ import com.qa.cinema.util.JSONUtil;
 
 @Stateless
 @Default
-public class TicketServiceDBImpl implements TicketService {
+public class TicketServiceDBImp implements TicketService {
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;

@@ -14,7 +14,7 @@ import com.qa.cinema.util.JSONUtil;
 
 @Stateless
 @Default
-public class ScreenServiceDBImpl implements ScreenService {
+public class ScreenServiceDBImp implements ScreenService {
 
 	@PersistenceContext(unitName="primary")
 	private EntityManager em;
