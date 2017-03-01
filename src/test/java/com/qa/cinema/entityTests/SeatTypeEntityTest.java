@@ -1,13 +1,10 @@
 package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
-
 import java.math.BigDecimal;
-
 import org.junit.Test;
-
 import com.qa.cinema.persistence.SeatType;
-import com.qa.cinema.persistence.TicketType;
+import com.qa.cinema.persistence.SeatTypeName;
 
 public class SeatTypeEntityTest {
 
@@ -26,9 +23,9 @@ public class SeatTypeEntityTest {
 	
 	@Test
 	public void testSeatTypeName() {
-		SeatType seatType = SeatType.STANDARD;
-		seatType.setName(seatType);
-		assertEquals(seatType, seatType.getName());
+		SeatTypeName seatTypeName = SeatTypeName.STANDARD;
+		seatType.setName(seatTypeName);
+		assertEquals(seatTypeName, seatType.getName());
 	}
 
 	@Test

@@ -23,7 +23,8 @@ public class SeatType implements Serializable {
 	private Long typeId;
 
 	@Column(name="type_name")
-	private String name;
+	@Enumerated(EnumType.STRING)
+	private SeatTypeName name;
 
 	@Column(name="type_price")
 	private BigDecimal price;
@@ -31,7 +32,7 @@ public class SeatType implements Serializable {
 	public SeatType() {
 	}
 
-	public SeatType(Long typeId, String name, BigDecimal price) {
+	public SeatType(Long typeId, SeatTypeName name, BigDecimal price) {
 		super();
 		this.typeId = typeId;
 		this.name = name;
@@ -46,11 +47,11 @@ public class SeatType implements Serializable {
 		this.typeId = typeId;
 	}
 
-	public String getName() {
+	public SeatTypeName getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(SeatTypeName name) {
 		this.name = name;
 	}
 
@@ -61,4 +62,5 @@ public class SeatType implements Serializable {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+	
 }
