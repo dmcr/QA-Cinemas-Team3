@@ -30,7 +30,8 @@ public class Film implements Serializable {
 	private String cast;
 
 	@Column(name="film_certification")
-	private String certification;
+	@Enumerated(EnumType.STRING)
+	private CertificationRating certification;
 
 	@Column(name="film_director")
 	private String director;
@@ -59,13 +60,15 @@ public class Film implements Serializable {
 	private String IMDBID;
 
 	public Film() {
+		
 	}
-
-	public Film(Long filmId, boolean is3D, String cast, String certification, String director, int duration,
-			String genre, Date releaseDate, String summary, String title, List<Showing> showings, String IMDBID) {
+	
+	public Film(Long filmId, boolean is3d, String cast, CertificationRating certification, String director,
+			int duration, String genre, Date releaseDate, String summary, String title, List<Showing> showings,
+			String iMDBID) {
 		super();
 		this.filmId = filmId;
-		this.is3D = is3D;
+		is3D = is3d;
 		this.cast = cast;
 		this.certification = certification;
 		this.director = director;
@@ -75,7 +78,7 @@ public class Film implements Serializable {
 		this.summary = summary;
 		this.title = title;
 		this.showings = showings;
-		this.IMDBID = IMDBID;
+		IMDBID = iMDBID;
 	}
 
 	public Long getFilmId() {
@@ -102,11 +105,11 @@ public class Film implements Serializable {
 		this.cast = cast;
 	}
 
-	public String getCertification() {
+	public CertificationRating getCertification() {
 		return certification;
 	}
 
-	public void setCertification(String certification) {
+	public void setCertification(CertificationRating certification) {
 		this.certification = certification;
 	}
 
