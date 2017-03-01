@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.qa.cinema.persistence.Film;
+import com.qa.cinema.persistence.SeatTypeName;
 import com.qa.cinema.persistence.Showing;
 
 public class FilmEntityTest {
@@ -52,8 +53,9 @@ public class FilmEntityTest {
 		
 		@Test
 		public void testGetCertrating() {
-			film.setCertification("Test");
-			assertEquals("Test", film.getCertification());
+			CertificationRating certRating = CertificationRating.PG;
+			film.setCertification(certRating);
+			assertEquals(certRating, film.getCertification());
 		}
 	
 		@Test
