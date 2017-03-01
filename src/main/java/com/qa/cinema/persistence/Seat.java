@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-import java.util.List;
-
 /**
  * The persistent class for the cin_seat database table.
  * 
@@ -27,38 +25,27 @@ public class Seat implements Serializable {
 	@Column(name = "seat_row")
 	private String row;
 
-	// bi-directional many-to-one association to SeatType
 	@ManyToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	@JoinColumn(name = "seat_type_id")
 	private SeatType seatType;
 
-//	// bi-directional many-to-one association to Screen
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "seat_screen_id")
-//	private Screen screen;
 	@Column(name = "seat_screen_id")
 	private Long screenId;
-
-//	// bi-directional many-to-one association to Ticket
-//	@OneToMany(mappedBy = "seat")
-//	private List<Ticket> tickets;
 
 	public Seat() {
 	}
 
-	public Seat(Long seatId, int number, String row, SeatType seatType,
-			Long screenId, List<Ticket> tickets) {
+	public Seat(Long seatId, int number, String row, SeatType seatType, Long screenId) {
+		super();
 		this.seatId = seatId;
 		this.number = number;
 		this.row = row;
 		this.seatType = seatType;
 		this.screenId = screenId;
-//		this.screen = screen;
-//		this.tickets = tickets;
 	}
 
 	public Long getSeatId() {
-		return this.seatId;
+		return seatId;
 	}
 
 	public void setSeatId(Long seatId) {
@@ -66,7 +53,7 @@ public class Seat implements Serializable {
 	}
 
 	public int getNumber() {
-		return this.number;
+		return number;
 	}
 
 	public void setNumber(int number) {
@@ -74,7 +61,7 @@ public class Seat implements Serializable {
 	}
 
 	public String getRow() {
-		return this.row;
+		return row;
 	}
 
 	public void setRow(String row) {
@@ -82,7 +69,7 @@ public class Seat implements Serializable {
 	}
 
 	public SeatType getSeatType() {
-		return this.seatType;
+		return seatType;
 	}
 
 	public void setSeatType(SeatType seatType) {
@@ -96,37 +83,4 @@ public class Seat implements Serializable {
 	public void setScreenId(Long screenId) {
 		this.screenId = screenId;
 	}
-	
-	
-
-//	public Screen getScreen() {
-//		return this.screen;
-//	}
-//
-//	public void setScreen(Screen screen) {
-//		this.screen = screen;
-//	}
-//
-//	public List<Ticket> getTickets() {
-//		return this.tickets;
-//	}
-//
-//	public void setTickets(List<Ticket> tickets) {
-//		this.tickets = tickets;
-//	}
-
-//	public Ticket addTicket(Ticket ticket) {
-//		getTickets().add(ticket);
-//		ticket.setSeat(this);
-//
-//		return ticket;
-//	}
-//
-//	public Ticket removeTicket(Ticket ticket) {
-//		getTickets().remove(ticket);
-//		ticket.setSeat(null);
-//
-//		return ticket;
-//	}
-
 }

@@ -52,21 +52,5 @@ public class SeatEntityTest {
 		seat.setScreenId(1L);
 		assertSame(1L, seat.getScreenId());
 	}
-	
-//	@Test
-//	public void testSeatScreen() {
-//		Screen screen = new Screen();
-//		seat.setScreen(screen);
-//		assertSame(screen, seat.getScreen());
-//		
-//	}
-	
-//	@Test
-//	public void testSeatTicket() {
-//		List<Ticket> tickets = new ArrayList<Ticket>();
-//		seat.setTickets(tickets);
-//		assertSame(tickets, seat.getTickets());
-//		
-//	}
 
 }
