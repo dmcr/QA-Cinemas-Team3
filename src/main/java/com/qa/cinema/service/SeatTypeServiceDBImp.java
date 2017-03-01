@@ -15,7 +15,7 @@ import com.qa.cinema.util.JSONUtil;
 
 @Stateless
 @Default
-public class DBSeatTypeService implements SeatTypeService{
+public class SeatTypeServiceDBImp implements SeatTypeService{
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
