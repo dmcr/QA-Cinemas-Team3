@@ -7,13 +7,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.qa.cinema.service.seatService;
+import com.qa.cinema.service.SeatService;
 
 @Path("/seat")
 public class SeatEndPoint {
 	
 	@Inject
-	private seatService seatService;
+	private SeatService seatService;
 	
 	@GET
 	@Path("/json")

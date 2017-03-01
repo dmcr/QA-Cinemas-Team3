@@ -1,6 +1,6 @@
 package com.qa.cinema.service;
 
-public interface seatService {
+public interface SeatService {
 	
 	public String getAllSeats();
 	

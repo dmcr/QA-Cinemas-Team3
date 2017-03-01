@@ -10,7 +10,7 @@ import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.SeatEndPoint;
-import com.qa.cinema.service.DBSeatService;
+import com.qa.cinema.service.SeatServiceDBImp;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -26,7 +26,7 @@ public class SeatEndPointTest {
 			+ "\"typeId\": 1, \"name\": \"STANDARD\", \"price\": 10},\"screenId\": 1}";
 
 	@Mock
-	private DBSeatService mockService;
+	private SeatServiceDBImp mockService;
 
 	@Test
 	public void testGetAllSeats() {
