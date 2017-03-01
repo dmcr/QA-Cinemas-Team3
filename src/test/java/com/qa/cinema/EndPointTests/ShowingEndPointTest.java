@@ -17,17 +17,18 @@ public class ShowingEndPointTest {
 	@InjectMocks
 	private ShowingEndPoint subject;
 
-	private static final String MOCKSTRING = "[{\"id\": 1,\"price\": \"10.00\",\"name\": \"child\"}]";
+	private static final String MOCKSTRINGALL = "[{\"showingId\": 1,\"startTime\": \"Jun 17, 0018 12:10:08 PM\",\"screenId\": 1, \"filmId\": 1}]";
+	private static final String MOCKSTRING = "{\"showingId\": 1,\"startTime\": \"Jun 17, 0018 12:10:08 PM\",\"screenId\": 1, \"filmId\": 1}";
 
 	@Mock
 	private ShowingService mockService;
 
 	@Test
 	public void testAllShowingsAreReturnedCorrectly() {
-		Mockito.when(mockService.getAllShowings()).thenReturn(MOCKSTRING);
+		Mockito.when(mockService.getAllShowings()).thenReturn(MOCKSTRINGALL);
 		String showingString = subject.getShowingsAsJson();
 		Mockito.verify(mockService).getAllShowings();
-		Assert.assertEquals(MOCKSTRING, showingString);
+		Assert.assertEquals(MOCKSTRINGALL, showingString);
 	}
 	
 	@Test
