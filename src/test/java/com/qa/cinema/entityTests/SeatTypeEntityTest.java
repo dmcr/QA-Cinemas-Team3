@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import org.junit.Test;
 
 import com.qa.cinema.persistence.SeatType;
+import com.qa.cinema.persistence.TicketType;
 
 public class SeatTypeEntityTest {
 
@@ -24,9 +25,10 @@ public class SeatTypeEntityTest {
 	}
 	
 	@Test
-	public void testSeatName() {
-		seatType.setName("Child");
-		assertEquals("Child", seatType.getName());
+	public void testSeatTypeName() {
+		SeatType seatType = SeatType.STANDARD;
+		seatType.setName(seatType);
+		assertEquals(seatType, seatType.getName());
 	}
 
 	@Test
