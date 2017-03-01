@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.qa.cinema.persistence.Booking;
 import com.qa.cinema.persistence.Ticket;
 
-public class BookingTest {
+public class BookingEntityTest {
 	
 	@Test
 	public void testBooking() {

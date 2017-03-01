@@ -6,7 +6,7 @@ import org.junit.Test;
 import com.qa.cinema.persistence.Showing;
 
 
-public class ShowingEntityJunitTest {
+public class ShowingEntityTest {
 
 	Showing showing = new Showing();
 	

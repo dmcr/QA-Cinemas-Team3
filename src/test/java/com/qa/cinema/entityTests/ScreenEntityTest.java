@@ -11,7 +11,7 @@ import com.qa.cinema.persistence.Screen;
 import com.qa.cinema.persistence.Seat;
 import com.qa.cinema.persistence.Showing;
 
-public class ScreenTest {
+public class ScreenEntityTest {
 	
 	Screen screen = new Screen();
 	

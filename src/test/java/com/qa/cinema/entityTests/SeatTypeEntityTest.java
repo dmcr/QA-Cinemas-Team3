@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import com.qa.cinema.persistence.SeatType;
 
-public class SeatTypeJUnitEntity {
+public class SeatTypeEntityTest {
 
 	SeatType seatType = new SeatType();
 	
