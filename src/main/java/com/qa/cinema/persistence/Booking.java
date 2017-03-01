@@ -31,7 +31,7 @@ public class Booking implements Serializable{
 	private String paypal;
 
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
-	@JoinColumn(name="ticket_id")
+	@JoinColumn(name="ticket_booking_id")
 	private List<Ticket> tickets;
 
 	public Booking() {

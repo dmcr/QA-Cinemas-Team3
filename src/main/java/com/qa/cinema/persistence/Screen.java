@@ -25,12 +25,12 @@ public class Screen implements Serializable {
 	@Column(name="cin_screen_capacity")
 	private int cinScreenCapacity;
 
-	@JoinColumn(name = "seat_id")
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name = "seat_screen_id")
 	private List<Seat> seats;
 
-	@JoinColumn(name="showing_id")
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name="showing_screen_id")
 	private List<Showing> showings;
 	
 

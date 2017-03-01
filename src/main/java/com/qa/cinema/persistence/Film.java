@@ -51,9 +51,8 @@ public class Film implements Serializable {
 	@Column(name="film_title")
 	private String title;
 
-	//bi-directional many-to-one association to Showing
-	@JoinColumn(name="showing_id")
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name="showing_film_id")
 	private List<Showing> showings;
 	
 	@Column(name="film_IMDBID")
