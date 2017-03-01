@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 
 import com.qa.cinema.service.FilmService;
 
-@Path("/films")
+@Path("/film")
 public class FilmEndPoint {
 
 	@Inject
@@ -22,7 +22,6 @@ public class FilmEndPoint {
 	@Produces({ "application/json" })
 	public String getFilmsAsJson() {
 		return filmService.getAllFilms();
-
 	}
 
 	@GET
