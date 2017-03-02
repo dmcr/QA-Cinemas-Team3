@@ -5,7 +5,7 @@
 
         vm.addMovie = function(movieToAdd) {
 
-            var movieToJson = JSON.stringify(movieToAdd);
+
 
             movieDal.saveMovie(movieToAdd).then(function (results) {
                 vm.movieAddMessage  = results;
