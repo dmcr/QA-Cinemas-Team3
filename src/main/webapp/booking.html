@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/jquery-1.11.1.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+
+<!-- call in JS header -->
+<div id="header"></div>
+
+
+
+<!-- **** main content for booking page ***** -->
+<div id="container-fluid" class="top">
+    <div class="row">
+        <div class="col-xs-2"></div>
+        <form id="book_tickets" class="cf">
+        <div id="form" class="half left cf">
+                <div class="col-xs-4">
+                    <label for="movie_name" class="booklabel">Movies</label>
+                    <select id="movie_name" name="movie_name" class="bookselect" required autofocus>
+                        <option>Select movie...</option>
+                        <option value="Movie 1">La La Land</option>
+                        <option value="Movie 2">Logan</option>
+                        <option value="Movie 3">John Wick 2</option>
+                    </select>
+
+                    <br />
+
+                    <label for="type">Ticket type</label>
+                    <select id="type" required>
+                        <option>Select type...</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Student">Student</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+
+                    <br />
+
+                    <label for="date">Date<br/></label>
+                    <input type="date" name="date" id="date" min="today" required/>
+
+                    <br />
+                </div>
+                <div class="col-xs-4">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required/>
+
+                    <label for="tickets_quantity">Number of Tickets</label>
+                    <input type="number" min="1" name="tickets_quantity" id="tickets_quantity" required/>
+
+                    <div id="submit_wrapper">
+                        <input type="submit" id="submit" value="Book Tickets"/>
+                    </div>
+                    <br>
+                    <!--<input type="image" id="paypal" src="paypal.png" alt="Submit" width="150" height="40">-->
+                    <input type="submit" value="Submit" id="input-submit">
+                </div>
+        </div>
+        </form>
+        <div class="col-xs-2"></div>
+    </div>
+</div>
+
+
+
+<!-- call in JS footer -->
+<div id="footer"></div>
+
+</body>
+</html>

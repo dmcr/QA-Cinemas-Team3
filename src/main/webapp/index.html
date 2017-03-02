@@ -10,15 +10,22 @@
 
     <title>QACinemas</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="scripts/jquery.easing.min.js"></script>
-    <script src="scripts/navbar-collapse.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="app/css/bootstrap-responsive.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="scripts/navbar-collapse.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/grayscale.js"></script>
+    <script src="scripts/jquery.easing.min.js"></script>
+    <script src="scripts/keyboard-scroll.js"></script>
+
+
+
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +33,10 @@
     <!-- Stylesheets for the pages -->
     <link rel="stylesheet" href="app/css/form-style.css">
     <link rel="stylesheet" href="app/css/animate.css">
-
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="app/css/ie-only.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="app/css/main-style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,14 +45,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    <link rel="stylesheet" href="app/css/main-style.css">
 </head>
 
 <body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <!-- Navigation -->
-<nav class="navbar navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -165,7 +173,7 @@
 
             <br/>
 
-            <p>
+            <p class="bottompad150">
                 QA Cinema is a new development, hoping to be more than just the 'new kid on the block' -
                 with an all new outlook on the blockbuster experience.
             </p>
@@ -174,15 +182,15 @@
         <div class="col-xs-4">
             <h3>Our Facilities</h3>
             <div class="row">
-                <div class="col-xs-6">
-                    <p><i class="fa fa-wheelchair padleft" aria-hidden="true"> Accessibility Access</i></p>
+                <div class="col-xs-6 padtop50">
+                    <p><i class="fa fa-wheelchair padleft" aria-hidden="true"></i> Accessibility Access</i></p>
                     <p><i class="fa fa-male padleft" aria-hidden="true"></i> <i class="fa fa-female" aria-hidden="true"></i>
                         Toilets</p>
                     <p><i class="fa fa-glass padleft" aria-hidden="true"></i> Cocktail Bar</p>
                     <p><i class="fa fa-cutlery padleft" aria-hidden="true"></i> Food</p>
                 </div>
 
-                <div class="col-xs-6">
+                <div class="col-xs-6 padtop50">
                     <p><i class="fa fa-coffee padleft" aria-hidden="true"></i> Cafe </p>
                     <p><i class="fa fa-money padleft" aria-hidden="true"></i> Cash Machine</p>
                     <p><i class="fa fa-wifi padleft" aria-hidden="true"></i> Free Wifi</p>
@@ -201,13 +209,21 @@
             <h2><span class="light">Find</span> Us</h2>
         </div>
     </div>
+
+    <!-- show/hide car/taxi/bus -->
+    <div class="row padtop50">
+
+    </div>
+
+    <!-- iframe of Google maps -->
     <div class="row iframe">
-        <div class="col-xs-6">
+        <div class="col-xs-6 padright50">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.6677270981413!2d-2.288242684005388!3d53.474398172812755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDI4JzI3LjgiTiAywrAxNycwOS44Ilc!5e0!3m2!1sen!2suk!4v1488207449795"
-                    width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    width="400" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-5">
             <br/>
             <br/>
             <p>
@@ -240,7 +256,7 @@
         <div class="col-xs-2"></div>
         <div class="col-xs-2 footercol">
             <h2><span class="light">Get</span> In Touch</h2>
-            <p style="padding-top: 10px;">
+            <p>
                 <a href="" data-toggle="modal" data-target="#myModal"> <i class="fa fa-comment"
                                                                           aria-hidden="true"></i> Contact Us</a>
                 <a href="#"> <i class="fa fa-question-circle" aria-hidden="true"></i> FAQs</a>
@@ -250,9 +266,9 @@
         </div>
         <div class="col-xs-2 footercol">
             <h2><span class="light">Site</span> Links</h2>
-            <p style="padding-top: 10px;">
+            <p>
                 <a href="#whatson"><i class="fa fa-ticket" aria-hidden="true"></i> What's On</a>
-                <a href="#comingsoon"><i class="fa fa-film" aria-hidden="true"></i> Coming Soon</a>
+                <a href="#whatson"><i class="fa fa-film" aria-hidden="true"></i> Coming Soon</a>
                 <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Offers</a>
                 <a href="#"><i class="fa fa-glass" aria-hidden="true"></i> Cocktail Bar</a>
             </p>
@@ -267,14 +283,10 @@
         <div class="col-xs-2 footercol-right">
             <h2><span class="light">QA</span> Social</h2>
             <p>
-                <a href="#"><i class="fa fa-twitter-square fa-1x" aria-hidden="true"
-                               style="padding-right: 3px;"></i> Twitter </a>
-                <a href="#"><i class="fa fa-facebook-square fa-1x" aria-hidden="true"
-                               style="padding-right: 3px;"></i> Facebook </a>
-                <a href="#"><i class="fa fa-snapchat-square" aria-hidden="true" style="padding-right: 3px;"></i>
-                    Snapchat </a>
-                <a href="#"><i class="fa fa-youtube-square" aria-hidden="true" style="padding-right: 3px;"></i>
-                    YouTube </a>
+                <a href="#"><i class="fa fa-twitter-square fa-1x padright3" aria-hidden="true"></i> Twitter </a>
+                <a href="#"><i class="fa fa-facebook-square fa-1x padright3" aria-hidden="true"></i> Facebook </a>
+                <a href="#"><i class="fa fa-snapchat-square padright3" aria-hidden="true"></i> Snapchat </a>
+                <a href="#"><i class="fa fa-youtube-square padright3" aria-hidden="true"></i> YouTube </a>
             </p>
         </div>
         <div class="col-xs-2"></div>
@@ -289,20 +301,17 @@
         <div class="col-xs-2"></div>
     </div>
 </div>
-</div>
-</div>
 
 <!-- Modal -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
-                WHY DOESN'T THIS WORK?!
+                Make this font darker
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
