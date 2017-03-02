@@ -137,7 +137,7 @@ a:focus {
 .navbar-custom .navbar-brand .navbar-toggle {
     padding: 4px 6px;
     font-size: 16px;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 .navbar-custom .navbar-brand .navbar-toggle:focus,
@@ -157,8 +157,7 @@ a:focus {
 
 .navbar-custom .nav li a:hover {
     outline: 0;
-    color: rgba(255,255,255,.8);
-    background-color: transparent;
+    /*color: rgba(255,255,255,.8);*/
 }
 
 .navbar-custom .nav li a:focus,
@@ -172,7 +171,7 @@ a:focus {
 }
 
 .navbar-custom .nav li.active a {
-    background-color: rgba(255,255,255,.3);
+    /*background-color: rgba(255,255,255,.3);*/
 }
 
 .navbar-custom .nav li.active a:hover {
@@ -435,6 +434,10 @@ body {
 
 
 
+
+
+
+
 /*MARKS STUFF*/
 
 .darken{
@@ -470,7 +473,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    color : black;
+    color : white;
 }
 
 
@@ -498,8 +501,8 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;
-color : black;
+.dropdown-content a:hover {background-color: black
+
 }
 
 .show {display:block;}
