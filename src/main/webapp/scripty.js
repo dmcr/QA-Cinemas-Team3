@@ -62,7 +62,6 @@
 
 
 function expand1(){
-    alert("HIIIIIIIII")
     DarkenComingSoon();
 }
 
