@@ -2,6 +2,7 @@ package com.qa.cinema.persistence;
 
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.*;
 
@@ -22,68 +23,44 @@ public class SeatType implements Serializable {
 	private Long typeId;
 
 	@Column(name="type_name")
-	private String name;
+	@Enumerated(EnumType.STRING)
+	private SeatTypeName name;
 
 	@Column(name="type_price")
-	private double price;
-
-	//bi-directional many-to-one association to Seat
-//	@OneToMany(mappedBy="seatType", cascade={CascadeType.ALL})
-//	private List<Seat> seats;
+	private BigDecimal price;
 
 	public SeatType() {
 	}
-	
-	public SeatType(Long typeId, String name, double price) {
+
+	public SeatType(Long typeId, SeatTypeName name, BigDecimal price) {
+		super();
 		this.typeId = typeId;
 		this.name = name;
 		this.price = price;
 	}
 
 	public Long getTypeId() {
-		return this.typeId;
+		return typeId;
 	}
 
 	public void setTypeId(Long typeId) {
 		this.typeId = typeId;
 	}
 
-	public String getName() {
-		return this.name;
+	public SeatTypeName getName() {
+		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(SeatTypeName name) {
 		this.name = name;
 	}
 
-	public double getPrice() {
-		return this.price;
+	public BigDecimal getPrice() {
+		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-
-//	public List<Seat> getSeats() {
-//		return this.seats;
-//	}
-//
-//	public void setSeats(List<Seat> seats) {
-//		this.seats = seats;
-//	}
-
-//	public Seat addSeat(Seat seat) {
-//		getSeats().add(seat);
-//		seat.setSeatType(this);
-//
-//		return seat;
-//	}
-//
-//	public Seat removeSeat(Seat seat) {
-//		getSeats().remove(seat);
-//		seat.setSeatType(null);
-//
-//		return seat;
-//	}
-
+	
 }

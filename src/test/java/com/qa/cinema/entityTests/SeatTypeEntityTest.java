@@ -1,14 +1,12 @@
 package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
-
-
-
+import java.math.BigDecimal;
 import org.junit.Test;
-
 import com.qa.cinema.persistence.SeatType;
+import com.qa.cinema.persistence.SeatTypeName;
 
-public class SeatTypeJUnitEntity {
+public class SeatTypeEntityTest {
 
 	SeatType seatType = new SeatType();
 	
@@ -24,16 +22,18 @@ public class SeatTypeJUnitEntity {
 	}
 	
 	@Test
-	public void testSeatName() {
-		seatType.setName("Child");
-		assertEquals("Child", seatType.getName());
+	public void testSeatTypeName() {
+		SeatTypeName seatTypeName = SeatTypeName.STANDARD;
+		seatType.setName(seatTypeName);
+		assertEquals(seatTypeName, seatType.getName());
 	}
 
 	@Test
 	public void testSeatTypePrice() {
-		double dd = 100.00;
+		BigDecimal dd = new BigDecimal("10.00");
 		seatType.setPrice(dd);
 		boolean same = seatType.getPrice() == dd ? true : false;
 		assertTrue(same);
 	}
+
 }

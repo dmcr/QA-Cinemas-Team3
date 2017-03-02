@@ -30,7 +30,8 @@ public class Film implements Serializable {
 	private String cast;
 
 	@Column(name="film_certification")
-	private String certification;
+	@Enumerated(EnumType.STRING)
+	private CertificationRating certification;
 
 	@Column(name="film_director")
 	private String director;
@@ -51,18 +52,23 @@ public class Film implements Serializable {
 	@Column(name="film_title")
 	private String title;
 
-	//bi-directional many-to-one association to Showing
-	@OneToMany(mappedBy="film")
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name="showing_film_id")
 	private List<Showing> showings;
+	
+	@Column(name="film_IMDBID")
+	private String IMDBID;
 
 	public Film() {
+		
 	}
 	
-	public Film(Long filmId, boolean is3d, String cast, String certification,
-			String director, int duration, String genre, Date releaseDate,
-			String summary, String title, List<Showing> showings) {
+	public Film(Long filmId, boolean is3d, String cast, CertificationRating certification, String director,
+			int duration, String genre, Date releaseDate, String summary, String title, List<Showing> showings,
+			String iMDBID) {
+		super();
 		this.filmId = filmId;
-		this.is3D = is3d;
+		is3D = is3d;
 		this.cast = cast;
 		this.certification = certification;
 		this.director = director;
@@ -72,42 +78,43 @@ public class Film implements Serializable {
 		this.summary = summary;
 		this.title = title;
 		this.showings = showings;
+		IMDBID = iMDBID;
 	}
 
 	public Long getFilmId() {
-		return this.filmId;
+		return filmId;
 	}
 
 	public void setFilmId(Long filmId) {
 		this.filmId = filmId;
 	}
 
-	public boolean getIs3D() {
-		return this.is3D;
+	public boolean isIs3D() {
+		return is3D;
 	}
 
-	public void setIs3D(boolean is3D) {
-		this.is3D = is3D;
+	public void setIs3D(boolean is3d) {
+		is3D = is3d;
 	}
 
 	public String getCast() {
-		return this.cast;
+		return cast;
 	}
 
 	public void setCast(String cast) {
 		this.cast = cast;
 	}
 
-	public String getCertification() {
-		return this.certification;
+	public CertificationRating getCertification() {
+		return certification;
 	}
 
-	public void setCertification(String certification) {
+	public void setCertification(CertificationRating certification) {
 		this.certification = certification;
 	}
 
 	public String getDirector() {
-		return this.director;
+		return director;
 	}
 
 	public void setDirector(String director) {
@@ -115,7 +122,7 @@ public class Film implements Serializable {
 	}
 
 	public int getDuration() {
-		return this.duration;
+		return duration;
 	}
 
 	public void setDuration(int duration) {
@@ -123,7 +130,7 @@ public class Film implements Serializable {
 	}
 
 	public String getGenre() {
-		return this.genre;
+		return genre;
 	}
 
 	public void setGenre(String genre) {
@@ -131,7 +138,7 @@ public class Film implements Serializable {
 	}
 
 	public Date getReleaseDate() {
-		return this.releaseDate;
+		return releaseDate;
 	}
 
 	public void setReleaseDate(Date releaseDate) {
@@ -139,7 +146,7 @@ public class Film implements Serializable {
 	}
 
 	public String getSummary() {
-		return this.summary;
+		return summary;
 	}
 
 	public void setSummary(String summary) {
@@ -147,7 +154,7 @@ public class Film implements Serializable {
 	}
 
 	public String getTitle() {
-		return this.title;
+		return title;
 	}
 
 	public void setTitle(String title) {
@@ -155,25 +162,19 @@ public class Film implements Serializable {
 	}
 
 	public List<Showing> getShowings() {
-		return this.showings;
+		return showings;
 	}
 
 	public void setShowings(List<Showing> showings) {
 		this.showings = showings;
 	}
 
-	public Showing addShowing(Showing showing) {
-		getShowings().add(showing);
-		showing.setFilm(this);
-
-		return showing;
+	public String getIMDBID() {
+		return IMDBID;
 	}
 
-	public Showing removeShowing(Showing showing) {
-		getShowings().remove(showing);
-		showing.setFilm(null);
-
-		return showing;
+	public void setIMDBID(String iMDBID) {
+		IMDBID = iMDBID;
 	}
 
 }

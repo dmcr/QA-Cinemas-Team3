@@ -1,13 +1,11 @@
 package com.qa.cinema.entityTests;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-import com.qa.cinema.persistence.Booking;
 import com.qa.cinema.persistence.Seat;
 import com.qa.cinema.persistence.Showing;
 import com.qa.cinema.persistence.Ticket;
+import com.qa.cinema.persistence.TicketType;
 
 public class TicketEntityTest {
 
@@ -16,7 +14,7 @@ public class TicketEntityTest {
 	@Test
 	public void testTicket() {
 		assertNotNull(new Ticket());
-		assertNotNull(new Ticket(0L, new Booking(), new Showing(), new Seat()));
+		assertNotNull(new Ticket(1L, 1L, new Showing(), new Seat(), TicketType.CHILD));
 	}
 	
 	@Test
@@ -27,9 +25,8 @@ public class TicketEntityTest {
 	
 	@Test
 	public void testGetBooking() {
-		Booking booking = new Booking();
-		ticket.setBooking(booking);
-		assertEquals(booking, ticket.getBooking());
+		ticket.setBookingId(1L);
+		assertSame(1L, ticket.getBookingId());
 	}
 
 	@Test
@@ -40,9 +37,16 @@ public class TicketEntityTest {
 	}
 	
 	@Test
-	public void ticketGetSeat() {
+	public void testGetTicketSeat() {
 		Seat seat = new Seat();
 		ticket.setSeat(seat);
 		assertEquals(seat, ticket.getSeat());
+	}
+	
+	@Test 
+	public void testGetTicketType() {
+		TicketType ticketType = TicketType.ADULT;
+		ticket.setTicketType(ticketType);
+		assertEquals(ticketType, ticket.getTicketType());
 	}
 }

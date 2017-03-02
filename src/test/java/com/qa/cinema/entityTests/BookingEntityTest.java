@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.qa.cinema.persistence.Booking;
 import com.qa.cinema.persistence.Ticket;
 
-public class BookingTest {
+public class BookingEntityTest {
 	
 	@Test
 	public void testBooking() {
@@ -30,7 +30,7 @@ public class BookingTest {
 	public void testGetBookingComplete()  {
 		Booking booking = new Booking();
 		booking.setComplete(true);
-		assertEquals(true, booking.getComplete());
+		assertEquals(true, booking.isComplete());
 	}
 	
 	@Test

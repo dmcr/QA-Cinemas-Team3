@@ -11,7 +11,7 @@ import com.qa.cinema.persistence.Screen;
 import com.qa.cinema.persistence.Seat;
 import com.qa.cinema.persistence.Showing;
 
-public class ScreenTest {
+public class ScreenEntityTest {
 	
 	Screen screen = new Screen();
 	
@@ -24,12 +24,6 @@ public class ScreenTest {
 	public void getScreenIDTest() {
 		screen.setScreenId(12L);
 		assertSame(12L, screen.getScreenId());
-	}
-	
-	@Test
-	public void getScreenTypeIDTest() {
-		screen.setScreenTypeId(34L);
-		assertSame(34L,screen.getScreenTypeId());
 	}
 	
 	@Test

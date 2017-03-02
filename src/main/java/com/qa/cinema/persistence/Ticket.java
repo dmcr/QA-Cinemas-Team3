@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="cin_ticket")
@@ -26,30 +27,32 @@ public class Ticket implements Serializable {
 	@Column(name="ticket_id")
 	private Long ticketId;
 	
-	@NotNull
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ticket_booking_id", referencedColumnName = "booking_id")
-	private Booking booking;
+	@Column(name="ticket_booking_id")
+	private Long bookingId;
 
-	@NotNull
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ticket_showing_id", referencedColumnName = "showing_id")
+	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name="ticket_showing_id")
 	private Showing showing;
 	
-	@NotNull
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name = "ticket_seat_id", referencedColumnName = "seat_id")
+	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinColumn(name="ticket_seat_id")
 	private Seat seat;
+	
+	@Column(name="ticket_type")
+	@Enumerated(EnumType.STRING)
+	private TicketType ticketType;
 
 	public Ticket() {
 		
 	}
 	
-	public Ticket(Long ticketId, Booking booking, Showing showing, Seat seat) {
+	public Ticket(Long ticketId, Long bookingId, Showing showing, Seat seat, TicketType ticketType) {
+		super();
 		this.ticketId = ticketId;
-		this.booking = booking;
+		this.bookingId = bookingId;
 		this.showing = showing;
 		this.seat = seat;
+		this.ticketType = ticketType;
 	}
 
 	public Long getTicketId() {
@@ -60,12 +63,12 @@ public class Ticket implements Serializable {
 		this.ticketId = ticketId;
 	}
 
-	public Booking getBooking() {
-		return booking;
+	public Long getBookingId() {
+		return bookingId;
 	}
 
-	public void setBooking(Booking booking) {
-		this.booking = booking;
+	public void setBookingId(Long bookingId) {
+		this.bookingId = bookingId;
 	}
 
 	public Showing getShowing() {
@@ -82,6 +85,14 @@ public class Ticket implements Serializable {
 
 	public void setSeat(Seat seat) {
 		this.seat = seat;
+	}
+
+	public TicketType getTicketType() {
+		return ticketType;
+	}
+
+	public void setTicketType(TicketType ticketType) {
+		this.ticketType = ticketType;
 	}
 	
 }

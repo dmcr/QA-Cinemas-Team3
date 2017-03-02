@@ -1,13 +1,20 @@
 package com.qa.cinema.util;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class JSONUtil {
 
+	private GsonBuilder b;
+
+	
 	private Gson gson;
 
 	public JSONUtil() {
-		this.gson = new Gson();
+		//this.gson = new Gson();
+		this.b = new GsonBuilder();
+		b.registerTypeAdapterFactory(HibernateProxyTypeAdapter.FACTORY);
+		this.gson = b.create();
 	}
 
 	public String getJSONForObject(Object obj) {
