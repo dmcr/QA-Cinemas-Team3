@@ -6,7 +6,7 @@
     function FilmsDal(dal) {
 
         this.getFilms = function () {
-            return dal.http.GET("rest/films/json");
+            return dal.http.GET("rest/film/json");
         };
 
     }
