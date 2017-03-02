@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|ABeeZee|Muli:300,400');
-@import url('https://fonts.googleapis.com/css?family=Kanit:400,700');
 
 html {
     width: 100%;
@@ -13,15 +12,10 @@ body {
     /*change this if you change footer height! */
     margin-bottom: 100px;
     overflow-x: hidden;
-    color: #eee;
-}
-
-.container {
-    width: 100%;
 }
 
 .footer {
-    border-top: 80px solid #fff;
+    border-top: 50px solid #fff;
     background-color: #333;
     font-family: 'Lato', sans-serif;
     font-size: 8px;
@@ -30,44 +24,13 @@ body {
     margin-top: 40px;
 }
 
-.footer h1 {
-    margin-top: 25px;
-    margin-bottom: 5px;
-    font-size: 36px;
-}
-
-.footer h2{
-    text-align: center;
-}
-
-.footer a {
-    font-family: 'Kanit', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: #2e6da4;
-    display:block;
-}
-
-.footer p {
-    font-size: 14px;
-}
-
 .footercol {
-    padding-left: 35px;
-    padding-right: 35px;
-    border-right: 1px dashed #286090;
-    height: 250px;
-    padding-bottom: 20px;
-
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.footercol-right {
-    padding-left: 35px;
-    border: 0;
-}
-
-.footercol-right a {
-    padding-top: 10px;
+.footercol p {
+    font-size: 14px;
 }
 
 h1,
@@ -120,12 +83,9 @@ a:focus {
 .light {
     font-weight: 400;
     color: rgb(12, 165, 255);
+    transition: 3s;
 }
 
-
-.right {
-    margin-right:0;
-}
 
 .carousel, .item, .active {
     height: 100%;
@@ -158,6 +118,7 @@ a:focus {
 }
 
 .navbar-custom {
+    position: fixed;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
@@ -357,8 +318,15 @@ a:focus {
     }
 }
 
+.content-section {
+    padding-top: 100px;
+}
 
 @media(min-width:767px) {
+    .content-section {
+        padding-top: 250px;
+    }
+
     .download-section {
         padding: 100px 0;
     }
@@ -428,6 +396,11 @@ ul.banner-social-buttons {
     background: rgba(255,255,255,.2);
 }
 
+.row img
+{
+    transition: 2s;
+}
+
 img::selection {
     background: 0 0;
 }
@@ -448,55 +421,93 @@ body {
     color: #fff;
 }
 
+.white{
+    color: white;
+    transition: 3s;
+}
 
-.carousel-controls{
-    position:relative;
-    width:250px;
-    margin:0 auto;
+
+
+
+
+
+
+
+
+
+/*MARKS STUFF*/
+
+.darken{
+    color: #2d2d30;
+}
+
+
+div.panel {
+    padding: 0 18px;
+    background-color: black;
+    display: none;
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
     text-align: center;
-    margin-top: -25px;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-.carousel-indicators{
-    top:0;
-    left:105px;
+li a:hover, .dropdown:hover .dropbtn {
+    color : black;
 }
 
-.carousel-indications > left {
-    margin-right: -20px;
+
+
+
+
+li.dropdown {
+    display: inline-block;
 }
 
-.whatson-section {
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
-    height: 100%;
-    padding-top: 150px;
-    background-color: #222;
-    color: #ddd;
-}
-
-.about-section {
-    display: block;
-    height: 100%;
-    padding-top: 150px;
-    background-color: #fff;
-    color: #333;
-}
-
-.findus-section {
-    display: block;
-    height: 70%;
-    padding-top: 150px;
-    background-color: #222;
-    color: #ddd;
-}
-
-.findus-section p {
     text-align: left;
-    margin-left: 20px;
 }
 
-.findus-section iframe {
-    position: relative;
-    float:right;
-    margin-right: 40px;
+.dropdown-content a:hover {background-color: #f1f1f1;
+color : black;
 }
+
+.show {display:block;}
+
+
+
+
+
+
+
+

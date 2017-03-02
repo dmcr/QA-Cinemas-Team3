@@ -12,8 +12,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/jquery.easing.min.js"></script>
-    <script src="scripts/navbar-collapse.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/grayscale.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
     <!-- Bootstrap Core CSS -->
@@ -21,13 +21,13 @@
     <link rel="stylesheet" href="app/css/bootstrap-responsive.css">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Stylesheets for the pages -->
+     <!-- Stylesheets for the pages -->
+
     <link rel="stylesheet" href="app/css/form-style.css">
     <link rel="stylesheet" href="app/css/animate.css">
-
-
+    <link rel="stylesheet" href="app/css/main-style.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,15 +35,33 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
 
-    <link rel="stylesheet" href="app/css/main-style.css">
 </head>
+
+
 
 <body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Navigation -->
-<nav class="navbar navbar-fixed-top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-custom navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -55,20 +73,40 @@
             </a>
         </div>
 
+
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
-                <li class="hidden">
-                    <a href="#topPage"></a>
+
+
+
+
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden"><a href="#topPage"></a></li>
+                <li class = "dropdown">
+                    <a class="dropbtn" href="javascript:void(0)" onclick="myFunction()">Films</a>
+                     <div class="dropdown-content" id="myDropdown">
+
+                            <a href="#Films" onclick="DarkenComingSoon" >What's On</a>
+                            <a class = "page-scroll" href="#Films" onclick="DarkenWhatsOn" >Coming Soon</a>
+
+                      </div>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#whatson">What's On</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#whatson">Coming Soon</a>
-                </li>
+
+
+
+
+
+
+
+
                 <li>
                     <a class="page-scroll" href="#about">About Us</a>
                 </li>
+
                 <li>
                     <a class="page-scroll" href="#findus">Find Us</a>
                 </li>
@@ -78,8 +116,34 @@
 </nav>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Intro Header -->
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="4000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -98,219 +162,145 @@
             </div>
         </div>
     </div>
-
-    <!-- Indicators -->
-    <div class="carousel-controls">
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" >
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- What's on Section -->
-<div id="whatson" class="container whatson-section text-center">
+<div id="Films" class="container content-section text-center">
     <div class="row">
-        <div class="col-xs-6">
-            <h2 id="whatson1"><span class="light">What's</span> On</h2>
-        </div>
-        <div class="col-xs-6">
-            <h2><span class="dark">Coming Soon</span></h2>
-        </div>
-    </div>
+        <div class="col-md-4">
+            <h2 onclick = DarkenComingSoon()><span class="light" id="whats-on1"  >What's</span> <span class="white" id="whats-on2" >On</span></h2>
 
-    <div class="row">
-
-    </div>
-</div>
-
-
-<!-- Contact Section -->
-<div id="about" class="container about-section text-center">
-    <div class="row">
-        <div class="col-xs-12">
-            <h2><span class="light bold">About</span> Us</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-5">
-            <h3>Our cinema</h3>
-
-            <p>
-                Considered the premier provider of cinema services in the UK,
-                QA Cinemas is committed to quality, experience and world class customer service.
-            </p>
-
-            <br/>
-
-            <p>
-                Our site also includes “Ivre Comme Un Putois”, our very own cocktail
-                lounge where the setting is quirky but classy. Most of our creative cocktails
-                are sought after. With a total of 1500 seats, which at
-                the very least are “living room” comfort, QA Cinemas innovative cinema has
-                certainly stamped its footprint on the scene in the UK.
-            </p>
-
-            <br/>
-
-            <p>
-                QA Cinema is a new development, hoping to be more than just the 'new kid on the block' -
-                with an all new outlook on the blockbuster experience.
-            </p>
-        </div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-4">
-            <h3>Our Facilities</h3>
             <div class="row">
-                <div class="col-xs-6">
-                    <p><i class="fa fa-wheelchair padleft" aria-hidden="true"> Accessibility Access</i></p>
-                    <p><i class="fa fa-male padleft" aria-hidden="true"></i> <i class="fa fa-female" aria-hidden="true"></i>
-                        Toilets</p>
-                    <p><i class="fa fa-glass padleft" aria-hidden="true"></i> Cocktail Bar</p>
-                    <p><i class="fa fa-cutlery padleft" aria-hidden="true"></i> Food</p>
-                </div>
 
-                <div class="col-xs-6">
-                    <p><i class="fa fa-coffee padleft" aria-hidden="true"></i> Cafe </p>
-                    <p><i class="fa fa-money padleft" aria-hidden="true"></i> Cash Machine</p>
-                    <p><i class="fa fa-wifi padleft" aria-hidden="true"></i> Free Wifi</p>
-                    <p><i class="fa fa-assistive-listening-systems padleft" aria-hidden="true"></i> Assistive Listening Systems
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-1"></div>
+                <!--  <div class = "accordion">-->
+                      <img id = "image1" onclick = expand1() src="app/image/RougeOne.jpg"/>  </img>
+                 <!-- </div> -->
+
+
+
+                  <img id = "image2" onclick = expand2() src="app/image/RougeOne.jpg"/>  </img>
+                  <img id = "image3" onclick = expand3() src="app/image/RougeOne.jpg"/>  </img>
+                  <img id = "image4" onclick = expand4() src="app/image/RougeOne.jpg"/>  </img>
+              </div>
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+              <h2 id="coming-soon" onclick = DarkenWhatsOn()><span class="light" id="coming-soon1">Coming</span> <span id="coming-soon2" class = "white">Soon</span></h2>
+              <div class="row">
+                  <img id = "image5" onclick = expand5() src="app/image/RougeOne.jpg"/>  </img>
+                  <img id = "image6" onclick = expand6() src="app/image/RougeOne.jpg"/>  </img>
+                  <img id = "image7" onclick = expand7() src="app/image/RougeOne.jpg"/>  </img>
+                  <img id = "image8" onclick = expand8() src="app/image/RougeOne.jpg"/>  </img>
+
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Contact Section -->
+<div id="about" class="container content-section text-center">
+    <div class="row">
+        <h2><span class="light">About</span> <span class = "white">Us</span></h2>
     </div>
 </div>
 
-<div id="findus" class="container findus-section text-center">
+
+
+
+<!-- Find Us -->
+<div id="findus" class="container content-section text-center">
     <div class="row">
-        <div class="col-xs-12">
-            <h2><span class="light">Find</span> Us</h2>
-        </div>
+        <h2><span class="light">Find</span> <span class="white">Us</span></h2>
     </div>
     <div class="row iframe">
-        <div class="col-xs-6">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-4">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.6677270981413!2d-2.288242684005388!3d53.474398172812755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDI4JzI3LjgiTiAywrAxNycwOS44Ilc!5e0!3m2!1sen!2suk!4v1488207449795"
                     width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-4">
             <br/>
             <br/>
-            <p>
-                <i class="fa fa-map-pin" aria-hidden="true"></i> <span
-                    style="padding-left:5px;">Anchorage Quay</span><br/>
-                <span style="padding-left: 22px;">Salford</span><br/>
-                <span style="padding-left: 22px;">M50 3XL</span><br/>
-                <br/>
-                <i class="fa fa-envelope" aria-hidden="true"></i> <span
-                    style="padding-left:5px;">info@QACinemas.co.uk</span><br/>
-                <br/>
-                <i class="fa fa-phone" aria-hidden="true"></i> <span
-                    style="padding-left:5px;">0161 396 254</span>
-            </p>
+            <p style ="color: white">Anchorage Quay,<br/>
+                Salford,<br/>
+                M50 3XL<br/>
+                info@QACinemas.co.uk<br/>
+                0161 396 254</p>
+            <br/>
+            <i class="fa fa-twitter-square fa-5x" aria-hidden="true" style="color: lightskyblue"></i>
+            <i class="fa fa-facebook-square fa-5x" aria-hidden="true" style="color: lightskyblue"></i>
         </div>
+        <div class="col-xs-4"></div>
     </div>
 </div>
 
 <!-- call in JS footer -->
-<div id="footer" class="container footer">
-    <div class="row" style="margin-top: -80px; margin-bottom: 50px;">
-        <div class="col-xs-12 text-center">
-            <a class="page-scroll" href="#whatson"><i class="fa fa-chevron-circle-up fa-2x"></i><br/>
-                Back to Top</a>
-        </div>
-    </div>
+<div id="footer" class="footer">
 
-
-    <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-2 footercol">
-            <h2><span class="light">Get</span> In Touch</h2>
-            <p style="padding-top: 10px;">
-                <a href="" data-toggle="modal" data-target="#myModal"> <i class="fa fa-comment"
-                                                                          aria-hidden="true"></i> Contact Us</a>
-                <a href="#"> <i class="fa fa-question-circle" aria-hidden="true"></i> FAQs</a>
-
-            </p>
-
-        </div>
-        <div class="col-xs-2 footercol">
-            <h2><span class="light">Site</span> Links</h2>
-            <p style="padding-top: 10px;">
-                <a href="#whatson"><i class="fa fa-ticket" aria-hidden="true"></i> What's On</a>
-                <a href="#comingsoon"><i class="fa fa-film" aria-hidden="true"></i> Coming Soon</a>
-                <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Offers</a>
-                <a href="#"><i class="fa fa-glass" aria-hidden="true"></i> Cocktail Bar</a>
-            </p>
-        </div>
-        <div class="col-xs-2 footercol">
-            <h2><span class="light">QA</span> Legal</h2>
-            <p>
-                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Terms of Use</a>
-                <a href="#"><i class="fa fa-file" aria-hidden="true"></i> Privacy Policy</a>
-            </p>
-        </div>
-        <div class="col-xs-2 footercol-right">
-            <h2><span class="light">QA</span> Social</h2>
-            <p>
-                <a href="#"><i class="fa fa-twitter-square fa-1x" aria-hidden="true"
-                               style="padding-right: 3px;"></i> Twitter </a>
-                <a href="#"><i class="fa fa-facebook-square fa-1x" aria-hidden="true"
-                               style="padding-right: 3px;"></i> Facebook </a>
-                <a href="#"><i class="fa fa-snapchat-square" aria-hidden="true" style="padding-right: 3px;"></i>
-                    Snapchat </a>
-                <a href="#"><i class="fa fa-youtube-square" aria-hidden="true" style="padding-right: 3px;"></i>
-                    YouTube </a>
-            </p>
-        </div>
-        <div class="col-xs-2"></div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-8">
-            <h1 class="text-center"><i class="fa fa-play-circle"></i> <span class="light">QA</span> Cinemas</h1>
-        </div>
-        <div class="col-xs-2"></div>
-    </div>
-</div>
-</div>
 </div>
 
-<!-- Modal -->
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                WHY DOESN'T THIS WORK?!
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="scripty.js"></script>
 </body>
 </html>
