@@ -37,9 +37,8 @@ public class Booking implements Serializable{
 	public Booking() {
 	}
 
-	public Booking(Long bookingId, boolean complete, String paypal, List<Ticket> tickets) {
+	public Booking(boolean complete, String paypal, List<Ticket> tickets) {
 		super();
-		this.bookingId = bookingId;
 		this.complete = complete;
 		this.paypal = paypal;
 		this.tickets = tickets;
