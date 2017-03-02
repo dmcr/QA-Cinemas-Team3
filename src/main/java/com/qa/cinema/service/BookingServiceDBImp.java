@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import com.qa.cinema.util.JSONUtil;
 import com.qa.cinema.persistence.*;
 
@@ -21,6 +22,7 @@ public class BookingServiceDBImp implements BookingService {
 	@Inject
 	private JSONUtil util;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllBookings() {
 		Query query = em.createQuery("SELECT b FROM Booking b");

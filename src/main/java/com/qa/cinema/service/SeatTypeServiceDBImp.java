@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import com.qa.cinema.persistence.SeatType;
 import com.qa.cinema.util.JSONUtil;
 
@@ -21,6 +22,7 @@ public class SeatTypeServiceDBImp implements SeatTypeService{
 	@Inject
 	private JSONUtil util;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public String getSeatTypes() {
 		Query query = em.createQuery("SELECT m FROM SeatType m");

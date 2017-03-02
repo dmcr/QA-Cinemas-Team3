@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import com.qa.cinema.persistence.CertificationRating;
 import com.qa.cinema.persistence.Film;
-import com.qa.cinema.persistence.SeatTypeName;
 import com.qa.cinema.persistence.Showing;
 
 public class FilmEntityTest {

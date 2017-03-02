@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import com.qa.cinema.persistence.Ticket;
 import com.qa.cinema.util.JSONUtil;
 
@@ -21,6 +22,7 @@ public class TicketServiceDBImp implements TicketService {
 	@Inject
 	private JSONUtil util;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllTickets() {
 		Query query = em.createQuery("SELECT t FROM Ticket t");
