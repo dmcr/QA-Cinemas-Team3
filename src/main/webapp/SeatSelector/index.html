@@ -26,7 +26,7 @@
         <p>Tickets: <span id="counter">0</span></p>
         <p>Total: <b>&pound;<span id="total">0</span></b></p>
 
-        <button class="checkout-button" id="buyButton">BUY</button>
+        <button class="checkout-button" onclick="buySeats()">BUY</button>
 
         <div id="legend" class="seatCharts-legend">
 
@@ -154,15 +154,12 @@
             //let's pretend some seats have already been booked
             sc.get(['A_1','A_6']).status('unavailable');
 
-            document.getElementById("buyButton").onclick=function buyNow(sc){
-                sc.find('selected').each(function () {
-                    this.data().status('unavailable');
-                });
-            }
-
-
-
         });
+
+
+        function buySeats(sc){
+            sc.find('selected').status('unavailable');
+        }
 
         function recalculateTotal(sc) {
             var total = 0;
