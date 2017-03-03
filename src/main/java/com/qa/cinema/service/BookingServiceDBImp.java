@@ -37,5 +37,9 @@ public class BookingServiceDBImp implements BookingService {
 		return util.getJSONForObject(booking);
 	}
 	
+	@Override
+	public String createNewBooking() {
+		return "";
+	}
 
 }
