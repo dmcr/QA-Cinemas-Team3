@@ -14,20 +14,20 @@ import com.qa.cinema.service.ShowingService;
 	public class ShowingEndPoint {
 
 		@Inject
-		private ShowingService ShowingService;
+		private ShowingService showingService;
 
 		@GET
 		@Path("/json")
 		@Produces({ "application/json" })
 		public String getShowingsAsJson() {
-			return ShowingService.getShowings();
+			return showingService.getShowings();
 		}
 		
 		@GET
 		@Path("/json/{id}")
 		@Produces({ "application/json" })
 			public String getShowingBasedOnIDAsJson(@PathParam("id") Long id) {
-				return ShowingService.getShowingById(id);
+				return showingService.getShowingById(id);
 			}
 
 
