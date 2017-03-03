@@ -130,7 +130,7 @@ function DarkenComingSoon(){
     document.getElementById('image15').style.cssText = 'opacity:0;';
     document.getElementById('image16').style.cssText = 'opacity:0;';
 
-
+    document.getElementById("WhatsOnRow").setAttribute("style" , "width:100%");
 
 
 
@@ -157,6 +157,7 @@ function DarkenWhatsOn(){
     document.getElementById('image6').style.cssText = 'opacity:0;';
     document.getElementById('image7').style.cssText = 'opacity:0;';
     document.getElementById('image8').style.cssText = 'opacity:0;';
+
     document.getElementById('image9').style.cssText = 'opacity:1;';
     document.getElementById('image10').style.cssText = 'opacity:1;';
     document.getElementById('image11').style.cssText = 'opacity:1;';
@@ -165,6 +166,9 @@ function DarkenWhatsOn(){
     document.getElementById('image14').style.cssText = 'opacity:1;';
     document.getElementById('image15').style.cssText = 'opacity:1;';
     document.getElementById('image16').style.cssText = 'opacity:1;';
+
+    document.getElementById("ComingSoonRow").setAttribute("style" , "width:100%");
+
 }
 
 function test(){
