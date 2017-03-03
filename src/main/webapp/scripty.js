@@ -9,6 +9,7 @@
 
 
 
+
 /* When the user clicks on the button,
  toggle between hiding and showing the dropdown content */
     function myFunction() {
@@ -98,7 +99,28 @@ function expand8(){
 }
 
 
+
+
+
+var WOfirstclick = 0;
+
+
 function DarkenComingSoon(){
+
+    if(WOfirstclick == 0){
+        alert("I WORK WO")
+        $('ComingSoonRow').removeClass('row3');
+        $('ComingSoonRow').addClass('row4');
+
+        WOfirstclick++;
+    }
+    else if(WOfirstclick == 1){
+        alert("I WORK 2 WO")
+        $('ComingSoonRow').removeClass('row4');
+        $('ComingSoonRow').addClass('row3');
+        WOfirstclick++;
+    }
+
 
     document.getElementById('coming-soon1').style.cssText = 'opacity:0.5;';
     document.getElementById('coming-soon2').style.cssText = 'opacity:0.5;';
@@ -137,16 +159,33 @@ function DarkenComingSoon(){
 }
 
 
-
+var CSfirstclick = 0;
 
 function DarkenWhatsOn(){
+
+    if(CSfirstclick == 0){
+        alert("I WORK CS")
+        $('WhatsOnRow').removeClass("row3");
+        $('WhatsOnRow').addClass("row4");
+
+        CSfirstclick++;
+    }
+    else if(CSfirstclick == 1){
+
+        alert("I WORK CS2")
+        $('WhatsOnRow').removeClass("row4");
+        $('WhatsOnRow').addClass("row3");
+        CSfirstclick++;
+    }
+
+
     document.getElementById('whats-on1').style.cssText = 'opacity:0.5;';
     document.getElementById('whats-on2').style.cssText = 'opacity:0.5;';
     document.getElementById('coming-soon1').style.cssText = 'opacity:1;';
     document.getElementById('coming-soon2').style.cssText = 'opacity:1;';
 
-    document.getElementById('coming-soon1').style.cssText = 'text-decoration : underline; white-space: pre;';
-    document.getElementById('coming-soon2').style.cssText = 'text-decoration : underline; white-space: pre;';
+    document.getElementById('coming-soon1').style.cssText = 'text-decoration: underline;';
+    document.getElementById('coming-soon2').style.cssText = 'text-decoration: underline;';
 
 
     document.getElementById('image1').style.cssText = 'opacity:0;';
@@ -157,6 +196,8 @@ function DarkenWhatsOn(){
     document.getElementById('image6').style.cssText = 'opacity:0;';
     document.getElementById('image7').style.cssText = 'opacity:0;';
     document.getElementById('image8').style.cssText = 'opacity:0;';
+
+
 
     document.getElementById('image9').style.cssText = 'opacity:1;';
     document.getElementById('image10').style.cssText = 'opacity:1;';
