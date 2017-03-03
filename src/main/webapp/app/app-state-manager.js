@@ -12,6 +12,8 @@
         }).state("whatson-upcoming", {
             url: "/films",
             templateUrl: "app/feature/films/films.html"
-        })
+        }).state("screens", {
+            url: "/screens",
+            templateUrl: "app/feature/screen/screen.html" })
     });
 }());
