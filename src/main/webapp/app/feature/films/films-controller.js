@@ -4,7 +4,7 @@
 
         function init() {
             filmsDal.getFilms().then(function (results) {
-                vm.movies = results;
+                vm.films = results;
             }, function(error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -12,5 +12,5 @@
         }
         init();
     };
-    angular.module('cinemaApp').controller('getFilmsController', ['filmsDal', GetFilmsController]);
+    angular.module('cinemaApp').controller('getFilmsController', ['FilmsDal', GetFilmsController]);
 }());
