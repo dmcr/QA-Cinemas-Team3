@@ -122,6 +122,7 @@ a:focus {
 
 
 .navbar-custom {
+    position: fixed;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
@@ -174,8 +175,8 @@ a:focus {
     outline: 0;
 }
 
-.navbar-custom .nav li.active {
-    background-color: rgba(255,255,255,.3) !important;
+.navbar-custom .nav li.active a {
+    background-color: rgba(255,255,255,.3);
 }
 
 .navbar-custom .nav li.active a:hover {
@@ -200,10 +201,6 @@ a:focus {
     }
 }
 
-.right {
-    margin-right:0;
-}
-
 .carousel, .item, .active {
     height: 100%;
 }
@@ -211,6 +208,7 @@ a:focus {
 .carousel-inner {
     height: 100%;
 }
+
 
 .fill {
     width: 100%;
@@ -222,16 +220,27 @@ a:focus {
     -o-background-size: cover;
 }
 
-.carousel-caption.h3 {
+
+.carousel-caption h3 {
     font-family: 'Muli', sans-serif;
-    font-size: 10em;
+    font-size: 28px;
     color: #eee;
 }
 
 .carousel-caption > p {
     font-family: 'Muli', sans-serif;
-    font-size: 5.5em;
+    font-size: 20px;
     color: #ddd;
+}
+
+.carousel-control {
+    position: absolute;
+    z-index: 5;
+    display: inline-block;
+}
+
+.carousel-control.right {
+    margin-right: -230px;
 }
 
 .top {
@@ -299,6 +308,10 @@ ul.banner-social-buttons {
     background: rgba(255,255,255,.2);
 }
 
+.row img {
+    transition: 2s;
+}
+
 img::selection {
     background: 0 0;
 }
@@ -319,23 +332,6 @@ body {
     color: #fff;
 }
 
-
-.carousel-controls{
-    position:relative;
-    width:250px;
-    margin:0 auto;
-    text-align: center;
-    margin-top: -25px;
-}
-
-.carousel-indicators{
-    top:0;
-    left:105px;
-}
-
-.carousel-indications > left {
-    margin-right: -20px;
-}
 
 .whatson-section {
     display: block;
@@ -380,8 +376,17 @@ body {
     margin-right: 40px;
 }
 
+.modal-content {
+    background-color: #ddd;
+}
+
 .modal-backdrop {
     opacity: 0.7;
+}
+
+.modal h1{
+    color: #333;
+    text-align: center;
 }
 
 .bold {
@@ -404,6 +409,11 @@ body {
     padding-right: 3px;
 }
 
+.chevSpace {
+    margin-top: -85px;
+    margin-bottom: 50px;
+}
+
 /*
  * ********************************* *
  * For IE fixes, to make Internet    *
@@ -417,5 +427,47 @@ body {
 
     .about-section p, .findus-section p, .whatson-section p {
         font-size: 12pt;
+    }
+
+    .footer {
+        font-size: 8pt;
+        margin-top: 50px;
+    }
+
+    .footer h1 {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        font-size: 22pt;
+    }
+
+    .footer a {
+        font-family: 'Kanit', sans-serif;
+        font-size: 12pt;
+    }
+
+    .footer p {
+        font-size: 10pt;
+    }
+
+    .footercol {
+        padding-left: 30px;
+        padding-right: 30px;
+        border-right: 1px dashed #286090;
+        height: 250px;
+        padding-bottom: 20px;
+
+    }
+
+    .footercol-right {
+        padding-left: 30px;
+        border: 0;
+    }
+
+    .footer h2 {
+        font-size: 18pt;
+    }
+
+    .aboutPadding {
+        padding-bottom: 150px;
     }
 }

@@ -34,24 +34,27 @@ form input, form textarea, form select, form option {
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     resize: none;
+    color: #666;
 }
 
-form input:focus, form textarea:focus, form select:focus, form option:focus {
-    -moz-box-shadow: 0 0px 2px #e74c3c !important;
-    -webkit-box-shadow: 0 0px 2px #e74c3c !important;
-    box-shadow: 0 0px 2px #e74c3c !important;
+form input:focus, form textarea:focus, form select:focus, form option:focus{
+    -moz-box-shadow: 0 0px 2px #286090 !important;
+    -webkit-box-shadow: 0 0px 2px #286090 !important;
+    box-shadow: 0 0px 2px #286090 !important;
+    color: #222;
 }
 
-form #input-submit {
+form #input-submit, form #button-submit {
     color: white;
-    background: #e74c3c;
+    background: #286090;
     cursor: pointer;
 }
-form #input-submit:hover {
+form #input-submit:hover, form #button-submit:hover {
     -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
     -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
     box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 }
+
 form textarea {
     height: 126px;
 }
@@ -90,10 +93,10 @@ form textarea {
     clear: both;
 }
 
-.bookselect {
-
+.wide {
+    margin-top: 8px;
+    width: 100%;
+    border-radius: 8px !important;
 }
 
-.booklabel {
 
-}
