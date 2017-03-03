@@ -12,6 +12,9 @@
         }).state("whatson-upcoming", {
             url: "/films",
             templateUrl: "app/feature/films/films.html"
+        }).state("/films", {
+            url: "/films",
+            templateUrl: "app/feature/bookings/get-booking-partial.html"
         })
     });
 }());
