@@ -53,7 +53,16 @@
 
 
 
+function unhideDiv(){
+alert("second function");
+    document.getElementById("paragraph").style.cssText = "opacity:0;";
 
+}
+
+// function underline(){
+//     document.getElementById("whats-on1").style.cssText = "opacity:0;";
+//     document.getElementById("whats-on2").style.cssText = "opacity:0;";
+// }
 
 
 
@@ -91,36 +100,71 @@ function expand8(){
 
 function DarkenComingSoon(){
 
-    document.getElementById('coming-soon1').style.cssText = 'opacity:0.05;';
-    document.getElementById('coming-soon2').style.cssText = 'opacity:0.05;';
+    document.getElementById('coming-soon1').style.cssText = 'opacity:0.5;';
+    document.getElementById('coming-soon2').style.cssText = 'opacity:0.5;';
     document.getElementById('whats-on1').style.cssText = 'opacity:1;';
     document.getElementById('whats-on2').style.cssText = 'opacity:1;';
+
+
+
+    document.getElementById('whats-on1').style.cssText = 'text-decoration : underline;';
+    document.getElementById('whats-on2').style.cssText = 'text-decoration : underline;';
+
+
+
     document.getElementById('image1').style.cssText = 'opacity:1;';
     document.getElementById('image2').style.cssText = 'opacity:1;';
     document.getElementById('image3').style.cssText = 'opacity:1;';
     document.getElementById('image4').style.cssText = 'opacity:1;';
-    document.getElementById('image5').style.cssText = 'opacity:0.05;';
-    document.getElementById('image6').style.cssText = 'opacity:0.05;';
-    document.getElementById('image7').style.cssText = 'opacity:0.05;';
-    document.getElementById('image8').style.cssText = 'opacity:0.05;';
+    document.getElementById('image5').style.cssText = 'opacity:1;';
+    document.getElementById('image6').style.cssText = 'opacity:1;';
+    document.getElementById('image7').style.cssText = 'opacity:1;';
+    document.getElementById('image8').style.cssText = 'opacity:1;';
+
+    document.getElementById('image9').style.cssText = 'opacity:0;';
+    document.getElementById('image10').style.cssText = 'opacity:0;';
+    document.getElementById('image11').style.cssText = 'opacity:0;';
+    document.getElementById('image12').style.cssText = 'opacity:0;';
+    document.getElementById('image13').style.cssText = 'opacity:0;';
+    document.getElementById('image14').style.cssText = 'opacity:0;';
+    document.getElementById('image15').style.cssText = 'opacity:0;';
+    document.getElementById('image16').style.cssText = 'opacity:0;';
+
+
+
+
+
 }
 
 
 
 
 function DarkenWhatsOn(){
-    document.getElementById('whats-on1').style.cssText = 'opacity:0.05;';
-    document.getElementById('whats-on2').style.cssText = 'opacity:0.05;';
+    document.getElementById('whats-on1').style.cssText = 'opacity:0.5;';
+    document.getElementById('whats-on2').style.cssText = 'opacity:0.5;';
     document.getElementById('coming-soon1').style.cssText = 'opacity:1;';
     document.getElementById('coming-soon2').style.cssText = 'opacity:1;';
-    document.getElementById('image1').style.cssText = 'opacity:0.05;';
-    document.getElementById('image2').style.cssText = 'opacity:0.05;';
-    document.getElementById('image3').style.cssText = 'opacity:0.05;';
-    document.getElementById('image4').style.cssText = 'opacity:0.05;';
-    document.getElementById('image5').style.cssText = 'opacity:1;';
-    document.getElementById('image6').style.cssText = 'opacity:1;';
-    document.getElementById('image7').style.cssText = 'opacity:1;';
-    document.getElementById('image8').style.cssText = 'opacity:1;';
+
+    document.getElementById('coming-soon1').style.cssText = 'text-decoration : underline; white-space: pre;';
+    document.getElementById('coming-soon2').style.cssText = 'text-decoration : underline; white-space: pre;';
+
+
+    document.getElementById('image1').style.cssText = 'opacity:0;';
+    document.getElementById('image2').style.cssText = 'opacity:0;';
+    document.getElementById('image3').style.cssText = 'opacity:0;';
+    document.getElementById('image4').style.cssText = 'opacity:0;';
+    document.getElementById('image5').style.cssText = 'opacity:0;';
+    document.getElementById('image6').style.cssText = 'opacity:0;';
+    document.getElementById('image7').style.cssText = 'opacity:0;';
+    document.getElementById('image8').style.cssText = 'opacity:0;';
+    document.getElementById('image9').style.cssText = 'opacity:1;';
+    document.getElementById('image10').style.cssText = 'opacity:1;';
+    document.getElementById('image11').style.cssText = 'opacity:1;';
+    document.getElementById('image12').style.cssText = 'opacity:1;';
+    document.getElementById('image13').style.cssText = 'opacity:1;';
+    document.getElementById('image14').style.cssText = 'opacity:1;';
+    document.getElementById('image15').style.cssText = 'opacity:1;';
+    document.getElementById('image16').style.cssText = 'opacity:1;';
 }
 
 function test(){
