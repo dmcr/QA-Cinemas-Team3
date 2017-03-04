@@ -22,24 +22,50 @@ public class BookingServiceDBImp implements BookingService {
 	@Inject
 	private JSONUtil util;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllBookings() {
-		Query query = em.createQuery("SELECT b FROM Booking b");
-		Collection<Booking> bookings = (Collection<Booking> )query.getResultList();
+		Query query = em.createQuery("SELECT m FROM Booking m");
+		@SuppressWarnings("unchecked")
+		Collection<Booking> bookings = (Collection<Booking>) query.getResultList();
 		return util.getJSONForObject(bookings);
 	}
 
 	@Override
-	public String getBookingByID(Long bookingId) {
-		Query query = em.createQuery("SELECT b FROM Booking b WHERE bookingId ="+bookingId);
-		Booking booking = (Booking)query.getSingleResult();
+	public String getBookingById(Long bookingId) {
+		Query query = em.createQuery("SELECT f FROM Booking f WHERE bookingId =" + bookingId);
+		Booking booking = (Booking) query.getSingleResult();
 		return util.getJSONForObject(booking);
 	}
-	
+
 	@Override
-	public String createNewBooking() {
-		return "";
+	public String addNewBooking(String bookingJson) {
+		Booking newBooking = util.getObjectForJSON(bookingJson, Booking.class);
+		em.persist(newBooking);
+		return  "{\"message\": \"booking sucessfully added\"}" + bookingJson;
 	}
 
+	@Override
+	public String removeBooking(Long bookingId) {
+		Booking booking = findBooking(new Long(bookingId));
+		if (booking != null) {
+			em.remove(booking);
+		}
+		return "{\"message\": \"booking sucessfully removed\"}";
+
+	}
+
+	@Override
+	public String updateBooking(Long bookingId, String bookingUpdate) {
+		Booking updateBooking = util.getObjectForJSON(bookingUpdate, Booking.class);
+		Booking booking = findBooking(new Long(bookingId));
+		if (booking != null) {
+			booking = updateBooking;
+			em.merge(booking);
+		}
+		return "{\"message\": \"booking sucessfully updated\"}";
+	}
+	
+	private Booking findBooking(Long id) {
+		return em.find(Booking.class, id);
+	}
 }
