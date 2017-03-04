@@ -16,7 +16,7 @@ import com.qa.cinema.service.FilmService;
 public class FilmEndpointTest {
 
 	@InjectMocks
-	private FilmEndPoint subject;
+	private FilmEndPoint film;
 	
 	private static final String MOCKFILMALL = "[{\"filmId\": 1,\" is3D\": \"false\", \"cast\": \"Tom Hardy\", \"certification\":"
 			+ " \"PG\", \"director\": \"James Cameron\", \"duration\": \"120\", \"genre\": \"Horror\", \"releaseDate\": "
@@ -36,7 +36,7 @@ public class FilmEndpointTest {
 	@Test
 	public void testGetAllFilms() {
 		Mockito.when(filmServiceMock.getAllFilms()).thenReturn(MOCKFILMALL);
-		String filmString = subject.getFilmsAsJson();
+		String filmString = film.getAllFilms();
 		Mockito.verify(filmServiceMock).getAllFilms();
 		assertEquals(MOCKFILMALL, filmString);
 	}
@@ -44,7 +44,7 @@ public class FilmEndpointTest {
 	@Test
 	public void testGetFilmById() {
 		Mockito.when(filmServiceMock.getFilmById(1l)).thenReturn(MOCKFILM);
-		String filmString = subject.getFilmAsJsonBasedOnId(1l);
+		String filmString = film.getFilmById(1l);
 		Mockito.verify(filmServiceMock).getFilmById(1l);
 		assertEquals(MOCKFILM, filmString);
 	}
@@ -52,7 +52,7 @@ public class FilmEndpointTest {
 	@Test
 	public void testAddNewFilm() {
 		Mockito.when(filmServiceMock.addNewFilm(MOCKFILM)).thenReturn(MOCKFILM);
-		String filmString = subject.addNewFilm(MOCKFILM);
+		String filmString = film.addNewFilm(MOCKFILM);
 		Mockito.verify(filmServiceMock).addNewFilm(MOCKFILM);
 		assertEquals(MOCKFILM, filmString);
 	}
@@ -61,7 +61,7 @@ public class FilmEndpointTest {
 	@Test
 	public void testRemoveFilm() {
 		Mockito.when(filmServiceMock.removeFilm(Mockito.anyLong())).thenReturn("Film removed successfully");
-		String deleteMessage = subject.deleteFilmFromCinema(1l);
+		String deleteMessage = film.removeFilm(1l);
 		Mockito.verify(filmServiceMock).removeFilm(1l);
 		assertEquals("Film removed successfully", deleteMessage);
 	}
@@ -70,7 +70,7 @@ public class FilmEndpointTest {
 	@Test
 	public void testUpdateFilm() {
 		Mockito.when(filmServiceMock.updateFilm(2l, MOCKFILM)).thenReturn(MOCKFILM);
-		String filmString = subject.updateFilmInCinema(2l, MOCKFILM);
+		String filmString = film.updateFilm(2l, MOCKFILM);
 		Mockito.verify(filmServiceMock).updateFilm(2l, MOCKFILM);
 		assertEquals(MOCKFILM, filmString);
 	}

@@ -10,6 +10,6 @@ public interface FilmService {
 	
 	String removeFilm(Long filmId);
 	
-	String updateFilm(Long filmId, String filmUpdated);
+	String updateFilm(Long filmId, String filmUpdate);
 	
 }

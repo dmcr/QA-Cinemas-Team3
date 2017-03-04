@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.qa.cinema.persistence.Ticket;
+import com.qa.cinema.persistence.Ticket;
 import com.qa.cinema.util.JSONUtil;
 
 @Stateless
@@ -22,19 +23,51 @@ public class TicketServiceDBImp implements TicketService {
 	@Inject
 	private JSONUtil util;
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public String getAllTickets() {
-		Query query = em.createQuery("SELECT t FROM Ticket t");
+		Query query = em.createQuery("SELECT m FROM Ticket m");
+		@SuppressWarnings("unchecked")
 		Collection<Ticket> tickets = (Collection<Ticket>) query.getResultList();
 		return util.getJSONForObject(tickets);
 	}
 
 	@Override
-	public String getTicketByTicketID(Long id) {
-		Query query = em.createQuery("SELECT t FROM Ticket t WHERE t.ticketId = " + id);
+	public String getTicketById(Long ticketId) {
+		Query query = em.createQuery("SELECT f FROM Ticket f WHERE ticketId =" + ticketId);
 		Ticket ticket = (Ticket) query.getSingleResult();
 		return util.getJSONForObject(ticket);
+	}
+
+	@Override
+	public String addNewTicket(String ticketJson) {
+		Ticket newTicket = util.getObjectForJSON(ticketJson, Ticket.class);
+		em.persist(newTicket);
+		return  "{\"message\": \"ticket sucessfully added\"}" + ticketJson;
+	}
+
+	@Override
+	public String removeTicket(Long ticketId) {
+		Ticket ticket = findTicket(new Long(ticketId));
+		if (ticket != null) {
+			em.remove(ticket);
+		}
+		return "{\"message\": \"ticket sucessfully removed\"}";
+
+	}
+
+	@Override
+	public String updateTicket(Long ticketId, String ticketUpdate) {
+		Ticket updateTicket = util.getObjectForJSON(ticketUpdate, Ticket.class);
+		Ticket ticket = findTicket(new Long(ticketId));
+		if (ticket != null) {
+			ticket = updateTicket;
+			em.merge(ticket);
+		}
+		return "{\"message\": \"ticket sucessfully updated\"}";
+	}
+	
+	private Ticket findTicket(Long id) {
+		return em.find(Ticket.class, id);
 	}
 
 }

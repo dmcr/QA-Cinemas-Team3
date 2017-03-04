@@ -20,14 +20,14 @@ public class FilmEndPoint {
 	@GET
 	@Path("/json")
 	@Produces({ "application/json" })
-	public String getFilmsAsJson() {
+	public String getAllFilms() {
 		return filmService.getAllFilms();
 	}
 
 	@GET
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String getFilmAsJsonBasedOnId(@PathParam("id") Long filmId) {
+	public String getFilmById(@PathParam("id") Long filmId) {
 		return filmService.getFilmById(filmId);
 	}
 	
@@ -41,14 +41,14 @@ public class FilmEndPoint {
 	@PUT
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String updateFilmInCinema(@PathParam("id") Long filmId, String filmUpdated) {
-		return filmService.updateFilm(filmId, filmUpdated);
+	public String updateFilm(@PathParam("id") Long filmId, String filmUpdate) {
+		return filmService.updateFilm(filmId, filmUpdate);
 	}
 
 	@DELETE
 	@Path("/json/{id}")
 	@Produces({ "application/json" })
-	public String deleteFilmFromCinema(@PathParam("id") Long filmId) {
+	public String removeFilm(@PathParam("id") Long filmId) {
 		return filmService.removeFilm(filmId);
 	}
 
