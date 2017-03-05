@@ -14,5 +14,5 @@
         };
     };
 
-    angular.module('cinemaApp').controller('addSeatTypeController', ['$state','seatTyoeDal',AddSeatTypeController]);
+    angular.module('cinemaApp').controller('addSeatTypeController', ['$state','seatTypeDal',AddSeatTypeController]);
 }());
