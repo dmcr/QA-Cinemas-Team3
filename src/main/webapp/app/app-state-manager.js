@@ -45,6 +45,12 @@
         }).state("getseat", {
         	url: "/getseat",
         	templateUrl: "app/feature/seat/get/get-seat-partial.html"
+        }).state("addseattype", {
+        	url: "/addseattype",
+        	templateUrl: "app/feature/seatType/add/add-seatType-partial.html"
+        }).state("getseattype", {
+        	url: "/getseattype",
+        	templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
         })
     });
 }());
