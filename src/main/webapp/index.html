@@ -11,6 +11,10 @@
 </ul>
 
     <div ui-view></div>
+    
+    <!--  JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
     <!-- bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,8 +22,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Angular modules-->
-    <script src="scripts/angular.min.js"></script>
+    <!-- <script src="scripts/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="scripts/ui-router.min.js"></script>
+    
+    
 
     <!-- App and state manager-->
     <script src="app/app.js"></script>
@@ -27,10 +34,18 @@
 
     <!-- Services-->
     <script src="app/service/dal/dal.js"></script>
-    <script src="app/service/dal/films.js"></script>
+    <script src="app/service/dal/film.js"></script>
+    <script src="app/service/dal/booking.js"></script>
+    <script src="app/service/dal/screen.js"></script>
+    <script src="app/service/dal/seat.js"></script>
+    <script src="app/service/dal/seatType.js"></script>
+    <script src="app/service/dal/showing.js"></script>
+    <script src="app/service/dal/ticket.js"></script>
 
     <!-- Features-->
-    <!--<script src="app/feature/dashboard/dashboard-controller.js"></script>-->
+    <script src="app/feature/dashboard/dashboard-controller.js"></script>
+    <script src="app/feature/booking/add/add-booking-controller.js"></script>
+    <script src="app/feature/booking/get/get-booking-controller.js"></script>
 
 
 
