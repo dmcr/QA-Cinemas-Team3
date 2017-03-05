@@ -3,7 +3,6 @@ package com.qa.cinema.rest;
 import javax.inject.Inject;
 
 import com.qa.cinema.service.SeatTypeService;
-import com.qa.cinema.service.SeatTypeService;
 
 import javax.ws.rs.*;
 

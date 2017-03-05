@@ -2,14 +2,14 @@ package com.qa.cinema.EndPointTests;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.TicketEndPoint;
 import com.qa.cinema.service.TicketService;
-import com.qa.cinema.service.TicketService;
+
 
 
 import org.mockito.InjectMocks;

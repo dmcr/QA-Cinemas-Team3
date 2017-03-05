@@ -2,7 +2,6 @@ package com.qa.cinema.EndPointTests;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
 import com.qa.cinema.rest.ShowingEndPoint;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +9,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import com.qa.cinema.service.ShowingService;
 import com.qa.cinema.service.ShowingService;
 
 @RunWith(MockitoJUnitRunner.class)

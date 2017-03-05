@@ -2,7 +2,6 @@ package com.qa.cinema.EndPointTests;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -12,7 +11,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.BookingEndPoint;
 import com.qa.cinema.service.BookingService;
-import com.qa.cinema.service.BookingService;
+
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -23,7 +22,7 @@ public class BookingEndpointTest {
 	
 	private static final String MOCKBOOKINGALL = "[{\"bookingId\": 1,\"complete\": true,\"paypal\": \"10074405\"}]";
 	private static final String MOCKBOOKING = "{\"bookingId\": 1,\"complete\": true,\"paypal\": \"10074405\"}";
-	private static final String MOCKBOOKINGNEW = "{\"bookingId\": 1,\"complete\": false,\"paypal\": }";
+
 	
 	@Mock
 	private BookingService bookingServiceMock;

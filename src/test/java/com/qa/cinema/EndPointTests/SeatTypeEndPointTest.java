@@ -3,7 +3,6 @@ package com.qa.cinema.EndPointTests;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
 import com.qa.cinema.rest.SeatTypeEndPoint;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +12,7 @@ import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.service.SeatTypeService;
-import com.qa.cinema.service.SeatTypeService;;
+
 @RunWith(MockitoJUnitRunner.class)
 public class SeatTypeEndPointTest {
 

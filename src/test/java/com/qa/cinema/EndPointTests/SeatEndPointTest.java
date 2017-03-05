@@ -3,7 +3,6 @@ package com.qa.cinema.EndPointTests;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -13,7 +12,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.qa.cinema.rest.SeatEndPoint;
 import com.qa.cinema.service.SeatService;
-import com.qa.cinema.service.SeatServiceDBImp;
+
 
 
 @RunWith(MockitoJUnitRunner.class)
