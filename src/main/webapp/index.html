@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="qaCinema">
 
 <head>
     <meta charset="utf-8">
@@ -210,6 +210,8 @@
         </div>
         <div class="col-xs-1"></div>
     </div>
+
+    <div class="row about-section-padding"></div>
 </div>
 
 <div id="findus" class="container findus-section text-center aboutPadding">
@@ -317,19 +319,20 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
             </div>
-            <div class="modal-body">
-                <h1>Contact Us</h1>
-                <form name="loginForm" method="post" action="LoginServlet.java" class="cf">
-                    <div class="half left cf wow animated fadeIn" data-wow-delay=".5s">
-                        <input type="text" id="input-name" placeholder="Name">
-                        <input type="email" id="input-email" placeholder="Email address">
-                        <input type="text" id="input-subject" placeholder="Subject">
+            <div class="modal-body" ng-controller="contactController as ctrl">
+
+                <form name="loginForm" id="contactForm" class="cf">
+                    <div class="half left cf animated fadeIn" data-wow-delay=".5s">
+                        <input type="text" id="input-name" ng-model="email.name" placeholder="Name">
+                        <input type="email" id="input-email" ng-model="email.email" placeholder="Email address">
+                        <input type="text" id="input-subject" ng-model="email.subject" placeholder="Subject">
                     </div>
                     <div class="half right cf wow animated fadeIn">
-                        <textarea name="message" id="input-message" placeholder="Message"></textarea>
-                        <button type="submit" id="input-submit" class="btn btn-primary wide">Submit</button>
+                        <textarea name="message" id="input-message" ng-model="email.message" placeholder="Message"></textarea>
+                        <button type="submit" id="input-submit" ng-click="ctrl.sendEmail(email)" class="btn btn-primary wide">Submit</button>
                     </div>
                 </form>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -360,6 +363,30 @@
         </div>
     </div>
 </div>
+
+
+<! -- Services -->
+<script src="app/service/dal/dal.js"></script>
+<script src="app/service/dal/contactDal.js"></script>
+<script src="app/service/contact.js"></script>
+<!-- <script src="app/service/dal/booking.js"></script>
+<script src="app/service/dal/film.js"></script>
+<script src="app/service/dal/screen.js"></script>
+<script src="app/service/dal/showing.js"></script>
+<script src="app/service/dal/seat.js"></script>
+<script src="app/service/dal/ticket.js"></script> -->
+
+<! -- Features -->
+<script src="app/feature/booking/"></script>
+<script src="app/feature/contact/contact-controller.js"></script>
+<!--<script src="app/feature/"></script>
+<script src="app/feature/"></script>
+<script src="app/feature/"></script>
+<script src="app/feature/"></script>
+<script src="app/feature/"></script>
+<script src="app/feature/"></script>
+<script src="app/feature/"></script> -->
+
 
 </body>
 </html>
