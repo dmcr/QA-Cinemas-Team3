@@ -2,7 +2,7 @@ package com.qa.cinema.service;
 
 public interface SeatTypeService {
 
-String getAllSeatTypes();
+	String getAllSeatTypes();
 	
 	String getSeatTypeById(Long seatTypeId);
 	
