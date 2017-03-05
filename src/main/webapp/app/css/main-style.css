@@ -440,21 +440,17 @@ ul.banner-social-buttons {
 .row3 img
 {
     transition: 3s;
+    position: relative;
+
+
 }
 
 .row4 img
 {
     transition: 0s;
+    position: relative;
 
 }
-
-.row5 img {
-
-   top: 100px;
-
-}
-
-
 
 
 

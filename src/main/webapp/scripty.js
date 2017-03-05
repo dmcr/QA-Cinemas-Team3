@@ -58,16 +58,29 @@ var firstclick = 0;
 function DarkenComingSoon(){
 
     if(firstclick == 0){
-
+        document.getElementById('image9').style.top = '-560px';
+        document.getElementById('image10').style.top = '-560px';
+        document.getElementById('image11').style.top = '-560px';
+        document.getElementById('image12').style.top = '-560px';
+        document.getElementById('image13').style.top = '-560px';
+        document.getElementById('image14').style.top = '-560px';
+        document.getElementById('image15').style.top = '-560px';
+        document.getElementById('image16').style.top = '-560px';
         $("div").removeClass("row3");
         $("div").addClass("row4");
         firstclick++;
     }
     else if(firstclick == 1){
-
+        document.getElementById('image9').style.top = '-560px';
+        document.getElementById('image10').style.top = '-560px';
+        document.getElementById('image11').style.top = '-560px';
+        document.getElementById('image12').style.top = '-560px';
+        document.getElementById('image13').style.top = '-560px';
+        document.getElementById('image14').style.top = '-560px';
+        document.getElementById('image15').style.top = '-560px';
+        document.getElementById('image16').style.top = '-560px';
         $("div").removeClass("row4");
         $("div").addClass("row3");
-        // document.getElementById('WhatsOnRow').style.position = '-100px';
 
         firstclick++;
     }
@@ -103,29 +116,66 @@ function DarkenComingSoon(){
     document.getElementById('image15').style.cssText = 'opacity:0;';
     document.getElementById('image16').style.cssText = 'opacity:0;';
 
+    document.getElementById('image9').style.top = '-560px';
+    document.getElementById('image10').style.top = '-560px';
+    document.getElementById('image11').style.top = '-560px';
+    document.getElementById('image12').style.top = '-560px';
+    document.getElementById('image13').style.top = '-560px';
+    document.getElementById('image14').style.top = '-560px';
+    document.getElementById('image15').style.top = '-560px';
+    document.getElementById('image16').style.top = '-560px';
+
+
+
     document.getElementById("WhatsOnRow").setAttribute("style" , "width:100%");
 
 
 
 }
 
+var CSfirstclick = 0;
 
 function DarkenWhatsOn(){
 
-    if(firstclick == 0){
 
+    if(firstclick == 0){
+        // alert("HI");
+        document.getElementById('image9').style.top = '-890px';
+        document.getElementById('image10').style.top = '-890px';
+        document.getElementById('image11').style.top = '-890px';
+        document.getElementById('image12').style.top = '-890px';
+        document.getElementById('image13').style.top = '-890px';
+        document.getElementById('image14').style.top = '-890px';
+        document.getElementById('image15').style.top = '-890px';
+        document.getElementById('image16').style.top = '-890px';
+        // document.getElementById('image9').style.top = '-560px';
+        // document.getElementById('image10').style.top = '-560px';
+        // document.getElementById('image11').style.top = '-560px';
+        // document.getElementById('image12').style.top = '-560px';
+        // document.getElementById('image13').style.top = '-560px';
+        // document.getElementById('image14').style.top = '-560px';
+        // document.getElementById('image15').style.top = '-560px';
+        // document.getElementById('image16').style.top = '-560px';
 
         $("div").removeClass("row3");
         $("div").addClass("row4");
 
+
+
+
         firstclick++;
     }
     else if(firstclick == 1){
-
-
+        // document.getElementById('image9').style.top = '-560px';
+        // document.getElementById('image10').style.top = '-560px';
+        // document.getElementById('image11').style.top = '-560px';
+        // document.getElementById('image12').style.top = '-560px';
+        // document.getElementById('image13').style.top = '-560px';
+        // document.getElementById('image14').style.top = '-560px';
+        // document.getElementById('image15').style.top = '-560px';
+        // document.getElementById('image16').style.top = '-560px';
         $("div").addClass("row3");
         $("div").removeClass("row4");
-        //
 
 
 
@@ -152,6 +202,14 @@ function DarkenWhatsOn(){
     document.getElementById('image7').style.cssText = 'opacity:0;';
     document.getElementById('image8').style.cssText = 'opacity:0;';
 
+document.getElementById('image9').style.top = '-560px';
+    document.getElementById('image10').style.top = '-560px';
+    document.getElementById('image11').style.top = '-560px';
+    document.getElementById('image12').style.top = '-560px';
+    document.getElementById('image13').style.top = '-560px';
+    document.getElementById('image14').style.top = '-560px';
+    document.getElementById('image15').style.top = '-560px';
+    document.getElementById('image16').style.top = '-560px';
 
 
     document.getElementById('image9').style.cssText = 'opacity:1;';
@@ -162,6 +220,10 @@ function DarkenWhatsOn(){
     document.getElementById('image14').style.cssText = 'opacity:1;';
     document.getElementById('image15').style.cssText = 'opacity:1;';
     document.getElementById('image16').style.cssText = 'opacity:1;';
+
+
+
+
 
     document.getElementById("ComingSoonRow").setAttribute("style" , "width:100%");
 
