@@ -44,81 +44,32 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 function unhideDiv(){
 alert("second function");
     document.getElementById("paragraph").style.cssText = "opacity:0;";
 
 }
 
-// function underline(){
-//     document.getElementById("whats-on1").style.cssText = "opacity:0;";
-//     document.getElementById("whats-on2").style.cssText = "opacity:0;";
-// }
 
 
-
-
-
-
-
-function expand1(){
-    DarkenComingSoon();
-}
-
-
-function expand2(){
-    DarkenComingSoon();
-}
-function expand3(){
-    DarkenComingSoon();
-}
-function expand4(){
-    DarkenComingSoon();
-}
-function expand5(){
-    DarkenWhatsOn();
-}
-function expand6(){
-    DarkenWhatsOn();
-}
-function expand7(){
-    DarkenWhatsOn();
-}
-function expand8(){
-    DarkenWhatsOn();
-}
-
-
-
-
-
-var WOfirstclick = 0;
+var firstclick = 0;
 
 
 function DarkenComingSoon(){
 
-    if(WOfirstclick == 0){
-        alert("I WORK WO")
-        $('ComingSoonRow').removeClass('row3');
-        $('ComingSoonRow').addClass('row4');
+    if(firstclick == 0){
 
-        WOfirstclick++;
+        $("div").removeClass("row3");
+        $("div").addClass("row4");
+
+        firstclick++;
     }
-    else if(WOfirstclick == 1){
-        alert("I WORK 2 WO")
-        $('ComingSoonRow').removeClass('row4');
-        $('ComingSoonRow').addClass('row3');
-        WOfirstclick++;
+    else if(firstclick == 1){
+
+        $("div").removeClass("row4");
+        $("div").addClass("row3");
+
+        firstclick++;
     }
 
 
@@ -159,23 +110,26 @@ function DarkenComingSoon(){
 }
 
 
-var CSfirstclick = 0;
-
 function DarkenWhatsOn(){
 
-    if(CSfirstclick == 0){
-        alert("I WORK CS")
-        $('WhatsOnRow').removeClass("row3");
-        $('WhatsOnRow').addClass("row4");
+    if(firstclick == 0){
 
-        CSfirstclick++;
+
+        $("div").removeClass("row3");
+        $("div").addClass("row4");
+
+        firstclick++;
     }
-    else if(CSfirstclick == 1){
+    else if(firstclick == 1){
 
-        alert("I WORK CS2")
-        $('WhatsOnRow').removeClass("row4");
-        $('WhatsOnRow').addClass("row3");
-        CSfirstclick++;
+
+        $("div").addClass("row5");
+        $("div").removeClass("row4");
+        //
+
+
+
+        firstclick++;
     }
 
 
@@ -186,6 +140,7 @@ function DarkenWhatsOn(){
 
     document.getElementById('coming-soon1').style.cssText = 'text-decoration: underline;';
     document.getElementById('coming-soon2').style.cssText = 'text-decoration: underline;';
+
 
 
     document.getElementById('image1').style.cssText = 'opacity:0;';

@@ -438,13 +438,25 @@ ul.banner-social-buttons {
 
 .row3 img
 {
-    transition: 2s;
+    transition: 3s;
 }
 
 .row4 img
 {
     transition: 0s;
+
 }
+
+.row5 img {
+
+   margin-top: -100px;
+
+}
+
+
+
+
+
 
 
 img::selection {
