@@ -45,7 +45,7 @@ public class SeatTypeServiceDBImp implements SeatTypeService{
 
 	@Override
 	public String removeSeatType(Long seatTypeId) {
-		SeatType seatType = findSeatType(new Long(seatTypeId));
+		SeatType seatType = findSeatType(seatTypeId);
 		if (seatType != null) {
 			em.remove(seatType);
 		}
@@ -56,7 +56,7 @@ public class SeatTypeServiceDBImp implements SeatTypeService{
 	@Override
 	public String updateSeatType(Long seatTypeId, String seatTypeUpdate) {
 		SeatType updateSeatType = util.getObjectForJSON(seatTypeUpdate, SeatType.class);
-		SeatType seatType = findSeatType(new Long(seatTypeId));
+		SeatType seatType = findSeatType(seatTypeId);
 		if (seatType != null) {
 			seatType = updateSeatType;
 			em.merge(seatType);

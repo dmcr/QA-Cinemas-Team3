@@ -47,7 +47,7 @@ public class FilmServiceDBImp implements FilmService{
 
 	@Override
 	public String removeFilm(Long filmId) {
-		Film film = findFilm(new Long(filmId));
+		Film film = findFilm(filmId);
 		if (film != null) {
 			em.remove(film);
 		}
@@ -58,7 +58,7 @@ public class FilmServiceDBImp implements FilmService{
 	@Override
 	public String updateFilm(Long filmId, String filmUpdate) {
 		Film updateFilm = util.getObjectForJSON(filmUpdate, Film.class);
-		Film film = findFilm(new Long(filmId));
+		Film film = findFilm(filmId);
 		if (film != null) {
 			film = updateFilm;
 			em.merge(film);

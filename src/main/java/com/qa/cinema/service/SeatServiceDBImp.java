@@ -45,7 +45,7 @@ public class SeatServiceDBImp implements SeatService {
 
 	@Override
 	public String removeSeat(Long seatId) {
-		Seat seat = findSeat(new Long(seatId));
+		Seat seat = findSeat(seatId);
 		if (seat != null) {
 			em.remove(seat);
 		}
@@ -56,7 +56,7 @@ public class SeatServiceDBImp implements SeatService {
 	@Override
 	public String updateSeat(Long seatId, String seatUpdate) {
 		Seat updateSeat = util.getObjectForJSON(seatUpdate, Seat.class);
-		Seat seat = findSeat(new Long(seatId));
+		Seat seat = findSeat(seatId);
 		if (seat != null) {
 			seat = updateSeat;
 			em.merge(seat);

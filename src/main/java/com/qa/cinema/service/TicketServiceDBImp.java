@@ -45,7 +45,7 @@ public class TicketServiceDBImp implements TicketService {
 
 	@Override
 	public String removeTicket(Long ticketId) {
-		Ticket ticket = findTicket(new Long(ticketId));
+		Ticket ticket = findTicket(ticketId);
 		if (ticket != null) {
 			em.remove(ticket);
 		}
@@ -56,7 +56,7 @@ public class TicketServiceDBImp implements TicketService {
 	@Override
 	public String updateTicket(Long ticketId, String ticketUpdate) {
 		Ticket updateTicket = util.getObjectForJSON(ticketUpdate, Ticket.class);
-		Ticket ticket = findTicket(new Long(ticketId));
+		Ticket ticket = findTicket(ticketId);
 		if (ticket != null) {
 			ticket = updateTicket;
 			em.merge(ticket);

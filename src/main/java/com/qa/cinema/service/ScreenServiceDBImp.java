@@ -45,7 +45,7 @@ public class ScreenServiceDBImp implements ScreenService {
 
 	@Override
 	public String removeScreen(Long screenId) {
-		Screen screen = findScreen(new Long(screenId));
+		Screen screen = findScreen(screenId);
 		if (screen != null) {
 			em.remove(screen);
 		}
@@ -56,7 +56,7 @@ public class ScreenServiceDBImp implements ScreenService {
 	@Override
 	public String updateScreen(Long screenId, String screenUpdate) {
 		Screen updateScreen = util.getObjectForJSON(screenUpdate, Screen.class);
-		Screen screen = findScreen(new Long(screenId));
+		Screen screen = findScreen(screenId);
 		if (screen != null) {
 			screen = updateScreen;
 			em.merge(screen);

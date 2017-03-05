@@ -46,7 +46,7 @@ public class ShowingServiceDBImp implements ShowingService{
 
 	@Override
 	public String removeShowing(Long showingId) {
-		Showing showing = findShowing(new Long(showingId));
+		Showing showing = findShowing(showingId);
 		if (showing != null) {
 			em.remove(showing);
 		}
@@ -57,7 +57,7 @@ public class ShowingServiceDBImp implements ShowingService{
 	@Override
 	public String updateShowing(Long showingId, String showingUpdate) {
 		Showing updateShowing = util.getObjectForJSON(showingUpdate, Showing.class);
-		Showing showing = findShowing(new Long(showingId));
+		Showing showing = findShowing(showingId);
 		if (showing != null) {
 			showing = updateShowing;
 			em.merge(showing);

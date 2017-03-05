@@ -46,7 +46,7 @@ public class BookingServiceDBImp implements BookingService {
 
 	@Override
 	public String removeBooking(Long bookingId) {
-		Booking booking = findBooking(new Long(bookingId));
+		Booking booking = findBooking(bookingId);
 		if (booking != null) {
 			em.remove(booking);
 		}
@@ -57,7 +57,7 @@ public class BookingServiceDBImp implements BookingService {
 	@Override
 	public String updateBooking(Long bookingId, String bookingUpdate) {
 		Booking updateBooking = util.getObjectForJSON(bookingUpdate, Booking.class);
-		Booking booking = findBooking(new Long(bookingId));
+		Booking booking = findBooking(bookingId);
 		if (booking != null) {
 			booking = updateBooking;
 			em.merge(booking);
