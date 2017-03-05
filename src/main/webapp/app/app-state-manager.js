@@ -14,7 +14,10 @@
             templateUrl: "app/feature/film/films.html"
         }).state("getbooking", {
             url: "/getbooking",
-            templateUrl: "app/feature/booking/get-booking-partial.html"
+            templateUrl: "app/feature/booking/get/get-booking-partial.html"
+        }).state("addbooking", {
+        	url: "/addbooking",
+        	templateUrl: "app/feature/booking/add/add-booking-partial.html"
         })
     });
 }());
