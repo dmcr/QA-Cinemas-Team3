@@ -20,7 +20,6 @@ public class Booking implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@NotNull
 	@Column(name = "booking_id")
 	private Long bookingId;
 

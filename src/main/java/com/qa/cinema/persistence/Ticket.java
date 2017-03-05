@@ -30,11 +30,11 @@ public class Ticket implements Serializable {
 	@Column(name="ticket_booking_id")
 	private Long bookingId;
 
-	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_showing_id")
 	private Showing showing;
 	
-	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_seat_id")
 	private Seat seat;
 	
