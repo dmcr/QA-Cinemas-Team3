@@ -61,13 +61,13 @@ function DarkenComingSoon(){
 
         $("div").removeClass("row3");
         $("div").addClass("row4");
-
         firstclick++;
     }
     else if(firstclick == 1){
 
         $("div").removeClass("row4");
         $("div").addClass("row3");
+        // document.getElementById('WhatsOnRow').style.position = '-100px';
 
         firstclick++;
     }
@@ -123,7 +123,7 @@ function DarkenWhatsOn(){
     else if(firstclick == 1){
 
 
-        $("div").addClass("row5");
+        $("div").addClass("row3");
         $("div").removeClass("row4");
         //
 

@@ -12,6 +12,7 @@ body {
     /*change this if you change footer height! */
     margin-bottom: 100px;
     overflow-x: hidden;
+    /*padding-top: 100px;*/
 }
 
 
@@ -449,7 +450,7 @@ ul.banner-social-buttons {
 
 .row5 img {
 
-   margin-top: -100px;
+   top: 100px;
 
 }
 
@@ -565,6 +566,30 @@ li.dropdown {
 }
 
 .show {display:block;}
+
+
+
+
+/*Makes the navbar line up correctly*/
+.about-section{
+    height: 100%;
+    padding-top: 80px;
+    /*background-color: white;*/
+
+}
+.findus-section{
+    height: 100%;
+    padding-top: 80px;
+}
+
+
+.films-section{
+    /*height: 100%;*/
+    padding-top: 80px;
+}
+
+
+
 
 
 
