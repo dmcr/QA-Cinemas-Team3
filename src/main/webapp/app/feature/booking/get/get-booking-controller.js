@@ -4,7 +4,7 @@
 
         function init() {
             bookingDal.getBookings().then(function (results) {
-                vm.movies = results;
+                vm.bookings = results;
             }, function(error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -12,5 +12,5 @@
         }
         init();
     };
-    angular.module('cinemaApp').controller('getBookingController', ['filmsDal', GetBookingController]);
+    angular.module('cinemaApp').controller('getBookingController', ['bookingDal', GetBookingController]);
 }());
