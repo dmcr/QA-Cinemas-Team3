@@ -9,11 +9,11 @@
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard-partial.html"
-        }).state("film", {
-            url: "/film",
+        }).state("getfilm", {
+            url: "/getfilm",
             templateUrl: "app/feature/film/films.html"
-        }).state("/film", {
-            url: "/film",
+        }).state("getbooking", {
+            url: "/getbooking",
             templateUrl: "app/feature/booking/get-booking-partial.html"
         })
     });
