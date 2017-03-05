@@ -1,0 +1,11 @@
+<div ng-controller="addTicketController as ctrl">
+	<h2>Add a new ticket</h2>
+	
+	<form role="form">
+		<input id="bookingId" placeholder="bookingId" ng-model="ticket.bookingId">
+
+        <input id="ticketType" placeholder="ticketType" ng-model="ticket.ticketType">
+
+        <button type="submit" ng-click="ctrl.addTicket(ticket)">addTicket</button>
+	</form>
+</div>
