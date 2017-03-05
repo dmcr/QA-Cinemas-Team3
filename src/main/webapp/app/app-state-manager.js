@@ -27,6 +27,12 @@
         }).state("getshowing", {
         	url: "/getshowing",
         	templateUrl: "app/feature/showing/get/get-showing-partial.html"
+        }).state("addticket", {
+        	url: "/addticket",
+        	templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
+        }).state("getticket", {
+        	url: "/getticket",
+        	templateUrl: "app/feature/ticket/get/get-ticket-partial.html"
         })
     });
 }());
