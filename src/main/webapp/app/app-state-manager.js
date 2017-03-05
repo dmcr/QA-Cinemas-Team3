@@ -39,6 +39,12 @@
         }).state("getscreen", {
         	url: "/getscreen",
         	templateUrl: "app/feature/screen/get/get-screen-partial.html"
+        }).state("addseat", {
+        	url: "/addseat",
+        	templateUrl: "app/feature/seat/add/add-seat-partial.html"
+        }).state("getseat", {
+        	url: "/getseat",
+        	templateUrl: "app/feature/seat/get/get-seat-partial.html"
         })
     });
 }());
