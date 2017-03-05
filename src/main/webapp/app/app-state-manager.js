@@ -33,6 +33,12 @@
         }).state("getticket", {
         	url: "/getticket",
         	templateUrl: "app/feature/ticket/get/get-ticket-partial.html"
+        }).state("addscreen", {
+        	url: "/addscreen",
+        	templateUrl: "app/feature/screen/add/add-screen-partial.html"
+        }).state("getscreen", {
+        	url: "/getscreen",
+        	templateUrl: "app/feature/screen/get/get-screen-partial.html"
         })
     });
 }());
