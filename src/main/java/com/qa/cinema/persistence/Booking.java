@@ -19,8 +19,7 @@ public class Booking implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@NotNull
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "booking_id")
 	private Long bookingId;
 
@@ -30,16 +29,14 @@ public class Booking implements Serializable{
 	@Column(name = "booking_paypal")
 	private String paypal;
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="ticket_booking_id")
 	private List<Ticket> tickets;
 
 	public Booking() {
 	}
 
-	public Booking(Long bookingId, boolean complete, String paypal, List<Ticket> tickets) {
-		super();
-		this.bookingId = bookingId;
+	public Booking(boolean complete, String paypal, List<Ticket> tickets) {
 		this.complete = complete;
 		this.paypal = paypal;
 		this.tickets = tickets;
@@ -47,10 +44,6 @@ public class Booking implements Serializable{
 
 	public Long getBookingId() {
 		return bookingId;
-	}
-
-	public void setBookingId(Long bookingId) {
-		this.bookingId = bookingId;
 	}
 
 	public boolean isComplete() {

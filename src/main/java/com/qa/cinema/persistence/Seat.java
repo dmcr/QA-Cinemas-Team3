@@ -25,7 +25,7 @@ public class Seat implements Serializable {
 	@Column(name = "seat_row")
 	private String row;
 
-	@ManyToOne(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "seat_type_id")
 	private SeatType seatType;
 

@@ -19,12 +19,6 @@ public class BookingEntityTest {
 		assertNotNull(booking);
 	}
 	
-	@Test
-	public void testGetBookingId() {
-		Booking booking = new Booking();
-		booking.setBookingId(1L);
-		assertSame(1L, booking.getBookingId());
-	}
 	
 	@Test
 	public void testGetBookingComplete()  {
