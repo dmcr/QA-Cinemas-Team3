@@ -21,6 +21,12 @@
         }).state("addbooking", {
         	url: "/addbooking",
         	templateUrl: "app/feature/booking/add/add-booking-partial.html"
+        }).state("addshowing", {
+        	url: "/addshowing",
+        	templateUrl: "app/feature/showing/add/add-showing-partial.html"
+        }).state("getshowing", {
+        	url: "/getshowing",
+        	templateUrl: "app/feature/showing/get/get-showing-partial.html"
         })
     });
 }());
