@@ -58,27 +58,16 @@ var firstclick = 0;
 function DarkenComingSoon(){
 
     if(firstclick == 0){
-        document.getElementById('image9').style.top = '-560px';
-        document.getElementById('image10').style.top = '-560px';
-        document.getElementById('image11').style.top = '-560px';
-        document.getElementById('image12').style.top = '-560px';
-        document.getElementById('image13').style.top = '-560px';
-        document.getElementById('image14').style.top = '-560px';
-        document.getElementById('image15').style.top = '-560px';
-        document.getElementById('image16').style.top = '-560px';
+
+
+
         $("div").removeClass("row3");
         $("div").addClass("row4");
         firstclick++;
     }
     else if(firstclick == 1){
-        document.getElementById('image9').style.top = '-560px';
-        document.getElementById('image10').style.top = '-560px';
-        document.getElementById('image11').style.top = '-560px';
-        document.getElementById('image12').style.top = '-560px';
-        document.getElementById('image13').style.top = '-560px';
-        document.getElementById('image14').style.top = '-560px';
-        document.getElementById('image15').style.top = '-560px';
-        document.getElementById('image16').style.top = '-560px';
+
+
         $("div").removeClass("row4");
         $("div").addClass("row3");
 
@@ -116,14 +105,14 @@ function DarkenComingSoon(){
     document.getElementById('image15').style.cssText = 'opacity:0;';
     document.getElementById('image16').style.cssText = 'opacity:0;';
 
-    document.getElementById('image9').style.top = '-560px';
-    document.getElementById('image10').style.top = '-560px';
-    document.getElementById('image11').style.top = '-560px';
-    document.getElementById('image12').style.top = '-560px';
-    document.getElementById('image13').style.top = '-560px';
-    document.getElementById('image14').style.top = '-560px';
-    document.getElementById('image15').style.top = '-560px';
-    document.getElementById('image16').style.top = '-560px';
+    // document.getElementById('image9').style.top = '-560px';
+    // document.getElementById('image10').style.top = '-560px';
+    // document.getElementById('image11').style.top = '-560px';
+    // document.getElementById('image12').style.top = '-560px';
+    // document.getElementById('image13').style.top = '-560px';
+    // document.getElementById('image14').style.top = '-560px';
+    // document.getElementById('image15').style.top = '-560px';
+    // document.getElementById('image16').style.top = '-560px';
 
 
 
@@ -140,14 +129,14 @@ function DarkenWhatsOn(){
 
     if(firstclick == 0){
         // alert("HI");
-        document.getElementById('image9').style.top = '-890px';
-        document.getElementById('image10').style.top = '-890px';
-        document.getElementById('image11').style.top = '-890px';
-        document.getElementById('image12').style.top = '-890px';
-        document.getElementById('image13').style.top = '-890px';
-        document.getElementById('image14').style.top = '-890px';
-        document.getElementById('image15').style.top = '-890px';
-        document.getElementById('image16').style.top = '-890px';
+        // document.getElementById('image9').style.top = '-890px';
+        // document.getElementById('image10').style.top = '-890px';
+        // document.getElementById('image11').style.top = '-890px';
+        // document.getElementById('image12').style.top = '-890px';
+        // document.getElementById('image13').style.top = '-890px';
+        // document.getElementById('image14').style.top = '-890px';
+        // document.getElementById('image15').style.top = '-890px';
+        // document.getElementById('image16').style.top = '-890px';
         // document.getElementById('image9').style.top = '-560px';
         // document.getElementById('image10').style.top = '-560px';
         // document.getElementById('image11').style.top = '-560px';
@@ -232,3 +221,14 @@ document.getElementById('image9').style.top = '-560px';
 function test(){
     alert("TEST WORKS!!");
 }
+
+
+// function DarkenBackground(){
+//
+//     alert("HI");
+//     $()
+// }
+
+
+
+

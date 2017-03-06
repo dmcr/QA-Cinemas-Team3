@@ -505,6 +505,7 @@ div.panel {
     padding: 0 18px;
     background-color: black;
     display: none;
+    z-index: 1000;
 }
 
 
@@ -562,6 +563,10 @@ li.dropdown {
 }
 
 .show {display:block;}
+
+.about-section{
+
+}
 
 
 
