@@ -9,8 +9,6 @@ public class Email {
     private String subject;
     private String message;
 
-    public Email() {};
-
     public Email(String name, String email, String subject, String message) {
         this.name = name;
         this.email = email;

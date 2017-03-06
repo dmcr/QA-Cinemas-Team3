@@ -5,7 +5,7 @@ import javax.ws.rs.*;
 import com.qa.cinema.service.ContactService;
 
 
-@Path("")
+@Path("/")
 public class ContactEndpoint {
 
     @Inject
@@ -15,7 +15,6 @@ public class ContactEndpoint {
     @POST
     @Produces({ "application/json"})
     public String sendEmail(String email) {
-        // NAE IDEA!!!!     return service.doSendMail(email, "hello", "hello", "hello", null);
-    	return "";
+    	return service.sendEmail(email);
     }
 }
