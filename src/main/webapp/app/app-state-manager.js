@@ -33,6 +33,9 @@
         }).state("addbooking", {
         	url: "/addbooking",
         	templateUrl: "app/feature/booking/add/add-booking-partial.html"
+        }).state("updatebooking", {
+        	url: "/updatebooking/{bookingId:[0-9]}",
+        	templateUrl: "app/feature/booking/update/update-booking-partial.html"
         }).state("addshowing", {
         	url: "/addshowing",
         	templateUrl: "app/feature/showing/add/add-showing-partial.html"
