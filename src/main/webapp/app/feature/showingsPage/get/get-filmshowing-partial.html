@@ -21,23 +21,37 @@
         <!--<div id="main-info" ng-include="'partials/main-info.html'" class="col-md-8"></div>-->
     <!--</div>-->
 
+
+
+
     <div ng-controller="getShowingController as ctrl" >
-    <ul ng-repeat="showing in ctrl.showings">
+        <ul ng-repeat="showing in ctrl.showings">
+                <h>Showings</h>>
+                <li>
+                    <tr>
+                        <th>Start Time</th>
+                        <th>ShowingID</th>
+                        <th>ScreenID</th>
+                        <th>FilmID</th>
+                    </tr>
 
-        <li>
+                        <td>
+                        {{showing.startTime}}
+                        </td>
 
-            Start Time: {{showing.startTime}}
-            <br>
-            ShowingID: {{showing.showingId}}
-            <br>
-            ShowingID: {{showing.screenId}}
-            <br>
-            FilmID: {{showing.filmId}}
+                        <td>
+                            {{showing.showingId}}
+                        </td>
 
-        </li>
+                        <td>
+                             {{showing.screenId}}
+                        </td>
 
-
-    </ul>
+                        <td>
+                             {{showing.filmId}}
+                        </td>
+                </li>
+        </ul>
 
     </div>
     <!--<script src="js/angular.min.js"></script>-->
