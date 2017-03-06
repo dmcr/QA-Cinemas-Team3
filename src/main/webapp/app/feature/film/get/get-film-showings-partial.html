@@ -1,3 +1,40 @@
+<body>
+
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">title</h>
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">cast</h>
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">certification</h>
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">director</h>
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">genre</h>
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">releaseDate</h>
+<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">summary</h>
+
+
+
 <div ng-controller="getFilmController as ctrl">
-    <h1 ng-repeat="showing in ctrl.film.showings">{{showing}}</h1>
+
+    <ul>
+
+            <table style = "width:100%">
+                <tr>
+                    <th style = "font-size: 25px">Start Time</th>
+                    <th style = "font-size: 25px">ScreenID</th>
+                    <th style = "font-size: 25px">FilmID</th>
+                </tr>
+                <tr ng-repeat="showing in ctrl.showings">
+                    <td>{{showing.startTime}}</td>
+                    <td>{{showing.screenId}}</td>
+                    <td>{{showing.filmId}}</td>
+                </tr>
+            </table>
+
+    </ul>
+
+
 </div>
+
+
+
+
+
+
+</body>

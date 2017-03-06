@@ -63,10 +63,6 @@
         }).state("getseattype", {
             url: "/getseattype",
             templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
-        }).state("getfilmshowings", {
-                url: "/getfilmshowings",
-                templateUrl: "app/feature/showingsPage/get/get-filmshowing-partial.html"
-
         })
     });
 }());
