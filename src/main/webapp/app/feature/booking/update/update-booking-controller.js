@@ -2,7 +2,7 @@
     var UpdateBookingController = function (bookingDal, $stateParams, $state) {
         var vm = this;
         function init() {
-        	filmDal.getBookingByID($stateParams.bookingId).then(function (result) {
+        	bookingDal.getBookingByID($stateParams.bookingId).then(function (result) {
             	vm.booking = result;
             }, function(error) {
             	vm.error = true;
