@@ -28,29 +28,20 @@
         <ul ng-repeat="showing in ctrl.showings">
 
                 <li>
-                    <tr>
-                        <th>Start Time</th>
-                        <th>ShowingID</th>
-                        <th>ScreenID</th>
-                        <th>FilmID</th>
-                    </tr>
+                    <table style = "width:100%">
                         <tr>
-                        <td>
-                        {{showing.startTime}}
-                        </td>
-
-                        <td>
-                            {{showing.showingId}}
-                        </td>
-
-                        <td>
-                             {{showing.screenId}}
-                        </td>
-
-                        <td>
-                             {{showing.filmId}}
-                        </td>
+                                <th>Start Time</th>
+                                <th>ShowingID</th>
+                                <th>ScreenID</th>
+                                <th>FilmID</th>
                         </tr>
+                                <tr>
+                                    <td>{{showing.startTime}}</td>
+                                    <td>{{showing.showingId}}</td>
+                                    <td>{{showing.screenId}}</td>
+                                    <td>{{showing.filmId}}</td>
+                                </tr>
+                    </table>
                 </li>
         </ul>
 
