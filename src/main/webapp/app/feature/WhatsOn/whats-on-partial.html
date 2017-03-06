@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Whats on</title>
@@ -15,10 +13,10 @@
     <script type="text/javascript" src="scripts/jquery.dim-background.js"></script>
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="scripts/jquery.dim-background.js"></script>
-    <script type="text/javascript" src="scripts/jquery.dim-background.min.js"></script>
-    <link rel="stylesheet" href="../QA-Cinemas-Team3/src/main/webapp/app/feature/WhatsOn/css/style.css">
+    <script type="text/javascript" src="app/feature/WhatsOn/scripts/jquery.dim-background.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <script src="scripts/angular.min.js"></script>
-    <script src="../QA-Cinemas-Team3/src/main/webapp/app/feature/WhatsOn/omdbAPI.js"></script>
+    <script src="omdbAPI.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,11 +39,6 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Stylesheets for the pages -->
-
-    <link rel="stylesheet" href="../QA-Cinemas-Team3/src/main/webapp/app/feature/WhatsOn/css/form-style.css">
-    <link rel="stylesheet" href="../QA-Cinemas-Team3/src/main/webapp/app/feature/WhatsOn/css/animate.css">
-    <link rel="stylesheet" href="../QA-Cinemas-Team3/src/main/webapp/app/feature/WhatsOn/css/main-style.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,65 +47,17 @@
     <![endif]-->
 
 
-</head>
-<body>
 <div id="Films" class="container content-section text-center">
 
     <div id="gridofequals" ng-repeat="film in ctrl.films">
         <div class="geInline" ng-app="myApp" ng-controller="MovieController">
             <div  class="actionBox"><img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="image" style="z-index: 1000;"></div>
-            <span class="top-films__title">logan</span>
-        </div>
-        <div class="geInline" ng-app="myApp" ng-controller="MovieController">
-            <div class="actionBox" ><img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="image" style="z-index: 1000;"></div>
-            <span class="top-films__title">Fences</span>
-        </div>
-        <div class="geInline">
-            <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/50Shades.jpg"
-                                        alt="50 Shades darker"></div>
-            <span class="top-films__title">50 Shades Darker</span>
-        </div>
-        <div class="geInline">
-            <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/FistFight.jpg" alt="Fist Fight"></div>
-            <span class="top-films__title">Fist Fight</span>
-        </div>
-        <div class="geInline">
-            <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/LaLaLand.jpg"
-                                                 alt="La La Land"></div>
-            <span class="top-films__title ">La La Land</span>
-        </div>
-        <br>
-        <br>
-        <div class="geInline">
-            <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/Moana.jpg" alt="Moana"></div>
-            <span class="top-films__title">Moana</span></div>
-        <div class="geInline">
-            <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/LegoBM.jpg"
-                                                 alt="Lego Batman"></div>
-            <span class="top-films__title">Logo Batman</span></div>
-        <div class="geInline">
-            <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/GreatWall.jpg"
-                                                 alt="The Great Wall"></div>
-            <span class="top-films__title">The great wall</span>
-        </div>
-        <div class="geInline">
-            <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/Beaty.jpg"
-                                                 alt="beaty and the beast"></div>
-            <span class="top-films__title">Beauty and <br> the Beast</span>
-        </div>
-        <div class="geInline">
-            <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/hiddenFigures.jpg"
-                                                 alt="hidden figures"></div>
-            <span class="top-films__title">Hidden Figures</span>
+            <span class="top-films__title">{{film.title}}</span>
         </div>
     </div>
 </div>
-<br>
-<br>
 
 <div id="darkness" style="opacity: 0; display: none;"></div>
-
-<button>Click to fade in/out boxes</button><br><br>
 
 <script type="text/javascript">
     $(function () {
@@ -129,8 +74,3 @@
 </script>
 
 
-
-
-</body>
-
-</html>
