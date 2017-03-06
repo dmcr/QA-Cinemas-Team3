@@ -15,11 +15,17 @@
         }).state("getfilm", {
             url: "/getfilm/{filmId:[0-9]}",
             templateUrl: "app/feature/film/get/get-film-partial.html"
+        }).state("getfilmshowings", {
+            url: "/getfilmshowings/{filmId:[0-9]}",
+            templateUrl: "app/feature/film/get/get-film-showings-partial.html"
         }).state("addfilm", {
             url: "/addfilm",
             templateUrl: "app/feature/film/add/add-film-partial.html"
+        }).state("getbookings", {
+            url: "/getbookings",
+            templateUrl: "app/feature/booking/get/get-bookings-partial.html"
         }).state("getbooking", {
-            url: "/getbooking",
+            url: "/getbooking/{bookingId:[0-9]}",
             templateUrl: "app/feature/booking/get/get-booking-partial.html"
         }).state("addbooking", {
         	url: "/addbooking",
