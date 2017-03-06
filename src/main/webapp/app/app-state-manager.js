@@ -9,8 +9,11 @@
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard-partial.html"
+        }).state("getfilms", {
+            url: "/getfilms",
+            templateUrl: "app/feature/film/get/get-films-partial.html"
         }).state("getfilm", {
-            url: "/getfilm",
+            url: "/getfilm/{filmId:[0-9]}",
             templateUrl: "app/feature/film/get/get-film-partial.html"
         }).state("addfilm", {
             url: "/addfilm",
