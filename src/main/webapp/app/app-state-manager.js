@@ -57,8 +57,11 @@
         }).state("addseat", {
         	url: "/addseat",
         	templateUrl: "app/feature/seat/add/add-seat-partial.html"
+        }).state("getseats", {
+        	url: "/getseats",
+        	templateUrl: "app/feature/seat/get/get-seats-partial.html"
         }).state("getseat", {
-        	url: "/getseat",
+        	url: "/getseat/{seatId:[0-9]}",
         	templateUrl: "app/feature/seat/get/get-seat-partial.html"
         }).state("addseattype", {
         	url: "/addseattype",
