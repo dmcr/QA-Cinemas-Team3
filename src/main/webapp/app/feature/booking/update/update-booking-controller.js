@@ -11,8 +11,8 @@
         }
         init();
         
-        vm.updateFilm = function(bookingToUpdate) {
-            filmDal.updateFilm(bookingToUpdate.filmId, bookingToUpdate).then(function (result) {
+        vm.updateBooking = function(bookingToUpdate) {
+            bookingDal.updateFilm(bookingToUpdate.filmId, bookingToUpdate).then(function (result) {
                 vm.bookingUpdateMessage  = result;
                 $state.go('getbookings');
             }, function (error) {
