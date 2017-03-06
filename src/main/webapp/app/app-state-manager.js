@@ -66,8 +66,11 @@
         }).state("addseattype", {
         	url: "/addseattype",
         	templateUrl: "app/feature/seatType/add/add-seatType-partial.html"
+        }).state("getseattypes", {
+        	url: "/getseattypes",
+        	templateUrl: "app/feature/seatType/get/get-seatTypes-partial.html"
         }).state("getseattype", {
-        	url: "/getseattype",
+        	url: "/getseattype/{seatTypeId:[0-9]}",
         	templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
         })
     });
