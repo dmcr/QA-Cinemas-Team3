@@ -23,32 +23,33 @@
 
 
 
-<h>Showings</h>
-    <div ng-controller="getShowingController as ctrl" >
-        <ul ng-repeat="showing in ctrl.showings">
+        <h>Showings</h>
+        <table style = "width:100%">
+                <tr>
+                    <th>Start Time</th>
+                    <th>ShowingID</th>
+                    <th>ScreenID</th>
+                    <th>FilmID</th>
+                </tr>
 
-                <li>
-                    <table style = "width:100%">
-                        <tr>
-                                <th>Start Time</th>
-                                <th>ShowingID</th>
-                                <th>ScreenID</th>
-                                <th>FilmID</th>
-                        </tr>
-                                <tr>
-                                    <td>{{showing.startTime}}</td>
-                                    <td>{{showing.showingId}}</td>
-                                    <td>{{showing.screenId}}</td>
-                                    <td>{{showing.filmId}}</td>
-                                </tr>
-                    </table>
-                </li>
-        </ul>
+                <div ng-controller="getShowingController as ctrl" >
+                <ul ng-repeat="showing in ctrl.showings">
 
-    </div>
-    <!--<script src="js/angular.min.js"></script>-->
-    <!--<script src="js/app.js"></script>-->
-    </body>
+                        <li>
+                            <tr>
+                                <td>{{showing.startTime}}</td>
+                                <td>{{showing.showingId}}</td>
+                                <td>{{showing.screenId}}</td>
+                                <td>{{showing.filmId}}</td>
+                            </tr>
+
+                        </li>
+                </ul>
+            </div>
+        </table>
+            <!--<script src="js/angular.min.js"></script>-->
+            <!--<script src="js/app.js"></script>-->
+            </body>
 
 
 
