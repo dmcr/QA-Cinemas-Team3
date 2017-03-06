@@ -9,14 +9,23 @@
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard-partial.html"
+        }).state("getfilms", {
+            url: "/getfilms",
+            templateUrl: "app/feature/film/get/get-films-partial.html"
         }).state("getfilm", {
-            url: "/getfilm",
+            url: "/getfilm/{filmId:[0-9]}",
             templateUrl: "app/feature/film/get/get-film-partial.html"
+        }).state("getfilmshowings", {
+            url: "/getfilmshowings/{filmId:[0-9]}",
+            templateUrl: "app/feature/film/get/get-film-showings-partial.html"
         }).state("addfilm", {
             url: "/addfilm",
             templateUrl: "app/feature/film/add/add-film-partial.html"
+        }).state("getbookings", {
+            url: "/getbookings",
+            templateUrl: "app/feature/booking/get/get-bookings-partial.html"
         }).state("getbooking", {
-            url: "/getbooking",
+            url: "/getbooking/{bookingId:[0-9]}",
             templateUrl: "app/feature/booking/get/get-booking-partial.html"
         }).state("addbooking", {
         	url: "/addbooking",
@@ -24,8 +33,11 @@
         }).state("addshowing", {
         	url: "/addshowing",
         	templateUrl: "app/feature/showing/add/add-showing-partial.html"
+        }).state("getshowings", {
+        	url: "/getshowings",
+        	templateUrl: "app/feature/showing/get/get-showings-partial.html"
         }).state("getshowing", {
-        	url: "/getshowing",
+        	url: "/getshowing/{showingId:[0-9]}",
         	templateUrl: "app/feature/showing/get/get-showing-partial.html"
         }).state("addticket", {
         	url: "/addticket",
