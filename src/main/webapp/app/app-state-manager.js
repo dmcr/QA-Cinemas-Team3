@@ -49,8 +49,11 @@
         	url: "/addseattype",
         	templateUrl: "app/feature/seatType/add/add-seatType-partial.html"
         }).state("getseattype", {
-        	url: "/getseattype",
-        	templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
+            url: "/getseattype",
+            templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
+        }).state("getfilmshowings", {
+                url: "/getfilmshowings",
+                templateUrl: "app/feature/seatType/get/get-filmshowing-partial.html"
         })
     });
 }());
