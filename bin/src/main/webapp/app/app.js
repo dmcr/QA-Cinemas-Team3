@@ -1,0 +1,1 @@
+var cinemaApp = angular.module('cinemaApp',['ui.router']);

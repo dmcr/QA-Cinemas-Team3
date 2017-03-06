@@ -1,0 +1,25 @@
+<div ng-controller="addFilmController as ctrl">
+	<h2>Add a new film:</h2>
+	
+	<form role="form">
+		<input id="is3D" placeholder="id3D" ng-model="film.is3D">
+
+        <input id="cast" placeholder="cast" ng-model="film.cast">
+        
+        <input id="certification" placeholder="certification" ng-model="film.certification">
+        
+        <input id="director" placeholder="director" ng-model="film.director">
+        
+        <input id="duration" placeholder="duration" ng-model="film.duration">
+        
+        <input id="genre" placeholder="genre" ng-model="film.genre">
+        
+        <input id="releaseDate" placeholder="releaseDate" ng-model="film.releaseDate">
+        
+        <input id="summary" placeholder="summary" ng-model="film.summary">
+        
+        <input id="title" placeholder="title" ng-model="film.title">
+
+        <button type="submit" ng-click="ctrl.addFilm(film)">addFilm</button>
+	</form>
+</div>

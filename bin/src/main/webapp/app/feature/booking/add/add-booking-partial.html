@@ -1,0 +1,11 @@
+<div ng-controller="addBookingController as ctrl">
+	<h2>Add a new booking</h2>
+	
+	<form role="form">
+		<input id="complete" placeholder="complete" ng-model="booking.complete">
+
+        <input id="paypal" placeholder="paypal" ng-model="booking.paypal">
+
+        <button type="submit" ng-click="ctrl.addBooking(booking)">addBooking</button>
+	</form>
+</div>

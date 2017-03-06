@@ -44,11 +44,22 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+    <!-- Angular modules-->
+    <!-- <script src="scripts/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="scripts/ui-router.min.js"></script>
+        <!--  JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </head>
 
 <body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+
+    <div ui-view></div>
+    
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
@@ -62,6 +73,7 @@
                 <i class="fa fa-play-circle"></i> <span class="light">QA</span>Cinemas
             </a>
         </div>
+
 
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
@@ -84,6 +96,37 @@
         </div>
     </div>
 </nav>
+
+    <!-- App and state manager-->
+    <script src="app/app.js"></script>
+    <script src="app/app-state-manager.js"></script>
+
+    <!-- Services-->
+    <script src="app/service/dal/dal.js"></script>
+    <script src="app/service/dal/film.js"></script>
+    <script src="app/service/dal/booking.js"></script>
+    <script src="app/service/dal/screen.js"></script>
+    <script src="app/service/dal/seat.js"></script>
+    <script src="app/service/dal/seatType.js"></script>
+    <script src="app/service/dal/showing.js"></script>
+    <script src="app/service/dal/ticket.js"></script>
+
+    <!-- Features-->
+    <script src="app/feature/dashboard/dashboard-controller.js"></script>
+    <script src="app/feature/booking/add/add-booking-controller.js"></script>
+    <script src="app/feature/booking/get/get-booking-controller.js"></script>
+	<script src="app/feature/film/get/get-film-controller.js"></script>
+	<script src="app/feature/film/add/add-film-controller.js"></script>
+	<script src="app/feature/showing/get/get-showing-controller.js"></script>
+	<script src="app/feature/showing/add/add-showing-controller.js"></script>
+	<script src="app/feature/ticket/get/get-ticket-controller.js"></script>
+	<script src="app/feature/ticket/add/add-ticket-controller.js"></script>
+	<script src="app/feature/screen/get/get-screen-controller.js"></script>
+	<script src="app/feature/screen/add/add-screen-controller.js"></script>
+	<script src="app/feature/seat/get/get-seat-controller.js"></script>
+	<script src="app/feature/seat/add/add-seat-controller.js"></script>
+	<script src="app/feature/seatType/get/get-seatType-controller.js"></script>
+	<script src="app/feature/seatType/add/add-seatType-controller.js"></script>
 
 
 <!-- Intro Header -->

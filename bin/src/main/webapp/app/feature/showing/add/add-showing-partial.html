@@ -1,0 +1,13 @@
+<div ng-controller="addShowingController as ctrl">
+	<h2>Add a new showing</h2>
+	
+	<form role="form">
+		<input id="startTime" placeholder="startTime" ng-model="showing.startTime">
+
+        <input id="screenId" placeholder="screenId" ng-model="showing.screenId">
+        
+        <input id="filmId" placeholder="filmId" ng-model="showing.filmId">
+
+        <button type="submit" ng-click="ctrl.addShowing(showing)">addShowing</button>
+	</form>
+</div>

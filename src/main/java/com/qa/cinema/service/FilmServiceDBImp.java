@@ -40,22 +40,34 @@ public class FilmServiceDBImp implements FilmService{
 
 	@Override
 	public String addNewFilm(String filmJson) {
-		// TODO Auto-generated method stub
-		return null;
+		Film newFilm = util.getObjectForJSON(filmJson, Film.class);
+		em.persist(newFilm);
+		return  "{\"message\": \"film sucessfully added\"}" + filmJson;
 	}
 
 	@Override
 	public String removeFilm(Long filmId) {
-		// TODO Auto-generated method stub
-		return null;
+		Film film = findFilm(filmId);
+		if (film != null) {
+			em.remove(film);
+		}
+		return "{\"message\": \"film sucessfully removed\"}";
+
 	}
 
 	@Override
-	public String updateFilm(Long filmId, String filmUpdated) {
-		// TODO Auto-generated method stub
-		return null;
+	public String updateFilm(Long filmId, String filmUpdate) {
+		Film updateFilm = util.getObjectForJSON(filmUpdate, Film.class);
+		Film film = findFilm(filmId);
+		if (film != null) {
+			film = updateFilm;
+			em.merge(film);
+		}
+		return "{\"message\": \"film sucessfully updated\"}";
 	}
 	
-	
+	private Film findFilm(Long id) {
+		return em.find(Film.class, id);
+	}
 
 }
