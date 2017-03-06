@@ -22,9 +22,9 @@
     <!--</div>-->
 
     <div ng-controller="getShowingController as ctrl" >
-        <h1>Showings</h1>
+        <h1 ng-repeat="showing in ctrl.showings">{{showing}}</h1>
 
-        {{ctrl.showings}}
+
     </div>
     <!--<script src="js/angular.min.js"></script>-->
     <!--<script src="js/app.js"></script>-->
