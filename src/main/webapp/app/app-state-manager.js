@@ -48,8 +48,11 @@
         }).state("addscreen", {
         	url: "/addscreen",
         	templateUrl: "app/feature/screen/add/add-screen-partial.html"
+        }).state("getscreens", {
+        	url: "/getscreens",
+        	templateUrl: "app/feature/screen/get/get-screens-partial.html"
         }).state("getscreen", {
-        	url: "/getscreen",
+        	url: "/getscreen/{screenId:[0-9]}",
         	templateUrl: "app/feature/screen/get/get-screen-partial.html"
         }).state("addseat", {
         	url: "/addseat",
