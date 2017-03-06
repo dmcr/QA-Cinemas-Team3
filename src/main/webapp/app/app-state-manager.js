@@ -42,8 +42,11 @@
         }).state("addticket", {
         	url: "/addticket",
         	templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
+        }).state("gettickets", {
+        	url: "/gettickets",
+        	templateUrl: "app/feature/ticket/get/get-tickets-partial.html"
         }).state("getticket", {
-        	url: "/getticket",
+        	url: "/getticket/{ticketId:[0-9]}",
         	templateUrl: "app/feature/ticket/get/get-ticket-partial.html"
         }).state("addscreen", {
         	url: "/addscreen",
