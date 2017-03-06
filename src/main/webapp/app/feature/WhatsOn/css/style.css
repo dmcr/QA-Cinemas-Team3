@@ -29,7 +29,7 @@ h1 {
     font-family: "Lato", sans-serif;
     margin-top: 1em;
     font-size: 1em;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     position: relative;
 }
 
@@ -59,7 +59,7 @@ h1 {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform:translateZ(0) scale(1); /* Safari and Chrome */
-    -moz-transform:scale(1; /* Firefox */
+    -moz-transform:scale(1); /* Firefox */
     -ms-transform:scale(1); /* IE 9 */
 }
 
