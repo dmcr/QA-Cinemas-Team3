@@ -1,12 +1,12 @@
 'use strict';
 
+
+
 angular.module('app', [])
     .controller('MovieController', function ($scope, $http) {
-        $scope.$watch('search', function () {
-            fetch();
-        });
+        $scope.$watch('search', function () { fetch(); });
 
-        $scope.search = "logan";
+        $scope.search = film;
 
         function fetch() {
             $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
