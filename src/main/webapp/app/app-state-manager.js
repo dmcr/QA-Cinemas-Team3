@@ -45,6 +45,9 @@
         }).state("getshowing", {
         	url: "/getshowing/{showingId:[0-9]}",
         	templateUrl: "app/feature/showing/get/get-showing-partial.html"
+        }).state("updateshowing", {
+        	url: "/updateshowing/{showingId:[0-9]}",
+        	templateUrl: "app/feature/showing/update/update-showing-partial.html"
         }).state("addticket", {
         	url: "/addticket",
         	templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
@@ -54,6 +57,9 @@
         }).state("getticket", {
         	url: "/getticket/{ticketId:[0-9]}",
         	templateUrl: "app/feature/ticket/get/get-ticket-partial.html"
+        }).state("updateticket", {
+        	url: "/updateticket/{ticketId:[0-9]}",
+        	templateUrl: "app/feature/ticket/update/update-ticket-partial.html"
         }).state("addscreen", {
         	url: "/addscreen",
         	templateUrl: "app/feature/screen/add/add-screen-partial.html"
@@ -63,6 +69,9 @@
         }).state("getscreen", {
         	url: "/getscreen/{screenId:[0-9]}",
         	templateUrl: "app/feature/screen/get/get-screen-partial.html"
+        }).state("updatescreen", {
+        	url: "/updatescreen/{screenId:[0-9]}",
+        	templateUrl: "app/feature/screen/update/update-screen-partial.html"
         }).state("addseat", {
         	url: "/addseat",
         	templateUrl: "app/feature/seat/add/add-seat-partial.html"
@@ -72,6 +81,9 @@
         }).state("getseat", {
         	url: "/getseat/{seatId:[0-9]}",
         	templateUrl: "app/feature/seat/get/get-seat-partial.html"
+        }).state("updateseat", {
+        	url: "/updateseat/{seatId:[0-9]}",
+        	templateUrl: "app/feature/seat/update/update-seat-partial.html"
         }).state("addseattype", {
         	url: "/addseattype",
         	templateUrl: "app/feature/seatType/add/add-seatType-partial.html"
@@ -81,6 +93,9 @@
         }).state("getseattype", {
         	url: "/getseattype/{seatTypeId:[0-9]}",
         	templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
+        }).state("updateseattype", {
+        	url: "/updateseattype/{seatTypeId:[0-9]}",
+        	templateUrl: "app/feature/seatType/update/update-seatType-partial.html"
         })
     });
 }());
