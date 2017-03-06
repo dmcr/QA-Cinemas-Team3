@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<div ng-controller="getShowingController as ctrl">
-    <h1>Showings</h1>
-    {{ctrl.showings}}
-</div>>
-
 
 
 
@@ -26,6 +21,11 @@
         <div id="main-info" ng-include="'partials/main-info.html'" class="col-md-8"></div>
     </div>
 
+    <div ng-controller="getShowingController as ctrl">
+        <h1>Showings</h1>
+
+        {{ctrl.showings}}
+    </div>>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     </body>
