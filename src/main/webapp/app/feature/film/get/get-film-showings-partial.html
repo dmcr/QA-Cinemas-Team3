@@ -29,18 +29,17 @@
 
     <ul>
 
-            <table style = "width:100%">
-                <tr>
-                    <th style = "font-size: 25px">Start Time</th>
-                    <th style = "font-size: 25px">ScreenID</th>
-                    <th style = "font-size: 25px">FilmID</th>
-                </tr>
-                    <tr ng-repeat="showing in ctrl.film.showings">
+            <div class="row" style = "width:100%">
+                    <h style = "font-size: 25px">Showings</h>
+                    <!--<th style = "font-size: 25px">ScreenID</th>-->
+                    <!--<th style = "font-size: 25px">FilmID</th>-->
+
+                    <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
                         <td><button>{{showing.startTime}}</button></td>
                         <!--<td>{{showing.screenId}}</td>-->
                         <!--<td>{{showing.filmId}}</td>-->
-                    </tr>
-            </table>
+                    </div>
+            </div>
     </ul>
 
 
