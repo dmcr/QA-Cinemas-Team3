@@ -22,8 +22,13 @@
     <!--</div>-->
 
     <div ng-controller="getShowingController as ctrl" >
-        <h1 ng-repeat="showing in ctrl.showings">{{showing}}</h1>
+    <ul ng-repeat="showing in ctrl.showings">
 
+        <li>
+            starttime: {{showing.startTime}};
+        </li>
+
+    </ul>
 
     </div>
     <!--<script src="js/angular.min.js"></script>-->
