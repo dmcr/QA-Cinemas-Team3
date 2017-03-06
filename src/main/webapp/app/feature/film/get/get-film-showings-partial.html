@@ -12,10 +12,10 @@
 
 <div ng-controller="getFilmController as ctrl">
 
-    {{title}}
-    {{ShowingID}}
-    {{ScreenID}}
-    {{FilmID}}
+    {{ctrl.film.title}}
+    {{ctrl.film.ShowingID}}
+    {{ctrl.film.ScreenID}}
+    {{ctrl.film.FilmID}}
 
     <ul>
 
@@ -25,7 +25,7 @@
                     <th style = "font-size: 25px">ScreenID</th>
                     <th style = "font-size: 25px">FilmID</th>
                 </tr>
-                    <tr ng-repeat="showing in ctrl.showings">
+                    <tr ng-repeat="showing in ctrl.film.showings">
                         <td>{{showing.startTime}}</td>
                         <td>{{showing.screenId}}</td>
                         <td>{{showing.filmId}}</td>
