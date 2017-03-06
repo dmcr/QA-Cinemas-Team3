@@ -1,16 +1,21 @@
 <body>
 
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">title</h>
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">cast</h>
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">certification</h>
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">director</h>
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">genre</h>
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">releaseDate</h>
-<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">summary</h>
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">title</h>-->
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">cast</h>-->
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">certification</h>-->
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">director</h>-->
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">genre</h>-->
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">releaseDate</h>-->
+<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">summary</h>-->
 
 
 
 <div ng-controller="getFilmController as ctrl">
+
+    {{title}}
+    {{ShowingID}}
+    {{ScreenID}}
+    {{FilmID}}
 
     <ul>
 
@@ -20,13 +25,12 @@
                     <th style = "font-size: 25px">ScreenID</th>
                     <th style = "font-size: 25px">FilmID</th>
                 </tr>
-                <tr ng-repeat="showing in ctrl.showings">
-                    <td>{{showing.startTime}}</td>
-                    <td>{{showing.screenId}}</td>
-                    <td>{{showing.filmId}}</td>
-                </tr>
+                    <tr ng-repeat="showing in ctrl.showings">
+                        <td>{{showing.startTime}}</td>
+                        <td>{{showing.screenId}}</td>
+                        <td>{{showing.filmId}}</td>
+                    </tr>
             </table>
-
     </ul>
 
 
