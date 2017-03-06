@@ -53,7 +53,8 @@
             templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
         }).state("getfilmshowings", {
                 url: "/getfilmshowings",
-                templateUrl: "app/feature/seatType/get/get-filmshowing-partial.html"
+                templateUrl: "app/feature/showingsPage/get/get-filmshowing-partial.html"
+
         })
     });
 }());
