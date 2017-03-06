@@ -12,7 +12,7 @@
         init();
         
         vm.updateBooking = function(bookingToUpdate) {
-            bookingDal.updateBooking(bookingToUpdate.filmId, bookingToUpdate).then(function (result) {
+            bookingDal.updateBooking(bookingToUpdate.bookingId, bookingToUpdate).then(function (result) {
                 vm.bookingUpdateMessage  = result;
                 $state.go('getbookings');
             }, function (error) {
