@@ -5,7 +5,7 @@
 <div id="Films" class="container content-section text-center">
 
     <div id="gridofequals" ng-repeat="film in ctrl.films">
-        <div class="geInline" ng-app="myApp" ng-controller="MovieController">
+        <div class="geInline">
             <div  class="actionBox"><img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="image" style="z-index: 1000;"></div>
             <span class="top-films__title">{{film.title}}</span>
     </div>
