@@ -1,4 +1,4 @@
-package com.qa.cinema;
+package com.qa.cinema.model;
 
 import java.util.Date;
 
