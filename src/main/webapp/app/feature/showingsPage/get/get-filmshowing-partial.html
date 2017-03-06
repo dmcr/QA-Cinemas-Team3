@@ -28,14 +28,13 @@
 
     <div ng-controller="getShowingController as ctrl" >
         <ul>
-
                 <li>
                     <table style = "width:100%">
                         <tr>
-                                <th>Start Time</th>
-                                <th>ShowingID</th>
-                                <th>ScreenID</th>
-                                <th>FilmID</th>
+                                <th style = "font-size: 25px">Start Time</th>
+                                <th style = "font-size: 25px">ShowingID</th>
+                                <th style = "font-size: 25px">ScreenID</th>
+                                <th style = "font-size: 25px">FilmID</th>
                         </tr>
                                 <tr ng-repeat="showing in ctrl.showings">
                                     <td>{{showing.startTime}}</td>
