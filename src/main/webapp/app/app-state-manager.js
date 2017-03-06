@@ -14,7 +14,7 @@
             templateUrl: "app/feature/film/get/get-films-partial.html"
         }).state("whatson", {
             url: "/whatson",
-            templateUrl: "app/feature/whatsOn/whats-on-partial.html"
+            templateUrl: "app/feature/WhatsOn/whats-on-partial.html"
         }).state("getfilm", {
             url: "/getfilm/{filmId:[0-9]}",
             templateUrl: "app/feature/film/get/get-film-partial.html"
