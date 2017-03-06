@@ -55,8 +55,7 @@
 
 <body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-
-    <div ui-view></div>
+<div ui-view></div>
     
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -352,7 +351,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="contactUsController as contactCtrl">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -362,13 +361,13 @@
                 <h1>Contact Us</h1>
                 <form name="loginForm" method="post" action="LoginServlet.java" class="cf">
                     <div class="half left cf wow animated fadeIn" data-wow-delay=".5s">
-                        <input type="text" id="input-name" placeholder="Name">
-                        <input type="email" id="input-email" placeholder="Email address">
-                        <input type="text" id="input-subject" placeholder="Subject">
+                        <input type="text" id="input-name" placeholder="Name" ng-model="contact.name">
+                        <input type="email" id="input-email" placeholder="Email address" ng-model="contact.email">
+                        <input type="text" id="input-subject" placeholder="Subject" ng-model="contact.subject">
                     </div>
                     <div class="half right cf wow animated fadeIn">
-                        <textarea name="message" id="input-message" placeholder="Message"></textarea>
-                        <button type="submit" id="input-submit" class="btn btn-primary wide">Submit</button>
+                        <textarea name="message" id="input-message" placeholder="Message" ng-model="contact.message"></textarea>
+                        <button type="submit" id="input-submit" class="btn btn-primary wide" ng-click="contactCtrl.sendEmail(contact)">Submit</button>
                     </div>
                 </form>
             </div>
