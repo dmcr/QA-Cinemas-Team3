@@ -3,27 +3,27 @@
 <div id="Films" class="container content-section text-center">
 
     <div id="gridofequals" ng-repeat="film in ctrl.films">
-        <div class="geInline" ng-app="myApp" ng-controller="MovieController">
-            <div  class="actionBox"><img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="image" style="z-index: 1000;"></div>
+        <!--<div class="geInline" ng-app="myApp" ng-controller="MovieController">-->
+            <!--<div  class="actionBox"><img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="image" style="z-index: 1000;"></div>-->
             <span class="top-films__title">{{film.title}}</span>
-        </div>
+    <!--</div>-->
     </div>
 </div>
 
-<div id="darkness" style="opacity: 0; display: none;"></div>
+<!--<div id="darkness" style="opacity: 0; display: none;"></div>-->
 
-<script type="text/javascript">
-    $(function () {
-        $('.actionBox')
-            .mouseenter(function () {
-                $(this).dimBackground({
-                    darkness: 0.7  // 0: no dimming, 1: completely black
-                });
-            })
-            .mouseleave(function () {
-                $(this).undim();
-            });
-    });
-</script>
+<!--<script type="text/javascript">-->
+    <!--$(function () {-->
+        <!--$('.actionBox')-->
+            <!--.mouseenter(function () {-->
+                <!--$(this).dimBackground({-->
+                    <!--darkness: 0.7  // 0: no dimming, 1: completely black-->
+                <!--});-->
+            <!--})-->
+            <!--.mouseleave(function () {-->
+                <!--$(this).undim();-->
+            <!--});-->
+    <!--});-->
+<!--</script>-->
 
 
