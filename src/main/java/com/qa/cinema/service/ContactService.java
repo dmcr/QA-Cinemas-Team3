@@ -4,12 +4,16 @@ package com.qa.cinema.service;
 import java.util.Properties;
 
 import javax.inject.Inject;
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import com.qa.cinema.model.Email;
 import com.qa.cinema.util.JSONUtil;
+
 
 
 public class ContactService {
@@ -47,7 +51,7 @@ public class ContactService {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(username));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-			message.setText(formEmailSend.getMessage());
+			message.setText(formEmailSend.toString());
 			Transport.send(message);
 			System.out.println("message sent");
 		} catch (Exception e) {

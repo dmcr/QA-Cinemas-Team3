@@ -8,6 +8,7 @@ public class Email {
     private String email;
     private String subject;
     private String message;
+    StringBuilder emailBody;
 
     public Email(String name, String email, String subject, String message) {
         this.name = name;
@@ -17,14 +18,13 @@ public class Email {
         createEmail();
     }
 
-    private void createEmail() {
-        String emailBody = "";
-
-        String head = "From: " + name + " Email Address: " + email + " \n";
+    
+	private void createEmail() {
+    	String head = "From: " + name + " Email Address: " + email + " \n";
         String subjectBody = "Concerning : " + subject + " \n \n ";
         String messageBody = "Message : " + message + " \n \n";
 
-        emailBody = emailBody + head + subjectBody + messageBody;
+        emailBody.append(head + subjectBody + messageBody);
     }
 
 

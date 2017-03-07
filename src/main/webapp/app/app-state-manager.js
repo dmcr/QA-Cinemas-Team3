@@ -2,9 +2,8 @@
 
 (function () {
 
-    angular.module('cinemaApp').config(function ($stateProvider, $urlRouterProvider) {
+    angular.module('cinemaApp').config(function ($stateProvider) {
 
-        $urlRouterProvider.otherwise("index.html");
 
         $stateProvider.state("getfilm", {
             url: "/getfilm",

@@ -31,13 +31,9 @@
     <!-- Stylesheets for the pages -->
     <link rel="stylesheet" href="app/css/form-style.css">
     <link rel="stylesheet" href="app/css/animate.css">
-    <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="app/css/ie-only.css" />
-    <![endif]-->
     <link rel="stylesheet" href="app/css/main-style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -45,16 +41,15 @@
     
     
     <!-- Angular modules-->
-    <!-- <script src="scripts/angular.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="scripts/ui-router.min.js"></script>
-        <!--  JQuery  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 
 </head>
 
-<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50" ng-controller="MainCtrl">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
 <div ui-view></div>
     
 <!-- Navigation -->
@@ -75,19 +70,19 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="hidden">
-                    <a href="#topPage"></a>
+                    <a ng-click="scrollTo('topPage')"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#whatson">What's On</a>
+                    <a ng-click="scrollTo('whatson')" href="#whatson" target="_self" class="page-scroll">What's On</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#whatson">Coming Soon</a>
+                    <a ng-click="scrollTo('whatson')" href="#whatson" target="_self" class="page-scroll">Coming Soon</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">About Us</a>
+                    <a ng-click="scrollTo('about')" href="#about" target="_self" class="page-scroll">About Us</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#findus">Find Us</a>
+                    <a ng-click="scrollTo('findus')" href="#findus" target="_self" class="page-scroll">Find Us</a>
                 </li>
             </ul>
         </div>
@@ -97,7 +92,8 @@
     <!-- App and state manager-->
     <script src="app/app.js"></script>
     <script src="app/app-state-manager.js"></script>
-
+    <script src="app/scroll.js"></script>
+    
     <!-- Services-->
     <script src="app/service/dal/dal.js"></script>
     <script src="app/service/dal/film.js"></script>
@@ -108,6 +104,7 @@
     <script src="app/service/dal/showing.js"></script>
     <script src="app/service/dal/ticket.js"></script>
     <script src="app/service/dal/contact.js"></script>
+
 
     <!-- Features-->
     <script src="app/feature/booking/add/add-booking-controller.js"></script>
@@ -289,7 +286,7 @@
 <div id="footer" class="container footer">
     <div class="row chevSpace">
         <div class="col-xs-12 text-center">
-            <a class="page-scroll" href="#topPage"><i class="fa fa-chevron-circle-up fa-2x"></i><br/>
+            <a class="page-scroll" ng-click="scrollTo('topPage')"><i class="fa fa-chevron-circle-up fa-2x"></i><br/>
                 Back to Top</a>
         </div>
     </div>
