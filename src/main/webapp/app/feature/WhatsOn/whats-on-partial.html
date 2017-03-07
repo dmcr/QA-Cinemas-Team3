@@ -17,8 +17,8 @@
     </script>
 
     <script>
-        function filmPoster(film.title){
-            var title = film.title;
+        function filmPoster(){
+            var title = "logan";
             <!--{{film.title}} -->
             var $Poster = $('#poster');
             var sUrl, oData;
@@ -37,7 +37,7 @@
         <div id="gridofequals">
             <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
                 <div class="actionBox" style="z-index: 1000;">
-                    <script>filmPoster(film.title)</script>
+                    <script>filmPoster()</script>
                     <span class="poster">{{film.title}}</span>
                 </div>
                 <span class="top-films__title">{{film.title}}</span>
