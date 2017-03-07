@@ -89,7 +89,7 @@
             .state("BookingTest", {
             url: "/BookingTest",
             templateUrl: "app/feature/showing/get/BookingTest.html",
-                // data: {time: showing.startTime}
+            params: {starttime: null}
         })
     });
 }());
