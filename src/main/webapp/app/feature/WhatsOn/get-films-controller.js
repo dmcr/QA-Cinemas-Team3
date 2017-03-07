@@ -1,5 +1,5 @@
 (function () {
-    var GetFilmController = function (filmDal) {
+    var GetFilmsController = function (filmDal) {
         var vm = this;
 
         function init() {
@@ -12,8 +12,5 @@
         }
         init();
     };
-    angular.module('cinemaApp').controller('getFilmController', ['filmDal', GetFilmController]);
+    angular.module('cinemaApp').controller('getFilmsController', ['filmDal', GetFilmsController]);
 }());
-
-
-
