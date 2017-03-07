@@ -12,9 +12,9 @@
         init();
         
         vm.updateSeatType = function(seatTypeToUpdate) {
-            seatTypeDal.updateSeat(seatTypeToUpdate.seatTypeId, seatTypeToUpdate).then(function (result) {
+            seatTypeDal.updateSeatType(seatTypeToUpdate.typeId, seatTypeToUpdate).then(function (result) {
                 vm.seatTypeUpdateMessage  = result;
-                $state.go('getseatTypes');
+                $state.go('getseattypes');
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
