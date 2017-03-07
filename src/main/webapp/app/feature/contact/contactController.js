@@ -1,21 +1,22 @@
 (function () {
 	
-	var ContactController = function(contactDal) {
+	var contactController = function(contactService) {
 		
 		var vm = this;
+		var string = [];
 		
 		vm.sendEmail = function(emailToSend) {
-			contactDal.sendEmail(emailToSend).then(function (results) {
-				vm.sendEmailMessage = results;
-				console.log(results);
-			}, function (error) {
-				vm.error = true;
-				vm.errorMessage = error;
-				console.log(results);
-			});
-		};
-	};
+			console.log(emailToSend);
+			string = emailToSend;
+			
+			//JSON convert?
+			var emailJson = JSON.stringify(string);
+			console.log(emailJson);
+			contactService.sendEmail(emailToSend);
+			
+		}
+	}
 	
-	angular.module('cinemaApp').controller('contactController', ['contactDal', ContactController]);
+	angular.module('cinemaApp').controller('contactController', ['contactService', contactController]);
 	
 }());

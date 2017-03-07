@@ -1,64 +1,62 @@
 package com.qa.cinema.model;
 
-import java.util.Date;
 
 public class Email {
 
     private String name;
     private String email;
     private String subject;
-    private String message;
+    private StringBuilder message;
 
     public Email(String name, String email, String subject, String message) {
         this.name = name;
         this.email = email;
         this.subject = subject;
-        this.message = message;
+        this.message = new StringBuilder();
         createEmail();
     }
 
     private void createEmail() {
-        String emailBody = "";
+        String head = "From: " + getName() + " Email Address: " + getEmail() + " \n";
+        String subjectBody = "Concerning : " + getSubject() + " \n \n ";
+        String messageBody = "Message : " + getMessage() + " \n \n";
 
-        String head = "From: " + name + " Email Address: " + email + " \n";
-        String subjectBody = "Concerning : " + subject + " \n \n ";
-        String messageBody = "Message : " + message + " \n \n";
-
-        emailBody = emailBody + head + subjectBody + messageBody;
+        this.message.append(head + subjectBody + messageBody);
     }
 
+	public String getName() {
+		return name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getSubject() {
-        return subject;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public StringBuilder getMessage() {
+		return message;
+	}
+
+	public void setMessage(StringBuilder message) {
+		this.message = message;
+	}
 
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
 }

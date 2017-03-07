@@ -108,6 +108,7 @@
     <script src="app/service/dal/showing.js"></script>
     <script src="app/service/dal/ticket.js"></script>
     <script src="app/service/dal/contact.js"></script>
+    <script src="app/service/contactService.js"></script>
 
     <!-- Features-->
     <script src="app/feature/booking/add/add-booking-controller.js"></script>
@@ -355,13 +356,13 @@
                 <h1>Contact Us</h1>
                 <form name="loginForm" class="cf">
                     <div class="half left cf wow animated fadeIn" data-wow-delay=".5s">
-                        <input type="text" id="input-name" placeholder="Name" ng-model="contact.name">
-                        <input type="email" id="input-email" placeholder="Email address" ng-model="contact.email">
-                        <input type="text" id="input-subject" placeholder="Subject" ng-model="contact.subject">
+                        <input type="text" placeholder="Name" ng-model="contact.name">
+                        <input type="email" placeholder="Email address" ng-model="contact.email">
+                        <input type="text" placeholder="Subject" ng-model="contact.subject">
                     </div>
                     <div class="half right cf wow animated fadeIn">
-                        <textarea name="message" id="input-message" placeholder="Message" ng-model="contact.message"></textarea>
-                        <button type="submit" id="input-submit" class="btn btn-primary wide" ng-click="contactCtrl.sendEmail(contact)">Submit</button>
+                        <textarea name="message" placeholder="Message" ng-model="contact.message"></textarea>
+                        <button type="submit" class="btn btn-primary wide" ng-click="contactCtrl.sendEmail(contact)">Submit</button>
                     </div>
                 </form>
             </div>
