@@ -1,10 +1,10 @@
 (function () {
-    var GetSeatController = function (seatDal) {
+    var GetSeatController = function (seatDal, $stateParams) {
         var vm = this;
 
         function init() {
-            seatDal.getSeats().then(function (results) {
-                vm.seats = results;
+            seatDal.getSeatByID($stateParams.seatId).then(function (result) {
+                vm.seat = result;
             }, function(error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -12,5 +12,5 @@
         }
         init();
     };
-    angular.module('cinemaApp').controller('getSeatController', ['seatDal', GetSeatController]);
+    angular.module('cinemaApp').controller('getSeatController', ['seatDal', '$stateParams', GetSeatController]);
 }());
