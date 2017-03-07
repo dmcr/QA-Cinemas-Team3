@@ -51,7 +51,7 @@ public class ContactService {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(username));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-			message.setText(formEmailSend.toString());
+			message.setText(formEmailSend.getMessage().toString());
 			Transport.send(message);
 			System.out.println("message sent");
 		} catch (Exception e) {

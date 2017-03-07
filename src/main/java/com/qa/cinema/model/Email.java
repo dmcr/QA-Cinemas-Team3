@@ -7,24 +7,23 @@ public class Email {
     private String name;
     private String email;
     private String subject;
-    private String message;
-    StringBuilder emailBody;
+    private StringBuilder message;
 
     public Email(String name, String email, String subject, String message) {
         this.name = name;
         this.email = email;
         this.subject = subject;
-        this.message = message;
+        this.message = new StringBuilder();
         createEmail();
     }
 
     
 	private void createEmail() {
-    	String head = "From: " + name + " Email Address: " + email + " \n";
-        String subjectBody = "Concerning : " + subject + " \n \n ";
-        String messageBody = "Message : " + message + " \n \n";
+    	String head = "<b>From: </b>" + name + " \t \t <b>Email Address: </b>" + email + " \n";
+        String subjectBody = "<b>Concerning : </b>" + subject + " \n \n ";
+        String messageBody = "<b>Message : </b>" + message + " \n \n";
 
-        emailBody.append(head + subjectBody + messageBody);
+        this.message.append(head + subjectBody + messageBody);
     }
 
 
@@ -40,7 +39,7 @@ public class Email {
         return subject;
     }
 
-    public String getMessage() {
+    public StringBuilder getMessage() {
         return message;
     }
 
@@ -57,7 +56,7 @@ public class Email {
         this.subject = subject;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(StringBuilder message) {
         this.message = message;
     }
 
