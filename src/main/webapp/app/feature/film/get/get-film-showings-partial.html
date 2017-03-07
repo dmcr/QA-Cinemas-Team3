@@ -47,7 +47,9 @@
 
             <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
 
-                <td><button>{{format(showing.startTime,"%H:%M")}}</button></td>
+                <td><button>{{date_format(showing.startTime,"%H:%M")}}</button></td>
+
+
 
             </div>
         </div>
