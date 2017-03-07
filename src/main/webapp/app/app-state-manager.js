@@ -90,6 +90,7 @@
             url: "/BookingTest",
             templateUrl: "app/feature/showing/get/BookingTest.html",
             params: {starttime: null}
+
         })
     });
 }());

@@ -13,11 +13,10 @@
         init();
     };
 
-    function UserCtrl($stateParams) {
-        conrole.log($stateParams)
+    function ParseVariables() {
+        
     }
-    $state.go('users', {obj:startTime})
-
+    
     // vm.getShowingTime = function (showing) {
     //         $state.go('showing', {'showingId', showingId})
     // }

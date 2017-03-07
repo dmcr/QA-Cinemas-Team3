@@ -26,7 +26,7 @@
 
                 <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
 
-                    <td><button><a href="#/BookingTest">{{showing.startTime}}</a></button></td>
+                    <td><button><a href="#/BookingTest" onclick= "ParseVariables()">{{showing.startTime}}</a></button></td>
 
 
 
@@ -35,7 +35,11 @@
         </ul>
 
     </div>
-
+<script>
+    function ParseVariables() {
+        alert("HI Steve is cool");
+    }
+</script>
 
 
     </html>
