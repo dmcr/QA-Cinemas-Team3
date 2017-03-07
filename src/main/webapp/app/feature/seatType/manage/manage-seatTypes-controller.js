@@ -13,7 +13,7 @@
         init();
         
         vm.updateSeatType = function(seatTypeToUpdateId) {
-                $state.go('updateseattype', {'seatTypeId' : seatTypeToUpdateId}); 
+                $state.go('cms.manageseattypes.updateseattype', {'seatTypeId' : seatTypeToUpdateId}); 
         };
     };
     angular.module('cinemaApp').controller('manageSeatTypesController', ['seatTypeDal', '$state', ManageSeatTypesController]);

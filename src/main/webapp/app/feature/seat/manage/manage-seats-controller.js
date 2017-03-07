@@ -16,6 +16,10 @@
                 $state.go('cms.manageseats.updateseat', {'seatId' : seatToUpdateId}); 
         };
         
+        vm.addSeat = function() {
+        	$state.go('cms.manageseats.newseat');
+        };
+        
         vm.deleteSeat = function(seatToDeleteID) {
         	console.log(seatToDeleteID);
             seatDal.deleteSeat(seatToDeleteID);

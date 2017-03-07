@@ -14,7 +14,7 @@
         vm.updateSeatType = function(seatTypeToUpdate) {
             seatTypeDal.updateSeatType(seatTypeToUpdate.typeId, seatTypeToUpdate).then(function (result) {
                 vm.seatTypeUpdateMessage  = result;
-                $state.go('manageseattypes');
+                $state.go('cms.manageseattypes', {}, { reload: true });
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
