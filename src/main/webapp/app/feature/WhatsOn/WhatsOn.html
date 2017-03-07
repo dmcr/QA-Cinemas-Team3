@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,115 +19,33 @@
     <link rel="stylesheet" href="style.css">
     <script src="scripts/angular.min.js"></script>
 
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>QACinemas</title>
-
-
     <script src="scripts/jquery.easing.min.js"></script>
     <script src="scripts/grayscale.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/dim-background.js"></script>
 
-
-    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-responsive.css">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Stylesheets for the pages -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 
 </head>
 <body>
 <div id="Films" class="container content-section text-center">
 
-<div id="gridofequals" ng-repeat="film in ctrl.films">
-    <div class="geInline">
-        <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/logan.jpg"
-                                    alt="logan"></div>
-        <span class="top-films__title">logan</span>
-    </div>
-    <div class="geInline">
-        <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/Fences.jpg"
-                                    alt="Fences"></div>
-        <span class="top-films__title">Fences</span>
-    </div>
-    <div class="geInline">
-        <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/50Shades.jpg"
-                                    alt="50 Shades darker"></div>
-        <span class="top-films__title">50 Shades Darker</span>
-    </div>
-    <div class="geInline">
-        <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/FistFight.jpg" alt="Fist Fight"></div>
-        <span class="top-films__title">Fist Fight</span>
-    </div>
-    <div class="geInline">
-        <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/LaLaLand.jpg"
-                                             alt="La La Land"></div>
-        <span class="top-films__title ">La La Land</span>
+    <div id="gridofequals" ng-repeat="film in ctrl.films">
+        <div class="geInline">
+            <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/{{film.filmId}}.jpg"
+                                        alt={{film.title}}></div>
+            <span class="top-films__title">{{film.title}}</span>
+        </div>
     </div>
     <br>
     <br>
-    <div class="geInline">
-        <div class="actionBox"><img class="image" style="z-index: 1000;" src="img/Moana.jpg" alt="Moana"></div>
-        <span class="top-films__title">Moana</span></div>
-    <div class="geInline">
-        <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/LegoBM.jpg"
-                                             alt="Lego Batman"></div>
-        <span class="top-films__title">Logo Batman</span></div>
-    <div class="geInline">
-        <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/GreatWall.jpg"
-                                             alt="The Great Wall"></div>
-        <span class="top-films__title">The great wall</span>
-    </div>
-    <div class="geInline">
-        <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/Beaty.jpg"
-                                             alt="beaty and the beast"></div>
-        <span class="top-films__title">Beauty and <br> the Beast</span>
-    </div>
-    <div class="geInline">
-        <div class="geInline actionBox"><img class="image" style="z-index: 1000;" src="img/hiddenFigures.jpg"
-                                             alt="hidden figures"></div>
-        <span class="top-films__title">Hidden Figures</span>
-    </div>
 </div>
-</div>
-<br>
-<br>
-
-<div id="darkness" style="opacity: 0; display: none;"></div>
-
-
-<script type="text/javascript">
-    $(function () {
-        $('.actionBox')
-            .mouseenter(function () {
-                $(this).dimBackground({
-                    darkness: 0.7  // 0: no dimming, 1: completely black
-                });
-            })
-            .mouseleave(function () {
-                $(this).undim();
-            });
-    });
-</script>
-
-
-
+    <div id="darkness" style="opacity: 0; display: none;"></div>
 
 </body>
 
