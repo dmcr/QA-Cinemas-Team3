@@ -3,7 +3,7 @@
         var vm = this;
 
         function init() {
-            seatTypeDal.getSeatTypes($stateParams.seatTypeId).then(function (result) {
+            seatTypeDal.getSeatTypes($stateParams.typeId).then(function (result) {
                 vm.seatType = result;
             }, function(error) {
                 vm.error = true;
