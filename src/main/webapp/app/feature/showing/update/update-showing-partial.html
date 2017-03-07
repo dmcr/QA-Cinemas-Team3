@@ -1,0 +1,13 @@
+<div ng-controller="updateShowingController as ctrl">
+	<h2>Update Showing:</h2>
+	<h1>{{ctrl.showing.showingId}}</h1>
+	<form role="form">
+		<input id="startTime" placeholder="startTime" ng-model="ctrl.showing.startTime">
+
+        <input id="screenId" placeholder="screenId" ng-model="ctrl.showing.screenId">
+        
+        <input id="filmId" placeholder="filmId" ng-model="ctrl.showing.filmId">
+
+        <button type="submit" ng-click="ctrl.updateShowing(ctrl.showing)">updateShowing</button>
+	</form>
+</div>

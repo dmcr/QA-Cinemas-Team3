@@ -1,0 +1,11 @@
+<div ng-controller="updateSeatTypeController as ctrl">
+	<h2>Update SeatType:</h2>
+	<h1>{{ctrl.seatType.name}}</h1>
+	<form role="form">
+		<input id="name" placeholder="name" ng-model="ctrl.seatType.name">
+
+        <input id="price" placeholder="price" ng-model="ctrl.seatType.price">
+
+        <button type="submit" ng-click="ctrl.updateSeatType(ctrl.seatType)">UpdateSeatType</button>
+	</form>
+</div>
