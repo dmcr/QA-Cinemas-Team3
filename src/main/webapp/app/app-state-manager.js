@@ -15,9 +15,6 @@
         }).state("getfilm", {
             url: "/getfilm/{filmId:[0-9]}",
             templateUrl: "app/feature/film/get/get-film-partial.html"
-        }).state("getfilmshowings", {
-            url: "/getfilmshowings/{filmId:[0-9]}",
-            templateUrl: "app/feature/film/get/get-film-showings-partial.html"
         }).state("addfilm", {
             url: "/addfilm",
             templateUrl: "app/feature/film/add/add-film-partial.html"
