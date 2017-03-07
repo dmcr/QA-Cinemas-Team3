@@ -88,7 +88,8 @@
         })
             .state("BookingTest", {
             url: "/BookingTest",
-            templateUrl: "app/feature/showing/get/BookingTest.html"
+            templateUrl: "app/feature/showing/get/BookingTest.html",
+                params: {time: showing.startTime}
         })
     });
 }());
