@@ -2,32 +2,50 @@
 <div ng-controller="getFilmController as ctrl">
 
 
-<div id="Films" class="container content-section text-center">
-
-    <div id="gridofequals">
-        <div class="geInline" ng-repeat="film in ctrl.films" ng-app="app" ng-controller="MovieController">
-            <div  class="actionBox"><img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="image" style="z-index: 1000;">
-            </div>
-            <span class="top-films__title">{{film.title}}</span>
-    </div>
-    </div>
-</div>
-
-</div>
-<div id="darkness" style="opacity: 0; display: none;"></div>
-
-<script type="text/javascript">
-    $(function () {
-        $('.actionBox')
-            .mouseenter(function () {
-                $(this).dimBackground({
-                    darkness: 0.7  // 0: no dimming, 1: completely black
+    <script>
+        $(function () {
+            $('.actionBox')
+                .mouseenter(function () {
+                    $(this).dimBackground({
+                        darkness: 0.7  // 0: no dimming, 1: completely black
+                    });
+                })
+                .mouseleave(function () {
+                    $(this).undim();
                 });
-            })
-            .mouseleave(function () {
-                $(this).undim();
+        });
+    </script>
+
+    <script>
+        function filmPoster(filmtitle) {
+            var title = filmtitle;
+            <!--{{film.title}} -->
+            var $Poster = $('#poster');
+            var sUrl, oData;
+            sUrl = 'https://www.omdbapi.com/?t=' + title + '&type=movie&tomatoes=true';
+            $.ajax(sUrl, {
+                complete: function (p_oXHR) {
+                    oData = $.parseJSON(p_oXHR.responseText);
+                    $Poster.find('.poster').html('<img class="image" src="' + oData.Poster + '"/>');
+                    $Poster.show();
+                }
             });
-    });
-</script>
+        }
+    </script>
+
+    <div id="Films" class="container content-section text-center">
+        <div id="gridofequals">
+            <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
+                <div class="actionBox" style="z-index: 1000;">
+                    <script>filmPoster(film.title)</script>
+                    <span class="poster">Poster</span>
+                </div>
+                <span class="top-films__title">{{film.title}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="darkness" style="opacity: 0; display: none;"></div>
+
 
 

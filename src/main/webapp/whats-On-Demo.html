@@ -41,8 +41,8 @@
     </script>
 
     <script>
-        function filmPoster() {
-            var title = 'logan';
+        function filmPoster(filmtitle) {
+            var title = filmtitle;
             <!--{{film.title}} -->
             var $Poster = $('#poster');
             var sUrl, oData;
@@ -50,7 +50,7 @@
             $.ajax(sUrl, {
                 complete: function (p_oXHR) {
                     oData = $.parseJSON(p_oXHR.responseText);
-                    $Poster.find('.poster').html('<img src="' + oData.Poster + '"/>');
+                    $Poster.find('.poster').html('<img class="image" src="' + oData.Poster + '"/>');
                     $Poster.show();
                 }
             });
@@ -65,13 +65,12 @@
     <div id="gridofequals">
         <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
             <div class="actionBox" style="z-index: 1000;">
-                <script>filmPoster()</script>
-                <!-- need to add styling so image is correct size and has rounded edges. found in style.css.image-->
-                <span class="poster">Poster</span>
-            </div>
-            <span class="top-films__title">{{film.title}}</span>
-        </div>
-    </div>
+    <script>filmPoster()</script>
+    <span class="poster">Poster</span>
+</div>
+<span class="top-films__title">{{film.title}}</span>
+</div>
+</div>
 </div>
 
 <div id="darkness" style="opacity: 0; display: none;"></div>
