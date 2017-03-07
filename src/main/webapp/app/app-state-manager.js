@@ -64,7 +64,7 @@
         	url: "/getseattype",
         	templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
         }).state("index", {
-            url: "/index",
+            url: "/index/{filmId:[0-9]}",
             templateUrl: "app/feature/film/get/index.html"
         })
     });
