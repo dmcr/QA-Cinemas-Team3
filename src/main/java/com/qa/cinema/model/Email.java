@@ -17,6 +17,11 @@ public class Email {
     }
 
     private void createEmail() {
+    	setName(name);
+    	setEmail(email);
+    	setSubject(subject);
+    	setMessage(message);
+    	
         String head = "From: " + getName() + " Email Address: " + getEmail() + " \n";
         String subjectBody = "Concerning : " + getSubject() + " \n \n ";
         String messageBody = "Message : " + getMessage() + " \n \n";
