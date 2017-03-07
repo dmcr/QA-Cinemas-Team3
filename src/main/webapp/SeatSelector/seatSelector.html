@@ -19,8 +19,8 @@
     <h2>Booking Details</h2>
 
     <div class="booking-details">
-        <p>Movie: <span> Gingerclown</span></p>
-        <p>Time: <span>November 3, 21:00</span></p>
+        <p>Movie: <span> {{film.title}}</span></p>
+        <p>Time: <span>{{film.releaseDate}}</span></p>
         <p>Seat: </p>
         <ul id="selected-seats"></ul>
         <p>Tickets: <span id="counter">0</span></p>
@@ -152,7 +152,7 @@
             });
 
             //let's pretend some seats have already been booked
-            sc.get(['A_1','A_6']).status('unavailable');
+            sc.get(['A_1','A_4','E_5','E_6','E_7','H_6','H_1','D_6',]).status('unavailable');
 
         });
 
