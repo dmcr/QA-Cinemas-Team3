@@ -85,6 +85,9 @@
             .state("get-showing-partial", {
             url: "/film-showing-page/{filmId:[0-9]}",
             templateUrl: "app/feature/showing/get/get-showing-partial.html"
+        }).state("BookingTest", {
+            url: "/BookingTest",
+            templateUrl: "app/feature/showing/get/BookingTest.html"
         })
     });
 }());
