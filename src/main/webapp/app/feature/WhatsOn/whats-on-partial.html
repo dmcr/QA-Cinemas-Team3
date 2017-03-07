@@ -3,8 +3,8 @@
      <div id="Films" class="container content-section text-center">
         <div id="gridofequals">
             <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
-                <div class="actionBox" style="z-index: 1000;">
-                    <img src="">
+                <div class="actionBox">
+                    <img src="{{filmPoster(film.title)}}" class="image" style="z-index: 1000;">
                 </div>
                 <span class="top-films__title">{{films.title}}</span>
             </div>
