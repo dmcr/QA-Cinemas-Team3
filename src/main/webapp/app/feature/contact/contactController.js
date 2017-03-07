@@ -1,15 +1,17 @@
 (function () {
 	
-	var ContactController = function(cntactDal) {
+	var ContactController = function(contactDal) {
 		
 		var vm = this;
 		
 		vm.sendEmail = function(emailToSend) {
 			contactDal.sendEmail(emailToSend).then(function (results) {
 				vm.sendEmailMessage = results;
+				console.log(results);
 			}, function (error) {
 				vm.error = true;
 				vm.errorMessage = error;
+				console.log(results);
 			});
 		};
 	};

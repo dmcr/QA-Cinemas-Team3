@@ -5,13 +5,13 @@ import javax.ws.rs.*;
 import com.qa.cinema.service.ContactService;
 
 
-@Path("/")
+@Path("/email")
 public class ContactEndpoint {
 
     @Inject
     private ContactService service;
 
-    @Path("/#")
+    @Path("/send")
     @POST
     @Produces({ "application/json"})
     public String sendEmail(String email) {

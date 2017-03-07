@@ -5,9 +5,9 @@
 	
 	function ContactDal(dal) {
 		
-		this.sendEmail = function() {
+		this.sendEmail = function(emailToSend) {
 			//Don't want to go to a specific page? Keep on home page
-			return dal.http.POST("/");
+			return dal.http.POST("/qa-cinemas3/rest/email/send", emailToSend);
 		};
 		
 	}	

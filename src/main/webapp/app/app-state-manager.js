@@ -4,12 +4,9 @@
 
     angular.module('cinemaApp').config(function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/dashboard");
+        $urlRouterProvider.otherwise("index.html");
 
-        $stateProvider.state("dashboard", {
-            url: "/dashboard",
-            templateUrl: "app/feature/dashboard/dashboard-partial.html"
-        }).state("getfilm", {
+        $stateProvider.state("getfilm", {
             url: "/getfilm",
             templateUrl: "app/feature/film/get/get-film-partial.html"
         }).state("addfilm", {
