@@ -10,8 +10,8 @@
         <div id="gridofequals">
             <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
                 <div class="actionBox" style="z-index: 1000;">
-
-                    <span class="poster">{{filmPoster(film.title)}}</span>
+                     {{filmPoster(film.title)}}
+                    <span class="poster">{{film.title}}</span>
                 </div>
                 <span class="top-films__title">{{film.title}}</span>
             </div>

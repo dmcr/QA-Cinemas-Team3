@@ -1,5 +1,5 @@
 
-function filmPoster(title) {
+filmPoster = function(title) {
     <!--{{film.title}} -->
     var $Poster = $('#poster');
     var sUrl, oData;
@@ -11,5 +11,5 @@ function filmPoster(title) {
             $Poster.show();
         }
     });
-}
+};
 
