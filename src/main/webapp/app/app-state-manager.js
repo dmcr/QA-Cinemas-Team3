@@ -36,18 +36,18 @@
         }).state("updatebooking", {
         	url: "/updatebooking/{bookingId:[0-9]*}",
         	templateUrl: "app/feature/booking/update/update-booking-partial.html"
-        }).state("addshowing", {
-        	url: "/addshowing",
-        	templateUrl: "app/feature/showing/add/add-showing-partial.html"
+//        }).state("addshowing", {
+//        	url: "/addshowing",
+//        	templateUrl: "app/feature/showing/add/add-showing-partial.html"
         }).state("getshowings", {
         	url: "/getshowings",
         	templateUrl: "app/feature/showing/get/get-showings-partial.html"
         }).state("getshowing", {
         	url: "/getshowing/{showingId:[0-9]*}",
         	templateUrl: "app/feature/showing/get/get-showing-partial.html"
-        }).state("updateshowing", {
-        	url: "/updateshowing/{showingId:[0-9]*}",
-        	templateUrl: "app/feature/showing/update/update-showing-partial.html"
+//        }).state("updateshowing", {
+//        	url: "/updateshowing/{showingId:[0-9]*}",
+//        	templateUrl: "app/feature/showing/update/update-showing-partial.html"
         }).state("addticket", {
         	url: "/addticket",
         	templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
@@ -116,7 +116,13 @@
         	templateUrl: "app/feature/seatType/update/update-seatType-partial.html"
         }).state("cms.manageshowings", {
         	url: "/manageshowings",
-        	templateUrl: "app/feature/seatType/manage/manage-seatTypes-partial.html"
+        	templateUrl: "app/feature/showing/manage/manage-showings-partial.html"
+        }).state("cms.manageshowings.updateshowing", {
+        	url: "/updateshowing/{showingId:[0-9]*}",
+        	templateUrl: "app/feature/showing/update/update-showing-partial.html"
+        }).state("cms.manageshowings.newshowing", {
+        	url: "/newshowing",
+        	templateUrl: "app/feature/showing/add/add-showing-partial.html"
         })
     });
 }());
