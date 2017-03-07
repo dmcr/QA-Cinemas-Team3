@@ -1,25 +1,10 @@
 <div ng-controller="getFilmsController as ctrl">
 
-    <script>
-       function filmPoster(title) {
-        var $Poster = $('#poster');
-        var sUrl, oData;
-        sUrl = 'https://www.omdbapi.com/?t=' + title + '&type=movie&tomatoes=true';
-        $.ajax(sUrl, {
-            complete: function (p_oXHR) {
-                oData = $.parseJSON(p_oXHR.responseText);
-                $Poster.find('.poster').html('<img class="image" src="' + oData.Poster + '"/>');
-                $Poster.show();
-            }
-        });
-    }
-    </script>
-
-    <div id="Films" class="container content-section text-center">
+     <div id="Films" class="container content-section text-center">
         <div id="gridofequals">
             <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
                 <div class="actionBox" style="z-index: 1000;">
-                    <span class="poster"><script>filmPoster('logan')</script></span>
+                    <img src="">
                 </div>
                 <span class="top-films__title">{{films.title}}</span>
             </div>
