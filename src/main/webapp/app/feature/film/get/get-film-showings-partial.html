@@ -1,14 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="MovieController">
+<head>
+    <title ng-bind="'Fastr - ' + details.Title"></title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+
 <body>
-
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">title</h>-->
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">cast</h>-->
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">certification</h>-->
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">director</h>-->
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">genre</h>-->
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">releaseDate</h>-->
-<!--<h style = "font-size: 50px" ng-repeat="showing in ctrl.film.showings">summary</h>-->
-
-
 
 <div ng-controller="getFilmController as ctrl">
 
@@ -27,26 +28,37 @@
     <h style = "font-size: 30px"> {{ctrl.film.summary}}</h>
     <br>
 
+
     <ul>
         <h style = "font-size: 25px">Showings</h>
             <div class="row" style = "width:100%; padding:10px">
-                    <!--<th style = "font-size: 25px">ScreenID</th>-->
-                    <!--<th style = "font-size: 25px">FilmID</th>-->
 
                     <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
+
                         <td><button>{{showing.startTime}}</button></td>
-                        <!--<td>{{showing.screenId}}</td>-->
-                        <!--<td>{{showing.filmId}}</td>-->
+
                     </div>
             </div>
     </ul>
 
 
+
+
+
+
 </div>
 
+<div class="container-fluid outerdiv">
+    <noscript>
+        <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
+    </noscript>
+    <div id="main-info" ng-include="'partials/main-info.html'" class="col-md-8"></div>
+</div>
 
-
-
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
 
 
 </body>
+
+</html>
