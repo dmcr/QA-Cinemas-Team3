@@ -21,6 +21,22 @@ public class ContactService {
     @Inject
     JSONUtil util;
     
+    public String getName() {
+    	return "";
+    }
+    
+    public String getEmail() {
+    	return "";
+    }
+    
+    public String getSubject() {
+    	return "";
+    }
+    
+    public String getMessageBody() {
+    	return "";
+    }
+    
     public String sendEmail(String messageSend) {
     	
     	Email formEmailSend = util.getObjectForJSON(messageSend, Email.class);
@@ -51,6 +67,7 @@ public class ContactService {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(username));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+			message.setSubject(formEmailSend.getSubject());
 			message.setText(formEmailSend.getMessage().toString());
 			Transport.send(message);
 			System.out.println("message sent");

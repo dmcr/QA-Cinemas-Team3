@@ -1,29 +1,30 @@
 package com.qa.cinema.model;
 
-import java.util.Date;
 
 public class Email {
 
     private String name;
     private String email;
-    private String subject;
-    private StringBuilder message;
+    private String messageSubject;
+    private StringBuilder messageBody;
 
-    public Email(String name, String email, String subject, String message) {
+    public Email() {}
+    
+    public Email(String name, String email, String messageSubject, String messageBody) {
         this.name = name;
         this.email = email;
-        this.subject = subject;
-        this.message = new StringBuilder();
+        this.messageSubject = messageSubject;
+        this.messageBody = new StringBuilder();
         createEmail();
     }
 
     
 	private void createEmail() {
     	String head = "<b>From: </b>" + name + " \t \t <b>Email Address: </b>" + email + " \n";
-        String subjectBody = "<b>Concerning : </b>" + subject + " \n \n ";
-        String messageBody = "<b>Message : </b>" + message + " \n \n";
+        String subjectBody = "<b>Concerning : </b>" + messageSubject + " \n \n ";
+        String message = "<b>Message : </b>" + messageBody + " \n \n";
 
-        this.message.append(head + subjectBody + messageBody);
+        this.messageBody.append(head + subjectBody + message);
     }
 
 
@@ -36,11 +37,11 @@ public class Email {
     }
 
     public String getSubject() {
-        return subject;
+        return messageSubject;
     }
 
     public StringBuilder getMessage() {
-        return message;
+        return messageBody;
     }
 
 
@@ -52,12 +53,12 @@ public class Email {
         this.email = email;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setSubject(String messageSubject) {
+        this.messageSubject = messageSubject;
     }
 
-    public void setMessage(StringBuilder message) {
-        this.message = message;
+    public void setMessage(StringBuilder messageBody) {
+        this.messageBody = messageBody;
     }
 
 }

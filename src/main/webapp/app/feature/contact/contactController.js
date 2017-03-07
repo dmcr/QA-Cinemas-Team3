@@ -3,7 +3,7 @@
 	var ContactController = function(contactDal) {
 		
 		var vm = this;
-		var string = "";
+		var string = [];
 		
 		vm.sendEmail = function(emailToSend) {
 			console.log(emailToSend);
