@@ -1,5 +1,5 @@
 
-<div ng-controller="getFilmsController as ctrl">
+<div ng-controller="getFilmController as ctrl">
 
 
     <script>
@@ -17,12 +17,12 @@
     </script>
 
     <script>
-        function filmPoster(filmtitle) {
-            var title = filmtitle;
+        function filmPoster(film.title){
+            var title = film.title;
             <!--{{film.title}} -->
             var $Poster = $('#poster');
             var sUrl, oData;
-            sUrl = 'https://www.omdbapi.com/?t=' + '\''+ title + '\'' + '&type=movie&tomatoes=true';
+            sUrl = 'https://www.omdbapi.com/?t=' + title + '&type=movie&tomatoes=true';
             $.ajax(sUrl, {
                 complete: function (p_oXHR) {
                     oData = $.parseJSON(p_oXHR.responseText);
@@ -38,7 +38,7 @@
             <div id="poster" class="geInline" ng-repeat="film in ctrl.films">
                 <div class="actionBox" style="z-index: 1000;">
                     <script>filmPoster(film.title)</script>
-                    <span class="poster">Poster</span>
+                    <span class="poster">{{film.title}}</span>
                 </div>
                 <span class="top-films__title">{{film.title}}</span>
             </div>
