@@ -22,7 +22,7 @@
             <!--{{film.title}} -->
             var $Poster = $('#poster');
             var sUrl, oData;
-            sUrl = 'https://www.omdbapi.com/?t=' + title + '&type=movie&tomatoes=true';
+            sUrl = 'https://www.omdbapi.com/?t=' + '\''+title + '\'' + '&type=movie&tomatoes=true';
             $.ajax(sUrl, {
                 complete: function (p_oXHR) {
                     oData = $.parseJSON(p_oXHR.responseText);
