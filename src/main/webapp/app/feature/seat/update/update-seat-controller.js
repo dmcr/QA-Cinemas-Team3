@@ -14,7 +14,7 @@
         vm.updateSeat = function(seatToUpdate) {
             seatDal.updateSeat(seatToUpdate.seatId, seatToUpdate).then(function (result) {
                 vm.seatUpdateMessage  = result;
-                $state.go('getseats');
+                $state.go('cms.manageseats', {}, { reload: true });
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;

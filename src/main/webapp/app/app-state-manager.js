@@ -82,7 +82,7 @@
         	url: "/getseat/{seatId:[0-9]}",
         	templateUrl: "app/feature/seat/get/get-seat-partial.html"
         }).state("updateseat", {
-        	url: "/updateseat/{seatTypeId:[0-9]}",
+        	url: "/updateseat/{seatId:[0-9]}",
         	templateUrl: "app/feature/seat/update/update-seat-partial.html"
         }).state("addseattype", {
         	url: "/addseattype",
@@ -102,6 +102,15 @@
         }).state("updateseattypes", {
         	url: "/updateseattypes",
         	templateUrl: "app/feature/seatType/update/update-seatTypes-partial.html"
+        }).state("cms", {
+        	url: "/cms",
+        	templateUrl: "app/feature/cms/manage-content-partial.html"
+        }).state("cms.manageseats", {
+        	url: "/manageseats",
+        	templateUrl: "app/feature/seat/manage/manage-seats-partial.html"
+        }).state("cms.manageseats.updateseat", {
+        	url: "/updateseat/{seatId:[0-9]}",
+        	templateUrl: "app/feature/seat/update/update-seat-partial.html"
         })
     });
 }());
