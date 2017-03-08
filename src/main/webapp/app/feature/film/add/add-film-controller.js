@@ -1,18 +1,18 @@
 (function() {
 
-    var AddFilmController =  function($state, filmDal) {
+    var AddBookingController =  function(filmDal, $stateParams, $state) {
         var vm = this;
 
-        vm.addFilm = function(filmToAdd) {
-            filmDal.saveFilm(filmToAdd).then(function (results) {
+        vm.addShowing = function(filmToAdd) {
+            filmDal.saveShowing(filmToAdd).then(function (results) {
                 vm.filmAddMessage  = results;
-                $state.go('getfilm');
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
             });
+            $state.go('cms.managefilms', {}, { reload: true });
         };
     };
 
-    angular.module('cinemaApp').controller('addFilmController', ['$state','filmDal',AddFilmController]);
+    angular.module('cinemaApp').controller('addBookingController', ['filmDal', '$stateParams', '$state',AddBookingController]);
 }());
