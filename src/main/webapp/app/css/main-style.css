@@ -414,6 +414,58 @@ body {
     margin-bottom: 50px;
 }
 
+#gridofequals {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top-films__title {
+    width: 100%;
+    display: block;
+    font-family: "Lato", sans-serif;
+    margin-top: 1em;
+    font-size: 1em;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.title{
+    cursor: pointer;
+}
+
+.image{
+    height: 300px;
+    width: 175px;
+    border-radius: 10px;
+}
+
+.geInline {
+    display: inline-block;
+
+}
+
+.actionBox {
+    position: relative;
+    border-radius: 10px;
+    margin: 5px 10px;
+    transform: scale(0.90);
+    -webkit-transition: all 0.3s ease; /* Safari and Chrome */
+    -moz-transition: all 0.3s ease; /* Firefox */
+    -o-transition: all 0.3s ease; /* IE 9 */
+    transition: all 0.3s ease;
+}
+
+.actionBox:hover {
+    -webkit-transform:translateZ(0) scale(1); /* Safari and Chrome */
+    -moz-transform:scale(1); /* Firefox */
+    -ms-transform:scale(1); /* IE 9 */
+    box-shadow: 0 0 5px 10px #fff, 0 100px 100px 5000px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 100px 100px 5000px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 100px 100px 5000px rgba(0,0,0,0.8);
+    z-index:1100 !important ;
+}
+
+
 /*
  * ********************************* *
  * For IE fixes, to make Internet    *
