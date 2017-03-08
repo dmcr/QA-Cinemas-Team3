@@ -14,5 +14,6 @@
         };
     };
 
-    angular.module('cinemaApp').controller('addScreenController', ['$state','screenDal',AddScreenController]);
+    angular.module('cinemaApp').controller('addScreenController', ['$state','$stateParams','screenDal',AddScreenController]);
+
 }());
