@@ -32,5 +32,5 @@
 
 
     angular.module('cinemaApp').controller('getShowingController', ['showingDal', '$stateParams', GetShowingController]);
-    angular.module('cinemaApp').controller('GetShowingTimeController', ['showingDal', '$stateParams', GetShowingTimeController]);
+    // angular.module('cinemaApp').controller('GetShowingTimeController', ['showingDal', '$stateParams', GetShowingTimeController]);
 }());
