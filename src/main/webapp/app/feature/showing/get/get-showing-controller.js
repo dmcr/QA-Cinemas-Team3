@@ -11,38 +11,26 @@
             });
         }
         init();
-    };
-
-
-
-    // function ParseVariables() {
-    //
-    // }
-    //
-
-    var ParseVariablesController = function(showingDal, $stateParams){
-        var vm = this;
-
-        function init() {
-            showingDal.getShowingStartTime($stateParams.showingId).then(function (result) {
-                vm.showing = result;
-            }, function(error) {
-                vm.error = true;
-                vm.errorMessage = error;
-            });
-        }
-        init();
-
 
 
     };
 
+var GetShowingTimeController = function (showingDal, $stateParams) {
+    var vm = this;
 
-    // vm.getShowingTime = function (showing) {
-    //         $state.go('showing', {'showingId', showingId})
-    // }
+   app.controler('getShowingController', function Parsevariables($scope) {
+        showingDal.getShowingStartTime($stateParams.showingId).then(function (result) {
+            vm.showing = result;
+        }, function(error) {
+            vm.error = true;
+            vm.errorMessage = error;
+        });
+    })
+
+}
+
 
 
     angular.module('cinemaApp').controller('getShowingController', ['showingDal', '$stateParams', GetShowingController]);
-    angular.module('cinemaApp').controller('ParseVariablesController', ['showingDal', '$stateParams', ParseVariablesController]);
+    angular.module('cinemaApp').controller('GetShowingTimeController', ['showingDal', '$stateParams', GetShowingTimeController]);
 }());
