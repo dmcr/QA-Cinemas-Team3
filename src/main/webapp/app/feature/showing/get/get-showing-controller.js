@@ -15,19 +15,19 @@
 
     };
 
-var GetShowingTimeController = function (showingDal, $stateParams) {
-    var vm = this;
-
-   app.controler('getShowingController', function Parsevariables($scope) {
-        showingDal.getShowingStartTime($stateParams.showingId).then(function (result) {
-            vm.showing = result;
-        }, function(error) {
-            vm.error = true;
-            vm.errorMessage = error;
-        });
-    })
-
-}
+// var GetShowingTimeController = function (showingDal, $stateParams) {
+//     var vm = this;
+//
+//    app.controler('getShowingController', function Parsevariables($scope) {
+//         showingDal.getShowingStartTime($stateParams.showingId).then(function (result) {
+//             vm.showing = result;
+//         }, function(error) {
+//             vm.error = true;
+//             vm.errorMessage = error;
+//         });
+//     })
+//
+// }
 
 
 
