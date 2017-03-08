@@ -1,43 +1,37 @@
-<!DOCTYPE html>
+<div ng-controller="getFilmController as ctrl" class="film-info">
 
+	<div class="row">
+		<div class="col-xs-12 text-center padding-bottom-50">
+			<h1>{{ctrl.film.title}}</h1>
+		</div>
+	</div>
 
-    <div ng-controller="getFilmController as ctrl">
+	<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-4">
+			<img src="http://legionofleia.com/wp-content/uploads/cxqaayzwiaab2l4.jpg" class="image-size">
+		</div>
 
-        <h style = "font-size: 30px">{{ctrl.film.title}}</h>
-        <br>
-        <h style = "font-size: 30px"> {{ctrl.film.cast}}</h>
-        <br>
-        <h style = "font-size: 30px">{{ctrl.film.certification}}</h>
-        <br>
-        <h style = "font-size: 30px">{{ctrl.film.director}}</h>
-        <br>
-        <h style = "font-size: 30px">{{ctrl.film.duration}}</h>
-        <br>
-        <h style = "font-size: 30px">{{ctrl.film.genre}}</h>
-        <br>
-        <h style = "font-size: 30px"> {{ctrl.film.summary}}</h>
-        <br>
+		<div class="col-xs-4">
+			<div id="film-info" class="film-info-text">
+				<p>{{ctrl.film.cast}}</p>
+				<p>{{ctrl.film.certification}}</p>
+				<p>{{ctrl.film.director}}</p>
+				<p>{{ctrl.film.duration}}</p>
+				<p>{{ctrl.film.genre}}</p>
+				<p>{{ctrl.film.summary}}</p>
 
-
-        <ul>
-            <!--var pathname = window.location.href;-->
-                <h style = "font-size: 25px">Showings</h>
-            <div class="row" style = "width:100%; padding:10px">
-
-                <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
-
-                    <td><button><a href="#/BookingTest" >{{showing.startTime}}</a></button></td>
-
-
-
-                </div>
-            </div>
-        </ul>
-
-    </div>
-
-
-
-    </html>
-
+				<!--var pathname = window.location.href;-->
+				<p>Showings</p>
+				<ul>
+					<li ng-repeat="showing in ctrl.film.showings">
+						<button>
+							<a href="#/BookingTest">{{showing.startTime}}</a>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-2"></div>
+	</div>
 </div>
