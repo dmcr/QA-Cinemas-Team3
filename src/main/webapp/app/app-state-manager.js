@@ -172,6 +172,9 @@
         }).state("film", {
             url: "/film/{filmId:[0-9]*}",
             templateUrl: "app/feature/film/get/get-film-info-partial.html"
+        }).state("booking", {
+            url: "/booking/{showingId:[0-9]*}",
+            templateUrl: "app/feature/booking/add/add-user-booking-partial.html"
         }).state("filmposter", {
         url: "/filmposter/{imdbId:[0-9a-zA-Z]*}",
         templateUrl: "app/feature/film/get/get-film-poster-partial.html"
