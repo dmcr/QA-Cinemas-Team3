@@ -26,7 +26,7 @@
 
                 <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
 
-                    <td><button><a href="#/BookingTest" onclick= "ParseVariables()">{{showing.startTime}}</a></button></td>
+                    <td><button><a href="#/BookingTest" ng-click= "ParseVariables(showing.startTime)">{{showing.startTime}}</a></button></td>
 
 
 
