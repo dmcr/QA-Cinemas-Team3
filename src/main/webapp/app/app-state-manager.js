@@ -123,6 +123,9 @@
         }).state("cms.manageshowings.newshowing", {
         	url: "/newshowing",
         	templateUrl: "app/feature/showing/add/add-showing-partial.html"
+        }).state("filmposter", {
+        	url: "/filmposter/{imdbId:[0-9a-zA-Z]*}",
+        	templateUrl: "app/feature/film/get/get-film-poster-partial.html"
         })
     });
 }());
