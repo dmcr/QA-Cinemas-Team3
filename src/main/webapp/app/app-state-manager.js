@@ -166,7 +166,9 @@
         }).state("cms.managetickets.newticket", {
             url: "/newticket",
             templateUrl: "app/feature/film/add/add-ticket-partial.html"
-        })
-
+        }).state("filmposter", {
+        url: "/filmposter/{imdbId:[0-9a-zA-Z]*}",
+        templateUrl: "app/feature/film/get/get-film-poster-partial.html"
+    })
     });
 }());
