@@ -58,16 +58,27 @@ public class Film implements Serializable {
 	
 	@Column(name="film_IMDBID")
 	private String IMDBID;
+	
+	@Column(name="film_poster")
+	private String poster;
+	
+	@Column(name="film_rating")
+	private String rating;
+	
+	@Column(name="film_trailer")
+	private String trailer;
+	
+	@Column(name="film_showing")
+	private boolean nowShowing;
 
 	public Film() {
 		
 	}
-	
-	public Film(Long filmId, boolean is3d, String cast, CertificationRating certification, String director,
-			int duration, String genre, Date releaseDate, String summary, String title, List<Showing> showings,
-			String iMDBID) {
+
+	public Film(boolean is3d, String cast, CertificationRating certification, String director, int duration,
+			String genre, Date releaseDate, String summary, String title, List<Showing> showings, String iMDBID,
+			String rating, String poster, String trailer, boolean nowShowing) {
 		super();
-		this.filmId = filmId;
 		is3D = is3d;
 		this.cast = cast;
 		this.certification = certification;
@@ -79,6 +90,10 @@ public class Film implements Serializable {
 		this.title = title;
 		this.showings = showings;
 		IMDBID = iMDBID;
+		this.rating = rating;
+		this.poster = poster;
+		this.trailer = trailer;
+		this.nowShowing = nowShowing;
 	}
 
 	public Long getFilmId() {
@@ -175,6 +190,38 @@ public class Film implements Serializable {
 
 	public void setIMDBID(String iMDBID) {
 		IMDBID = iMDBID;
+	}
+
+	public String getRating() {
+		return rating;
+	}
+
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
+
+	public String getPoster() {
+		return poster;
+	}
+
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+
+	public boolean isNowShowing() {
+		return nowShowing;
+	}
+
+	public void setNowShowing(boolean nowShowing) {
+		this.nowShowing = nowShowing;
 	}
 
 }
