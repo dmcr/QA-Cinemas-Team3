@@ -166,9 +166,15 @@
         }).state("cms.managetickets.newticket", {
             url: "/newticket",
             templateUrl: "app/feature/film/add/add-ticket-partial.html"
+        }).state("films", {
+            url: "/films",
+            templateUrl: "app/feature/film/get/get-films-home-partial.html"
+        }).state("film", {
+            url: "/film/{filmId:[0-9]*}",
+            templateUrl: "app/feature/film/get/get-film-info-partial.html"
         }).state("filmposter", {
         url: "/filmposter/{imdbId:[0-9a-zA-Z]*}",
         templateUrl: "app/feature/film/get/get-film-poster-partial.html"
-    })
+        })
     });
 }());

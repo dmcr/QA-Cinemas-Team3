@@ -1,0 +1,7 @@
+<div ng-controller="getFilmsHomeController as ctrl">
+	<div ng-repeat="film in ctrl.films">
+		<a ui-sref="film({filmId: film.filmId})">
+			<img ng-src="{{film.poster}}" alt="film.title"/>
+		</a>
+	</div>
+</div>
