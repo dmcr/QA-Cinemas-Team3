@@ -1,0 +1,19 @@
+<div ng-controller="manageScreenController as ctrl">
+	<h1>Manage Screens:</h1>
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.addScreen()">Add New Screen</button>
+	<div ui-view></div>
+	<table>
+		<thead>
+			<tr>
+				<th>Capacity</th>
+
+			</tr>
+		</thead>
+		<tr ng-repeat="screen in ctrl.screen">
+			<td>Capacity: {{screen.capacity}}<td>
+
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateScreen(screen.screenId)">UpdateScreen</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteScreen(screen.screenId)">DeleteScreen</button></td>
+		</tr>
+	</table>
+</div>

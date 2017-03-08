@@ -1,0 +1,37 @@
+<div ng-controller="manageFilmController as ctrl">
+	<h1>Manage Films:</h1>
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.addFilm()">Add New Film</button>
+	<div ui-view></div>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Release Date</th>
+				<th>Genre</th>
+				<th>Duration</th>
+				<th>Director</th>
+				<th>Cast</th>
+				<th>Summary</th>
+				<th>Certification</th>
+				<th>3D</th>
+
+
+			</tr>
+		</thead>
+		<tr ng-repeat="film in ctrl.film">
+			<td>Title: {{film.title}}<td>
+			<td>Release Date: {{film.releaseDate}}<td>
+			<td>Genre: {{film.genre}}<td>
+			<td>Duration: {{film.duration}}<td>
+			<td>Director: {{film.director}}<td>
+			<td>Cast: {{film.cast}}<td>
+			<td>Summary: {{film.summary}}<td>
+			<td>Certification: {{film.certifaction}}<td>
+			<td>3D: {{film.is3D}}<td>
+
+
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateFilm(film.filmId)">UpdateFilm</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteFilm(film.filmId)">DeleteFilm</button></td>
+		</tr>
+	</table>
+</div>

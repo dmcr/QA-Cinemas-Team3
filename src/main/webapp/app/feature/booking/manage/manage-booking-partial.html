@@ -1,0 +1,20 @@
+<div ng-controller="manageBookingController as ctrl">
+	<h1>Manage Bookings:</h1>
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.addBooking()">Add New Booking</button>
+	<div ui-view></div>
+	<table>
+		<thead>
+			<tr>
+				<th>Complete</th>
+				<th>PayPal Id</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="booking in ctrl.booking">
+			<td>Complete: {{booking.complete}}<td>
+			<td>PayPal id: {{booking.paypal}}<td>
+
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateBooking(booking.bookingId)">UpdateBooking</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteBooking(booking.bookingId)">DeleteBooking</button></td>
+		</tr>
+	</table>
+</div>
