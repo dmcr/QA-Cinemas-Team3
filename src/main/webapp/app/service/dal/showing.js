@@ -13,10 +13,6 @@
         	return dal.http.GET("rest/showing/json/" + showingToGetID);
         }
 
-        // this.getShowingStartTime = function(showingToGetID) {
-        //     return dal.http.GET("rest/showing/json/" + showingToGetID);
-        // }
-
         this.saveShowing = function (showingToSave) {
         	return dal.http.POST("rest/showing/json", showingToSave);
         };

@@ -11,10 +11,19 @@
             });
         }
         init();
-
-
     };
 
+    // function UserCtrl($stateParams) {
+    //     conrole.log($stateParams)
+    //     <>
+    // }
+    // $state.go('users', {obj:startTime})
+
+
+
+
+    // vm.getShowingTime = function (showing) {
+    //         $state.go('showing', {'showingId', showingId})
+    // }
     angular.module('cinemaApp').controller('getShowingController', ['showingDal', '$stateParams', GetShowingController]);
-    // angular.module('cinemaApp').controller('GetShowingTimeController', ['showingDal', '$stateParams', GetShowingTimeController]);
 }());
