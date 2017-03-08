@@ -30,9 +30,17 @@ INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES
 INSERT INTO cin_booking(booking_complete, booking_paypal) VALUES (true, 'examplepaypal1');
 INSERT INTO cin_booking(booking_complete, booking_paypal) VALUES (true, 'examplepaypal2');
 
-INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cast', 'PG', 'director', 120, 'genre', '18-06-17', 'summary', 'title');
-INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cas2t', 'PG', 'direct2or', 100, 'genr2e', '18-07-17', 'summary', 'titasdle');
-INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(true, 'cast example 3', 'PG', 'many directors', 140, 'action', '18-02-17', 'summary', 'actiona title');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cast', 'PG', 'director', 120, 'genre', '18-06-17', 'summary', 'Logan');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cas2t', 'PG', 'direct2or', 100, 'genr2e', '18-07-17', 'summary', 'Fences');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(true, 'cast example 3', 'PG', 'many directors', 140, 'action', '18-02-17', 'summary', '50 Shades Darker');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cast', 'PG', 'director', 120, 'genre', '18-06-17', 'summary', 'Fist Fight');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cas2t', 'PG', 'direct2or', 100, 'genr2e', '18-07-17', 'summary', 'La La Land');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(true, 'cast example 3', 'PG', 'many directors', 140, 'action', '18-02-17', 'summary', 'Moana');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cast', 'PG', 'director', 120, 'genre', '18-06-17', 'summary', 'Lego Batman');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(false, 'cas2t', 'PG', 'direct2or', 100, 'genr2e', '18-07-17', 'summary', 'The Great Wall');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(true, 'cast example 3', 'PG', 'many directors', 140, 'action', '18-02-17', 'summary', 'Beauty and the Beast');
+INSERT INTO cin_film (film_3D, film_cast, film_certification, film_director, film_duration, film_genre, film_release_date, film_summary, film_title) VALUES(true, 'cast example 3', 'PG', 'many directors', 140, 'action', '18-02-17', 'summary', 'Hidden Figures');
+
 
 INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) VALUES ('04-03-17 12:10:08', 1, 3);
 INSERT INTO cin_showing(showing_start_time, showing_screen_id, showing_film_id) VALUES ('04-03-17 16:10:08', 1, 3);
