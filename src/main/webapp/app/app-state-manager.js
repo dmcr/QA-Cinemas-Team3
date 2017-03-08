@@ -18,48 +18,48 @@
         }).state("getfilmshowings", {
             url: "/getfilmshowings/{filmId:[0-9]*}",
             templateUrl: "app/feature/film/get/get-film-showings-partial.html"
-            // }).state("addfilm", {
-            //     url: "/addfilm",
-            //     templateUrl: "app/feature/film/add/add-film-partial.html"
-            // }).state("updatefilm", {
-            //     url: "/updatefilm/{filmId:[0-9]*}",
-            //     templateUrl: "app/feature/film/update/update-film-partial.html"
+            }).state("addfilm", {
+                url: "/addfilm",
+                templateUrl: "app/feature/film/add/add-film-partial.html"
+            }).state("updatefilm", {
+                url: "/updatefilm/{filmId:[0-9]*}",
+                templateUrl: "app/feature/film/update/update-film-partial.html"
         }).state("getbookings", {
             url: "/getbookings",
             templateUrl: "app/feature/booking/get/get-bookings-partial.html"
         }).state("getbooking", {
             url: "/getbooking/{bookingId:[0-9]*}",
             templateUrl: "app/feature/booking/get/get-booking-partial.html"
-            // }).state("addbooking", {
-            //     url: "/addbooking",
-            //     templateUrl: "app/feature/booking/add/add-booking-partial.html"
-            // }).state("updatebooking", {
-            //     url: "/updatebooking/{bookingId:[0-9]*}",
-            //     templateUrl: "app/feature/booking/update/update-booking-partial.html"
-//        }).state("addshowing", {
-//        	url: "/addshowing",
-//        	templateUrl: "app/feature/showing/add/add-showing-partial.html"
+            }).state("addbooking", {
+                url: "/addbooking",
+                templateUrl: "app/feature/booking/add/add-booking-partial.html"
+            }).state("updatebooking", {
+                url: "/updatebooking/{bookingId:[0-9]*}",
+                templateUrl: "app/feature/booking/update/update-booking-partial.html"
+       }).state("addshowing", {
+       	url: "/addshowing",
+       	templateUrl: "app/feature/showing/add/add-showing-partial.html"
         }).state("getshowings", {
             url: "/getshowings",
             templateUrl: "app/feature/showing/get/get-showings-partial.html"
         }).state("getshowing", {
             url: "/getshowing/{showingId:[0-9]*}",
             templateUrl: "app/feature/showing/get/get-showing-partial.html"
-//        }).state("updateshowing", {
-//        	url: "/updateshowing/{showingId:[0-9]*}",
-//        	templateUrl: "app/feature/showing/update/update-showing-partial.html"
-//         }).state("addticket", {
-//             url: "/addticket",
-//             templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
+       }).state("updateshowing", {
+       	url: "/updateshowing/{showingId:[0-9]*}",
+       	templateUrl: "app/feature/showing/update/update-showing-partial.html"
+        }).state("addticket", {
+            url: "/addticket",
+            templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
         }).state("gettickets", {
             url: "/gettickets",
             templateUrl: "app/feature/ticket/get/get-tickets-partial.html"
         }).state("getticket", {
             url: "/getticket/{ticketId:[0-9]*}",
             templateUrl: "app/feature/ticket/get/get-ticket-partial.html"
-            // }).state("updateticket", {
-            //     url: "/updateticket/{ticketId:[0-9]*}",
-            //     templateUrl: "app/feature/ticket/update/update-ticket-partial.html"
+            }).state("updateticket", {
+                url: "/updateticket/{ticketId:[0-9]*}",
+                templateUrl: "app/feature/ticket/update/update-ticket-partial.html"
         }).state("addscreen", {
             url: "/addscreen",
             templateUrl: "app/feature/screen/add/add-screen-partial.html"
@@ -69,9 +69,9 @@
         }).state("getscreen", {
             url: "/getscreen/{screenId:[0-9]*}",
             templateUrl: "app/feature/screen/get/get-screen-partial.html"
-            // }).state("updatescreen", {
-            //     url: "/updatescreen/{screenId:[0-9]*}",
-            //     templateUrl: "app/feature/screen/update/update-screen-partial.html"
+            }).state("updatescreen", {
+                url: "/updatescreen/{screenId:[0-9]*}",
+                templateUrl: "app/feature/screen/update/update-screen-partial.html"
         }).state("getseats", {
             url: "/getseats",
             templateUrl: "app/feature/seat/get/get-seats-partial.html"
@@ -87,15 +87,15 @@
         }).state("getseattype", {
             url: "/getseattype/{seatTypeId:[0-9]*}",
             templateUrl: "app/feature/seatType/get/get-seatType-partial.html"
-//        }).state("updateseattype", {
-//        	url: "/updateseattype/{seatTypeId:[0-9]*}",
-//        	templateUrl: "app/feature/seatType/update/update-seatType-partial.html"
-//        }).state("manageseattypes", {
-//        	url: "/manageseattypes",
-//        	templateUrl: "app/feature/seatType/manage/manage-seatTypes-partial.html",
-//        }).state("updateseattypes", {
-//        	url: "/updateseattypes",
-//        	templateUrl: "app/feature/seatType/update/update-seatTypes-partial.html"
+       }).state("updateseattype", {
+       	url: "/updateseattype/{seatTypeId:[0-9]*}",
+       	templateUrl: "app/feature/seatType/update/update-seatType-partial.html"
+       }).state("manageseattypes", {
+       	url: "/manageseattypes",
+       	templateUrl: "app/feature/seatType/manage/manage-seatTypes-partial.html",
+       }).state("updateseattypes", {
+       	url: "/updateseattypes",
+       	templateUrl: "app/feature/seatType/update/update-seatTypes-partial.html"
 
         }).state("cms", {
             url: "/cms",
