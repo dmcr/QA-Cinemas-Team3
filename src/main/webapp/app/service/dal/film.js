@@ -24,5 +24,10 @@
         this.deleteFilm = function (filmToDeleteID) {
             return dal.http.DELETE("rest/film/json/" + filmToDeleteId);
         };
+        
+        this.getFilmIMDB = function (imdbId) {
+            return dal.http.GET("http://www.omdbapi.com/?i=" + imdbId);
+        };
+        
     }
 }());

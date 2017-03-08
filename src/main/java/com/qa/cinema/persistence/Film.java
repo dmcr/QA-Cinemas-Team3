@@ -58,6 +58,9 @@ public class Film implements Serializable {
 	
 	@Column(name="film_IMDBID")
 	private String IMDBID;
+	
+	@Column(name="film_poster_url")
+	private String posterUrl;
 
 	public Film() {
 		
@@ -65,7 +68,7 @@ public class Film implements Serializable {
 	
 	public Film(Long filmId, boolean is3d, String cast, CertificationRating certification, String director,
 			int duration, String genre, Date releaseDate, String summary, String title, List<Showing> showings,
-			String iMDBID) {
+			String iMDBID, String posterUrl) {
 		super();
 		this.filmId = filmId;
 		is3D = is3d;
@@ -79,6 +82,7 @@ public class Film implements Serializable {
 		this.title = title;
 		this.showings = showings;
 		IMDBID = iMDBID;
+		this.posterUrl = posterUrl;
 	}
 
 	public Long getFilmId() {
@@ -176,5 +180,15 @@ public class Film implements Serializable {
 	public void setIMDBID(String iMDBID) {
 		IMDBID = iMDBID;
 	}
+
+	public String getPosterUrl() {
+		return posterUrl;
+	}
+
+	public void setPosterUrl(String posterUrl) {
+		this.posterUrl = posterUrl;
+	}
+	
+	
 
 }

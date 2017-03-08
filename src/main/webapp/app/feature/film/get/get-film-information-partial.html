@@ -1,0 +1,30 @@
+<div ng-controller="getFilmController as ctrl">
+
+		<img ng-src="{{ctrl.film.posterUrl}}"/>
+        <h style = "font-size: 30px">{{ctrl.film.title}}</h>
+        <br>
+        <h style = "font-size: 30px"> {{ctrl.film.cast}}</h>
+        <br>
+        <h style = "font-size: 30px">{{ctrl.film.certification}}</h>
+        <br>
+        <h style = "font-size: 30px">{{ctrl.film.director}}</h>
+        <br>
+        <h style = "font-size: 30px">{{ctrl.film.duration}}</h>
+        <br>
+        <h style = "font-size: 30px">{{ctrl.film.genre}}</h>
+        <br>
+        <h style = "font-size: 30px"> {{ctrl.film.summary}}</h>
+        <br>
+
+        <ul>
+            <h style = "font-size: 25px">Showings</h>
+            <div class="row" style = "width:100%; padding:10px">
+                <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
+                    <td><button><a href="#/BookingTest" ng-click = "" >{{showing.startTime}}</a></button></td>
+                </div>
+            </div>
+        </ul>
+
+    </div>
+
+</div>
