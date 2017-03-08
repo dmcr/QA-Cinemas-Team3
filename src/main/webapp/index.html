@@ -1,37 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="cinemaApp">
+
 <head>
-    <meta charset="UTF-8">
-    <title>QA Cinemas</title>
-</head>
-<body>
-<ul>
-    <li ><a ui-sref="dashboard">Dashboard</a></li>
-</ul>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <div ui-view></div>
-    
-    <!--  JQuery  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-    <!-- bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>QACinemas</title>
 
-    <!-- Angular modules-->
-    <!-- <script src="scripts/angular.min.js"></script>-->
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/bootstrap-responsive.css">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/ui-router.min.js"></script>
 
+    <script src="scripts/navbar-collapse.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/grayscale.js"></script>
+    <script src="scripts/jquery.easing.min.js"></script>
+    <script src="scripts/keyboard-scroll.js"></script>
+    <!--<script src="scripts/dim-background.js"></script>
+    <script src="scripts/jquery.dim-background.js"></script>-->
 
 
-    <!-- App and state manager-->
-    <script src="app/app.js"></script>
-    <script src="app/app-state-manager.js"></script>
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<script src="app/feature/dashboard/dashboard-controller.js"></script>
+    <!-- Stylesheets for the pages -->
+    <link rel="stylesheet" href="app/css/form-style.css">
+    <link rel="stylesheet" href="app/css/animate.css">
+    <link rel="stylesheet" href="app/css/main-style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div ui-view></div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#topPage"> <i class="fa fa-play-circle"></i> <span class="light">QA</span>Cinemas
+            </a>
+        </div>
+
+
+        <div
+                class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden"><a ng-click="scrollTo('topPage')" href="#topPage" target="_self"></a></li>
+                <li><a ng-click="scrollTo('whatson')" class="page-scroll" href="#whatson" target="_self">What's On</a>
+                </li>
+                <li><a ng-click="scrollTo('whatson')" class="page-scroll" href="#whatson" target="_self">Coming Soon</a>
+                </li>
+                <li><a ng-click="scrollTo('about')" class="page-scroll" href="#about" target="_self">About Us</a></li>
+                <li><a ng-click="scrollTo('findus')" class="page-scroll" href="#findus" target="_self">Find Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br><br><br><br><br>
+<a href="http://localhost:63342/QA-Cinemas-Team3a/src/main/webapp/app/feature/showing/get/get-showing-partial.html">Go here</a>
+
     <!-- Marks Shit -->
     <script src="app/feature/film/get/app.js"></script>
 
