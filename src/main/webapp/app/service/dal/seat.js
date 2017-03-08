@@ -22,7 +22,7 @@
         }
 
         this.deleteSeat = function (seatToDeleteID) {
-            return dal.http.DELETE("/rest/seat/json/", seatToDeleteID);
+            return dal.http.DELETE("rest/seat/json/", seatToDeleteID);
         };
     }
 }());

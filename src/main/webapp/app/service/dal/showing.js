@@ -22,7 +22,7 @@
         }
 
         this.deleteShowing = function (showingToDeleteID) {
-            return dal.http.DELETE("/rest/showing/json/" + showingToDeleteId);
+            return dal.http.DELETE("rest/showing/json/", showingToDeleteID);
         };
     }
 }());

@@ -22,7 +22,7 @@
         }
 
         this.deleteFilm = function (filmToDeleteID) {
-            return dal.http.DELETE("/rest/film/json/" + filmToDeleteId);
+            return dal.http.DELETE("rest/film/json/" + filmToDeleteId);
         };
     }
 }());

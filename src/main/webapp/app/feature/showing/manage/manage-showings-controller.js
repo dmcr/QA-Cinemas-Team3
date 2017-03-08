@@ -13,7 +13,7 @@
         init();
         
         vm.updateShowing = function(showingToUpdateId) {
-            $state.go('cms.manageshowings.updateshowing', {'showingId' : showingToUpdateId}); 
+                $state.go('cms.manageshowings.updateshowing', {'showingId' : showingToUpdateId}); 
         };
         
         vm.addShowing = function() {
