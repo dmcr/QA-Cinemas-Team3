@@ -1,0 +1,143 @@
+.carousel, .item, .active {
+	height: 100%;
+}
+
+.carousel-inner {
+	height: 100%;
+}
+
+.fill {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.space {
+	position:relative;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	clear: both;
+}
+
+.carousel-caption h3 {
+	font-family: 'Muli', sans-serif;
+	font-size: 28px;
+	color: #eee;
+}
+
+.carousel-caption>p {
+	font-family: 'Muli', sans-serif;
+	font-size: 20px;
+	color: #ddd;
+}
+
+.carousel-control {
+	position: absolute;
+	z-index: 5;
+	display: inline-block;
+}
+
+.carousel-control.right {
+	margin-right: -230px;
+}
+
+.top {
+	padding-top: 10px;
+	margin-top: 100px;
+}
+
+.img0 {
+	background-image:
+		url('https://cdna.artstation.com/p/assets/images/images/003/253/192/large/justin-lancaster-rogueoneposter-v2-smaller.jpg?1471666351');
+	min-height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.img1 {
+	background-image: url('../../../app/img/bobposter2.jpg');
+	min-height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.img2 {
+	background-image: url('../../../app/img/hacksaw.jpg');
+	min-height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.carousel-section {
+    min-height: 100%;
+    height: 1000px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+
+.whatson-section {
+	display: block;
+	min-height: 100%;
+	padding-top: 130px;
+	background-color: #222;
+	color: #ddd;
+	padding-bottom: 250px;
+	clear: both;
+}
+
+.about-section {
+	display: block;
+	min-height: 100%;
+	padding-top: 150px;
+	background-color: #fff;
+	color: #333;
+	padding-bottom: 300px;
+}
+
+.about-section p {
+	text-align: left;
+}
+
+.about-section h2 {
+	padding-bottom: 20px;
+}
+
+.findus-section {
+	display: block;
+	min-height: 70%;
+	padding-top: 150px;
+	padding-bottom: 100px; background-color : #222;
+	color: #ddd;
+	background-color: #222;
+}
+
+.findus-section p {
+	text-align: left;
+	margin-left: 20px;
+}
+
+.findus-section iframe {
+	position: relative;
+	float: right;
+	margin-right: 40px;
+}
+
+.bottompad150 {
+	padding-bottom: 150px;
+}
