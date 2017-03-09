@@ -14,7 +14,7 @@
                 <input type="hidden" name="hosted_button_id" value="YNLCXP3NBHBZS">
                 <table>
 
-                    <tr><td><input type="hidden" name="on0" value="Seat Type">Seat Type</td></tr><tr><td><select name="os0">
+                    <tr><td><input type="hidden" name="on0" value="Seat Type" >Seat Type</td></tr><tr><td><select name="os0">
                     <option value="Standard">Standard £10.00 GBP</option>
                     <option value="Premier">Premier £15.00 GBP</option>
                     <option value="Disabled">Disabled £8.00 GBP</option>
@@ -23,6 +23,21 @@
                     <tr><td><input type="hidden" name="on2" value="Senior">Senior</td></tr><tr><td><input type="number" name="os2" maxlength="200"></td></tr>
                     <tr><td><input type="hidden" name="on3" value="Child">Child</td></tr><tr><td><input type="number" name="os3" maxlength="200"></td></tr>
                     <tr><td><input type="hidden" name="on4" value="Student">Student</td></tr><tr><td><input type="number" name="os4" maxlength="200"></td></tr>
+                    
+                    <tr>
+                    	<td>
+                    	{{ctrl.filmindex}}
+                    	{{ctrl.films[ctrl.filmindex].title}}
+                    		<select ng-model="selectedFilm" ng-init="selectedFilm = ctrl.films[getIndexOfParsedFilm].title" ng-options="x.title for x in ctrl.films"></select>
+                    	</td>
+                    </tr>
+                    
+                    <tr>
+                    	<td>
+                    		<select ng-model="selectedShowing" ng-options="st.startTime for st in ctrl.film.showings"></select>
+                    	</td>
+                    </tr>
+                    
                     <tr><td><input type="hidden" name="on5" value="PayPal Email">PayPal Email</td></tr><tr><td><input type="email" name="os5" maxlength="200"></td></tr>
                 </table>
                 <input type="hidden" name="currency_code" value="GBP">
