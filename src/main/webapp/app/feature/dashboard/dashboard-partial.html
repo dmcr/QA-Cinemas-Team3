@@ -34,10 +34,8 @@
 
 	<!-- Indicators -->
 	<a class="left carousel-control" href="#myCarousel" role="button"
-		data-slide="prev"> 
-		<span class="glyphicon glyphicon-chevron-left"
-		aria-hidden="true"></span> 
-		<span class="sr-only">Previous</span>
+		data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+		aria-hidden="true"></span> <span class="sr-only">Previous</span>
 	</a> <a class="right carousel-control" href="#myCarousel" role="button"
 		data-slide="next"> <span class="glyphicon glyphicon-chevron-right"
 		aria-hidden="true"></span> <span class="sr-only">Next</span>
@@ -56,77 +54,21 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12">
-			<div id="gridofequals">
-				<div class="geInline">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<div id="gridofequals" ng-controller="getFilmsHomeController as ctrl">
+				<div class="geInline" ng-repeat="film in ctrl.films">
 					<div class="actionBox" style="z-index: 500;">
-						<a href="#/getfilminfo/3"><img class="image"
-							src="app/img/logan.jpg" alt="logan"></a>
+						<a ui-sref="film({filmId: film.filmId})"> <img class="image"
+							ng-src="{{film.poster}}" alt="film.title" />
+						</a>
 					</div>
-					<span class="top-films__title">Logan</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/Fences.jpg" alt="Fences">
-					</div>
-					<span class="top-films__title">Fences</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/50Shades.jpg"
-							alt="50 Shades darker">
-					</div>
-					<span class="top-films__title">50 Shades Darker</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/FistFight.jpg" alt="Fist Fight">
-					</div>
-					<span class="top-films__title">Fist Fight</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/LaLaLand.jpg" alt="La La Land">
-					</div>
-					<span class="top-films__title ">La La Land</span>
-				</div>
-				<br> <br>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/Moana.jpg" alt="Moana">
-					</div>
-					<span class="top-films__title">Moana</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/LegoBM.jpg" alt="Lego Batman">
-					</div>
-					<span class="top-films__title">Logo Batman</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/GreatWall.jpg"
-							alt="The Great Wall">
-					</div>
-					<span class="top-films__title">The Great Wall</span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/Beaty.jpg"
-							alt="beauty and the beast">
-					</div>
-					<span class="top-films__title">Beauty & the Beast </span>
-				</div>
-				<div class="geInline">
-					<div class="actionBox" style="z-index: 500;">
-						<img class="image" src="app/img/hiddenFigures.jpg"
-							alt="hidden figures">
-					</div>
-					<span class="top-films__title">Hidden Figures</span>
+					<span class="top-films__title">{{film.title}}</span>
 				</div>
 			</div>
-			<!--<div id="darkness" style="opacity:0; display:none;"></div>-->
 		</div>
+		<div class="col-xs-2"></div>
+		<!--<div id="darkness" style="opacity:0; display:none;"></div>-->
 	</div>
 </div>
 
