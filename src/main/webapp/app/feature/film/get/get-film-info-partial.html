@@ -1,72 +1,105 @@
-<div  ng-controller="getFilmController as ctrl">
-<div class="jumbotron text-center" style = "background-color: #222">
-  <h1>{{ctrl.film.title}} ({{ctrl.film.certification}}) </h1>
-    <p><span class="text-danger">{{ctrl.film.rating}}/10</span></p>  
+<div ng-controller="getFilmController as ctrl">
 
-	
-	
-	<img class = "filmPoster" ng-src="{{ctrl.film.poster}}" alt="ctrl.film.title"/>
-	
-	<br>
-	<br>
-	<br>
-	<p style = "font-size: 30px">Cast: </p>
-	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.cast}}</h> <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<p style = "font-size: 30px">Director: </p>
-	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.director}}</h> <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<p style = "font-size: 30px">Duration: </p>
-	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.duration}}</h> <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<p style = "font-size: 30px">Genre: </p>
-	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.genre}}</h> <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<p style = "font-size: 30px">Summary: </p>
-	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.summary}}</h> <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<p style = "font-size: 30px">Release Date: </p>
-	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.releaseDate}}</h> <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	
-	
-	<ul>
-        <h style = "font-size: 25px">Showings</h>
-	    <div class="row" style = "width:100%; padding:10px">
-	        <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
-	            <td><button><a ui-sref="booking({filmId: showing.filmId, showingId: showing.showingId})">{{showing.startTime}}</a></button></td>
-	        </div>
-	    </div>
-	</ul>
-	
-	
-	
+	<div class="container film-info-section text-center">
 
-	<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/YoHD9XEInc0?rel=0?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+		<div class="row">
+
+			<div class="col-xs-12">
+				<h1>{{ctrl.film.title}} ({{ctrl.film.certification}})</h1>
+				<p>
+					<span class="text-danger">{{ctrl.film.rating}}/10</span>
+				</p>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-2"></div>
+			<div class="col-xs-4">
+				<img class="filmPoster" ng-src="{{ctrl.film.poster}}"
+					alt="ctrl.film.title" /> <br/>
+					<br/><br/>
+					<a href="" data-toggle="modal" data-target="#trailerModal"><i class="fa fa-play-circle"></i> View Trailer</a>
+			</div>
+
+			<div class="col-xs-4 text-left">
+				<p>
+					<b class="light">Cast:</b> {{ctrl.film.cast}}
+				</p>
+
+				<p>
+					<b class="light"> Director:</b> {{ctrl.film.director}}
+				</p>
+
+				<p>
+					<b class="light"> Duration: </b> {{ctrl.film.duration}}
+				</p>
+
+				<p>
+					<b class="light"> Genre: </b> {{ctrl.film.genre}}
+				</p>
+
+				<p>
+					<b class="light"> Summary: </b> {{ctrl.film.summary}}
+				</p>
+
+				<p>
+					<b class="light"> Release Date: </b> {{ctrl.film.releaseDate}}
+				</p>
+
+			</div>
+			<div class="col-xs-2"></div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2"></div>
+
+			<div class="col-xs-8">
+
+				<ul>
+					<h style="font-size: 25px">Showings</h>
+					<div class="row" style="width: 100%; padding: 10px">
+						<div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
+							<td><button class="bookBtn">
+									<a style="color:#333;" ui-sref="booking({filmId: showing.filmId, showingId: showing.showingId})">{{showing.startTime}}</a>
+								</button></td>
+						</div>
+					</div>
+				</ul>
+
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+	</div>
 	
 	
-	
+<div class="modal" id="trailerModal" tabindex="-1" role="dialog" aria-labelledBy="myModalLabel3">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <h1>{{ctrl.film.title}}</h1>
+                
+                <p><iframe width="560" height="315"
+			src="https://www.youtube.com/embed/frdj1zb9sMY" frameborder="0"
+			allowfullscreen></iframe></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
 
+</div>
 
 
 

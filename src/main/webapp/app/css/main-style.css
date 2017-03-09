@@ -384,10 +384,26 @@ body {
 	display: none;
 }
 
-#contact-form {
-	
+.film-info-section {
+	min-height: 100%;
+	background-color: #222;
+	display: block;
+	margin-top: 50px;
+	padding-top: 30px;
 }
 
+.text-left {
+	text-align: left;
+}
+
+
+.bookBtn {
+	color: #333;
+}
+
+.bookBtn > a:hover {
+	color: darkblue;
+}
 
 /*
  * ********************************* *
