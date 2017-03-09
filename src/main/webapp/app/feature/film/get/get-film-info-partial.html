@@ -1,31 +1,52 @@
-<div ng-controller="getFilmController as ctrl">
+<div  ng-controller="getFilmController as ctrl">
+<div class="jumbotron text-center" style = "background-color: #222">
+  <h1>{{ctrl.film.title}} ({{ctrl.film.certification}}) </h1>
+    <p><span class="text-danger">{{ctrl.film.rating}}/10</span></p>  
+
 	
-	<img ng-src="{{ctrl.film.poster}}" alt="ctrl.film.title"/>
 	
-	<h style = "font-size: 30px">{{ctrl.film.title}}</h>
+	<img class = "filmPoster" ng-src="{{ctrl.film.poster}}" alt="ctrl.film.title"/>
+	
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.is3D}}</h>
 	<br>
-	<h style = "font-size: 30px"> {{ctrl.film.cast}}</h>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.certification}}</h>
+	<p style = "font-size: 30px">Cast: </p>
+	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.cast}}</h> <br>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.director}}</h>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.duration}}</h>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.genre}}</h>
 	<br>
-	<h style = "font-size: 30px"> {{ctrl.film.summary}}</h>
+	<p style = "font-size: 30px">Director: </p>
+	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.director}}</h> <br>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.releaseDate}}</h>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.rating}}</h>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.nowShowing}}</h>
 	<br>
-	<h style = "font-size: 30px">{{ctrl.film.trailer}}</h>
+	<p style = "font-size: 30px">Duration: </p>
+	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.duration}}</h> <br>
 	<br>
+	<br>
+	<br>
+	<br>
+	<p style = "font-size: 30px">Genre: </p>
+	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.genre}}</h> <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p style = "font-size: 30px">Summary: </p>
+	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.summary}}</h> <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p style = "font-size: 30px">Release Date: </p>
+	<h class = "filmText" style = "font-size: 20px">{{ctrl.film.releaseDate}}</h> <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
 	
 	<ul>
         <h style = "font-size: 25px">Showings</h>
@@ -35,6 +56,21 @@
 	        </div>
 	    </div>
 	</ul>
+	
+	
+	
+
+	<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/YoHD9XEInc0?rel=0?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+	
+	
+	
 </div>
+</div>
+
+
+
+
+
+
 
 
