@@ -31,7 +31,7 @@
         <h style = "font-size: 25px">Showings</h>
 	    <div class="row" style = "width:100%; padding:10px">
 	        <div class="col-sm-2" ng-repeat="showing in ctrl.film.showings">
-	            <td><button><a ui-sref="booking({showingId: showing.showingId, filmId: showing.filmId})">{{showing.startTime}}</a></button></td>
+	            <td><button><a ui-sref="booking({filmId: showing.filmId, showingId: showing.showingId})">{{showing.startTime}}</a></button></td>
 	        </div>
 	    </div>
 	</ul>

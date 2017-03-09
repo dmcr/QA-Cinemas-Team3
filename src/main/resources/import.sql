@@ -15,6 +15,9 @@ INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (8, 'D', 1, 1);
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (9, 'E', 2, 1);
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (10, 'E', 2, 1);
+INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (0, 'ANY', 1, 1);
+INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (0, 'ANY', 2, 1);
+INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (0, 'ANY', 3, 1);
 
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (11, 'A', 3, 2);
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (12, 'A', 3, 2);
@@ -26,6 +29,9 @@ INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (18, 'D', 1, 2);
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (19, 'E', 2, 2);
 INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (20, 'E', 2, 2);
+INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (0, 'ANY', 1, 2);
+INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (0, 'ANY', 2, 2);
+INSERT INTO cin_seat(seat_number, seat_row, seat_type_id, seat_screen_id) VALUES (0, 'ANY', 3, 2);
 
 INSERT INTO cin_booking(booking_complete, booking_paypal) VALUES (true, 'examplepaypal1');
 INSERT INTO cin_booking(booking_complete, booking_paypal) VALUES (true, 'examplepaypal2');

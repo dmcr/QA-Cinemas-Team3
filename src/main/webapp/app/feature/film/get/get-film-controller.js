@@ -1,5 +1,5 @@
 (function () {
-    var GetFilmController = function (filmDal, $stateParams) {
+    var GetFilmController = function (filmDal, $state, $stateParams) {
         var vm = this;
         function init() {
         	filmDal.getFilmByID($stateParams.filmId).then(function (result) {
@@ -11,5 +11,5 @@
         }
         init();
     };
-    angular.module('cinemaApp').controller('getFilmController', ['filmDal', '$stateParams', GetFilmController]);
+    angular.module('cinemaApp').controller('getFilmController', ['filmDal', '$state', '$stateParams', GetFilmController]);
 }());
