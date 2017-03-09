@@ -1,5 +1,8 @@
 (function () {
-    var AddUserBookingController = function (showingDal, seatTypeDal, filmDal, $state, $stateParams) {
+    var AddUserBookingController = function (showingDal, seatTypeDal, filmDal, $state, $stateParams, $scope) {
+    	
+    	
+    	
         var vm = this;
 
         function init() {
@@ -21,9 +24,12 @@
                 vm.error = true;
                 vm.errorMessage = error;
             });
-        
         }
         init();
+        vm.priceChange = function(){
+        	console.log("fired price change!");
+   	     	vm.totalprice = vm.selectedSeatType;
+   	    };
     };
-    angular.module('cinemaApp').controller('addUserBookingController', ['showingDal', 'seatTypeDal', 'filmDal', '$state', '$stateParams', AddUserBookingController]);
+    angular.module('cinemaApp').controller('addUserBookingController', ['showingDal', 'seatTypeDal', 'filmDal', '$state', '$stateParams', '$scope', AddUserBookingController]);
 }());
