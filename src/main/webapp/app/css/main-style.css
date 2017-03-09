@@ -465,6 +465,10 @@ body {
     z-index:1100 !important ;
 }
 
+.move {
+	margin-top: 1000px;
+	min-height:100%;
+}
 
 /*
  * ********************************* *
