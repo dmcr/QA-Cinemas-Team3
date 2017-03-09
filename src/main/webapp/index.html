@@ -68,6 +68,7 @@
                 </li>
                 <li><a ng-click="scrollTo('about')" class="page-scroll" href="#about" target="_self">About Us</a></li>
                 <li><a ng-click="scrollTo('findus')" class="page-scroll" href="#findus" target="_self">Find Us</a></li>
+                <li><a href="" data-toggle="modal" data-target="#bookingModal">QUICK BOOK</a></li>
             </ul>
         </div>
     </div>
@@ -77,6 +78,7 @@
 
 
 <div ui-view></div>
+
 
 
 
@@ -160,6 +162,7 @@
     </div>
 </div>
 
+
 <!-- Modal -->
 <div class="modal" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="contactController as contactCtrl">
     <div class="modal-dialog modal-lg" role="document">
@@ -172,27 +175,21 @@
             <div class="modal-body">
             	<div id="contact-form">
                 <h1>Contact Us</h1>
-                <form name="loginForm" class="cf">
+                <form name="contactForm" class="cf">
                     <div class="half left cf wow animated fadeIn" data-wow-delay=".5s">
                         <input type="text" placeholder="Name" ng-model="contact.name">
                         <input type="email" placeholder="Email address"
-                               ng-model="contact.email"> <input type="text"
-                                                                placeholder="Subject" ng-model="contact.subject">
+                               ng-model="contact.email"> <input type="text" placeholder="Subject" ng-model="contact.subject">
                     </div>
                     <div class="half right cf wow animated fadeIn">
 							<textarea name="message" placeholder="Message"
                                       ng-model="contact.message"></textarea>
-                        <button type="submit" class="btn btn-primary wide"
-                                ng-click="contactCtrl.sendEmail(contact)" onclick="success()">Submit
+                        <button type="submit" id="contact-submit" class="btn btn-primary wide" ng-click="contactCtrl.sendEmail(contact)"  data-dismiss="modal">Submit
                         </button>
                     </div>
                 </form>
                 </div>
-                
-                <div id="contact-form-successt" style="display:hide">
-                <h1>Thank you</h1>
-                <p>Thank you for your message. We aim to respond within 48 hours.</p>
-                </div>
+               
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -209,7 +206,6 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel2">Book a Movie</h4>
             </div>
 
             <div class="modal-body">
@@ -228,10 +224,9 @@
 
 
 <script>
-	function success() {
-		this.onclick('#contact-form').hide();
-		this.onclick('#contact-form-success').show();
-	}
+$('#contact-submit').click( function() {
+	  alert('Thank you for contacting us. We aim to respond within 48 hours');
+	});
 </script>
 <!-- App and state manager-->
 <script src="app/app.js"></script>

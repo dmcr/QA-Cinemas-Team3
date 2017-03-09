@@ -14,7 +14,8 @@
 			console.log(emailJson);
 			contactService.sendEmail(emailToSend);
 			
-		}
+		};
+		
 	}
 	
 	angular.module('cinemaApp').controller('contactController', ['contactService', contactController]);

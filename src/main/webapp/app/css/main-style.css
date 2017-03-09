@@ -20,6 +20,7 @@ body {
     width: 100%;
 }
 
+
 .footer {
     border-top: 80px solid #fff;
     background-color: #333;
@@ -298,6 +299,10 @@ body {
     text-align: center;
 }
 
+.modal p {
+	color: #444;
+}
+
 .bold {
     font-weight: 700;
 }
@@ -373,6 +378,16 @@ body {
     -webkit-box-shadow: 0 100px 100px 5000px rgba(0,0,0,0.8);
     z-index:1100 !important ;
 }
+
+
+#contact-form-success {
+	display: none;
+}
+
+#contact-form {
+	
+}
+
 
 /*
  * ********************************* *
