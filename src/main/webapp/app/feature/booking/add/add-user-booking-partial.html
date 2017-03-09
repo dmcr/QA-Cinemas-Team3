@@ -1,11 +1,14 @@
 <div ng-controller="addUserBookingController as ctrl">
 <link rel="stylesheet" type="text/css" href="app/feature/booking/add/add-user-booking.css">
-<h1>Booking</h1>
+<br/>
+<br/>
+<br/>
+<br/>
 <div id="container">
     <div id="form">
         <form id="book_tickets">
             <fieldset>
-                <legend>Booking Details</legend>
+                <h1>Booking Details</h1>
                 <br>
         </form>
         <center>
@@ -13,30 +16,15 @@
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="YNLCXP3NBHBZS">
                 <table>
-
-                    <tr><td><input type="hidden" name="on0" value="Seat Type" >Seat Type</td></tr><tr><td><select name="os0">
-                    <option value="Standard">Standard £10.00 GBP</option>
-                    <option value="Premier">Premier £15.00 GBP</option>
-                    <option value="Disabled">Disabled £8.00 GBP</option>
-                </select> </td></tr>
-                    <tr><td><input type="hidden" name="on1" value="Adult">Adult</td></tr><tr><td><input type="number" name="os1" maxlength="200"></td></tr>
-                    <tr><td><input type="hidden" name="on2" value="Senior">Senior</td></tr><tr><td><input type="number" name="os2" maxlength="200"></td></tr>
-                    <tr><td><input type="hidden" name="on3" value="Child">Child</td></tr><tr><td><input type="number" name="os3" maxlength="200"></td></tr>
-                    <tr><td><input type="hidden" name="on4" value="Student">Student</td></tr><tr><td><input type="number" name="os4" maxlength="200"></td></tr>
-                    
-                    <tr>
-                    	<td>
-                    		Film: {{ctrl.film.title}}
-                    	</td>
-                    </tr>
-                    
-                    <tr>
-                    	<td>
-                    		Showing: {{ctrl.showing.startTime}}
-                    	</td>
-                    </tr>
-                    
-                    <tr><td><input type="hidden" name="on5" value="PayPal Email">PayPal Email</td></tr><tr><td><input type="email" name="os5" maxlength="200"></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on0" value="Seat Type" >Seat Type</label><select name="os0"><option value="Standard">Standard £10.00 GBP</option><option value="Premier">Premier £15.00 GBP</option><option value="Disabled">Disabled £8.00 GBP</option></select></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on1" value="Adult">Adult</label><input type="number" name="os1" min="0" max="10" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on2" value="Senior">Senior</label><input type="number" name="os2" min="0" max="10" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on3" value="Child">Child</label><input type="number" name="os3" min="0" max="10" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on4" value="Student">Student</label><input type="number" name="os4" min="0" max="10" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center">Film<input type="text" name="film" ng-readonly="true" value="{{ctrl.film.title}}"></input></label></td></tr>
+                    <tr><td><label class="text-center">Showing<input type="text" name="showing" ng-readonly="true" value="{{ctrl.showing.startTime}}"></input></label>	 </td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on5" value="PayPal Email">PayPal Email</label><input type="email" name="os5" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center">Total Price<input type="text" name="lname" ng-readonly="true" value=""></input></label></td></tr>
                 </table>
                 <input type="hidden" name="currency_code" value="GBP">
                 <input type="image" src="https://www.sandbox.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
