@@ -1,0 +1,77 @@
+<div ng-controller="addUserBookingController as ctrl">
+<link rel="stylesheet" type="text/css" href="app/feature/booking/add/add-user-booking.css">
+<h1>Booking</h1>
+<div id="container">
+    <div id="form">
+        <form id="book_tickets">
+            <fieldset>
+                <legend>Booking Details For {{ctrl.film.title}}</legend>
+                <!--
+                                <p>
+                                    <label for="movie_name">Movies</label>
+                                    <select id="movie_name" name="movie_name" required autofocus>
+                                        <option></option>
+                                        <option value="Movie 1">La La Land</option>
+                                        <option value="Movie 2">Logan</option>
+                                        <option value="Movie 3">John Wick 2</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <label for="type">Ticket type</label>
+                                    <select id="type" required>
+                                        <option></option>
+                                        <option value="Standard">Standard</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Senior">Senior</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <label for="date">Date<br/></label>
+                                    <input type="date" name="date" id="date" min="today" required />
+                                </p>
+                                <p>
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" required />
+                                </p>
+                                <p>
+                                    <label for="tickets_quantity">Number of Tickets</label>
+                                    <input type="number" min="1" name="tickets_quantity" id="tickets_quantity" required />
+                                </p>
+                                <div id="submit_wrapper">
+                                    <input type="submit" id="submit" value="Book Tickets" />
+                                </div>
+                                -->
+                <br>
+        </form>
+        <center>
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="YNLCXP3NBHBZS">
+                <table>
+
+                <tr>
+                <td><input type="hidden" name="on0" value="Ticket Type">Ticket Type</td>
+                </tr>
+                
+                <tr>
+                <td><select name="os0">
+                    <option value="Standard">Standard £{{ctrl.seatTypes[0].price}} GBP</option>
+                    <option value="Premier">Premier £{{ctrl.seatTypes[0].price}} GBP</option>
+                    <option value="Disabled">Disabled £{{ctrl.seatTypes[0].price}} GBP</option>
+                </select> 
+                </td>
+                </tr>
+                
+                    <tr><td></tr><tr><td> </td></tr>
+                    <tr><td><input type="hidden" name="on2" value="Name">Name</td></tr><tr><td><input type="text" name="os2" maxlength="200"></td></tr>
+                    <tr><td><input type="hidden" name="on3" value="Email">Email</td></tr><tr><td><input type="text" name="os3" maxlength="200"></td></tr>
+                </table>
+                <input type="hidden" name="currency_code" value="GBP">
+                <input type="image" src="https://www.sandbox.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+        </center>
+    </div>
+</div>
+</div>
