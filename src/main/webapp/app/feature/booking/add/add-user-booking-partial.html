@@ -26,15 +26,13 @@
                     
                     <tr>
                     	<td>
-                    	{{ctrl.filmindex}}
-                    	{{ctrl.films[ctrl.filmindex].title}}
-                    		<select ng-model="selectedFilm" ng-init="selectedFilm = ctrl.films[getIndexOfParsedFilm].title" ng-options="x.title for x in ctrl.films"></select>
+                    		Film: {{ctrl.film.title}}
                     	</td>
                     </tr>
                     
                     <tr>
                     	<td>
-                    		<select ng-model="selectedShowing" ng-options="st.startTime for st in ctrl.film.showings"></select>
+                    		Showing: {{ctrl.showing.startTime}}
                     	</td>
                     </tr>
                     
