@@ -17,19 +17,17 @@
     <link rel="stylesheet" href="app/css/bootstrap-responsive.css">
 
 
+	<!--  Angular Stuff -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/ui-router.min.js"></script>
 
+	<!-- Additional Scripts -->
     <script src="scripts/navbar-collapse.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="scripts/grayscale.js"></script>
     <script src="scripts/jquery.easing.min.js"></script>
     <script src="scripts/keyboard-scroll.js"></script>
-    <!--<script src="scripts/dim-background.js"></script>
-    <script src="scripts/jquery.dim-background.js"></script>-->
-
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -38,6 +36,7 @@
     <link rel="stylesheet" href="app/css/form-style.css">
     <link rel="stylesheet" href="app/css/animate.css">
     <link rel="stylesheet" href="app/css/main-style.css">
+    <link rel="stylesheet" href="app/feature/dashboard/dashboard.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,7 +76,7 @@
 
 
 
-<div class="move" ui-view></div>
+<div ui-view></div>
 
 
 
@@ -87,8 +86,7 @@
     <div class="row chevSpace">
         <div class="col-xs-12 text-center">
             <a class="page-scroll" ng-click="scrollTo('topPage')"
-               href="#topPage" target="_self"><i
-                    class="fa fa-chevron-circle-up fa-2x"></i><br/> Back to Top</a>
+               href="#topPage" target="_self"><i class="fa fa-chevron-circle-up fa-2x"></i><br/> Back to Top</a>
         </div>
     </div>
 
@@ -163,18 +161,16 @@
 </div>
 
 <!-- Modal -->
-<div class="modal" id="contactUsModal" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel"
-     ng-controller="contactController as contactCtrl">
+<div class="modal" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="contactController as contactCtrl">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
             <div class="modal-body">
+            	<div id="contact-form">
                 <h1>Contact Us</h1>
                 <form name="loginForm" class="cf">
                     <div class="half left cf wow animated fadeIn" data-wow-delay=".5s">
@@ -187,10 +183,16 @@
 							<textarea name="message" placeholder="Message"
                                       ng-model="contact.message"></textarea>
                         <button type="submit" class="btn btn-primary wide"
-                                ng-click="contactCtrl.sendEmail(contact)">Submit
+                                ng-click="contactCtrl.sendEmail(contact)" onclick="success()">Submit
                         </button>
                     </div>
                 </form>
+                </div>
+                
+                <div id="contact-form-successt" style="display:hide">
+                <h1>Thank you</h1>
+                <p>Thank you for your message. We aim to respond within 48 hours.</p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -200,20 +202,18 @@
 </div>
 
 
-<div class="modal" id="bookingModal" tabindex="-1" role="dialog"
-     aria-labelledBy="myModalLabel2">
+<div class="modal" id="bookingModal" tabindex="-1" role="dialog" aria-labelledBy="myModalLabel2" ng-controller="bookingController as bookingCtrl">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel2">Book a Movie</h4>
             </div>
 
             <div class="modal-body">
-                <h1>Film Booking</h1>
+                <h1>Quick Book</h1>
                 <form class="cf">
                     <p>Text here for booking</p>
                 </form>
@@ -227,6 +227,12 @@
 </div>
 
 
+<script>
+	function success() {
+		this.onclick('#contact-form').hide();
+		this.onclick('#contact-form-success').show();
+	}
+</script>
 <!-- App and state manager-->
 <script src="app/app.js"></script>
 <script src="app/app-state-manager.js"></script>
