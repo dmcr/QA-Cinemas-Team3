@@ -21,7 +21,6 @@
         };
         
         vm.deleteShowing = function(showingToDeleteID) {
-        	console.log(showingToDeleteID);
             showingDal.deleteShowing(showingToDeleteID);
             $state.go($state.current, {}, {reload: true});
         };

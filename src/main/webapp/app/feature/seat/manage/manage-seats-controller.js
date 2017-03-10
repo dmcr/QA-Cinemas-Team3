@@ -21,7 +21,6 @@
         };
         
         vm.deleteSeat = function(seatToDeleteID) {
-        	console.log(seatToDeleteID);
             seatDal.deleteSeat(seatToDeleteID);
             $state.go($state.current, {}, {reload: true});
         };
