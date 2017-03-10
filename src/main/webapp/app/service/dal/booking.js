@@ -22,7 +22,7 @@
         }
 
         this.deleteBooking = function (bookingToDeleteID) {
-            return dal.http.DELETE("/rest/booking/json/" + bookingToDeleteId);
+            return dal.http.DELETE("rest/booking/json/", bookingToDeleteID);
         };
     }
 }());

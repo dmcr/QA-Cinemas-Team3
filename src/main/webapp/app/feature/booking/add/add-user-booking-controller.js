@@ -27,7 +27,6 @@
         }
         init();
         vm.priceChange = function(){
-        	console.log("fired price change!");
    	     	vm.totalprice = vm.selectedSeatType;
    	    };
     };

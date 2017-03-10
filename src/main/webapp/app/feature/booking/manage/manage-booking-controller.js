@@ -13,7 +13,7 @@
         init();
         
         vm.updateBooking = function(bookingToUpdateId) {
-                $state.go('cms.managebookings.updatesbooking', {'bookingId' : bookingToUpdateId});
+                $state.go('cms.managebookings.updatebooking', {'bookingId' : bookingToUpdateId});
         };
         
         vm.addBooking = function() {
@@ -21,7 +21,6 @@
         };
         
         vm.deleteBooking = function(bookingToDeleteID) {
-        	console.log(bookingToDeleteID);
             bookingDal.deleteBooking(bookingToDeleteID);
             $state.go($state.current, {}, {reload: true});
         };

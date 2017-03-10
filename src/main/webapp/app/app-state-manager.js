@@ -164,7 +164,7 @@
             templateUrl: "app/feature/booking/update/update-booking-partial.html"
         }).state("cms.managebookings.newbooking", {
             url: "/newbooking",
-            templateUrl: "app/feature/film/add/add-booking-partial.html"
+            templateUrl: "app/feature/booking/add/add-booking-partial.html"
 
         }).state("cms.managetickets", {
             url: "/managetikcets",
@@ -187,6 +187,10 @@
         }).state("filmposter", {
         url: "/filmposter/{imdbId:[0-9a-zA-Z]*}",
         templateUrl: "app/feature/film/get/get-film-poster-partial.html"
+        })
+        .state("quickbook", {
+        url: "/quickbook",
+        templateUrl: "app/feature/booking/add/add-quickbook-partial.html"
         })
     });
 }());
