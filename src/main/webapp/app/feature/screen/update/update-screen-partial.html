@@ -1,9 +1,8 @@
 <div ng-controller="updateScreenController as ctrl">
 	<h2>Update Screen:</h2>
-	<h1>{{ctrl.screen.screenId}}</h1>
 	<form role="form">
 		<input id="cinScreenCapacity" placeholder="cinScreenCapacity" ng-model="ctrl.screen.cinScreenCapacity">
 
-        <button type="submit" ng-click="ctrl.updateScreen(ctrl.screen)">updateScreen</button>
+        <button type="submit" class="btn btn-primary" ng-click="ctrl.updateScreen(ctrl.screen)">updateScreen</button>
 	</form>
 </div>

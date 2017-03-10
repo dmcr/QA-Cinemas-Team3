@@ -1,5 +1,5 @@
 (function () {
-    var UpdateScreenController = function (screenDal, $stateParams, $state) {
+    var UpdateScreenController = function (screenDal, $state, $stateParams) {
         var vm = this;
         function init() {
             screenDal.getScreenByID($stateParams.screenId).then(function (result) {
@@ -21,5 +21,5 @@
             $state.go('cms.managescreens', {}, { reload: true });
         };
     };
-    angular.module('cinemaApp').controller('updateScreenController', ['screenDal', '$stateParams', '$state', UpdateScreenController]);
+    angular.module('cinemaApp').controller('updateScreenController', ['screenDal', '$state', '$stateParams', UpdateScreenController]);
 }());

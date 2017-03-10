@@ -13,7 +13,7 @@
         init();
         
         vm.updateFilm = function(filmToUpdateId) {
-                $state.go('cms.managefilms.updatesfilm', {'filmId' : filmToUpdateId});
+                $state.go('cms.managefilms.updatefilm', {'filmId' : filmToUpdateId});
         };
         
         vm.addFilm = function() {
@@ -21,7 +21,6 @@
         };
         
         vm.deleteFilm = function(filmToDeleteID) {
-        	console.log(filmToDeleteID);
             filmDal.deleteFilm(filmToDeleteID);
             $state.go($state.current, {}, {reload: true});
         };

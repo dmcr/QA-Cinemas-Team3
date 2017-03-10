@@ -1,25 +1,16 @@
 <div ng-controller="manageTicketController as ctrl">
-	<h1>Manage Showings:</h1>
+	<h1>Manage Tickets:</h1>
 	<button type="submit" class="btn btn-primary" ng-click="ctrl.addTicket()">Add New Ticket</button>
 	<div ui-view></div>
 	<table>
-		<thead>
-			<tr>
-				<th>bookingId</th>
-				<th>showingId</th>
-				<th>seatId</th>
-				<th>ticket type</th>
+		<tr ng-repeat="ticket in ctrl.tickets">
+			<td>BookingID: {{ticket.bookingId}}<td>
+			<td>ShowingID: {{ticket.showing.showingId}}<td>
+			<td>SeatID: {{ticket.seat.seatId}}<td>
+			<td>TicketType: {{ticket.ticketType}}<td>
 
-			</tr>
-		</thead>
-		<tr ng-repeat="ticket in ctrl.ticket">
-			<td>: {{ticket.bookingId}}<td>
-			<td>: {{ticket.showingId}}<td>
-			<td>: {{ticket.seatId}}<td>
-			<td>: {{ticket.ticketType}}<td>
-
-			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateTicket(screen.screenId)">UpdateTicket</button></td>
-			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteTicket(screen.screenId)">DeleteTicket</button></td>
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateTicket(ticket.ticketId)">UpdateTicket</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteTicket(ticket.ticketId)">DeleteTicket</button></td>
 		</tr>
 	</table>
 </div>

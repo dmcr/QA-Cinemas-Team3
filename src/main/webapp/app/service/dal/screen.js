@@ -21,8 +21,8 @@
         	return dal.http.PUT("rest/screen/json/" + screenToUpdateID, screenToUpdate);
         }
 
-        this.deleteScreen = function (bookingToDeleteID) {
-            return dal.http.DELETE("/rest/screen/json/" + screenToDeleteId);
+        this.deleteScreen = function (screenToDeleteID) {
+            return dal.http.DELETE("/rest/screen/json/", screenToDeleteID);
         };
     }
 }());

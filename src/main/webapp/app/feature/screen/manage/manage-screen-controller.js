@@ -13,7 +13,7 @@
         init();
         
         vm.updateScreen = function(screenToUpdateId) {
-                $state.go('cms.managescreens.updatesscreen', {'screenId' : screenToUpdateId});
+                $state.go('cms.managescreens.updatescreen', {'screenId' : screenToUpdateId});
         };
         
         vm.addScreen = function() {
@@ -21,7 +21,6 @@
         };
         
         vm.deleteScreen = function(screenToDeleteID) {
-        	console.log(screenToDeleteID);
             screenDal.deleteScreen(screenToDeleteID);
             $state.go($state.current, {}, {reload: true});
         };

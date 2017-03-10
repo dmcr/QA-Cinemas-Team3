@@ -174,7 +174,7 @@
             templateUrl: "app/feature/ticket/update/update-ticket-partial.html"
         }).state("cms.managetickets.newticket", {
             url: "/newticket",
-            templateUrl: "app/feature/film/add/add-ticket-partial.html"
+            templateUrl: "app/feature/ticket/add/add-ticket-partial.html"
         }).state("films", {
             url: "/films",
             templateUrl: "app/feature/film/get/get-films-home-partial.html"

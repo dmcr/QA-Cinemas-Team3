@@ -22,7 +22,7 @@
         }
 
         this.deleteTicket = function (ticketToDeleteID) {
-            return dal.http.DELETE("/rest/ticket/json/" + ticketToDeleteId);
+            return dal.http.DELETE("rest/ticket/json/", ticketToDeleteID);
         };
     }
 }());

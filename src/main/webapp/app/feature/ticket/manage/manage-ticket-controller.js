@@ -13,7 +13,7 @@
         init();
         
         vm.updateTicket = function(ticketToUpdateId) {
-                $state.go('cms.managetickets.updatesticket', {'ticketId' : ticketToUpdateId});
+                $state.go('cms.managetickets.updateticket', {'ticketId' : ticketToUpdateId});
         };
         
         vm.addTicket = function() {
@@ -21,7 +21,6 @@
         };
         
         vm.deleteTicket = function(ticketToDeleteID) {
-        	console.log(ticketToDeleteID);
             ticketDal.deleteTicket(ticketToDeleteID);
             $state.go($state.current, {}, {reload: true});
         };

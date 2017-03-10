@@ -6,10 +6,11 @@
         vm.addSeatType = function(seatTypeToAdd) {
             seatTypeDal.saveSeatType(seatTypeToAdd).then(function (results) {
                 vm.seatTypeAddMessage  = results;
-                $state.go('getseattype');
+                $state.go('cms.manageseattypes', {}, { reload: true });
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
+                $state.go('cms.manageseattypes', {}, { reload: true });
             });
         };
     };

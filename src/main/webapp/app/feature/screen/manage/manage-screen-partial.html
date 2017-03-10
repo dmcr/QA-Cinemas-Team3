@@ -9,8 +9,8 @@
 
 			</tr>
 		</thead>
-		<tr ng-repeat="screen in ctrl.screen">
-			<td>Capacity: {{screen.capacity}}<td>
+		<tr ng-repeat="screen in ctrl.screens">
+			<td>Capacity: {{screen.cinScreenCapacity}}<td>
 
 			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateScreen(screen.screenId)">UpdateScreen</button></td>
 			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteScreen(screen.screenId)">DeleteScreen</button></td>
