@@ -22,7 +22,7 @@
         }
 
         this.deleteScreen = function (screenToDeleteID) {
-            return dal.http.DELETE("/rest/screen/json/", screenToDeleteID);
+            return dal.http.DELETE("rest/screen/json/", screenToDeleteID);
         };
     }
 }());
