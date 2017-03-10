@@ -36,10 +36,7 @@
             }).state("updatebooking", {
                 url: "/updatebooking/{bookingId:[0-9]*}",
                 templateUrl: "app/feature/booking/update/update-booking-partial.html"
-       }).state("addshowing", {
-       	url: "/addshowing",
-       	templateUrl: "app/feature/showing/add/add-showing-partial.html"
-        }).state("getshowings", {
+       }).state("getshowings", {
             url: "/getshowings",
             templateUrl: "app/feature/showing/get/get-showings-partial.html"
         }).state("getshowing", {
@@ -132,9 +129,6 @@
         }).state("filminformation", {
         	url: "/filminfo/{filmId:[0-9]*}",
         	templateUrl: "app/feature/film/get/get-film-information-partial.html",
-
-            url: "/newshowing",
-            templateUrl: "app/feature/showing/add/add-showing-partial.html"
 
         }).state("cms.managescreens", {
             url: "/managescreens",
