@@ -1,36 +1,235 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="cinemaApp">
 <head>
-    <meta charset="UTF-8">
-    <title>QA Cinemas</title>
-    <script src="app/feature/dashboard/dashboard-controller.js"></script>
-</head>
-<body>
-<ul>
-    <li ><a ui-sref="dashboard">Dashboard</a></li>
-</ul>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <div ui-view></div>
-    
-    <!--  JQuery  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-    <!-- bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>QACinemas</title>
 
-    <!-- Angular modules-->
-    <!-- <script src="scripts/angular.min.js"></script>-->
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/bootstrap-responsive.css">
+
+
+	<!--  Angular Stuff -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/ui-router.min.js"></script>
-    
-    
+
+	<!-- Additional Scripts -->
+    <script src="scripts/navbar-collapse.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/grayscale.js"></script>
+    <script src="scripts/jquery.easing.min.js"></script>
+    <script src="scripts/keyboard-scroll.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Stylesheets for the pages -->
+    <link rel="stylesheet" href="app/css/form-style.css">
+    <link rel="stylesheet" href="app/css/animate.css">
+    <link rel="stylesheet" href="app/css/main-style.css">
+    <link rel="stylesheet" href="app/feature/dashboard/dashboard.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#topPage"> <i class="fa fa-play-circle"></i> <span class="light">QA</span>Cinemas
+            </a>
+        </div>
+
+
+        <div
+                class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden"><a ng-click="scrollTo('topPage')" href="#topPage" target="_self"></a></li>
+                <li><a ng-click="scrollTo('whatson')" class="page-scroll" href="#whatson" target="_self">What's On</a>
+                </li>
+                <li><a ng-click="scrollTo('about')" class="page-scroll" href="#about" target="_self">About Us</a></li>
+                <li><a ng-click="scrollTo('findus')" class="page-scroll" href="#findus" target="_self">Find Us</a></li>
+                <li><a href="" data-toggle="modal" data-target="#bookingModal">QUICK BOOK</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div ui-view></div>
+
+
+
+
+
+<!-- call in JS footer -->
+<div id="footer" class="container footer">
+    <div class="row chevSpace">
+        <div class="col-xs-12 text-center">
+            <a class="page-scroll" ng-click="scrollTo('topPage')"
+               href="#topPage" target="_self"><i class="fa fa-chevron-circle-up fa-2x"></i><br/> Back to Top</a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-2 footercol">
+            <h2>
+                <span class="light">Get</span> In Touch
+            </h2>
+            <p>
+                <a href="" data-toggle="modal" data-target="#contactUsModal"> <i
+                        class="fa fa-comment" aria-hidden="true"></i> Contact Us
+                </a> <a href="#"> <i class="fa fa-question-circle"
+                                     aria-hidden="true"></i> FAQs
+            </a>
+
+            </p>
+
+        </div>
+        <div class="col-xs-2 footercol">
+            <h2>
+                <span class="light">Site</span> Links
+            </h2>
+            <p>
+                <a href="#whatson"><i class="fa fa-ticket" aria-hidden="true"></i>
+                    What's On</a> <a href="#whatson"><i class="fa fa-film"
+                                                        aria-hidden="true"></i> Coming Soon</a> <a href="#"><i
+                    class="fa fa-thumbs-up" aria-hidden="true"></i> Offers</a> <a href="#"><i
+                    class="fa fa-glass" aria-hidden="true"></i> Cocktail Bar</a>
+            </p>
+        </div>
+        <div class="col-xs-2 footercol">
+            <h2>
+                <span class="light">QA</span> Legal
+            </h2>
+            <p>
+                <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i>
+                    Terms of Use</a> <a href="#"><i class="fa fa-file"
+                                                    aria-hidden="true"></i> Privacy Policy</a>
+            </p>
+        </div>
+        <div class="col-xs-2 footercol-right">
+            <h2>
+                <span class="light">QA</span> Social
+            </h2>
+            <p>
+                <a href="#"><i class="fa fa-twitter-square fa-1x padright3"
+                               aria-hidden="true"></i> Twitter </a> <a href="#"><i
+                    class="fa fa-facebook-square fa-1x padright3" aria-hidden="true"></i>
+                Facebook </a> <a href="#"><i
+                    class="fa fa-snapchat-square padright3" aria-hidden="true"></i>
+                Snapchat </a> <a href="#"><i
+                    class="fa fa-youtube-square padright3" aria-hidden="true"></i>
+                YouTube </a>
+            </p>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <h1 class="text-center">
+                <i class="fa fa-play-circle"></i> <span class="light">QA</span>
+                Cinemas
+            </h1>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="contactController as contactCtrl">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            	<div id="contact-form">
+                <h1>Contact Us</h1>
+                <form name="contactForm" class="cf">
+                    <div class="half left cf wow animated fadeIn" data-wow-delay=".5s">
+                        <input type="text" placeholder="Name" ng-model="contact.name">
+                        <input type="email" placeholder="Email address"
+                               ng-model="contact.email"> <input type="text" placeholder="Subject" ng-model="contact.subject">
+                    </div>
+                    <div class="half right cf wow animated fadeIn">
+							<textarea name="message" placeholder="Message"
+                                      ng-model="contact.message"></textarea>
+                        <button type="submit" id="contact-submit" class="btn btn-primary wide" ng-click="contactCtrl.sendEmail(contact)"  data-dismiss="modal">Submit
+                        </button>
+                    </div>
+                </form>
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="bookingModal" tabindex="-1" role="dialog" aria-labelledBy="myModalLabel2" ng-controller="bookingController as bookingCtrl">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <h1>Quick Book</h1>
+                <form class="cf">
+                    <p>Text here for booking</p>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+$('#contact-submit').click( function() {
+	  alert('Thank you for contacting us. We aim to respond within 48 hours');
+	});
+</script>
 
     <!-- App and state manager-->
     <script src="app/app.js"></script>
     <script src="app/app-state-manager.js"></script>
+    <script src="app/scripts/anchorscroll.js"></script>
 
     <!-- Services-->
     <script src="app/service/dal/dal.js"></script>
@@ -41,26 +240,60 @@
     <script src="app/service/dal/seatType.js"></script>
     <script src="app/service/dal/showing.js"></script>
     <script src="app/service/dal/ticket.js"></script>
+    <script src="app/service/dal/contact.js"></script>
+    <script src="app/service/contactService.js"></script>
 
     <!-- Features-->
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
     <script src="app/feature/booking/add/add-booking-controller.js"></script>
+    <script src="app/feature/booking/add/add-user-booking-controller.js"></script>
     <script src="app/feature/booking/get/get-bookings-controller.js"></script>
     <script src="app/feature/booking/get/get-booking-controller.js"></script>
+    <script src="app/feature/booking/update/update-booking-controller.js"></script>
+	<script src="app/feature/booking/manage/manage-booking-controller.js"></script>
+
 	<script src="app/feature/film/get/get-films-controller.js"></script>
 	<script src="app/feature/film/get/get-film-controller.js"></script>
 	<script src="app/feature/film/add/add-film-controller.js"></script>
+	<script src="app/feature/film/update/update-film-controller.js"></script>
+	<script src="app/feature/film/get/get-film-poster-controller.js"></script>
+	<script src="app/feature/film/get/get-films-posters.js"></script>
+	<script src="app/feature/film/get/get-films-home-controller.js"></script>
+	<script src="app/feature/film/manage/manage-film-controller.js"></script>
+
 	<script src="app/feature/showing/get/get-showing-controller.js"></script>
 	<script src="app/feature/showing/get/get-showings-controller.js"></script>
 	<script src="app/feature/showing/add/add-showing-controller.js"></script>
+	<script src="app/feature/showing/update/update-showing-controller.js"></script>
+	<script src="app/feature/showing/manage/manage-showings-controller.js"></script>
+
 	<script src="app/feature/ticket/get/get-ticket-controller.js"></script>
+	<script src="app/feature/ticket/get/get-tickets-controller.js"></script>
 	<script src="app/feature/ticket/add/add-ticket-controller.js"></script>
+	<script src="app/feature/ticket/update/update-ticket-controller.js"></script>
+	<script src="app/feature/ticket/manage/manage-ticket-controller.js"></script>
+
 	<script src="app/feature/screen/get/get-screen-controller.js"></script>
+	<script src="app/feature/screen/get/get-screens-controller.js"></script>
 	<script src="app/feature/screen/add/add-screen-controller.js"></script>
+	<script src="app/feature/screen/update/update-screen-controller.js"></script>
+	<script src="app/feature/screen/manage/manage-screen-controller.js"></script>
+
 	<script src="app/feature/seat/get/get-seat-controller.js"></script>
+	<script src="app/feature/seat/get/get-seats-controller.js"></script>
 	<script src="app/feature/seat/add/add-seat-controller.js"></script>
+	<script src="app/feature/seat/update/update-seat-controller.js"></script>
+	<script src="app/feature/seat/manage/manage-seats-controller.js"></script>
+
 	<script src="app/feature/seatType/get/get-seatType-controller.js"></script>
+	<script src="app/feature/seatType/get/get-seatTypes-controller.js"></script>
 	<script src="app/feature/seatType/add/add-seatType-controller.js"></script>
+	<script src="app/feature/seatType/update/update-seatType-controller.js"></script>
+	<script src="app/feature/seatType/update/update-seatTypes-controller.js"></script>
+	<script src="app/feature/seatType/manage/manage-seatTypes-controller.js"></script>
+
+	<script src="app/feature/cms/manage-content-controller.js"></script>
+	<script src="app/feature/contact/contactController.js"></script>
 
 
 </body>

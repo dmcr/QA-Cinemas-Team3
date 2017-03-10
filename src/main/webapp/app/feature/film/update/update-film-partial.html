@@ -1,0 +1,26 @@
+<div ng-controller="updateFilmController as ctrl">
+	<h2>Update Film:</h2>
+	<h1>{{ctrl.film.title}}</h1>
+	
+	<form role="form">
+		<input id="is3D" placeholder="id3D" ng-model="ctrl.film.is3D">
+
+        <input id="cast" placeholder="cast" ng-model="ctrl.film.cast">
+        
+        <input id="certification" placeholder="certification" ng-model="ctrl.film.certification">
+        
+        <input id="director" placeholder="director" ng-model="ctrl.film.director">
+        
+        <input id="duration" placeholder="duration" ng-model="ctrl.film.duration">
+        
+        <input id="genre" placeholder="genre" ng-model="ctrl.film.genre">
+        
+        <input id="releaseDate" placeholder="releaseDate" ng-model="ctrl.film.releaseDate">
+        
+        <input id="summary" placeholder="summary" ng-model="ctrl.film.summary">
+        
+        <input id="title" placeholder="title" ng-model="ctrl.film.title">
+
+        <button type="submit" class="btn btn-primary" ng-click="ctrl.updateFilm(ctrl.film)">updateFilm</button>
+	</form>
+</div>

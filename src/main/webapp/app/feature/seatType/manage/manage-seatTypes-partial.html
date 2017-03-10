@@ -1,0 +1,17 @@
+<div ng-controller="manageSeatTypesController as ctrl">
+	<h1>Seat Types To Update:</h1>
+	<div ui-view></div>
+	<table>
+		<thead>
+			<tr>
+				<th>Seat Type Price:</th>
+				<th>Seat Type Name:</th>
+			</tr>
+		</thead>	
+		<tr ng-repeat="seatType in ctrl.seatTypes">
+			<td>{{seatType.price}}<td>
+			<td>{{seatType.name}}</td>
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateSeatType(seatType.typeId)">UpdateSeatType</button></td>
+		</tr>
+	</table>
+</div>

@@ -17,12 +17,12 @@
         	return dal.http.POST("rest/showing/json", showingToSave);
         };
 
-        this.updateShowing = function (showingToUpdateID, bookingToUpdate) {
+        this.updateShowing = function (showingToUpdateID, showingToUpdate) {
         	return dal.http.PUT("rest/showing/json/" + showingToUpdateID, showingToUpdate);
         }
 
         this.deleteShowing = function (showingToDeleteID) {
-            return dal.http.DELETE("/rest/showing/json/" + showingToDeleteId);
+            return dal.http.DELETE("rest/showing/json/", showingToDeleteID);
         };
     }
 }());

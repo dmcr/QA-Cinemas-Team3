@@ -58,9 +58,9 @@
                     return deferred.promise;
                 },
 
-                DELETE: function (apiPath, itemToDelete) {
+                DELETE: function (apiPath, itemToDeleteID) {
                     var deferred = $q.defer();
-                    $http.delete(apiPath + itemToDelete.id).then(function () {
+                    $http.delete(apiPath + itemToDeleteID).then(function () {
                         deferred.resolve();
                     }, function (e) {
                         deferred.reject(e);

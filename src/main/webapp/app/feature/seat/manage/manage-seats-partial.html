@@ -1,0 +1,23 @@
+<div ng-controller="manageSeatsController as ctrl">
+	<h1>Manage Seats:</h1>
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.addSeat()">Add New Seat</button>
+	<div ui-view></div>
+	<table>
+		<thead>
+			<tr>
+				<th>Seat Row:</th>
+				<th>Seat Number:</th>
+				<th>Seat Type:</th>
+				<th>Seat Screen:</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="seat in ctrl.seats">
+			<td>Row: {{seat.row}}<td>
+			<td>Number: {{seat.number}}</td>
+			<td>SeatTypeId: {{seat.seatType.typeId}}<td>
+			<td>ScreenID: {{seat.screenId}}</td>
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateSeat(seat.seatId)">UpdateSeat</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteSeat(seat.seatId)">DeleteSeat</button></td>
+		</tr>
+	</table>
+</div>

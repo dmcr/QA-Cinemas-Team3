@@ -1,0 +1,7 @@
+<div ng-controller="getFilmsPostersController as ctrl">
+<h1>Whats On</h1> 
+<div ng-repeat="film in ctrl.films">
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.goToFilm(film.filmId)">GO</button>
+	<img ng-src="{{film.posterUrl}}" ui-sref="filminformation({'filmId': film.filmId})"/>
+</div>
+</div>

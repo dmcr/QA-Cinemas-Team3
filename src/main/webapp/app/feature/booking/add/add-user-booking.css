@@ -1,0 +1,92 @@
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "Verdana", Helvetica, sans-serif;
+    position: relative;
+}
+
+#container{
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+#form{
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    margin: 0 auto;
+    vertical-align:text-top;
+}
+
+fieldset{
+    border:1px solid #AED0EA;
+    border-radius:8px;
+    box-shadow:0 0 10px #D7EBF9;
+}
+
+legend {
+    color: #2779AA;
+    font-size: 120%;
+    text-align: center;
+    background-color: white;
+    font-weight:bold;
+}
+
+p{
+    overflow: hidden;
+}
+
+label{
+    width: 50%;
+    text-align: right;
+    float: left;
+    clear: both;
+    color: #2779AA;
+}
+
+p input, p select{
+    width: 40%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #2779AA;
+}
+
+#total_price, #movies_list, li, #note, #type{
+    color: #2779AA;
+}
+
+p, span, li{
+    text-align: left;
+}
+
+#movie_name,#type,#date,#email,#tickets_quantity {
+    height:25px;
+    font-size: 15px;
+}
+
+#submit_wrapper{
+    text-align: center;
+}
+
+#submit{
+    background-color: #4CAF50;
+    border: 2px solid green;
+    color: white;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 130px;
+}
+
+#submit:hover {
+    background-color: #3e8e41;
+}

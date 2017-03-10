@@ -1,18 +1,18 @@
 (function() {
 
-    var AddShowingController =  function($state, showingDal) {
+    var AddShowingController =  function(showingDal, $stateParams, $state) {
         var vm = this;
 
         vm.addShowing = function(showingToAdd) {
             showingDal.saveShowing(showingToAdd).then(function (results) {
                 vm.showingAddMessage  = results;
-                $state.go('getshowing');
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
             });
+            $state.go('cms.manageshowings', {}, { reload: true });
         };
     };
 
-    angular.module('cinemaApp').controller('addShowingController', ['$state','showingDal',AddShowingController]);
+    angular.module('cinemaApp').controller('addShowingController', ['showingDal', '$stateParams', '$state', AddShowingController]);
 }());

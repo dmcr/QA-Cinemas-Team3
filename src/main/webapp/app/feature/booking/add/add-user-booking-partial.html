@@ -1,0 +1,42 @@
+<div ng-controller="addUserBookingController as ctrl">
+<link rel="stylesheet" type="text/css" href="app/feature/booking/add/add-user-booking.css">
+
+<br/>
+<br/>
+<br/>
+<div id="container">
+    <div id="form">
+        <form id="book_tickets">
+            <fieldset>
+                <h1>Booking Details</h1>
+                <br>
+        </form>
+        <center>
+            <form name="_xclick" action="https://www.sandbox.paypal.com/uk/cgi-bin/webscr" method="post">
+            <div id="paypal">
+            	<input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="qacinemas3owners@gmail.com">
+                <input type="hidden" name="currency_code" value="GBP">
+                <table>
+                <input type="hidden" name="item_name" value="Ticket Price">
+                    <input type="hidden" name="amount" id="amount" value="20">
+                    <tr><td><label class="text-center"><input type="hidden" name="on0" value="Seat Type" >Seat Type</label><select id="selectedoption" name="os0" ng-model="ctrl.selectedSeatType" ng-onchange="ctrl.priceChange()"><option id="Standard" value="10">Standard £10.00 GBP</option><option id="Premium" value="15">Premium £15.00 GBP</option><option id="Disabled" value="8">Disabled £8.00 GBP</option></select></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on1" value="Adult">Adult</label><input type="number" name="os1" id="Adult" min="0" max="10" maxlength="200" ng-model="ctrl.adults" ng-onchange="ctrl.priceChange()" required></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on2" value="Senior">Senior</label><input type="number" name="os2" id="Senior" min="0" max="10" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on3" value="Child">Child</label><input type="number" name="os3" id="Child" min="0" max="10" maxlength="200"  required></td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on4" value="Student">Student</label><input type="number" name="os4" id="Student" min="0" max="10" maxlength="200"  required></td></tr>
+                    <tr><td><label class="text-center">Film<input type="text" name="film" ng-readonly="true" value="{{ctrl.film.title}}"></input></label></td></tr>
+                    <tr><td><label class="text-center">Showing<input type="text" name="showing" ng-readonly="true" value="{{ctrl.showing.startTime}}"></input></label>	 </td></tr>
+                    <tr><td><label class="text-center"><input type="hidden" name="on5" value="PayPal Email">PayPal Email</label><input type="email" name="os5" maxlength="200" required></td></tr>
+                    <tr><td><label class="text-center">Total Price<input name="pricetotal" id="Total" ng-readonly="true" ng-init="ctrl.totalprice = 0" value="{{ctrl.totalprice}}"></input></label></td></tr>
+                </table>
+               
+                
+                </div>
+                <input type="image" src="https://www.sandbox.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+</center>
+    </div>
+</div>
+</div>

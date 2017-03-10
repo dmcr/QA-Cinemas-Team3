@@ -1,0 +1,16 @@
+<div ng-controller="manageTicketController as ctrl">
+	<h1>Manage Tickets:</h1>
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.addTicket()">Add New Ticket</button>
+	<div ui-view></div>
+	<table>
+		<tr ng-repeat="ticket in ctrl.tickets">
+			<td>BookingID: {{ticket.bookingId}}<td>
+			<td>ShowingID: {{ticket.showing.showingId}}<td>
+			<td>SeatID: {{ticket.seat.seatId}}<td>
+			<td>TicketType: {{ticket.ticketType}}<td>
+
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateTicket(ticket.ticketId)">UpdateTicket</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteTicket(ticket.ticketId)">DeleteTicket</button></td>
+		</tr>
+	</table>
+</div>

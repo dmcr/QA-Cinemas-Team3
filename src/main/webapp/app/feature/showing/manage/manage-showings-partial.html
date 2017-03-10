@@ -1,0 +1,21 @@
+<div ng-controller="manageShowingsController as ctrl">
+	<h1>Manage Showings:</h1>
+	<button type="submit" class="btn btn-primary" ng-click="ctrl.addShowing()">Add New Showing</button>
+	<div ui-view></div>
+	<table>
+		<thead>
+			<tr>
+				<th>Start Time:</th>
+				<th>Screen ID:</th>
+				<th>Seat Type ID:</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="showing in ctrl.showings">
+			<td>Start Time: {{showing.startTime}}<td>
+			<td>Screen ID: {{showing.screenId}}</td>
+			<td>Film ID: {{showing.filmId}}<td>
+			<td><button type="submit" class="btn btn-primary" ng-click="ctrl.updateShowing(showing.showingId)">UpdateShowing</button></td>
+			<td><button type="submit" class="btn btn-danger" ng-click="ctrl.deleteShowing(showing.showingId)">DeleteShowing</button></td>
+		</tr>
+	</table>
+</div>

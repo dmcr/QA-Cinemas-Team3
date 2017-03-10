@@ -1,0 +1,10 @@
+<div id="gridofequals" ng-controller="getFilmsHomeController as ctrl">
+	<div class="geInline" ng-repeat="film in ctrl.films">
+			<div class="actionBox" style="z-index: 500;">
+				<a ui-sref="film({filmId: film.filmId})"> 
+					<img class="image" ng-src="{{film.poster}}" alt="film.title" />
+				</a>
+			</div>
+			<span class="top-films__title">{{film.title}}</span>
+	</div>
+</div>

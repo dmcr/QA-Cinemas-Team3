@@ -31,7 +31,7 @@ public class SeatTypeServiceDBImp implements SeatTypeService{
 
 	@Override
 	public String getSeatTypeById(Long seatTypeId) {
-		Query query = em.createQuery("SELECT f FROM SeatType f WHERE seatTypeId =" + seatTypeId);
+		Query query = em.createQuery("SELECT f FROM SeatType f WHERE typeId =" + seatTypeId);
 		SeatType seatType = (SeatType) query.getSingleResult();
 		return util.getJSONForObject(seatType);
 	}

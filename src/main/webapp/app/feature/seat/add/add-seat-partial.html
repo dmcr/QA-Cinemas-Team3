@@ -2,12 +2,14 @@
 	<h2>Add a new seat</h2>
 	
 	<form role="form">
+		<input id="row" placeholder="row" ng-model="seat.row">
+		
 		<input id="number" placeholder="number" ng-model="seat.number">
 
-        <input id="row" placeholder="row" ng-model="seat.row">
+        <input id="seatTypeId" placeholder="seatTypeId" ng-model="seat.seatType.typeId">
         
-        <input id="seatTypeId" placeholder="seatTypeId" ng-model="seat.seatTypeId">
+        <input id="screenId" placeholder="screenId" ng-model="seat.screenId">
         
-        <button type="submit" ng-click="ctrl.addSeat(seat)">addSeat</button>
+        <button type="submit" class="btn btn-primary" ng-click="ctrl.addSeat(seat)">addSeat</button>
 	</form>
 </div>
